@@ -35,7 +35,7 @@
       $rota->set_uri($_SERVER['REQUEST_URI']);
            
      
-   if(!isset($_SESSION["login"])) {
+   if(!isset($_SESSION["login"]) && !isset($_COOKIE['timeUser'])) {
       
       if(isset($_POST['acao'])) {
       
@@ -53,6 +53,11 @@
 
       // ENABLE ROUTES FOR NAVIGATION AFTER CREATED SESSION
       $rota->setRouter();
+
+
+      if(!isset($_COOKIE['timeUser'])){
+      $userControl->TimeLogout();
+      }
                         
       if(isset($_GET['url']) && $_GET['url'] == "logout"){
       $userControl->Logout();
@@ -63,8 +68,11 @@
       }
 
       if(!isset($_GET['url']) && $_GET['url'] == NULL ){
-            $userControl->Logout();
+      $userControl->Logout();
       }
+     
+
+     
 }
    
 ?>

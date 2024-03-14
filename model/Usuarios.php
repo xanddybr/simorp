@@ -84,7 +84,7 @@ Class Usuarios  {
     
          if(!isset($_SESSION['login'])) {
             
-            $_SESSION["login"] = [$this->nome . " " . $this->sobrenome, $this->token,'logado'];
+            $_SESSION["login"] = [$this->token,'logado'];
             
 
             if(isset($_SESSION['login'])){
@@ -136,16 +136,22 @@ Class Usuarios  {
       } 
     
       // function for logout user     
-      function LogoutSession() {
-
-        $_SESSION["login"] = [null, null, null];
-        unset($_SESSION['login']);
+        function LogoutSession() {
+        setcookie('timeUser', null, null);
+        unset($_COOKIE['timeUser']);
+        $_SESSION['login'] = [null, null, null];
         session_destroy();
         header("location:/simorp_beta/login");
-       
        }
-    
-        
+
+
+       function TimeOut() {
+        unset($_SESSION['login']);
+        $_SESSION['login'] = [null, null, null];
+        session_destroy();
+
+       }
+            
        
        //Exec connection with data-source API looking for user
        function GetUserAPI() {
@@ -174,15 +180,14 @@ Class Usuarios  {
         if(isset($check) && $check == true) {
           
           setcookie('rmb', 'checked', time() + 86400*90);
-          setcookie('user', $this->usuario, time() + 86400*90);
+          setcookie('checkUser', $this->nome . " " . $this->sobrenome, time() + 86400*90);
+          setcookie('timeUser', $this->nome, time() + 43200);
                   
        } else {
 
-          setcookie('rmb', '', 0);
-          setcookie('senha', '', 0);
-          setcookie('user', '', 0);
-
-      }
+          setcookie('rmb', null);
+          setcookie('checkUser', null);
+       }
                
     } 
 
