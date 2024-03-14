@@ -15,15 +15,15 @@ class ControllerUsuarios {
        
     }
 
-    function Display() {
-       
-    }
-
     function Logout() {
-
         $usuario = new Usuarios();
         $usuario->LogoutSession();
         
+    }
+
+    function TimeLogout() {
+        $usuario = new Usuarios();
+        $usuario->TimeOut();
     }
     
 }

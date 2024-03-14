@@ -97,7 +97,7 @@
 
 								 <div class="form-group col-lg-12">
 									<label>Observação</label>
-									<textarea class="form-control" rows="2" name="observacao"></textarea>
+									<textarea class="form-control" rows="2" name="observacao" ></textarea>
 								 </div>
 
 								<div><label class="form-group col-lg-8">Valor Total: <label>R$</label> -  </label>  <label class="form-group col-lg-2"> Total dos Ítens: ( ) - </label></label><button class="btn-primary pull-right" >Salvar Solicitação</button><button class="btn-default" id="btn-todo">Unidade Fornec.</button></div>
@@ -133,7 +133,7 @@
 							<td data-field="text">
 								<select class="form-control" name="objeto">
 									<option selected>< selecione um objeto ></option>
-									<option value="">184169 - CARRO 1.0 GASOLINA MOTOR 4 CV BLINDADO </option>
+									<option value="">184169 - CARRO 1.0 GASOLINA MOTOR 4 CV BLINDADO</option>
 									<option value="">158468 - MOTOCILCETA </option>
 									<option value="">123459 - TRATOR AGRICOLA </option>
 									<option value="">145258 - AVIÃO COMERCIAL </option>
@@ -155,13 +155,14 @@
 									<option value="litro">LT</option>
 									<option value="litro">ML</option>
 								</select>
+
 							</td>
 							
 
-							<td data-field="text" style="width: 120px"><input id='valor' class="form-control" placeholder="Valor item" data-inputmask = " 'mask' : 'xx-xxxxxxx'" /></td>
-							<td data-field="text" style="width: 100px"><input class="form-control" placeholder="Qtd item"></td>
-							<td data-field="text" style="width: 120px"><input class="form-control" placeholder=""></td>
-							<td data-field="text" style="width: 70px"><button class="btn-primary" id="btn-todo">Add</button></td>
+							<td data-field="text" style="width: 120px"><input id='valor' class="form-control" id='valorItem' placeholder="Valor item" /></td>
+							<td data-field="text" style="width: 100px"><input class="form-control" id='qtdItem' placeholder="Qtd item"></td>
+							<td data-field="text" style="width: 120px"><input class="form-control"  class="form-control" id='valorTotal' placeholder="Total"" /></td>
+							<td data-field="text" style="width: 70px">&nbsp;&nbsp;<button class="btn-primary" id="btn-todo">Add</button></td>
 							<td data-field="text" style="width: 70px"><button class="btn-default" id="btn-todo">Del</button></td>
 						</tr>
 				</table>
