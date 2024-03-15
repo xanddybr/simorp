@@ -12,6 +12,7 @@
 
 [
 
+0315.1836 : created script curl get/post/put/delete and fixed cookie error on logon
 0314.1925 : Implemented cookie timeUser expired 10hs, remove storage password user of cookie checkUser
 0313.1800 : autentication in API end-point (refinament)
 0312.1552 : Implement and set autentication in API end-point (refinament)

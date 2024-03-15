@@ -52,11 +52,11 @@
 } else {
 
       // ENABLE ROUTES FOR NAVIGATION AFTER CREATED SESSION
+      
       $rota->setRouter();
 
-
-      if(!isset($_COOKIE['timeUser'])){
-      $userControl->TimeLogout();
+      if(isset($_GET['url']) && !isset($_COOKIE['timeUser'])){
+      $userControl->TimeOut();
       }
                         
       if(isset($_GET['url']) && $_GET['url'] == "logout"){

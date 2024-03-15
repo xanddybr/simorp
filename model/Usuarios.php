@@ -85,7 +85,7 @@ Class Usuarios  {
          if(!isset($_SESSION['login'])) {
             
             $_SESSION["login"] = [$this->nome . " " . $this->sobrenome, $this->token,'logado'];
-            setcookie('timeUser', $this->nome , time() + 43200);
+            setcookie('timeUser', $this->nome , time() + 43200); // time duration 10hs 
 
             if(isset($_SESSION['login'])){
               
@@ -111,6 +111,12 @@ Class Usuarios  {
               echo "</div>";
                       
           }
+      }
+
+
+      function TimeOutSession() {
+        $_SESSION['login'] = [null, null, null];
+        session_destroy();
       }
     
     
@@ -146,16 +152,7 @@ Class Usuarios  {
 
        }
 
-
-       function TimeOut() {
-        unset($_SESSION['login']);
-        $_SESSION['login'] = [null, null, null];
-        session_destroy();
-
-       }
-            
-       
-       //Exec connection with data-source API looking for user
+      //Exec connection with data-source API looking for user
        function GetUserAPI() {
 
               $userAPI = new ConectAPI();
