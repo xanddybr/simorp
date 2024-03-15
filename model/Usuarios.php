@@ -84,8 +84,8 @@ Class Usuarios  {
     
          if(!isset($_SESSION['login'])) {
             
-            $_SESSION["login"] = [$this->token,'logado'];
-            
+            $_SESSION["login"] = [$this->nome . " " . $this->sobrenome, $this->token,'logado'];
+            setcookie('timeUser', $this->nome , time() + 43200);
 
             if(isset($_SESSION['login'])){
               
@@ -137,11 +137,13 @@ Class Usuarios  {
     
       // function for logout user     
         function LogoutSession() {
-        setcookie('timeUser', null, null);
-        unset($_COOKIE['timeUser']);
+
+        
         $_SESSION['login'] = [null, null, null];
+        setcookie('timeUser', null , null);  
         session_destroy();
         header("location:/simorp_beta/login");
+
        }
 
 
@@ -180,13 +182,14 @@ Class Usuarios  {
         if(isset($check) && $check == true) {
           
           setcookie('rmb', 'checked', time() + 86400*90);
-          setcookie('checkUser', $this->nome . " " . $this->sobrenome, time() + 86400*90);
-          setcookie('timeUser', $this->nome, time() + 43200);
+          setcookie('checkUser', $this->usuario, time() + 86400*90);
+          
                   
        } else {
 
-          setcookie('rmb', null);
-          setcookie('checkUser', null);
+          setcookie('rmb', null, 0);
+          setcookie('checkUser', null, 0);
+          
        }
                
     } 

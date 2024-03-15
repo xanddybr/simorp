@@ -35,10 +35,10 @@
 					<form id="form" method="POST">
 						<div class="form-group" >
 							
-								<input class="form-control" placeholder="usuario" name="usuario" id="usuario" type="text" value="<?php  if(isset($_COOKIE['user'])) { echo $_COOKIE['user'];} ?>" required />
+								<input class="form-control" placeholder="usuario" name="usuario" id="usuario" type="text" value="<?php  if(isset($_COOKIE['checkUser'])) { echo $_COOKIE['checkUser'];} ?>" required />
 									</div>
 										<div class="form-group">
-										<input class="form-control" placeholder="senha" name="senha" id="senha" type="password" value="<?php if(isset($_COOKIE['senha'])) { echo $_COOKIE['senha'];} ?>" required />
+										<input class="form-control" placeholder="senha" name="senha" id="senha" type="password" value="" required />
 										</div>
 										<div class="checkbox" >
 										<label>
