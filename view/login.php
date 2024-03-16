@@ -35,10 +35,10 @@
 					<form id="form" method="POST">
 						<div class="form-group" >
 							
-								<input class="form-control" placeholder="usuario" name="usuario" id="usuario" type="text" value="<?php  if(isset($_COOKIE['user'])) { echo $_COOKIE['user'];} ?>" required />
+								<input class="form-control" placeholder="usuario" name="usuario" id="usuario" type="text" value="<?php  if(isset($_COOKIE['checkUser'])) { echo $_COOKIE['checkUser'];} ?>" required />
 									</div>
 										<div class="form-group">
-										<input class="form-control" placeholder="senha" name="senha" id="senha" type="password" value="<?php if(isset($_COOKIE['senha'])) { echo $_COOKIE['senha'];} ?>" required />
+										<input class="form-control" placeholder="senha" name="senha" id="senha" type="password" value="" required />
 										</div>
 										<div class="checkbox" >
 										<label>
@@ -60,15 +60,10 @@
 	</div><!-- /.row -->	
 	 
 	<script>
-	/*	$(window).on('resize', function () {
-		  if ($(window).width() > 768) $('#sidebar-collapse').collapse('show');
-		})
-		$(window).on('resize', function () {
-		  if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide');
-		}) */
+
 	</script>	
 
-	<?php echo "<center><span style='text-aling: center'><h6>v1.0.0 build 0314.1925</h6></span></center>"; ?>
+	<?php echo "<center><span style='text-aling: center'><h6>v1.0.0 build 0315.1836</h6></span></center>"; ?>
 	
 
 </html>

@@ -84,8 +84,8 @@ Class Usuarios  {
     
          if(!isset($_SESSION['login'])) {
             
-            $_SESSION["login"] = [$this->token,'logado'];
-            
+            $_SESSION["login"] = [$this->nome . " " . $this->sobrenome, $this->token,'logado'];
+            setcookie('timeUser', $this->nome , time() + 43200); // time duration 10hs 
 
             if(isset($_SESSION['login'])){
               
@@ -112,6 +112,12 @@ Class Usuarios  {
                       
           }
       }
+
+
+      function TimeOutSession() {
+        $_SESSION['login'] = [null, null, null];
+        session_destroy();
+      }
     
     
        function ValidateData($check) {
@@ -137,23 +143,16 @@ Class Usuarios  {
     
       // function for logout user     
         function LogoutSession() {
-        setcookie('timeUser', null, null);
-        unset($_COOKIE['timeUser']);
+
+        
         $_SESSION['login'] = [null, null, null];
+        setcookie('timeUser', null , null);  
         session_destroy();
         header("location:/simorp_beta/login");
-       }
-
-
-       function TimeOut() {
-        unset($_SESSION['login']);
-        $_SESSION['login'] = [null, null, null];
-        session_destroy();
 
        }
-            
-       
-       //Exec connection with data-source API looking for user
+
+      //Exec connection with data-source API looking for user
        function GetUserAPI() {
 
               $userAPI = new ConectAPI();
@@ -180,13 +179,14 @@ Class Usuarios  {
         if(isset($check) && $check == true) {
           
           setcookie('rmb', 'checked', time() + 86400*90);
-          setcookie('checkUser', $this->nome . " " . $this->sobrenome, time() + 86400*90);
-          setcookie('timeUser', $this->nome, time() + 43200);
+          setcookie('checkUser', $this->usuario, time() + 86400*90);
+          
                   
        } else {
 
-          setcookie('rmb', null);
-          setcookie('checkUser', null);
+          setcookie('rmb', null, 0);
+          setcookie('checkUser', null, 0);
+          
        }
                
     } 

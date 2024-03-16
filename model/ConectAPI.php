@@ -29,6 +29,7 @@ Class ConectAPI {
         $result = curl_exec($curl);
         $result_json = json_decode($result, true);
         
+        curl_close($curl);
 
         if(!$result) { 
           

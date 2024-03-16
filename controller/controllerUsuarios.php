@@ -21,9 +21,9 @@ class ControllerUsuarios {
         
     }
 
-    function TimeLogout() {
+    function TimeOut() {
         $usuario = new Usuarios();
-        $usuario->TimeOut();
+        $usuario->TimeOutSession();
     }
     
 }
