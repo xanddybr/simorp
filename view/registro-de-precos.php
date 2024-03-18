@@ -92,9 +92,6 @@
    									 </select>
 								 </div>
 								
-
-								
-
 								 <div class="form-group col-lg-12">
 									<label>Observação</label>
 									<textarea class="form-control" rows="2" name="observacao" ></textarea>

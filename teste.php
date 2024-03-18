@@ -1,22 +1,21 @@
 <?php
 
+    function divide($dividend, $divisor) {
+      if($divisor == 0) {
+          throw new Exception("Division by zero");
+        }
+        return $dividend / $divisor;
+      }
+      
+      try {
+
+        echo divide(0, 0);
 
 
-function somar(int $num1, int $num2): int
-{
-    return $num1 + $num2 . "Essa é quantidade chanses que eu queria";
-}
+      } catch(Exception $e) {
 
-try {
-    echo somar(1000, 1);
-} catch(\TypeError $e) {
-    //tratamento necessário
+        echo "Unable to divide.";
 
-    echo "Tivemos uma exceção de tipos";
-}
-
-
-
-
-
+      }
+    
 ?>

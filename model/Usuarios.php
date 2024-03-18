@@ -1,7 +1,7 @@
 
 <?php
 
-require 'ConectAPI.php';
+require 'ConnectAPI.php';
 
 Class Usuarios  {
   
@@ -16,7 +16,7 @@ Class Usuarios  {
         private string $status;
            
     
-     function set_idUser($idUser) {
+     function set_idUser(int $idUser) {
         $this->idUser = $idUser;
       }
 
@@ -24,7 +24,7 @@ Class Usuarios  {
         return $this->idUser;
       }
 
-     function set_usuario($usuario) {
+     function set_usuario(string $usuario) {
         $this->usuario = $usuario;
       }
 
@@ -48,7 +48,7 @@ Class Usuarios  {
         return $this->sobrenome;
       }
 
-     function set_senha($senha) {
+     function set_senha(string $senha) {
         $this->senha = $senha;
       }
 
@@ -56,7 +56,7 @@ Class Usuarios  {
         return $this->senha;
       }
       
-     function set_token($token) {
+     function set_token(string $token) {
         $this->token = $token;
       }
 
@@ -64,7 +64,7 @@ Class Usuarios  {
         return $this->token;
       }
 
-     function set_perfil($perfil) {
+     function set_perfil(string $perfil) {
         $this->perfil = $perfil;
       }
 
@@ -72,13 +72,28 @@ Class Usuarios  {
         return $this->perfil;
       }
  
-     function set_status($status) {
+     function set_status(string $status) {
         $this->status = $status;
       }
 
      function get_status() {
         return $this->status;
     }
+
+/*
+    function __construct($idUser, $usuario, $nome, $sobrenome, $senha, $token, $perfil, $status) {
+
+        $this->idUser = $idUser;
+        $this->usuario = $usuario;
+        $this->nome = $nome;
+        $this->sobrenome = $sobrenome;
+        $this->senha = $senha;
+        $this->token = $token;
+        $this->perfil = $perfil;
+        $this->status = $status;
+
+    }
+ */       
 
     function Homologation() {
       if(!isset($_SESSION['login'] )) {
@@ -110,13 +125,19 @@ Class Usuarios  {
     }
 
       
-     function LogonSession() {
+    function LogonSession() {
     
          if(!isset($_SESSION['login'])) {
-            
-            $_SESSION["login"] = [$this->nome . " " . $this->sobrenome, $this->token,'logado'];
-            setcookie('timeUser', $this->nome , time() + 43200); // time duration 10hs 
 
+          try {
+                  $_SESSION["login"] = [$this->nome . " " . $this->sobrenome, $this->token,'logado'];
+                  setcookie('timeUser', $this->nome , time() + 7200); // time duration 10hs 
+
+          } catch(Exception $e){
+
+                  echo "Erro na tentativa de criar a sessão!";
+          }
+          
             if(isset($_SESSION['login'])){
               
                  header("location:/simorp_beta/home");
@@ -152,8 +173,8 @@ Class Usuarios  {
     
        function ValidateData($check) {
     
-        //verify data coming of datasource  
-        if(Usuarios::GetUserAPI() != 'false')  {
+        //verify data coming of datasource and authentic user 
+        if(Usuarios::AuthenticUserAPI() != 'false')  {
 
             // Message if user and password diferent
                 Usuarios::LogonSession();
@@ -170,6 +191,7 @@ Class Usuarios  {
                      
         }
       } 
+
     
       // function for logout user     
         function LogoutSession() {
@@ -182,12 +204,14 @@ Class Usuarios  {
 
        }
 
-      //Exec connection with data-source API looking for user
-       function GetUserAPI() {
 
-              $userAPI = new ConectAPI();
-              $userAPI->set_url('http://10.3.15.200:8002/auth/login/');             
-              $dataUser = $userAPI->AuthAPI($this->usuario, $this->senha);
+      //Exec connection with data-source API
+       function AuthenticUserAPI() {
+
+          $user = array($this->usuario, $this->senha);
+          $userAPI = new SearchInAPI('http://10.3.15.200:8002/auth/login/', true, $user);
+          $dataUser = array();
+          $dataUser = $userAPI->RequestAPI();
                         
         if(isset($dataUser['detail'])) {
 
@@ -195,13 +219,33 @@ Class Usuarios  {
 
           } else {
 
-                $this->nome = $dataUser['nome'];
-                $this->sobrenome = $dataUser['sobrenome'];
-                $this->perfil = $dataUser['perfil'];
-                $this->token = $dataUser['access'];
+                echo $this->nome = $dataUser['nome'];
+                echo $this->sobrenome = $dataUser['sobrenome'];
+                echo $this->perfil = $dataUser['perfil'];
+                echo $this->token = $dataUser['access'];
 
             }
+
       }
+
+
+      function RequestsAPI($url, $post, $postfields, $action) {
+
+        $userAPI = new ConectAPI($url, $post, $postfields, $action, $this->$token);
+        $dataUser = array();
+        $dataUser = $userAPI->RequestAPI();
+                      
+      if(isset($dataUser['detail'])) {
+
+      return 'false';
+
+        } else {
+
+              print_r($dataUser);
+
+          }
+
+    }
        
 
        //Create cookie for storage user and password in browser
@@ -227,9 +271,8 @@ Class Usuarios  {
      }
     
   }
+
   
- 
-       
 
  
 ?>

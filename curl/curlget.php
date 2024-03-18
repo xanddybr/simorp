@@ -24,7 +24,7 @@ if(!$result) {
 
    foreach ($result_json[0] as $index => $value){
         echo $value . "<br>";
-   }
+}
 
 
 

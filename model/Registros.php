@@ -15,7 +15,7 @@ Class Registros {
         private float $valor;
 
 
-    public function __construct($idReg,$nProcesso,$uniGestora,$nAta,$tipoObjeto,$tipoAta,$itens,$dataReceb,$dataEncam,$obs,$valor) {
+    public function __construct($idReg, $nProcesso, $uniGestora, $nAta, $tipoObjeto, $tipoAta, $itens, $dataReceb, $dataEncam, $obs, $valor) {
 
         $this->idReg = $idReg;   
         $this->Processo = $nProcesso;
@@ -31,77 +31,77 @@ Class Registros {
 
     }
 
-    public function set_idReg($idReg) {
+    public function set_idReg(int $idReg) {
         $this->idReg = $idReg;
       }
     public function get_idReg() {
         return $this->idReg;
       }
       
-    public function set_nProcessoe($nProcesso) {
+    public function set_nProcessoe(string $nProcesso) {
         $this->nProcesso = $nProcesso;
       }
     public function get_nProcesso() {
         return $this->nProcesso;
       }
 
-    public function set_uniGestora($uniGestora) {
+    public function set_uniGestora(string $uniGestora) {
         $this->uniGestora = $uniGestora;
       }
     public function get_uniGestora() {
         return $this->uniGestora;
       }
 
-    public function set_nAta($nAta) {
+    public function set_nAta(int $nAta) {
         $this->nAta = $nAta;
       }
     public function get_nAta() {
         return $this->nAta;
       }
 
-    public function set_tipoObjeto($tipoObjeto) {
+    public function set_tipoObjeto(string $tipoObjeto) {
         $this->tipoObjeto = $tipoObjeto;
       }
     public function get_tipoObjeto() {
         return $this->idtipoObjeto;
       }
 
-    public function set_tipoAta($tipoAta) {
+    public function set_tipoAta(string $tipoAta) {
         $this->tipoAta = $tipoAta;
       }
     public function get_tipoAta() {
         return $this->tipoAta;
       }
 
-    public function set_itens($itens) {
+    public function set_itens(array $itens) {
         $this->itens = $itens;
       }
     public function get_itens() {
         return $this->itens;
       }
 
-    public function set_dataReceb($dataReceb) {
+    public function set_dataReceb(string $dataReceb) {
         $this->dataReceb = $dataReceb;
       }
     public function get_dataReceb() {
         return $this->dataReceb;
       }
 
-    public function set_dataEncam($dataEncam) {
+    public function set_dataEncam(string $dataEncam) {
         $this->dataEncam = $dataEncam;
       }
     public function get_dataEncam() {
         return $this->dataEncam;
       }
 
-    public function set_obs($obs) {
+    public function set_obs(string $obs) {
         $this->obs = $obs;
       }
     public function get_obs() {
         return $this->obs;
       }
 
-    public function set_valor($valor) {
+    public function set_valor(float $valor) {
         $this->valor = $valor;
       }
     public function get_valor() {

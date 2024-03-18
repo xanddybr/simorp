@@ -55,7 +55,7 @@
       
       $rota->setRouter();
 
-      if(isset($_GET['url']) && !isset($_COOKIE['timeUser'])){
+      if(!isset($_COOKIE['timeUser'])){
       $userControl->TimeOut();
       }
                         

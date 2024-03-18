@@ -7,14 +7,14 @@ Class Unidades {
     private string $descricaoUni;
     
 
-    public function set_idUni($idUni) {
+    public function set_idUni(int $idUni) {
         $this->idUni = $idUni;
       }
     public function get_idUni() {
         return $this->idUni;
       }
 
-    function set_siglaUni($siglaUni) {
+    function set_siglaUni(string $siglaUni) {
         $this->siglaUni = $siglaUni;
       }
 
@@ -22,7 +22,7 @@ Class Unidades {
         return $this->siglaUni;
       }
 
-    public function set_descricaoUni($descricaoUni) {
+    public function set_descricaoUni(string $descricaoUni) {
         $this->descricaoUni = $descricaoUni;
       }
 

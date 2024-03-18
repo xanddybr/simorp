@@ -63,7 +63,7 @@
 
 	</script>	
 
-	<?php echo "<center><span style='text-aling: center'><h6>v1.0.0 build 0315.1836</h6></span></center>"; ?>
+	<?php echo "<center><span style='text-aling: center'><h6>v1.0.0 build 0318.1819</h6></span></center>"; ?>
 	
 
 </html>
