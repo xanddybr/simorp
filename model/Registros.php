@@ -2,17 +2,17 @@
 
 Class Registros {
 
-        private $idReg;    
-        private $nProcesso;
-        private $uniGestora;
-        private $nAta;
-        private $tipoObjeto;
-        private $tipoAta;
-        private $itens;
-        private $dataReceb;
-        private $dataEncam;
-        private $obs;
-        private $valor;
+        private int $idReg;    
+        private string $nProcesso;
+        private string $uniGestora;
+        private int $nAta;
+        private string $tipoObjeto;
+        private string $tipoAta;
+        private array $itens;
+        private string $dataReceb;
+        private string $dataEncam;
+        private string $obs;
+        private float $valor;
 
 
     public function __construct($idReg,$nProcesso,$uniGestora,$nAta,$tipoObjeto,$tipoAta,$itens,$dataReceb,$dataEncam,$obs,$valor) {

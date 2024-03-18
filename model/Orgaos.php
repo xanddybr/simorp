@@ -1,13 +1,13 @@
 <?php
 
-Class Orgaos {
+class Orgaos {
 
-        private $idOrg;
-        private $sigla;
-        private $descricao;
+        private int $idOrg;
+        private string $sigla;
+        private string $descricao;
        
         
-    function __contructor($idOrg,$sigla,$descricao) {
+    function __construct($idOrg,$sigla,$descricao) {
 
         $this->idOrg = $idOrg;
         $this->sigla = $sigla;
@@ -34,9 +34,8 @@ Class Orgaos {
     public function get_descricao() {
         return $this->descricao;
       }
-
-     
     
   }
+
 
 ?>

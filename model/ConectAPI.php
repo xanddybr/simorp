@@ -2,8 +2,12 @@
 
 Class ConectAPI {
 
-    public $url;
-    public $authentication = '0';
+    private string $url;
+    private int $authentication;
+
+    function __construct() {
+      
+    }
 
 
     function set_url($url) {

@@ -2,9 +2,9 @@
 
 Class Unidades {
 
-    private  idUni;
-    private  siglaUni;
-    private  descricaoUni;
+    private int $idUni;
+    private string $siglaUni;
+    private string $descricaoUni;
     
 
     public function set_idUni($idUni) {

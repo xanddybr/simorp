@@ -11,8 +11,20 @@ Class LogUsuarios {
     private string $objetoData;
     private string $objetoId;
 
+    
 
-      function set_idLog($idLog) {
+      function __construct(int $idLog,string $dataHora,string $operacao,string $objeto,string $objetoData,string $objetoId) {
+        
+        $this->idLog = $idLog;
+        $this->dataHora = $dataHora;
+        $this->operacao = $operacao;
+        $this->objeto = $objeto;
+        $this->objetoData = $objetoData;
+        $this->objetoId = $objetoId;
+    
+      }
+
+      function set_idLog(int $idLog) {
         $this->idLog = $idLog;
       }
 
@@ -64,8 +76,6 @@ Class LogUsuarios {
    
 }
 
-$log = new LogUsuarios();
-$log->set_operacao('INCLUSÃO DE NOVO USUARIO');
 
 
 ?>

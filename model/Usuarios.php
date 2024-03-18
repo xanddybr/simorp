@@ -4,6 +4,7 @@
 require 'ConectAPI.php';
 
 Class Usuarios  {
+  
 
         private int $idUser;
         private string $usuario;
@@ -77,6 +78,35 @@ Class Usuarios  {
 
      function get_status() {
         return $this->status;
+    }
+
+    function Homologation() {
+      if(!isset($_SESSION['login'] )) {
+
+        if($this->usuario == "homolog" && $this->senha == "123") {
+
+          $_SESSION["login"] = ['HOMOLOGAÇÃO','logado'];
+          setcookie('timeUser', $this->usuario , time() + 7200); // time duration 10hs 
+
+        if(isset($_SESSION['login'])){
+          
+             header("location:/simorp_beta/home");
+
+        } else { 
+
+              echo "<div class='col-lg-12'>";
+              echo "<div class='alert bg-danger' role='alert'>";
+              echo "<svg class='glyph stroked cancel'><use xlink:href='#stroked-cancel'></use></svg>Dados de homologação incorretos!!!<a href='' class='pull-right'><span class='glyphicon glyphicon-remove'></span></a>";
+              echo  "</div>";
+              echo "</div>";
+
+        }
+
+      }
+      
+    }  
+       
+
     }
 
       
