@@ -209,9 +209,9 @@ Class Usuarios  {
        function AuthenticUserAPI() {
 
           $user = array($this->usuario, $this->senha);
-          $userAPI = new SearchInAPI('http://10.3.15.200:8002/auth/login/', true, $user);
+          $userAPI = new AthuAPI('http://10.3.15.200:8002/auth/login/', true, $user);
           $dataUser = array();
-          $dataUser = $userAPI->RequestAPI();
+          $dataUser = $userAPI->SearchInAPI();
                         
         if(isset($dataUser['detail'])) {
 
