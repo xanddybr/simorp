@@ -23,15 +23,7 @@ Class DataSourceAPI {
                      
       }
 
-      function __construct(string $url, bool $post, string $httpheader) {
-                
-                $this->_url = $url;
-                $this->_post = $post;
-                $this->_httpheader = $httpheader;
-                
-                    
-      }
-
+  
       function AuthAPI() {
 
                 $curl = curl_init();
@@ -98,8 +90,6 @@ Class DataSourceAPI {
         
 }
 
-$api = new DataSourceAPI('http://10.3.15.200:8002/orgaos/', false, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzEwOTIxNTEyLCJpYXQiOjE3MTA4NzgzMTIsImp0aSI6IjYxYTU1M2VjNjQ4OTQwZjA5ZWE2YWExODVjOWJiNDkyIiwidXNlcl9pZCI6M30.OIpTZfIsMPgIfCnZksRxVtpnj6cchZYTM7OlqFRjlrg');
-$api->GetAPI();
 
 
 
