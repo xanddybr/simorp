@@ -2,7 +2,7 @@
 <?php session_start(); ?>
 
 
-<?php require ("./controller/controllerUsuarios.php"); ?>
+<?php require ("./controller/controllerUsuario.php"); ?>
 <?php require ("./router/Router.php"); ?>
 
 
@@ -28,7 +28,6 @@
 
 <?php
 
-      $userControl = new ControllerUsuarios();
       $rota = new Router();
 
       $rota->set_url($_SERVER['SERVER_NAME']);
@@ -41,7 +40,7 @@
       
       //CALL FUNCTION LOGIN USER
       
-      $userControl->Logon($_POST['usuario'], $_POST['senha'], isset($_POST['remember']));
+            ControllerUsuario::Logon($_POST['usuario'], $_POST['senha'], isset($_POST['remember']));
       
       } else { 
                              
@@ -56,19 +55,19 @@
       $rota->setRouter();
 
       if(!isset($_COOKIE['timeUser'])){
-      $userControl->TimeOut();
+            ControllerUsuario::TimeOut();
       }
                         
       if(isset($_GET['url']) && $_GET['url'] == "logout"){
-      $userControl->Logout();
+            ControllerUsuario::Logout();
       }
       
       if(isset($_GET['url']) && $_GET['url'] == "login"){
-      $userControl->Logout();
+            ControllerUsuario::Logout();
       }
 
       if(!isset($_GET['url']) && $_GET['url'] == NULL ){
-      $userControl->Logout();
+            ControllerUsuario::Logout();
       }
      
 

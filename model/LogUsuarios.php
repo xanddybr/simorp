@@ -4,12 +4,12 @@
 Class LogUsuarios {
 
 
-    private int $idLog;
-    private string $dataHora;
-    private string $operacao;
-    private string $objeto;
-    private string $objetoData;
-    private string $objetoId;
+        private int $idLog;
+        private string $dataHora;
+        private string $operacao;
+        private string $objeto;
+        private string $objetoData;
+        private string $objetoId;
 
     
 

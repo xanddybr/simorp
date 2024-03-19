@@ -3,8 +3,8 @@
 
 Class ConectDataBase {
 
-        public $link;
-        public $dsn;
+        private $link;
+        private $dsn;
      
 
         function __construct() {

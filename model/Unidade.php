@@ -1,6 +1,6 @@
 <?php 
 
-Class Unidades {
+Class Unidade {
 
     private int $idUni;
     private string $siglaUni;

@@ -1,8 +1,8 @@
 <?php 
 
-Class Registros {
+Class Solicitacao {
 
-        private int $idReg;    
+        private int $idSol;    
         private string $nProcesso;
         private string $uniGestora;
         private int $nAta;
@@ -15,9 +15,9 @@ Class Registros {
         private float $valor;
 
 
-    public function __construct($idReg, $nProcesso, $uniGestora, $nAta, $tipoObjeto, $tipoAta, $itens, $dataReceb, $dataEncam, $obs, $valor) {
+    public function __construct(int $idSol, string $nProcesso, string $uniGestora, int $nAta, string $tipoObjeto, string $tipoAta, array $itens, string $dataReceb, string $dataEncam, string $obs, float $valor) {
 
-        $this->idReg = $idReg;   
+        $this->idReg = $idSol;   
         $this->Processo = $nProcesso;
         $this->uniGestora = $uniGestora;
         $this->nAta = $nAta;
@@ -31,8 +31,8 @@ Class Registros {
 
     }
 
-    public function set_idReg(int $idReg) {
-        $this->idReg = $idReg;
+    public function set_idReg(int $idSol) {
+        $this->idReg = $idSol;
       }
     public function get_idReg() {
         return $this->idReg;

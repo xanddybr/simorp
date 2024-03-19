@@ -1,13 +1,13 @@
 <?php
 
-class Orgaos {
+class Orgao {
 
         private int $idOrg;
         private string $sigla;
         private string $descricao;
        
         
-    function __construct($idOrg,$sigla,$descricao) {
+    function __construct(int $idOrg, string $sigla, string $descricao) {
 
         $this->idOrg = $idOrg;
         $this->sigla = $sigla;

@@ -3,7 +3,7 @@
 
 require 'ConnectAPI.php';
 
-Class Usuarios  {
+Class Usuario {
   
 
         private int $idUser;
@@ -32,7 +32,7 @@ Class Usuarios  {
         return $this->usuario;
       }
 
-     function set_nome($nome) {
+     function set_nome(string $nome) {
         $this->nome = $nome;
       }
 
@@ -40,7 +40,7 @@ Class Usuarios  {
         return $this->nome;
       }
 
-     function set_sobrenome($sobrenome) {
+     function set_sobrenome(string $sobrenome) {
         $this->sobrenome = $sobrenome;
       }
 
@@ -131,7 +131,7 @@ Class Usuarios  {
 
           try {
                   $_SESSION["login"] = [$this->nome . " " . $this->sobrenome, $this->token,'logado'];
-                  setcookie('timeUser', $this->nome , time() + 7200); // time duration 10hs 
+                  setcookie('timeUser', $this->nome , time() + 43200); // time duration 10hs 
 
           } catch(Exception $e){
 
@@ -174,21 +174,17 @@ Class Usuarios  {
        function ValidateData($check) {
     
         //verify data coming of datasource and authentic user 
-        if(Usuarios::AuthenticUserAPI() != 'false')  {
+        if(Usuario::AuthenticUserAPI() != 'false')  {
 
             // Message if user and password diferent
-                Usuarios::LogonSession();
-                Usuarios::MakeUserCookie($check);
+                Usuario::LogonSession();
+                Usuario::MakeUserCookie($check);
                 
              
             } else {
-
-              echo "<div class='col-lg-12'>";
-              echo "<div class='alert bg-danger' role='alert'>";
-              echo "<svg class='glyph stroked cancel'><use xlink:href='#stroked-cancel'></use></svg> Usuario ou senha estão inválidos! <a href='' class='pull-right'><span class='glyphicon glyphicon-remove'></span></a>";
-              echo  "</div>";
-              echo "</div>";                  
-                     
+              
+              echo "<script>alert('Usuário e senha estão inválidos!');</script>";
+                       
         }
       } 
 
@@ -204,18 +200,22 @@ Class Usuarios  {
 
        }
 
-
+       
       //Exec connection with data-source API
        function AuthenticUserAPI() {
 
-          $user = array($this->usuario, $this->senha);
-          $userAPI = new AthuAPI('http://10.3.15.200:8002/auth/login/', true, $user);
+         /* $dataUser = array('username'	=> $this->_usuario, 'password'  => $this->_senha); */
+
+          $body = array('username'	=> $this->usuario, 'password'  => $this->senha); 
+
+          // Params: url(string) / post(boolean) / body (array) / token(string) / action('false' or 'PUT'/'DELETE')
+          $userAPI = new DataSourceAPI('http://10.3.15.200:8002/auth/login/', true, $body, 'false', 'false'); 
           $dataUser = array();
-          $dataUser = $userAPI->SearchInAPI();
+          $dataUser = $userAPI->AuthAPI();
                         
         if(isset($dataUser['detail'])) {
 
-        return 'false';
+          return 'false';
 
           } else {
 
@@ -226,28 +226,26 @@ Class Usuarios  {
 
             }
 
-      }
+       }
 
 
-      function RequestsAPI($url, $post, $postfields, $action) {
+        function SalveInAPI() {
 
-        $userAPI = new ConectAPI($url, $post, $postfields, $action, $this->$token);
-        $dataUser = array();
-        $dataUser = $userAPI->RequestAPI();
-                      
-      if(isset($dataUser['detail'])) {
+        }
 
-      return 'false';
+        function UpdateInAPI() {
 
-        } else {
+        }
 
-              print_r($dataUser);
+        function DeleteInAPI() {
 
-          }
+        }
 
-    }
+        function LoadDataAPI() {
+          
+        }
+
        
-
        //Create cookie for storage user and password in browser
        function MakeUserCookie($check) {
         if(isset($check) && $check == true) {
