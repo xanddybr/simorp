@@ -1,12 +1,11 @@
 <!-- Start the session -->
 <?php session_start(); ?>
 
+<?php include_once "./controller/controllerSolicitacao.php"; ?>
+<?php include_once "./controller/controllerUsuario.php"; ?>
+<?php include_once "./router/Router.php"; ?>
 
-<?php require ("./controller/controllerUsuario.php"); ?>
-<?php require ("./router/Router.php"); ?>
-
-
-
+ 
 <!DOCTYPE html>
 <html>
 <head>
@@ -48,7 +47,7 @@
       // START APP IN PAGE LOGIN
       $rota->StartAppLogin();
       
-} else {
+      } else {
 
       // ENABLE ROUTES FOR NAVIGATION AFTER CREATED SESSION
       

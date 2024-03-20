@@ -1,7 +1,17 @@
+<?php 
 
-<?php
+require ("./model/Solicitacao.php");
 
-Class ControlleSolicitacao {
+Class ControllerSolicitacao {
+    
+
+
+    public static function teste () {
+        $solicitacao = new Solicitacao();
+        return $solicitacao->escreve();
+    }
+
+
 
 
 

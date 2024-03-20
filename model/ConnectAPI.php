@@ -2,93 +2,210 @@
 
 Class DataSourceAPI {
 
+                       
+            private string $_customrequest;
+            private string $_url;
+            private array $_httpheader;
+            private array $_postfields;
+            private bool $_returntransfer = true;
            
-            
-              private bool $_post;
-              private string $_action;
-              private string $_url;
-              private string $_httpheader;
-              private array $_postfields;
-              private bool $_returntransfer = true;
-              private string $_curlauth_basic = 'CURLAUTH_BASIC';
 
+            public function get_url(){
+                return $this->_url;
+            }
+        
+            public function set_url($_url){
+                $this->_url = $_url;
+            }
+        
+            public function get_httpheader(){
+                return $this->_httpheader;
+            }
+        
+            public function set_httpheader($_httpheader){
+                $this->_httpheader = array('Authorization: Bearer ' . $_httpheader);
+            }
+        
+            public function get_postfields(){
+                return $this->_postfields;
+            }
+        
+            public function set_postfields($_postfields){
+                $this->_postfields = $_postfields;
+            }
 
-      function __construct(string $url, bool $post, array $postfields = null, string $httpheader, string $action) {
+            public function get_customrequest(){
+              return $this->_customrequest;
+            }
+      
+            public function set_customrequest($_customrequest){
+              $this->_customrequest = $_customrequest;
+            }
+           
+           
 
-                $this->_post = $post;
-                $this->_action = $action;
-                $this->_url = $url;
-                $this->_httpheader = $httpheader;
-                $this->_postfields = $postfields;
-                     
-      }
+      public function AuthAPI() {
 
-  
-      function AuthAPI() {
-
-                $curl = curl_init();
+                        $curl = curl_init();
                                           
-                        curl_setopt($curl, CURLOPT_POST, $this->_post);
+                        curl_setopt($curl, CURLOPT_POST, true);
                         curl_setopt($curl, CURLOPT_URL, $this->_url);
                         curl_setopt($curl, CURLOPT_POSTFIELDS, $this->_postfields);
                         curl_setopt($curl, CURLOPT_RETURNTRANSFER, $this->_returntransfer);
                         curl_setopt($curl, CURLOPT_HTTPAUTH, $this->_curlauth_basic);
                         curl_close ($curl);                       
-                try {
-
-                  $result = curl_exec($curl);
-                  
-                } catch (Exception $e){
-                     throw new Exception("não foi possivel conectar");
-                }               
-                
-        if(!$result) { 
-
-              throw new Exception("Não foi possivel estabelecer uma conexão com a API");
-              
-          return false;
-        
-        } else {
-
-              $result_json = json_decode($result, true);
               
 
-              return $result_json;
+                        if(!$result = curl_exec($curl)){
+                          
+                          die('Os dados não poderam ser carregados!');
+                       
+                        } else {
+                          $result_json = json_decode($result, true);
+                          return $result_json;
+                        }
+  
+        }
+
+     
+        public function GetAPI() {
+
+                      $curl = curl_init();
+                                    
+                      curl_setopt($curl, CURLOPT_HTTPHEADER, $this->_httpheader); 
+                      curl_setopt($curl, CURLOPT_URL, $this->_url);
+                      curl_setopt($curl, CURLOPT_RETURNTRANSFER, $this->_returntransfer);
+                      curl_close($curl);
+
+                      if(!$result = curl_exec($curl)){
+                          
+                        die('Os dados não poderam ser carregados!');
+                     
+                      } else {
+                        $result_json = json_decode($result, true);
+                        return $result_json;
+                      }
 
         }
-     }
-
-     function GetAPI () {
-
-            $curl = curl_init();
-                
-                $token  = array('Authorization: Bearer ' . $this->_httpheader);
                   
-                //$id = 7; //id user individual
+          
+        public function GetForIdAPI($id) {
 
-                      curl_setopt($curl, CURLOPT_POST, $this->_post);
-                      curl_setopt($curl, CURLOPT_HTTPH_EADER, $this->_httpheader); 
+                      $curl = curl_init();
+                    
+                      curl_setopt($curl, CURLOPT_HTTPHEADER, $this->_httpheader); 
                       curl_setopt($curl, CURLOPT_URL, $this->_url . $id .'/');
                       curl_setopt($curl, CURLOPT_RETURNTRANSFER, $this->_returntransfer);
                       
-                $result = curl_exec($curl);
-                $result_json = json_decode($result, true);
+                      $result = curl_exec($curl);
+                      $result_json = json_decode($result, true);
+                      curl_close($curl);
 
-                if(!$result) { 
+                      if(!$result = curl_exec($curl)){
+                          
+                        die('Os dados não poderam ser carregados!');
+                     
+                      } else {
+                        $result_json = json_decode($result, true);
+                        return $result_json;
+                      }
 
-                    die("Falha na conexão");
-                }
-                  
-                        foreach($result_json as $index => $value) {
-                            echo $value . " = " . $index . "<br>";
-                        }
+        }
+                    
+        
+
+        public function PostInAPI($arrayData) {
+
+                      $curl = curl_init();
+                      $array_Data = http_build_query($arrayData);
+
+                      curl_setopt($curl, CURLOPT_POST, true);    
+                      curl_setopt($curl, CURLOPT_HTTPHEADER, $this->_httpheader); 
+                      curl_setopt($curl, CURLOPT_URL, $this->_url);
+                      curl_setopt($curl, CURLOPT_POSTFIELDS, $array_Data);
+                      curl_setopt($curl, CURLOPT_RETURNTRANSFER, $this->_returntransfer);
+                      curl_close($curl);
+
+                      if(!$result = curl_exec($curl)){
+                          
+                        die('Erro ao efetuar a postagem!');
+                     
+                      } else {
+                        $result_json = json_decode($result, true);
+                        return $result_json;
+                      }
+
+                                            
+                
+
+        }
+
+
+        public function PutInAPI($arrayData) {
+
+                      $curl = curl_init();
+                      $array_Data = http_build_query($arrayData);
+                          
+                      curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'PUT');
+                      curl_setopt($curl, CURLOPT_HTTPHEADER, $this->_httpheader); 
+                      curl_setopt($curl, CURLOPT_URL, $this->_url . $arrayData['id'] .'/');
+                      curl_setopt($curl, CURLOPT_POSTFIELDS, $array_Data);
+                      curl_setopt($curl, CURLOPT_RETURNTRANSFER, $this->_returntransfer);
+                      curl_close($curl);
+                      
+                      if(!$result = curl_exec($curl)){
+                          
+                        die('Erro ao tentar atualizar os dados!');
+                     
+                      } else {
+                        $result_json = json_decode($result, true);
+                        return $result_json;
+                      }
+
                     
 
-            }
+        }
+
+
+        public function DeleteInAPI($id) {
+
+                      $curl = curl_init();
+               
+                      curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'DELETE');
+                      curl_setopt($curl, CURLOPT_HTTPHEADER, $this->_httpheader); 
+                      curl_setopt($curl, CURLOPT_URL, $this->_url . $id .'/');
+                      curl_setopt($curl, CURLOPT_RETURNTRANSFER, $this->_returntransfer);
+                      curl_close($curl);
+                      
+                      if(!$result = curl_exec($curl)){
+                          
+                        die('Erro ao tentar deletar os dados!');
+                     
+                      } else {
+                        $result_json = json_decode($result, true);
+                        return $result_json;
+                      }
+
+        }
+            
+}
+
+
+
+
+  //$requestAPI = new DataSourceAPI();
+  //$requestAPI->set_url('http://10.3.15.200:8002/orgaos/');
+  //$requestAPI->set_httpheader('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzEwOTg1ODM5LCJpYXQiOjE3MTA5NDI2MzksImp0aSI6IjgzNDdlNGYxZDczYTQ5MDZhZDM3YTFmZmVmZjk4NWZjIiwidXNlcl9pZCI6M30.JeJAt5e74Pb9P2nsdIimvZ0KNnQeoS2KoXJGjiKS6Dk');
+  //$data = array('id' => 14, 'nome' => 'EXERCITO BRASILEIRO', 'usuario' => 'alexandre', 'created_at' => '2024-01-04T17:37:19', 'updated_at' => '2024-01-04T17:37:19');
+  
+
 
 
         
-}
+
+            
+
+
 
 
 

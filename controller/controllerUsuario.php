@@ -1,8 +1,8 @@
 <?php
 
-require ("./model/Usuario.php");
+require "./model/Usuario.php";
 
-class ControllerUsuario {
+Class ControllerUsuario {
       
 
     static function Logon($user, $pass, $check) {
@@ -35,6 +35,13 @@ class ControllerUsuario {
         $usuario = new Usuario();
         $usuario->TimeOutSession();
     }
+
+    
+    public static function LoadSoliciId() {
+        $solicitacao = new Solicitacao();
+        return $solicitacao->get_obs();
+    }
+
     
 }
 

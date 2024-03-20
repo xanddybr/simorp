@@ -1,6 +1,8 @@
 <?php 
 
-Class Unidade {
+require_once 'ConnectAPI.php';
+
+Class Unidades {
 
     private int $idUni;
     private string $siglaUni;
@@ -14,11 +16,11 @@ Class Unidade {
         return $this->idUni;
       }
 
-    function set_siglaUni(string $siglaUni) {
+    public function set_siglaUni(string $siglaUni) {
         $this->siglaUni = $siglaUni;
       }
 
-    function get_siglaUni() {
+    public function get_siglaUni() {
         return $this->siglaUni;
       }
 

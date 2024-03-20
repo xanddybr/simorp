@@ -1,7 +1,10 @@
 <?php
 
+require_once 'ConnectAPI.php';
+
 class Orgao {
 
+  
         private int $idOrg;
         private string $sigla;
         private string $descricao;

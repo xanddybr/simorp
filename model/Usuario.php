@@ -1,7 +1,6 @@
-
 <?php
 
-require 'ConnectAPI.php';
+require_once 'ConnectAPI.php';
 
 Class Usuario {
   
@@ -16,72 +15,72 @@ Class Usuario {
         private string $status;
            
     
-     function set_idUser(int $idUser) {
+     public function set_idUser(int $idUser) {
         $this->idUser = $idUser;
       }
 
-     function get_idUser() {
+     public function get_idUser() {
         return $this->idUser;
       }
 
-     function set_usuario(string $usuario) {
+     public function set_usuario(string $usuario) {
         $this->usuario = $usuario;
       }
 
-     function get_usuario() {
+     public function get_usuario() {
         return $this->usuario;
       }
 
-     function set_nome(string $nome) {
+     public function set_nome(string $nome) {
         $this->nome = $nome;
       }
 
-     function get_nome() {
+     public function get_nome() {
         return $this->nome;
       }
 
-     function set_sobrenome(string $sobrenome) {
+     public function set_sobrenome(string $sobrenome) {
         $this->sobrenome = $sobrenome;
       }
 
-     function get_sobrenome() {
+     public function get_sobrenome() {
         return $this->sobrenome;
       }
 
-     function set_senha(string $senha) {
+     public function set_senha(string $senha) {
         $this->senha = $senha;
       }
 
-     function get_senha() {
+     public function get_senha() {
         return $this->senha;
       }
       
-     function set_token(string $token) {
+     public function set_token(string $token) {
         $this->token = $token;
       }
 
-     function get_token() {
+     public function get_token() {
         return $this->token;
       }
 
-     function set_perfil(string $perfil) {
+     public function set_perfil(string $perfil) {
         $this->perfil = $perfil;
       }
 
-     function get_perfil() {
+     public function get_perfil() {
         return $this->perfil;
       }
  
-     function set_status(string $status) {
+     public function set_status(string $status) {
         $this->status = $status;
       }
 
-     function get_status() {
+     public function get_status() {
         return $this->status;
     }
 
 /*
-    function __construct($idUser, $usuario, $nome, $sobrenome, $senha, $token, $perfil, $status) {
+    public function __construct($idUser, $usuario, $nome, $sobrenome, $senha, $token, $perfil, $status) {
 
         $this->idUser = $idUser;
         $this->usuario = $usuario;
@@ -95,7 +94,7 @@ Class Usuario {
     }
  */       
 
-    function Homologation() {
+    public function Homologation() {
       if(!isset($_SESSION['login'] )) {
 
         if($this->usuario == "homolog" && $this->senha == "123") {
@@ -125,7 +124,7 @@ Class Usuario {
     }
 
       
-    function LogonSession() {
+    public function LogonSession() {
     
          if(!isset($_SESSION['login'])) {
 
@@ -165,13 +164,13 @@ Class Usuario {
       }
 
 
-      function TimeOutSession() {
+      public function TimeOutSession() {
         $_SESSION['login'] = [null, null, null];
         session_destroy();
       }
     
     
-       function ValidateData($check) {
+       public function ValidateData($check) {
     
         //verify data coming of datasource and authentic user 
         if(Usuario::AuthenticUserAPI() != 'false')  {
@@ -189,9 +188,8 @@ Class Usuario {
       } 
 
     
-      // function for logout user     
-        function LogoutSession() {
-
+      // public function for logout user     
+        public function LogoutSession() {
         
         $_SESSION['login'] = [null, null, null];
         setcookie('timeUser', null , null);  
@@ -202,16 +200,16 @@ Class Usuario {
 
        
       //Exec connection with data-source API
-       function AuthenticUserAPI() {
+       public function AuthenticUserAPI() {
 
          /* $dataUser = array('username'	=> $this->_usuario, 'password'  => $this->_senha); */
 
-          $body = array('username'	=> $this->usuario, 'password'  => $this->senha); 
-
-          // Params: url(string) / post(boolean) / body (array) / token(string) / action('false' or 'PUT'/'DELETE')
-          $userAPI = new DataSourceAPI('http://10.3.15.200:8002/auth/login/', true, $body, 'false', 'false'); 
-          $dataUser = array();
+          $userAPI = new DataSourceAPI(); 
+          $userAPI->set_url('http://10.3.15.200:8002/auth/login/');
+          $user = array('username' => $this->usuario, 'password' => $this->senha);
+          $userAPI->set_postfields($user);
           $dataUser = $userAPI->AuthAPI();
+
                         
         if(isset($dataUser['detail'])) {
 
@@ -228,26 +226,14 @@ Class Usuario {
 
        }
 
+       public function LoadDataAPI() {
 
-        function SalveInAPI() {
 
-        }
-
-        function UpdateInAPI() {
-
-        }
-
-        function DeleteInAPI() {
-
-        }
-
-        function LoadDataAPI() {
-          
-        }
-
+       }  
        
+
        //Create cookie for storage user and password in browser
-       function MakeUserCookie($check) {
+       public function MakeUserCookie($check) {
         if(isset($check) && $check == true) {
           
           setcookie('rmb', 'checked', time() + 86400*90);
@@ -264,7 +250,7 @@ Class Usuario {
     } 
 
      //Exec connection with dataBAse looking for user
-     function GetUserDataBase(){
+     public function GetUserDataBase(){
     
      }
     

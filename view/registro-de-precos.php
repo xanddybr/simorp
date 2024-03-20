@@ -17,7 +17,6 @@
 
 <body>
 
-
 	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">			
 		<div class="row">
 			<!--<ol class="breadcrumb">
@@ -94,7 +93,7 @@
 								
 								 <div class="form-group col-lg-12">
 									<label>Observação</label>
-									<textarea class="form-control" rows="2" name="observacao" ></textarea>
+									<textarea class="form-control" rows="2" name="observacao" ><?php echo ControllerSolicitacao::teste(); ?></textarea>
 								 </div>
 
 								<div><label class="form-group col-lg-8">Valor Total: <label>R$</label> -  </label>  <label class="form-group col-lg-2"> Total dos Ítens: ( ) - </label></label><button class="btn-primary pull-right" >Salvar Solicitação</button><button class="btn-default" id="btn-todo">Unidade Fornec.</button></div>
