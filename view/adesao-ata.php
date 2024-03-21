@@ -65,9 +65,9 @@
 												<div class="col-lg-3">
 													<label>Tipo da Ata</label>
 														<select class="form-control" name="tipoAta">
-															<option value=''>< selecione um tipo ></option>
-															<option value=""> INTERNA </option>
-															<option value=""> EXTERNA </option>
+															<option value=''><< SELECIONE O TIPO >></option>
+															<option value="INTERNA"> INTERNA </option>
+															<option value="EXTERNA"> EXTERNA </option>
 															
 														</select>
 												</div>

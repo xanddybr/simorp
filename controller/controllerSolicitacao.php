@@ -1,19 +1,17 @@
 <?php 
 
-require ("./model/Solicitacao.php");
+require "./model/Solicitacao.php";
 
 Class ControllerSolicitacao {
     
 
 
-    public static function teste () {
+    public static function tipoAta () {
         $solicitacao = new Solicitacao();
-        return $solicitacao->escreve();
+        $solicitacao->set_idSol(8);
+        $solicitacao->LoadSolId();
+        return $solicitacao->get_obs();
     }
-
-
-
-
 
 
 

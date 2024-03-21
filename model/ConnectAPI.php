@@ -53,12 +53,14 @@ Class DataSourceAPI {
                         curl_setopt($curl, CURLOPT_POSTFIELDS, $this->_postfields);
                         curl_setopt($curl, CURLOPT_RETURNTRANSFER, $this->_returntransfer);
                         curl_setopt($curl, CURLOPT_HTTPAUTH, $this->_curlauth_basic);
+                        curl_setopt($curl, CURLOPT_CONNECTTIMEOUT, 10);
+                        curl_setopt($curl, CURLOPT_TIMEOUT, 30);
                         curl_close ($curl);                       
               
 
                         if(!$result = curl_exec($curl)){
                           
-                          die('Os dados não poderam ser carregados!');
+                          die('A aplicação não pode ser iniciada, porque a API não responde!!');
                        
                         } else {
                           $result_json = json_decode($result, true);
@@ -75,11 +77,13 @@ Class DataSourceAPI {
                       curl_setopt($curl, CURLOPT_HTTPHEADER, $this->_httpheader); 
                       curl_setopt($curl, CURLOPT_URL, $this->_url);
                       curl_setopt($curl, CURLOPT_RETURNTRANSFER, $this->_returntransfer);
+                      curl_setopt($curl, CURLOPT_CONNECTTIMEOUT, 10);
+                      curl_setopt($curl, CURLOPT_TIMEOUT, 30);
                       curl_close($curl);
 
                       if(!$result = curl_exec($curl)){
                           
-                        die('Os dados não poderam ser carregados!');
+                        die('Erro na integração com a API na tentativa de carregamento dos dados');
                      
                       } else {
                         $result_json = json_decode($result, true);
@@ -96,14 +100,13 @@ Class DataSourceAPI {
                       curl_setopt($curl, CURLOPT_HTTPHEADER, $this->_httpheader); 
                       curl_setopt($curl, CURLOPT_URL, $this->_url . $id .'/');
                       curl_setopt($curl, CURLOPT_RETURNTRANSFER, $this->_returntransfer);
-                      
-                      $result = curl_exec($curl);
-                      $result_json = json_decode($result, true);
+                      curl_setopt($curl, CURLOPT_CONNECTTIMEOUT, 10);
+                      curl_setopt($curl, CURLOPT_TIMEOUT, 30);
                       curl_close($curl);
 
                       if(!$result = curl_exec($curl)){
                           
-                        die('Os dados não poderam ser carregados!');
+                        die('Erro na integração com a API na tentativa de carregamento da informação');
                      
                       } else {
                         $result_json = json_decode($result, true);
@@ -124,11 +127,13 @@ Class DataSourceAPI {
                       curl_setopt($curl, CURLOPT_URL, $this->_url);
                       curl_setopt($curl, CURLOPT_POSTFIELDS, $array_Data);
                       curl_setopt($curl, CURLOPT_RETURNTRANSFER, $this->_returntransfer);
+                      curl_setopt($curl, CURLOPT_CONNECTTIMEOUT, 10);
+                      curl_setopt($curl, CURLOPT_TIMEOUT, 30);
                       curl_close($curl);
 
                       if(!$result = curl_exec($curl)){
                           
-                        die('Erro ao efetuar a postagem!');
+                        die('Erro na integração com a API ao efetuar a postagem!');
                      
                       } else {
                         $result_json = json_decode($result, true);
@@ -151,11 +156,13 @@ Class DataSourceAPI {
                       curl_setopt($curl, CURLOPT_URL, $this->_url . $arrayData['id'] .'/');
                       curl_setopt($curl, CURLOPT_POSTFIELDS, $array_Data);
                       curl_setopt($curl, CURLOPT_RETURNTRANSFER, $this->_returntransfer);
+                      curl_setopt($curl, CURLOPT_CONNECTTIMEOUT, 10);
+                      curl_setopt($curl, CURLOPT_TIMEOUT, 30);
                       curl_close($curl);
                       
                       if(!$result = curl_exec($curl)){
                           
-                        die('Erro ao tentar atualizar os dados!');
+                        die('Erro na integração com a API ao tentar atualizar os dados!');
                      
                       } else {
                         $result_json = json_decode($result, true);
@@ -175,11 +182,13 @@ Class DataSourceAPI {
                       curl_setopt($curl, CURLOPT_HTTPHEADER, $this->_httpheader); 
                       curl_setopt($curl, CURLOPT_URL, $this->_url . $id .'/');
                       curl_setopt($curl, CURLOPT_RETURNTRANSFER, $this->_returntransfer);
+                      curl_setopt($curl, CURLOPT_CONNECTTIMEOUT, 10);
+                      curl_setopt($curl, CURLOPT_TIMEOUT, 30);
                       curl_close($curl);
                       
                       if(!$result = curl_exec($curl)){
                           
-                        die('Erro ao tentar deletar os dados!');
+                        die('Erro na integração com a API ao tentar deletar os dados!');
                      
                       } else {
                         $result_json = json_decode($result, true);

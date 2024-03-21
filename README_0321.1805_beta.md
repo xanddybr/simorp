@@ -12,6 +12,7 @@
 
 [
 
+0321.1805 : get/post/put/delete (refinament)
 0320.1815 : implemented Class authAPI and Class Generic Requests API to make post/get/put/delete (refinament)
 0318.1819 : implemented Class authAPI and Class Generic Requests API to make post/get/put/delete
 0315.1836 : created script curl get/post/put/delete and fixed cookie error on logon

@@ -1,16 +1,9 @@
+    
 
-function load() {
 
-}
+            $.get('c:\xampp\localhos\simiorp_beta\js\data1.json', function (data, status) {
+            console.log("Retorno:" + data + "\status:" + status);
 
-function update(id) {
+        }); 
 
-}
-
-function delet(id) {
-
-}
-
-function insert(id) {
-
-}
+  

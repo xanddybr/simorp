@@ -37,12 +37,6 @@ Class ControllerUsuario {
     }
 
     
-    public static function LoadSoliciId() {
-        $solicitacao = new Solicitacao();
-        return $solicitacao->get_obs();
-    }
-
-    
 }
 
 

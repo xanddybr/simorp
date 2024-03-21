@@ -33,12 +33,12 @@ require_once 'ConnectAPI.php';
 
       }*/
 
-      public function set_idReg(int $idSol) {
-          $this->idReg = $idSol;
+      public function set_idSol(int $idSol) {
+          $this->idSol = $idSol;
         }
         
-      public function get_idReg() {
-          return $this->idReg;
+      public function get_idSol() {
+          return $this->idSol;
         }
         
       public function set_nProcessoe(string $nProcesso) {
@@ -101,7 +101,7 @@ require_once 'ConnectAPI.php';
           $this->obs = $obs;
         }
       public function get_obs() {
-          return $this->obs;
+          return strtoupper($this->obs);
         }
 
       public function set_valor(float $valor) {
@@ -112,37 +112,63 @@ require_once 'ConnectAPI.php';
         }
 
 
-      public static function LoadSolicitacaoId() {
+      public function LoadSolId() {
         
         $dataSourceAPI = new DataSourceAPI();
         $dataSourceAPI->set_url('http://10.3.15.200:8002/solicitacoes/');
-        $dataSourceAPI->set_httpheader('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzEwOTg1ODM5LCJpYXQiOjE3MTA5NDI2MzksImp0aSI6IjgzNDdlNGYxZDczYTQ5MDZhZDM3YTFmZmVmZjk4NWZjIiwidXNlcl9pZCI6M30.JeJAt5e74Pb9P2nsdIimvZ0KNnQeoS2KoXJGjiKS6Dk');
-        $data = $dataSourceAPI->GetForIdAPI(8);
+        $dataSourceAPI->set_httpheader($_SESSION['login'][1]);
+        $data = $dataSourceAPI->GetForIdAPI($this->idSol);
 
         if(isset($data['detail'])) {
 
-          echo 'Sem dados para este id';
+          echo "<script>alert('Sem dados para este id!!');</script>";
 
           } else {
-
-                $this->obs = $data['observacao'];
+                         
+            $this->nProcesso = $data['processo'];
+            $this->uniGestora = $data['orgao'];
+            $this->nAta = $data['numero_ata'];
+            $this->tipoObjeto = $data['tipo_objeto'];
+            $this->tipoAta = $data['tipo_ata'];
+            $this->dataReceb = $data['data_recebimento'];
+            $this->dataEncam = $data['data_encaminhamento'];
+            $this->obs = $data['observacao'];
+            $this->valor = $data['valor_total'];
                 
-            }
+          }
 
      }
 
-      public function escreve() {
+      public function LoadAllSol() {
+            
+      
+      }
+     
+      public function DeleteSol($id) {
 
-        return 'Solicitacao class access!!!';
+
+      }
+     
+      public function UpdateSol($id) {
+
 
       }
 
-    
+      public function PostSol(object $Solicitacao) {
+
+
+      }
+      
+
+          
     
 }
 
 
-    
+
+
+
+
 
 
 

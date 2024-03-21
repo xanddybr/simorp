@@ -130,7 +130,7 @@ Class Usuario {
 
           try {
                   $_SESSION["login"] = [$this->nome . " " . $this->sobrenome, $this->token,'logado'];
-                  setcookie('timeUser', $this->nome , time() + 43200); // time duration 10hs 
+                  setcookie('timeUser', $this->nome , time() + 7000); // time duration 10hs 
 
           } catch(Exception $e){
 
@@ -208,7 +208,7 @@ Class Usuario {
           $userAPI->set_url('http://10.3.15.200:8002/auth/login/');
           $user = array('username' => $this->usuario, 'password' => $this->senha);
           $userAPI->set_postfields($user);
-          $dataUser = $userAPI->AuthAPI();
+          $data = $userAPI->AuthAPI();
 
                         
         if(isset($dataUser['detail'])) {
@@ -217,10 +217,10 @@ Class Usuario {
 
           } else {
 
-                echo $this->nome = $dataUser['nome'];
-                echo $this->sobrenome = $dataUser['sobrenome'];
-                echo $this->perfil = $dataUser['perfil'];
-                echo $this->token = $dataUser['access'];
+                $this->nome = $data['nome'];
+                $this->sobrenome = $data['sobrenome'];
+                $this->perfil = $data['perfil'];
+                $this->token = $data['access'];
 
             }
 

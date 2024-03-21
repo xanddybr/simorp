@@ -38,12 +38,12 @@
       if(isset($_POST['acao'])) {
       
       //CALL FUNCTION LOGIN USER
-      
-            ControllerUsuario::Logon($_POST['usuario'], $_POST['senha'], isset($_POST['remember']));
-      
+    
+            ControllerUsuario::Logon($_POST['usuario'], $_POST['senha'], isset($_POST['remember'])); 
+                       
       } else { 
                              
-}
+      }
       // START APP IN PAGE LOGIN
       $rota->StartAppLogin();
       

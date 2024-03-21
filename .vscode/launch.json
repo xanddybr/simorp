@@ -10,8 +10,8 @@
             "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome against localhost",
-            "url": "http://localhost/simorp/main/",
-            "webRoot": "${main}"
+            "url": "http://localhost/simorp_beta/",
+            "webRoot": "${simorp_beta}"
         }
     ]
 }
