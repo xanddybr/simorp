@@ -8,7 +8,7 @@
    refresh: 'retrieve token for update token access before expirate'
    sobrenome: 'retrieve lastname of usuer'
       
-   */
+   SCRIPT WORKING!!! DON'T DELETE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/ 
       
     $(document).ready(function(){
       $("#acao").click(function() {

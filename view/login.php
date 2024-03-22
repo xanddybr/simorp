@@ -28,7 +28,7 @@
 <body class="minhaclasse">
 	
 	<div class="row">
-		<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
+		<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4" style='position: absolute; width:500px;'>
 			<div class="login-panel panel panel-default">
 				<div class="panel-heading"><b>SIMORP</b>_beta</div>
 				<div class="panel-body">
@@ -55,15 +55,18 @@
 								
 					</form>
 				</div>
+				
 			</div>
+			<?php echo "<center><span style='text-aling: center'><h6>v1.0.0 build 0321.1805</h6></span></center>"; ?>
 		</div><!-- /.col-->
+		
 	</div><!-- /.row -->	
 	 
 	<script>
 
 	</script>	
 
-	<?php echo "<center><span style='text-aling: center'><h6>v1.0.0 build 0315.1836</h6></span></center>"; ?>
+	
 	
 
 </html>

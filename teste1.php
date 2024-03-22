@@ -1,7 +1,8 @@
+<script src="js/requests.js"></script>
+
 <?php
 
-$pwd = md5('alexandre',true);
-echo $pwd;
+
 
 
 ?>

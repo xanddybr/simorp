@@ -1,42 +1,47 @@
 <?php
 
-Class Orgaos {
+require_once 'ConnectAPI.php';
 
-        private $idOrg;
-        private $sigla;
-        private $descricao;
+class Orgao {
+
+  
+        private int $idOrg;
+        private string $sigla;
+        private string $descricao;
        
         
-    function __contructor($idOrg,$sigla,$descricao) {
+    function __construct(int $idOrg, string $sigla, string $descricao) {
 
         $this->idOrg = $idOrg;
         $this->sigla = $sigla;
         $this->descricao = $descricao;
     }
    
-    public function set_idOrg($idOrg) {
+    public function set_idOrg(int $idOrg) {
         $this->idOrg = $idOrg;
       }
+
     public function get_idOrg() {
         return $this->idOrg;
       }
     
-    public function set_sigla($sigla) {
+    public function set_sigla(string $sigla) {
         $this->sigla = $sigla;
       }
+      
     public function get_sigla() {
         return $this->sigla;
       }
 
-    public function set_descricao($descricao) {
+    public function set_descricao(string $descricao) {
         $this->descricao = $descricao;
       }
+
     public function get_descricao() {
         return $this->descricao;
       }
-
-     
     
   }
+
 
 ?>

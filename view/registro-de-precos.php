@@ -17,7 +17,6 @@
 
 <body>
 
-
 	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">			
 		<div class="row">
 			<!--<ol class="breadcrumb">
@@ -30,9 +29,9 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="panel panel-default">
-					<div class="panel-heading" class="form-group"><label>Registro de preço Nº:</label> 000001 </div>
+					<div class="panel-heading" class="form-group"><label>Registro de preço Nº:</label> <?php ?> 01 </div>
 					  <div class="panel-body">
-								<form role="form">
+								<form role="form" method="Post">
 										<div class="form-group col-md-13">
 												<div class="col-lg-2">
 														<label>Nº do Processo</label>
@@ -48,7 +47,7 @@
 															<option value=''>< selecione um tipo ></option>
 															<option value=""> MATERIAL </option>
 															<option value=""> SERVIÇOS </option>
-															<option value=""> MATERIAL/SERVIÇOS</option>
+															<option value=""> MATERIAL/SERVIÇOS </option>
 														</select>
 												</div>
 
@@ -92,15 +91,12 @@
    									 </select>
 								 </div>
 								
-
-								
-
 								 <div class="form-group col-lg-12">
 									<label>Observação</label>
-									<textarea class="form-control" rows="2" name="observacao" ></textarea>
+									<textarea class="form-control" rows="2" name="observacao" ><?php ?></textarea>
 								 </div>
 
-								<div><label class="form-group col-lg-8">Valor Total: <label>R$</label> -  </label>  <label class="form-group col-lg-2"> Total dos Ítens: ( ) - </label></label><button class="btn-primary pull-right" >Salvar Solicitação</button><button class="btn-default" id="btn-todo">Unidade Fornec.</button></div>
+								<div><label class="form-group col-lg-8">Valor Total: <label>R$</label> -  </label>  <label class="form-group col-lg-2"> Total dos Ítens: ( ) - </label></label><button type="submit" class="btn-primary pull-right" >Salvar Solicitação</button><button class="btn-default" id="btn-todo">Unidade Fornec.</button></div>
 													
 
 						</form>

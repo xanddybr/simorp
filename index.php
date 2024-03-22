@@ -1,12 +1,11 @@
 <!-- Start the session -->
 <?php session_start(); ?>
 
+<?php include_once "./controller/controllerSolicitacao.php"; ?>
+<?php include_once "./controller/controllerUsuario.php"; ?>
+<?php include_once "./router/Router.php"; ?>
 
-<?php require ("./controller/controllerUsuarios.php"); ?>
-<?php require ("./router/Router.php"); ?>
-
-
-
+ 
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,7 +27,6 @@
 
 <?php
 
-      $userControl = new ControllerUsuarios();
       $rota = new Router();
 
       $rota->set_url($_SERVER['SERVER_NAME']);
@@ -40,35 +38,35 @@
       if(isset($_POST['acao'])) {
       
       //CALL FUNCTION LOGIN USER
-      
-      $userControl->Logon($_POST['usuario'], $_POST['senha'], isset($_POST['remember']));
-      
+    
+            ControllerUsuario::Logon($_POST['usuario'], $_POST['senha'], isset($_POST['remember'])); 
+                       
       } else { 
                              
-}
+      }
       // START APP IN PAGE LOGIN
       $rota->StartAppLogin();
       
-} else {
+      } else {
 
       // ENABLE ROUTES FOR NAVIGATION AFTER CREATED SESSION
       
       $rota->setRouter();
 
-      if(isset($_GET['url']) && !isset($_COOKIE['timeUser'])){
-      $userControl->TimeOut();
+      if(!isset($_COOKIE['timeUser'])){
+            ControllerUsuario::TimeOut();
       }
                         
       if(isset($_GET['url']) && $_GET['url'] == "logout"){
-      $userControl->Logout();
+            ControllerUsuario::Logout();
       }
       
       if(isset($_GET['url']) && $_GET['url'] == "login"){
-      $userControl->Logout();
+            ControllerUsuario::Logout();
       }
 
       if(!isset($_GET['url']) && $_GET['url'] == NULL ){
-      $userControl->Logout();
+            ControllerUsuario::Logout();
       }
      
 
