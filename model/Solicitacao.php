@@ -154,9 +154,15 @@ require_once 'ConnectAPI.php';
 
       }
 
-      public function PostSol(object $Solicitacao) {
-
-
+      public function SalvarSolRegPrec(array $solRegPrec) {
+        
+            $this->nProcesso = $solRegPrec[0];
+            $this->tipoObjeto = $solRegPrec[1];
+            $this->dataReceb = $solRegPrec[2];
+            $this->dataEncam = $solRegPrec[3];
+            $this->uniGestora = $solRegPrec[4];
+            $this->obs = $solRegPrec[5];
+        
       }
       
 

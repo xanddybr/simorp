@@ -2,7 +2,7 @@
 
 require_once 'ConnectAPI.php';
 
-Class ObjetosItens {
+Class ObjetoItens {
 
 
          private int $idProd;
@@ -16,7 +16,6 @@ Class ObjetosItens {
 
     /* public function __constructor(int $idProd, string $descricao, string $tipObjeto, string $unidFornec, float $valorUnitario, int $quantidade, float $subTotal) {
 
-         $this->idProd = $idProd;
          $this->descricao = $descricao;
          $this->tipObjeto = $tipObjeto;
          $this->unidFornec = $unidFornec;
@@ -24,6 +23,7 @@ Class ObjetosItens {
          $this->quantidade = $quantidade;
          $this->subTotal = $subTotal;
      }*/
+
             
    public function set_idProd(int $idProd) {
         $this->idProd = $idProd;

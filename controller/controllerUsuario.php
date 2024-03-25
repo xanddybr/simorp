@@ -5,7 +5,7 @@ require "./model/Usuario.php";
 Class ControllerUsuario {
       
 
-    static function Logon($user, $pass, $check) {
+    public static function Logon($user, $pass, $check) {
         
         $usuario = new Usuario();
         
@@ -15,7 +15,7 @@ Class ControllerUsuario {
        
     }
 
-    static function LogonTeste($user,$pass,$check) {
+    public static function LogonTeste($user,$pass,$check) {
         
         $usuario = new Usuario();
         
@@ -25,17 +25,18 @@ Class ControllerUsuario {
        
     }
 
-    static function Logout() {
+    public static function Logout() {
         $usuario = new Usuario();
         $usuario->LogoutSession();
         
     }
 
-    static function TimeOut() {
+    public static function TimeOut() {
         $usuario = new Usuario();
         $usuario->TimeOutSession();
     }
 
+   
     
 }
 

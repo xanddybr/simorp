@@ -12,6 +12,7 @@
 
 [
 
+0325.1820 : implemented method post
 0321.1805 : get/post/put/delete (refinament)
 0320.1815 : implemented Class authAPI and Class Generic Requests API to make post/get/put/delete (refinament)
 0318.1819 : implemented Class authAPI and Class Generic Requests API to make post/get/put/delete

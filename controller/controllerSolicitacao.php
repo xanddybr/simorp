@@ -4,14 +4,18 @@ require "./model/Solicitacao.php";
 
 Class ControllerSolicitacao {
     
-
-
-    public static function tipoAta () {
-        $solicitacao = new Solicitacao();
-        $solicitacao->set_idSol(8);
-        $solicitacao->LoadSolId();
-        return $solicitacao->get_obs();
+    public static function solRegPrec(array $SolReg) {
+        $solRegPrec = new Solicitacao();
+        $solRegPrec->SalvarSolRegPrec($SolReg);
     }
+    
+    public static function get_nProcesso(){
+        $solRegPrec = new Solicitacao();
+        return $solRegPrec->get_nProcesso();
+    }
+  
+
+    
 
 
 

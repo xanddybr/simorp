@@ -100,7 +100,7 @@ Class Usuario {
         if($this->usuario == "homolog" && $this->senha == "123") {
 
           $_SESSION["login"] = ['HOMOLOGAÇÃO','logado'];
-          setcookie('timeUser', $this->usuario , time() + 7200); // time duration 10hs 
+          setcookie('timeUser', $this->usuario , time() + 43200); // time duration 10hs 
 
         if(isset($_SESSION['login'])){
           
@@ -217,10 +217,10 @@ Class Usuario {
 
           } else {
 
-                $this->nome = $data['nome'];
-                $this->sobrenome = $data['sobrenome'];
-                $this->perfil = $data['perfil'];
-                $this->token = $data['access'];
+                $this->set_nome($data['nome']);
+                $this->set_sobrenome($data['sobrenome']);
+                $this->set_perfil($data['perfil']);
+                $this->set_token($data['access']);
 
             }
 

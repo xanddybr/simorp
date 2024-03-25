@@ -42,22 +42,17 @@
 										</div>
 										<div class="checkbox" >
 										<label>
-
-								<input name="remember" type="checkbox" value="true"  <?php if(isset($_COOKIE['rmb'])) { echo $_COOKIE['rmb'];} ?> /> Lembrar-me <br>
-
-								
-
+										<input name="remember" type="checkbox" value="true"  <?php if(isset($_COOKIE['rmb'])) { echo $_COOKIE['rmb'];} ?> /> Lembrar-me <br>
 										</label>
-								
-							</div>
-							<input type="submit" name="acao" value="Entrar" class="form-control btn-default" />
+									</div>
+										<input type="submit" name="acao" value="Entrar" class="form-control btn-default" />
 								<div style=""><center><img src="img/logo_marca.png" style="width: 227.80px; height: 155.32px; margin: 10px 0px 10px" alt="Carregando" /></center></div>
 								
 					</form>
 				</div>
 				
 			</div>
-			<?php echo "<center><span style='text-aling: center'><h6>v1.0.0 build 0321.1805</h6></span></center>"; ?>
+			<?php echo "<center><span style='text-aling: center'><h6>v1.0.0 build 0325.1820</h6></span></center>"; ?>
 		</div><!-- /.col-->
 		
 	</div><!-- /.row -->	

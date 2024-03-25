@@ -6,14 +6,28 @@
     <title>Document</title>
 </head>
 
+<?php
+
+        function plus(int $n1 , int $n2) {
+                $n3 = $n1 + $n2;
+                return $n3;
+        }
+
+        function getData() {
+                $data = $_POST['data'];
+                return $data;
+        }
+
+
+?>
+
 <script src="./js/jquery-1.11.1.min.js"></script>
 
 <script>
 $(document).ready(function (){
 
         $('#box2').focus(function (){
-
-         
+        
           document.getElementById('box2').value = 1;
 
         })
@@ -22,18 +36,20 @@ $(document).ready(function (){
  var i=1;
 $(document).ready(function (){
         $('#bt1').click(function (){
-       
-           $('#div1').prepend("<input type='text' width='100px' id='box[i]' value=[i] /><br>");
-           document.getElementById('box[i]').value = parseInt([i]);
-            i+=1;
-
+            $('#frm').submit();    
+                /*
+                $('#div1').prepend("<input type='text' width='100px' id='box[i]' value=[i] /><br>");
+                document.getElementById('box[i]').value = parseInt([i]);
+                i+=1;
                
-               /* const printWindow = window.open('', '_Blank');
+                const printWindow = window.open('', '_Blank');
                 printWindow.document.write('<html><head><title>Print with JavaScript </title></head><body>');
                 printWindow.document.write(valor);
                 printWindow.document.write('</body></html>');
                 printWindow.document.close();
                 printWindow.print(); */
+
+                document.write("<?php echo getData(); ?>");
 
         })
 })
@@ -41,11 +57,12 @@ $(document).ready(function (){
 
 </script>
 <body>
- <form>
+<form id='frm' action='post'>
 <div id='div1'>
-conteudo da div!
+Div in content!
 </div>
-<input type='text' width='100px' id='box0' /><button type='button' id='bt1' >adicionar</button>
+
+<input type='text' width='100px' id='box0' name='data' /><button type='button' id='bt1' >adicionar</button>
 
 
 </form>   
@@ -54,9 +71,3 @@ conteudo da div!
 
 
 
-<?php
-
-
-
-
-?>
