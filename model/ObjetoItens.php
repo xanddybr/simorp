@@ -1,17 +1,18 @@
 <?php
 
-require_once 'ConnectAPI.php';
+
+
 
 Class ObjetoItens {
 
 
-         private int $idProd;
-         private string $descricao;
-         private string $tipObjeto;
-         private string $unidFornec;
-         private float $valorUnitario;
-         private int $quantidade;
-         private float $subTotal;
+         protected int $idProd;
+         protected string $descricao;
+         protected string $tipObjeto;
+         protected string $unidFornec;
+         protected int $valorUnitario;
+         protected int $quantidade;
+         protected int $subTotal;
             
 
     /* public function __constructor(int $idProd, string $descricao, string $tipObjeto, string $unidFornec, float $valorUnitario, int $quantidade, float $subTotal) {
@@ -33,27 +34,27 @@ Class ObjetoItens {
      }
 
    public function set_descricao(string $descricao) {
-        $this->descricao = $descricao;
+        $this->descricao = strtoupper($descricao);
     }
    public function get_descricao() {
         return $this->descricao;
    }
 
    public function set_tipObjeto(string $tipObjeto) {
-        $this->tipObjeto = $tipObjeto;
+        $this->tipObjeto = strtoupper($tipObjeto);
     }
    public function get_tipObjeto() {
         return $this->tipObjeto;
     }
 
    public function set_unidFornec(string $unidFornec) {
-        $this->unidFornec = $unidFornec;
+        $this->unidFornec = strtoupper($unidFornec);
     }
    public function get_unidFornec() {
         return $this->idReg;
     }
 
-   public function set_valorUnitario(float $valorUnitario) {
+   public function set_valorUnitario(int $valorUnitario) {
         $this->valorUnitario = $valorUnitario;
     }
    public function get_valorUnitario() {
@@ -67,7 +68,7 @@ Class ObjetoItens {
        return $this->quantidade;
     }
 
-   public function set_subTotal(float $subTotal) {
+   public function set_subTotal(int $subTotal) {
        $this->subTotal = $subTotal;
     }
    public function get_subTotal() {

@@ -12,6 +12,7 @@
 
 [
 
+0326.1750 : implemented method post(refinament)
 0325.1820 : implemented method post
 0321.1805 : get/post/put/delete (refinament)
 0320.1815 : implemented Class authAPI and Class Generic Requests API to make post/get/put/delete (refinament)
@@ -23,7 +24,7 @@
 0309.1357 : Correction issue function makeCookie
 0311.1805 : Implement and set autentication in API end-point (refinament)
 0309.1357 : Correction issue function makeCookie
-0311.1805 : Implement and set autentication in API end-point (refinament)
+0311.1805 : Implement and set autentication in API end-point (refinament) 
 0308.1652 : Implement and set autentication in API end:point
 0304.1801 : Implement autentication in API (refinament)
 0303.2123 : Implement autentication in API
