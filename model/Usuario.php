@@ -92,7 +92,37 @@ Class Usuario {
         $this->status = $status;
 
     }
- */       
+ */ 
+
+ 
+//Exec connection with data-source API
+        public function AuthenticUserAPI() {
+
+            /* $dataUser = array('username'	=> $this->_usuario, 'password'  => $this->_senha); */
+
+            $userAPI = new DataSourceAPI(); 
+            $userAPI->set_url('http://10.3.15.200:8002/auth/login/');
+            $user = array('username' => $this->usuario, 'password' => $this->senha);
+            $userAPI->set_postfields($user);
+            $data = $userAPI->AuthAPI();
+
+                          
+          if(isset($dataUser['detail'])) {
+
+            return 'false';
+
+            } else {
+
+                  $this->set_nome($data['nome']);
+                  $this->set_sobrenome($data['sobrenome']);
+                  $this->set_perfil($data['perfil']);
+                  $this->set_token($data['access']);
+
+              }
+
+          }
+
+
 
     public function Homologation() {
       if(!isset($_SESSION['login'] )) {
@@ -123,54 +153,9 @@ Class Usuario {
 
     }
 
-      
-    public function LogonSession() {
-    
-         if(!isset($_SESSION['login'])) {
-
-          try {
-                  $_SESSION["login"] = [$this->nome . " " . $this->sobrenome, $this->token,'logado'];
-                  setcookie('timeUser', $this->nome , time() + 7000); // time duration 10hs 
-
-          } catch(Exception $e){
-
-                  echo "Erro na tentativa de criar a sessão!";
-          }
-          
-            if(isset($_SESSION['login'])){
-              
-                 header("location:/simorp_beta/home");
-
-            } else {
-
-              echo "<div class='col-lg-12'>";
-              echo "<div class='alert bg-danger' role='alert'>";
-              echo "<svg class='glyph stroked cancel'><use xlink:href='#stroked-cancel'></use></svg>Erro ao tentar iniciar a sessão, Já existe uma sessão iniciada!!!<a href='' class='pull-right'><span class='glyphicon glyphicon-remove'></span></a>";
-              echo  "</div>";
-              echo "</div>";
-
-            }
-         
-
-        } else {
-    
-              echo "<div class='col-lg-12'>";
-              echo "<div class='alert bg-danger' role='alert'>";
-              echo "<svg class='glyph stroked cancel'><use xlink:href='#stroked-cancel'></use></svg> Já existe uma sessão iniciada, ou usuário já esta logado!!!<a href='' class='pull-right'><span class='glyphicon glyphicon-remove'></span></a>";
-              echo "</div>";
-              echo "</div>";
-                      
-          }
-      }
 
 
-      public function TimeOutSession() {
-        $_SESSION['login'] = [null, null, null];
-        session_destroy();
-      }
-    
-    
-       public function ValidateData($check) {
+    public function ValidateData($check) {
     
         //verify data coming of datasource and authentic user 
         if(Usuario::AuthenticUserAPI() != 'false')  {
@@ -187,6 +172,16 @@ Class Usuario {
         }
       } 
 
+
+
+      
+       public function TimeOutSession() {
+        $_SESSION['login'] = [null, null, null];
+        session_destroy();
+      }
+    
+    
+       
     
       // public function for logout user     
         public function LogoutSession() {
@@ -198,39 +193,46 @@ Class Usuario {
 
        }
 
-       
-      //Exec connection with data-source API
-       public function AuthenticUserAPI() {
 
-         /* $dataUser = array('username'	=> $this->_usuario, 'password'  => $this->_senha); */
+       public function LogonSession() {
+    
+        if(!isset($_SESSION['login'])) {
 
-          $userAPI = new DataSourceAPI(); 
-          $userAPI->set_url('http://10.3.15.200:8002/auth/login/');
-          $user = array('username' => $this->usuario, 'password' => $this->senha);
-          $userAPI->set_postfields($user);
-          $data = $userAPI->AuthAPI();
+         try {
+                 $_SESSION["login"] = [$this->nome . " " . $this->sobrenome, $this->token,'logado'];
+                 setcookie('timeUser', $this->nome , time() + 43200); // time duration 10hs 
 
-                        
-        if(isset($dataUser['detail'])) {
+         } catch(Exception $e){
 
-          return 'false';
+                 echo "Erro na tentativa de criar a sessão!";
+         }
+         
+           if(isset($_SESSION['login'])){
+             
+                header("location:/simorp_beta/home");
 
-          } else {
+           } else {
 
-                $this->nome = $data['nome'];
-                $this->sobrenome = $data['sobrenome'];
-                $this->perfil = $data['perfil'];
-                $this->token = $data['access'];
+             echo "<div class='col-lg-12'>";
+             echo "<div class='alert bg-danger' role='alert'>";
+             echo "<svg class='glyph stroked cancel'><use xlink:href='#stroked-cancel'></use></svg>Erro ao tentar iniciar a sessão, Já existe uma sessão iniciada!!!<a href='' class='pull-right'><span class='glyphicon glyphicon-remove'></span></a>";
+             echo  "</div>";
+             echo "</div>";
 
-            }
+           }
+        
 
-       }
+       } else {
+   
+             echo "<div class='col-lg-12'>";
+             echo "<div class='alert bg-danger' role='alert'>";
+             echo "<svg class='glyph stroked cancel'><use xlink:href='#stroked-cancel'></use></svg> Já existe uma sessão iniciada, ou usuário já esta logado!!!<a href='' class='pull-right'><span class='glyphicon glyphicon-remove'></span></a>";
+             echo "</div>";
+             echo "</div>";
+                     
+         }
+     }
 
-       public function LoadDataAPI() {
-
-
-       }  
-       
 
        //Create cookie for storage user and password in browser
        public function MakeUserCookie($check) {
@@ -249,11 +251,7 @@ Class Usuario {
                
     } 
 
-     //Exec connection with dataBAse looking for user
-     public function GetUserDataBase(){
-    
-     }
-    
+   
   }
 
   

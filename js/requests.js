@@ -1,9 +1,11 @@
     
 
+        $(document).ready(function(){
 
-            $.get('c:\xampp\localhos\simiorp_beta\js\data1.json', function (data, status) {
-            console.log("Retorno:" + data + "\status:" + status);
-
-        }); 
-
-  
+            $("#valorTotal").focus(function(){
+        
+              alert("foco recebido!");
+        
+            })
+        
+        })

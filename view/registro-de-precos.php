@@ -12,10 +12,16 @@
 <link href="../css/styles.css" rel="stylesheet">
 <link href="../css/bootstrap-table.css" rel="stylesheet">
 <script src="../js/lumino.glyphs.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/requests.js"></script>
+
+<script>
+
+</script>
 
 </head>
 
-<body>
+<body><?php  ?>
 
 	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">			
 		<div class="row">
@@ -29,33 +35,37 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="panel panel-default">
-					<div class="panel-heading" class="form-group"><label>Registro de preço Nº:</label> <?php ?> 01 </div>
-					  <div class="panel-body">
-								<form role="form" method="Post">
+						
+					<div class="panel-heading" class="form-group">
+						<label>Registro de preço Nº:</label> <?php  ?> </div>
+					   <div class="panel-body" style='height:500;'>
+								<form id='frm' method='POST' action=''>
+								<?php if(isset($_POST['salvar'])) {  $SolReg = $_POST['solRegPrec']; ControllerSolicitacao::solRegPrec($SolReg); }  ?> 
 										<div class="form-group col-md-13">
+											
 												<div class="col-lg-2">
+													
 														<label>Nº do Processo</label>
+														<?php ?>
 
-														<?php  ?>
-
-														<input class="form-control" placeholder="Encontrado no SEI" value="">
+														<input class="form-control" placeholder="LOCALIZADO NO SEI" name='solRegPrec[]' value="" >
 												</div>
 
 												<div class="col-lg-3">
-													<label>Tipo de Objeto(s)</label>
-														<select class="form-control" name="tipoSolicitacao">
-															<option value=''>< selecione um tipo ></option>
-															<option value=""> MATERIAL </option>
-															<option value=""> SERVIÇOS </option>
-															<option value=""> MATERIAL/SERVIÇOS </option>
+													<label>Tipo de Objeto</label>
+														<select class="form-control" name='solRegPrec[]' >
+															<option>< SELECIONE UM TIPO ></option>
+															<option value="MATERIAL"> MATERIAL </option>
+															<option value="SERVIÇOS"> SERVIÇOS </option>
+															<option value="MATERIAL/SERVIÇOS"> MATERIAL/SERVIÇOS </option>
 														</select>
 												</div>
 
 
 												<div class="col-lg-3">
 													<label>Artigo</label>
-														<select class="form-control" name="artigo">
-															<option value=''>< selecione um tipo ></option>
+														<select class="form-control" name='artigo'>
+															<option value=''>< FILTAR POR ARTIGO ></option>
 															<option value=""> VENDA DE MATERIAS DE CONSTRUÇÃO</option>
 															<option value=""> SERVIÇOS DE LOCAÇAO DE VEICULOS</option>
 														</select>
@@ -64,12 +74,12 @@
 
    											   <div class="col-lg-2">
 													<label>Data Recebimento</label>
-													<input class="form-control" type="date" name="dataRecebimento">
+													<input class="form-control" type="" placeholder='dd/mm/yyyy' name='solRegPrec[]' maxlength="10">
 												</div>
 
 												<div class="col-lg-2">
 													<label>Data Encaminhamento</label>
-													<input class="form-control" type="date" name="dataEncaminhamento">
+													<input class="form-control" type="" placeholder='dd/mm/yyyy' name='solRegPrec[]' maxlength="10">
 												</div>
 										</div>
 												
@@ -79,27 +89,27 @@
 								  
 								 <div class="form-group col-lg-12">
 									    <label>Orgão Solicitante</label> <!-- Componente alimentado pela Api com id e descrião dos orgãos -->
-									    <select class="form-control" name="unidadeGestora">
-										<option value="">< selecione um orgão ></option>
-										<option value=""> IEEA - INST ESTADUAL DE ENGENHARIA E ARQUITETURA</option>
-										<option value=""> DER-RJ - FUND DEP ESTRADAS DE RODAGEM DO ESTADO DO RJ</option>
-										<option value=""> EMOP - EMPRESA DE OBRAS PÚBLICAS DO ESTADO DO RJ</option>
-										<option value=""> VICE - GOV VICE-GOVERNADORIA</option>
-										<option value=""> PGE - PROCURADORIA GERAL DO ESTADO</option>
-										<option value=""> FUNPERJ - FUNDO ESPECIAL DA PROCURADORIA GERAL DO ERJ</option>
-										<option value=""> DPGE - DEFENSORIA PÚBLICA GERAL DO ESTADO</option>
+									    <select class="form-control" name='solRegPrec[]'>
+										<option>< SELECIONE UM ORGÃO ></option>
+										<option value="IEEA - INST ESTADUAL DE ENGENHARIA E ARQUITETURA"> IEEA - INST ESTADUAL DE ENGENHARIA E ARQUITETURA</option>
+										<option value="DER-RJ - FUND DEP ESTRADAS DE RODAGEM DO ESTADO DO RJ"> DER-RJ - FUND DEP ESTRADAS DE RODAGEM DO ESTADO DO RJ</option>
+										<option value="EMOP - EMPRESA DE OBRAS PÚBLICAS DO ESTADO DO RJ"> EMOP - EMPRESA DE OBRAS PÚBLICAS DO ESTADO DO RJ</option>
+										<option value="VICE - GOV VICE-GOVERNADORIA"> VICE - GOV VICE-GOVERNADORIA</option>
+										<option value="PGE - PROCURADORIA GERAL DO ESTADO"> PGE - PROCURADORIA GERAL DO ESTADO</option>
+										<option value="FUNPERJ - FUNDO ESPECIAL DA PROCURADORIA GERAL DO ERJ"> FUNPERJ - FUNDO ESPECIAL DA PROCURADORIA GERAL DO ERJ</option>
+										<option value="DPGE - DEFENSORIA PÚBLICA GERAL DO ESTADO"> DPGE - DEFENSORIA PÚBLICA GERAL DO ESTADO</option>
    									 </select>
 								 </div>
 								
 								 <div class="form-group col-lg-12">
 									<label>Observação</label>
-									<textarea class="form-control" rows="2" name="observacao" ><?php ?></textarea>
-								 </div>
-
-								<div><label class="form-group col-lg-8">Valor Total: <label>R$</label> -  </label>  <label class="form-group col-lg-2"> Total dos Ítens: ( ) - </label></label><button type="submit" class="btn-primary pull-right" >Salvar Solicitação</button><button class="btn-default" id="btn-todo">Unidade Fornec.</button></div>
+									<textarea class="form-control" rows="2" name='solRegPrec[]' ><?php  ?></textarea>
+								 </div><br>
+								 <div>
+								</label><input type='submit' class='btn-primary pull-right' name='adduni' value='Add Unid.' /><button type="submit" name='salvar' class="btn-primary pull-right" >Salvar</button></div>
 													
 
-						</form>
+						
 					
 				</div>
 			</div><!-- /.col-->
@@ -117,31 +127,40 @@
 						
 						<tr>
 							<th data-field="name">ID/Descricão</th>
+							<th data-field="name">ID/Descricão</th>
 							<th data-field="name">Uni</th>
 							<th data-field="name">Valor</th>
 							<th data-field="name">Qtd</th>
 							<th data-field="name">Sub.Total</th>
 							<th data-field="name"> + </th>
 							<th data-field="name"> - </th>
-						</tr>							
+						</tr>
 						
 						<tr> 
 							<td data-field="text">
-								<select class="form-control" name="objeto">
-									<option selected>< selecione um objeto ></option>
-									<option value="">184169 - CARRO 1.0 GASOLINA MOTOR 4 CV BLINDADO</option>
-									<option value="">158468 - MOTOCILCETA </option>
-									<option value="">123459 - TRATOR AGRICOLA </option>
-									<option value="">145258 - AVIÃO COMERCIAL </option>
-									<option value="">145856 - COMPOSIÇÃO FERROVIÁRIA</option>
-									<option>152589 - NAVIO DE CARGA</option>
+								<select class="form-control" name="solRegPrec[]">
+									<option selected>< SELECIONE UM OBJETO ></option>
+									<option value="184169 - CARRO 1.0 GASOLINA MOTOR 4 CV BLINDADO">184169 - CARRO 1.0 GASOLINA MOTOR 4 CV BLINDADO</option>
+									<option value="158468 - MOTOCILCETA">158468 - MOTOCILCETA </option>
+									<option value="123459 - TRATOR AGRICOLA">123459 - TRATOR AGRICOLA </option>
+									<option value="145258 - AVIÃO COMERCIAL">145258 - AVIÃO COMERCIAL </option>
+									<option value="145856 - COMPOSIÇÃO FERROVIÁRIA">145856 - COMPOSIÇÃO FERROVIÁRIA</option>
+									<option value="152589 - NAVIO DE CARGA">152589 - NAVIO DE CARGA</option>
 								</select>
 							</td>
 							
-							
 							<td data-field="text" style="width: 130px">
-								<select class="form-control">
-									<option selected>< Unid ></option>
+								<select class="form-control" name="solRegPrec[]">
+									<option selected>< TIPO ></option>
+									<option value="MATERIAL">MATERIAL</option>
+									<option value="SERVIÇO">SERVIÇO</option>
+								</select>
+
+							</td>
+							
+							<td data-field="text" style="width: 130px" >
+								<select class="form-control" name="solRegPrec[]">
+									<option selected>< UNI ></option>
 									<option value="unidade">UN</option>
 									<option value="kilo">KG</option>
 									<option value="metro">MT</option>
@@ -149,21 +168,18 @@
 									<option value="pote">PT</option>
 									<option value="fardo">FD</option>
 									<option value="litro">LT</option>
-									<option value="litro">ML</option>
-								</select>
+							</select>
 
 							</td>
 							
-
-							<td data-field="text" style="width: 120px"><input id='valor' class="form-control" id='valorItem' placeholder="Valor item" /></td>
-							<td data-field="text" style="width: 100px"><input class="form-control" id='qtdItem' placeholder="Qtd item"></td>
-							<td data-field="text" style="width: 120px"><input class="form-control"  class="form-control" id='valorTotal' placeholder="Total"" /></td>
-							<td data-field="text" style="width: 70px">&nbsp;&nbsp;<button class="btn-primary" id="btn-todo">Add</button></td>
-							<td data-field="text" style="width: 70px"><button class="btn-default" id="btn-todo">Del</button></td>
+							<td data-field="text" style="width: 120px"><input class="form-control" id="valor"  placeholder="VALOR ITEM" name="solRegPrec[]" /></td>
+							<td data-field="text" style="width: 100px"><input class="form-control" id="qtdItem" placeholder="QTD ITEM" name="solRegPrec[]" /></td>
+							<td data-field="text" style="width: 120px"><input class="form-control" id="valorTotal" placeholder="TOTAL" name="solRegPrec[]"  /></td>
+							<td data-field="text" style="width: 70px">&nbsp;&nbsp;<button class="btn-primary" id="btn-todo" name="">Add</button></td>
+							<td data-field="text" style="width: 70px"><button class="btn-default" id="btn-todo" name="">Del</button></td>
 						</tr>
 				</table>
-				
-
+				</form>
 					<script>
 						$(function () {
 							$('#hover, #striped, #condensed').click(function () {
@@ -198,8 +214,7 @@
 			</div>
 		</div>
 	</div><!--/.row-->	
-	
-	
+		
 </div><!--/.main-->
 
 	<script src="../js/jquery-1.11.1.min.js"></script>

@@ -28,7 +28,6 @@
 <?php
 
       $rota = new Router();
-
       $rota->set_url($_SERVER['SERVER_NAME']);
       $rota->set_uri($_SERVER['REQUEST_URI']);
            
