@@ -7,15 +7,36 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Bem Vindo ao SIMORP</title>
 <link rel="icon" type="image/x-icon" href="img/ico/pencil.ico">
-<link href="../css/bootstrap.min.css" rel="stylesheet">
-<link href="../css/datepicker3.css" rel="stylesheet">
-<link href="../css/styles.css" rel="stylesheet">
-<link href="../css/bootstrap-table.css" rel="stylesheet">
-<script src="../js/lumino.glyphs.js"></script>
-<script src="../js/bootstrap.min.js"></script>
-<script src="../js/requests.js"></script>
+<link href="./css/bootstrap.min.css" rel="stylesheet">
+<link href="./css/styles.css" rel="stylesheet">
+<link href="./css/bootstrap-table.css" rel="stylesheet">
+
+<script src="./js/lumino.glyphs.js"></script>
+<script src="./js/bootstrap.min.js"></script>
+<script src="./js/jquery-1.9.0.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
+
 
 <script>
+	
+		$(function() {
+			$(".mskdate").mask("99/99/9999");
+		});
+
+		$(function() {
+			$('.dinheiro').mask('#.##0,00', {reverse: true});
+		});
+
+			$(document).ready(function (){
+			$('#valorTotal').focus(function (){
+				let vUnit = document.getElementById('valorUni').value;	
+				let qTd = 	document.getElementById('qtdItem').value;
+				let mult =  qTd * parseInt(vUnit);
+				document.getElementById('valorTotal').value = parseFloat(mult);
+			})
+		})
+
+
 
 </script>
 
@@ -48,19 +69,18 @@
 														<label>Nº do Processo</label>
 														<?php ?>
 
-														<input class="form-control" placeholder="LOCALIZADO NO SEI" name='solRegPrec[]' value="" >
+														<input class="form-control" placeholder="LOCALIZADO NO SEI" name='solRegPrec[]' value="" required>
 												</div>
 
 												<div class="col-lg-3">
 													<label>Tipo de Objeto</label>
-														<select class="form-control" name='solRegPrec[]' >
+														<select class="form-control" name='solRegPrec[]'>
 															<option>< SELECIONE UM TIPO ></option>
 															<option value="MATERIAL"> MATERIAL </option>
 															<option value="SERVIÇOS"> SERVIÇOS </option>
 															<option value="MATERIAL/SERVIÇOS"> MATERIAL/SERVIÇOS </option>
 														</select>
 												</div>
-
 
 												<div class="col-lg-3">
 													<label>Artigo</label>
@@ -71,15 +91,14 @@
 														</select>
 												</div>
 
-
    											   <div class="col-lg-2">
 													<label>Data Recebimento</label>
-													<input class="form-control" type="" placeholder='dd/mm/yyyy' name='solRegPrec[]' maxlength="10">
+													<input class="form-control mskdate" type="" id='' name='solRegPrec[]' maxlength="10" required>
 												</div>
 
 												<div class="col-lg-2">
 													<label>Data Encaminhamento</label>
-													<input class="form-control" type="" placeholder='dd/mm/yyyy' name='solRegPrec[]' maxlength="10">
+													<input class="form-control mskdate" type="" id='' name='solRegPrec[]' maxlength="10" required>
 												</div>
 										</div>
 												
@@ -90,7 +109,7 @@
 								 <div class="form-group col-lg-12">
 									    <label>Orgão Solicitante</label> <!-- Componente alimentado pela Api com id e descrião dos orgãos -->
 									    <select class="form-control" name='solRegPrec[]'>
-										<option>< SELECIONE UM ORGÃO ></option>
+										<option value="">< SELECIONE UM ORGÃO ></option>
 										<option value="IEEA - INST ESTADUAL DE ENGENHARIA E ARQUITETURA"> IEEA - INST ESTADUAL DE ENGENHARIA E ARQUITETURA</option>
 										<option value="DER-RJ - FUND DEP ESTRADAS DE RODAGEM DO ESTADO DO RJ"> DER-RJ - FUND DEP ESTRADAS DE RODAGEM DO ESTADO DO RJ</option>
 										<option value="EMOP - EMPRESA DE OBRAS PÚBLICAS DO ESTADO DO RJ"> EMOP - EMPRESA DE OBRAS PÚBLICAS DO ESTADO DO RJ</option>
@@ -106,10 +125,8 @@
 									<textarea class="form-control" rows="2" name='solRegPrec[]' ><?php  ?></textarea>
 								 </div><br>
 								 <div>
-								</label><input type='submit' class='btn-primary pull-right' name='adduni' value='Add Unid.' /><button type="submit" name='salvar' class="btn-primary pull-right" >Salvar</button></div>
-													
-
-						
+								</label><input type='submit' class='btn-primary pull-right' name='adduni' value='Add Unid.'  /><button type="submit" name='salvar' class="btn-primary pull-right" >Salvar</button></div>
+				
 					
 				</div>
 			</div><!-- /.col-->
@@ -172,9 +189,9 @@
 
 							</td>
 							
-							<td data-field="text" style="width: 120px"><input class="form-control" id="valor"  placeholder="VALOR ITEM" name="solRegPrec[]" /></td>
-							<td data-field="text" style="width: 100px"><input class="form-control" id="qtdItem" placeholder="QTD ITEM" name="solRegPrec[]" /></td>
-							<td data-field="text" style="width: 120px"><input class="form-control" id="valorTotal" placeholder="TOTAL" name="solRegPrec[]"  /></td>
+							<td data-field="text" style="width: 120px"><input class="form-control dinheiro" type="text" id="valorUni" name="solRegPrec[]" placeholder="R$" value=""  style="display:inline-block" required/></td>
+							<td data-field="text" style="width: 100px"><input class="form-control" type="text" id="qtdItem" placeholder="" name="solRegPrec[]" value="" required /></td>
+							<td data-field="text" style="width: 120px"><input class="form-control dinheiro" id="valorTotal" placeholder="R$" name="solRegPrec[]" value="" required /></td>
 							<td data-field="text" style="width: 70px">&nbsp;&nbsp;<button class="btn-primary" id="btn-todo" name="">Add</button></td>
 							<td data-field="text" style="width: 70px"><button class="btn-default" id="btn-todo" name="">Del</button></td>
 						</tr>
@@ -217,14 +234,9 @@
 		
 </div><!--/.main-->
 
-	<script src="../js/jquery-1.11.1.min.js"></script>
-	<script src="../js/bootstrap.min.js"></script>
-	<script src="../js/chart.min.js"></script>
-	<script src="../js/chart-data.js"></script>
-	<script src="../js/easypiechart.js"></script>
-	<script src="../js/easypiechart-data.js"></script>
-	<script src="../js/bootstrap-datepicker.js"></script>
-	<script src="../js/bootstrap-table.js"></script>
+	<script src="../lib/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+<!-- <script src="../js/jquery-1.11.1.min.js"></script>-->
+	
 	
 	<script>
 		!function ($) {

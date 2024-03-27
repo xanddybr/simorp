@@ -21,7 +21,7 @@
 <!--load Icons and javascripts-->
 <link rel="icon" type="image/x-icon" href="img/ico/pencil.ico">
 <script src="./js/lumino.glyphs.js"></script>
-<script src="./js/jquery-1.11.1.min.js"></script>
+
 
 </head>
 

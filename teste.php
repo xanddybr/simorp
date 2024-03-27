@@ -33,6 +33,7 @@ $(document).ready(function (){
         })
 
 })
+
  var i=1;
 $(document).ready(function (){
         $('#bt1').click(function (){

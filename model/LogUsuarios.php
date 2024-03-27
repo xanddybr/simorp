@@ -1,5 +1,5 @@
-
 <?php
+
 
 Class LogUsuarios {
 
@@ -10,7 +10,6 @@ Class LogUsuarios {
         private string $objeto;
         private string $objetoData;
         private string $objetoId;
-
     
 
      /* public function __construct(int $idLog,string $dataHora,string $operacao,string $objeto,string $objetoData,string $objetoId) {

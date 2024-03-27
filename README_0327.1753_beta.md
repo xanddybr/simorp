@@ -12,6 +12,7 @@
 
 [
 
+0327.1753 : implemented mask date and currency em frm registro de preço
 0326.1750 : implemented method post(refinament)
 0325.1820 : implemented method post
 0321.1805 : get/post/put/delete (refinament)
