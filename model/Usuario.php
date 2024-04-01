@@ -107,7 +107,7 @@ Class Usuario {
             $data = $userAPI->AuthAPI();
 
                           
-          if(isset($dataUser['detail'])) {
+          if(isset($data['detail'])) {
 
             return 'false';
 

@@ -21,12 +21,11 @@
 <!--load Icons and javascripts-->
 <link rel="icon" type="image/x-icon" href="img/ico/pencil.ico">
 <script src="./js/lumino.glyphs.js"></script>
-
+<script src="./js/jquery-1.9.0.min.js" type="text/javascript" charset="utf-8"></script>
 
 </head>
 
 <?php
-
 
 
       $rota = new Router();
