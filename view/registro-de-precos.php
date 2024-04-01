@@ -19,6 +19,8 @@
 
 <script>
 	
+		
+
 		$(function() {
 			$(".mskdate").mask("99/99/9999");
 		});
@@ -29,12 +31,15 @@
 
 			$(document).ready(function (){
 			$('#valorTotal').focus(function (){
+				
 				let vUnit = document.getElementById('valorUni').value;	
 				let qTd = 	document.getElementById('qtdItem').value;
 				let mult =  qTd * parseInt(vUnit);
 				document.getElementById('valorTotal').value = parseFloat(mult);
 			})
 		})
+
+		
 
 
 
@@ -108,16 +113,17 @@
 								  
 								 <div class="form-group col-lg-12">
 									    <label>Orgão Solicitante</label> <!-- Componente alimentado pela Api com id e descrião dos orgãos -->
-									    <select class="form-control" name='solRegPrec[]'>
-										<option value="">< SELECIONE UM ORGÃO ></option>
-										<option value="IEEA - INST ESTADUAL DE ENGENHARIA E ARQUITETURA"> IEEA - INST ESTADUAL DE ENGENHARIA E ARQUITETURA</option>
+									    <input class="form-control" name='solRegPrec[]' list='orgaos'>
+									<datalist id='orgaos'>
+										
+										<option value="IEEA - INST ESTADUAL DE ENGENHARIA E ARQUITETURA"> IEEA</option>
 										<option value="DER-RJ - FUND DEP ESTRADAS DE RODAGEM DO ESTADO DO RJ"> DER-RJ - FUND DEP ESTRADAS DE RODAGEM DO ESTADO DO RJ</option>
 										<option value="EMOP - EMPRESA DE OBRAS PÚBLICAS DO ESTADO DO RJ"> EMOP - EMPRESA DE OBRAS PÚBLICAS DO ESTADO DO RJ</option>
 										<option value="VICE - GOV VICE-GOVERNADORIA"> VICE - GOV VICE-GOVERNADORIA</option>
 										<option value="PGE - PROCURADORIA GERAL DO ESTADO"> PGE - PROCURADORIA GERAL DO ESTADO</option>
 										<option value="FUNPERJ - FUNDO ESPECIAL DA PROCURADORIA GERAL DO ERJ"> FUNPERJ - FUNDO ESPECIAL DA PROCURADORIA GERAL DO ERJ</option>
 										<option value="DPGE - DEFENSORIA PÚBLICA GERAL DO ESTADO"> DPGE - DEFENSORIA PÚBLICA GERAL DO ESTADO</option>
-   									 </select>
+									</datalist>
 								 </div>
 								
 								 <div class="form-group col-lg-12">

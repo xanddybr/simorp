@@ -1,8 +1,8 @@
 <!-- Start the session -->
 <?php session_start(); ?>
 
-<?php include_once "./controller/controllerSolicitacao.php"; ?>
-<?php include_once "./controller/controllerUsuario.php"; ?>
+<?php include_once "./controller/ControllerSolicitacao.php"; ?>
+<?php include_once "./controller/ControllerUsuario.php"; ?>
 <?php include_once "./router/Router.php"; ?>
 
  
@@ -27,6 +27,8 @@
 
 <?php
 
+
+
       $rota = new Router();
       $rota->set_url($_SERVER['SERVER_NAME']);
       $rota->set_uri($_SERVER['REQUEST_URI']);
@@ -37,7 +39,7 @@
       if(isset($_POST['acao'])) {
       
       //CALL FUNCTION LOGIN USER
-    
+            
             ControllerUsuario::Logon($_POST['usuario'], $_POST['senha'], isset($_POST['remember'])); 
                        
       } else { 
@@ -48,8 +50,7 @@
       
       } else {
 
-      // ENABLE ROUTES FOR NAVIGATION AFTER CREATED SESSION
-      
+      // ENABLE ROUTES BY NAVIGATION AND LOAD PAGE HOME
       $rota->setRouter();
 
       if(!isset($_COOKIE['timeUser'])){
@@ -74,6 +75,5 @@
    
 ?>
 
-<!-- BEGIN BODY HERE -->
 
 </html>
