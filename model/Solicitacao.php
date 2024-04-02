@@ -142,7 +142,7 @@ Class Solicitacao extends ObjetoItens {
 
      }
 
-      public function LoadAllSol() {
+      public function LoadAll($tpSolicitacao) {
             
       
       }
@@ -171,7 +171,7 @@ Class Solicitacao extends ObjetoItens {
             echo $this->unidFornec . "  ";
             echo $this->valorUnitario . "  ";
             echo $this->quantidade . "  ";
-            echo $this->subTotal . "  ";*/
+            echo $this->subTotal . "  ";       */
         
       }
       

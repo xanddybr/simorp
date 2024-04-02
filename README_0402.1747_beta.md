@@ -12,6 +12,9 @@
 
 [
 
+0402.1747 : request fill .json file
+0401.1809 : create multiple line itens add
+0327.1753 : implemented mask date and currency em frm registro de preço
 0326.1750 : implemented method post(refinament)
 0325.1820 : implemented method post
 0321.1805 : get/post/put/delete (refinament)
@@ -24,7 +27,7 @@
 0309.1357 : Correction issue function makeCookie
 0311.1805 : Implement and set autentication in API end-point (refinament)
 0309.1357 : Correction issue function makeCookie
-0311.1805 : Implement and set autentication in API end-point (refinament) 
+0311.1805 : Implement and set autentication in API end-point (refinament)
 0308.1652 : Implement and set autentication in API end:point
 0304.1801 : Implement autentication in API (refinament)
 0303.2123 : Implement autentication in API
@@ -36,19 +39,18 @@
 
 ]
 
+http://10.3.15.200:8002/
 
- http://10.3.15.200:8002/
+"orgaos": "http://10.3.15.200:8002/orgaos/",
+"orgaoslogs": "http://10.3.15.200:8002/orgaoslogs/",
+"solicitacoes": "http://10.3.15.200:8002/solicitacoes/",
+"solicitacoeslogs": "http://10.3.15.200:8002/solicitacoeslogs/",
+"objetos": "http://10.3.15.200:8002/objetos/",
+"objetoslogs": "http://10.3.15.200:8002/objetoslogs/"
 
- "orgaos": "http://10.3.15.200:8002/orgaos/",
- "orgaoslogs": "http://10.3.15.200:8002/orgaoslogs/",
- "solicitacoes": "http://10.3.15.200:8002/solicitacoes/",
- "solicitacoeslogs": "http://10.3.15.200:8002/solicitacoeslogs/",
- "objetos": "http://10.3.15.200:8002/objetos/",
- "objetoslogs": "http://10.3.15.200:8002/objetoslogs/"
+--------------------------------------------------------------------------
 
--------------------------------------------------------------------------------
-
- "orgaos": "http://10.3.15.200:8002/orgaos/",
+"orgaos": "http://10.3.15.200:8002/orgaos/",
 
     {
         "id": 4,
@@ -58,7 +60,7 @@
         "updated_at": "2024-03-15T21:31:30"
     }
 
---------------------------------------------------------------------------------
+--------------------------------------------------------------------------
 
 "orgaoslogs": "http://10.3.15.200:8002/orgaoslogs/",
 
@@ -72,10 +74,9 @@
         "orgao_id": null
     }
 
---------------------------------------------------------------------------------
+--------------------------------------------------------------------------
 
 "solicitacoes": "http://10.3.15.200:8002/solicitacoes/",
-
 
     {
         "id": 7,
@@ -162,25 +163,24 @@
             }
         ]
     }
-    
+
 --------------------------------------------------------------------------
 
 "solicitacoeslogs": "http://10.3.15.200:8002/solicitacoeslogs/",
 
-   {
-        "id": 230,
-        "usuario": "Alexandre",
-        "data_hora": "2024-03-15T22:17:09",
-        "operacao": "VISUALIZADO",
-        "solicitacao": null,
-        "solicitacao_data": null,
-        "solicitacao_id": null
-    }
+{
+"id": 230,
+"usuario": "Alexandre",
+"data_hora": "2024-03-15T22:17:09",
+"operacao": "VISUALIZADO",
+"solicitacao": null,
+"solicitacao_data": null,
+"solicitacao_id": null
+}
 
--------------------------------------------------------------------------
+--------------------------------------------------------------------------
 
 "objetos": "http://10.3.15.200:8002/objetos/",
-
 
     {
         "id": 10,
@@ -209,4 +209,44 @@
         "objeto_id": null
     }
 
--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+
+how to filling datalist with .json file
+
+function getCars() {
+$(data.osCars).each(function (idx, o) {
+carsOption = "<option value='" + this.name + "'>" + this.name + "</option>";
+$('#carList').append(carsOption);
+});
+}
+
+--------------------------------------------------------------------------
+
+<script>
+$(document).ready(function(){
+  $("#btn1").click(function(){
+    $("ol").append("<li>List item</li>");
+  });
+  $("#btn2").click(function(){
+    $("li:last").remove();
+  })
+})
+
+
+</script>
+</head>
+<body>
+
+<p>This is a paragraph.</p>
+<p>This is another paragraph.</p>
+
+<ol id='my'>
+  <li>List item</li>
+  <li>List item</li>
+  <li>List item</li>
+</ol>
+
+<button id="btn1">Append text</button>
+<button id="btn2">Append list item</button>
+
+

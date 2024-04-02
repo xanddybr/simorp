@@ -8,7 +8,7 @@ Class DataSourceAPI {
             private array $_httpheader;
             private array $_postfields;
             private bool $_returntransfer = true;
-           
+                       
 
             public function get_url(){
                 return $this->_url;
@@ -52,7 +52,6 @@ Class DataSourceAPI {
                         curl_setopt($curl, CURLOPT_URL, $this->_url);
                         curl_setopt($curl, CURLOPT_POSTFIELDS, $this->_postfields);
                         curl_setopt($curl, CURLOPT_RETURNTRANSFER, $this->_returntransfer);
-                        curl_setopt($curl, CURLOPT_HTTPAUTH, $this->_curlauth_basic);
                         curl_setopt($curl, CURLOPT_CONNECTTIMEOUT, 10);
                         curl_setopt($curl, CURLOPT_TIMEOUT, 30);
                         curl_close ($curl);                       
