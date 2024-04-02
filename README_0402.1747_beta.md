@@ -11,6 +11,8 @@
 `Notes-release`:
 
 [
+
+0402.1747 : request fill .json file
 0401.1809 : create multiple line itens add
 0327.1753 : implemented mask date and currency em frm registro de preço
 0326.1750 : implemented method post(refinament)

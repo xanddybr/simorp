@@ -18,37 +18,51 @@
 
 
 <script>
-	
+
+		$(document).ready(function(){
+  			$("#add").click(function(){
+				$("#obs").val($(".valorUni").val());
+			})
+		})
+
+
+		//MASK DATE
 		$(function() {
 			$(".mskdate").mask("99/99/9999");
 		});
 
+		//MASK CURRENCY REAL-BR
 		$(function() {
-			$('.dinheiro').mask('#.##0,00', {reverse: true});
+			$('.dinheiro').mask('#.##9,99', {reverse: true});
 		});
 
+
 		$(document).ready(function (){
-			$('#qtdItem').focus(function (){
-				
-				alert('recebido');
-				exit();
-				
+			$('.valorTotal').focus(function (){
+			
+			var v1 = $(".valorUni").val();
+			var v2 = $(".qtdItem").val();
+
+			var vlitem = parseFloat(v1) * v2;
+
+			$(".valorTotal").val(parseFloat(vlitem));
+
 			})
 		})
 
-		
+		//INSERT LINE ITEM IN TABLE
 		$(document).ready(function(){
   			$("#btn-add").click(function(){
-
-				var row = "<tr>"+
-				"<td> <input class='form-control' name='solRegPrec[]' list='itens' placeholder='DIGITE O ID/DESCRIÇÃO DO ITEM' />" +
+				
+				var row = "<tr>" +
+				"<td> <input class='form-control' name='solRegPrec[]' list='itens' placeholder='INFORME O ITEM...' />" +
 				"<datalist id='itens'><option value='184169 - CARRO 1.0 GASOLINA MOTOR 4 CV BLINDADO'></option></datalist> </td>" + 
 
 				"<td> <input class='form-control' list='tpObjeto' name='solRegPrec[]' />" +
 				"<datalist id='tpObjeto'>" +
 				"<option value='MATERIAL'></option>" +
 				"<option value='SERVIÇO'></option>" +
-				"</datalist> </td>" + 
+				"</datalist> </td>" +
 				
 				"<td> <input class='form-control' list='unidade' style='width: 100px' placeholder='' name='solRegPrec[]' />" +
 				"<datalist id='unidade'>" +
@@ -61,16 +75,18 @@
 				"<option value='LT'>LITRO</option>" +
 				"</datalist> </td>" +
 				
-				"<td> <input class='form-control dinheiro' type='text' id='valorUni'  name='solRegPrec[]' placeholder='R$' value='' style='display:inline-block' required/> </td>" + 
-				"<td> <input class='form-control' type='text' id='qtdItem' placeholder='' name='solRegPrec[]' value='' required /> </td>" + 
-				"<td> <input class='form-control dinheiro' id='valorTotal' placeholder='R$' name='solRegPrec[]' value='' required /> </td>" + 
-				"<td>&nbsp;&nbsp;</td>" + 
+				"<td> <input class='form-control dinheiro' type='text' id=''  placeholder='R$' value='' name='solRegPrec[]'  required/> </td>" +
+				"<td> <input class='form-control' type='text' id='qtdItemi' placeholder='' name='solRegPrec[]' value='' required /> </td>" +
+				"<td> <input class='form-control dinheiro' id='valorTotal' placeholder='R$' name='solRegPrec[]' value='' required /> </td>" +
+				"<td>&nbsp;&nbsp;</td>" +
 				"<td>&nbsp;&nbsp;</td></tr>";
 
 				$("#table01:last").append(row);
+				
+				
+		})
 
-	 			 })
-
+		//REMOVE LINE OF ITEM IN TABLE
 		$("#btn-rmv").click(function(){
 			
     			$("#table01 tr:last").remove();
@@ -168,10 +184,10 @@
 								
 								 <div class="form-group col-lg-12">
 									<label>Observação</label>
-									<textarea class="form-control" rows="2" name='solRegPrec[]' ><?php  ?></textarea>
+									<textarea class="form-control" id='obs' rows="2" name='solRegPrec[]' ><?php  ?></textarea>
 								 </div><br>
 								 <div>
-								</label><input type='submit' class='btn-primary pull-right' name='adduni' value='Add Unid.'  /><button type="submit" name='salvar' class="btn-primary pull-right" >Salvar</button></div>
+								</label><input type='button' class='btn-primary pull-right' id='add' name='adduni' value='Add Unid.'  /><button type="submit" name='salvar' class="btn-primary pull-right" >Salvar</button></div>
 				
 					
 				</div>
@@ -201,7 +217,7 @@
 						
 						<tr> 
 							<td data-field="text">
-								<input class="form-control" placeholder="DIGITE A ID/DESCRIÇÃO DO ITEM" list='itens' style='width: 800px' name="solRegPrec[]" />
+								<input class="form-control" placeholder="INFORME O ITEM..." list='itens' style='width: 800px' name="solRegPrec[]" />
 								<datalist id='itens'>
 									<option value="184169 - CARRO 1.0 GASOLINA MOTOR 4 CV BLINDADO"></option>
 									<option value="158468 - MOTOCILCETA"></option>
@@ -235,9 +251,9 @@
 
 							</td>
 							
-							<td data-field="text" style="width: 120px"><input class="form-control dinheiro " type="text" id="valorUni"  name="solRegPrec[]" placeholder="R$" value="" required/></td>
-							<td data-field="text" style="width: 100px"><input class="form-control " type="text" id="qtdItem" placeholder="" name="solRegPrec[]" value="" required /></td>
-							<td data-field="text" style="width: 120px"><input class="form-control dinheiro" id="valorTotal" placeholder="R$" name="solRegPrec[]" value="" required /></td>
+							<td data-field="text" style="width: 120px"><input class="form-control dinheiro valorUni" type="text" id=""  name="solRegPrec[]" placeholder="R$" value="" required/></td>
+							<td data-field="text" style="width: 100px"><input class="form-control qtdItem" type="text" id="" placeholder="" name="solRegPrec[]" value="" required /></td>
+							<td data-field="text" style="width: 120px"><input class="form-control dinheiro valorTotal " id="" placeholder="R$" name="solRegPrec[]" value="" required /></td>
 							<td data-field="text" style="width: 70px">&nbsp;&nbsp;<input type="button" id="btn-add" value='add' name="" /></td>
 							<td data-field="text" style="width: 70px"><input type="button" id="btn-rmv" name="" value='Rmv'></button></td>
 
