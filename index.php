@@ -17,9 +17,9 @@
 <link href="./css/bootstrap.min.css" rel="stylesheet">
 <link href="./css/bootstrap.css" rel="stylesheet">
 <link href="./css/styles.css" rel="stylesheet">
+<link href="./img/ico/pencil.ico" rel="icon" type="image/x-icon" >
 
 <!--load Icons and javascripts-->
-<link rel="icon" type="image/x-icon" href="img/ico/pencil.ico">
 <script src="./js/lumino.glyphs.js"></script>
 <script src="./js/jquery-1.9.0.min.js" type="text/javascript" charset="utf-8"></script>
 
