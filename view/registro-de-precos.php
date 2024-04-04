@@ -47,13 +47,24 @@
 
 			$(".valorTotal").val(parseFloat(vlitem));
 
-			})
 		})
+
+			//REMOVE LINE OF ITEM IN TABLE
+			$(".btn-rmv").click(function(){
+			
+			$("#table01 tr:last").remove();
+	  	})
+
+
+})
 
 		//INSERT LINE ITEM IN TABLE
 		$(document).ready(function(){
   			$("#btn-add").click(function(){
-				
+
+				let i = 0;
+				do { 
+
 				var row = "<tr>" +
 				"<td> <input class='form-control' name='solRegPrec[]' list='itens' placeholder='INFORME O ITEM...' />" +
 				"<datalist id='itens'><option value='184169 - CARRO 1.0 GASOLINA MOTOR 4 CV BLINDADO'></option></datalist> </td>" + 
@@ -75,24 +86,26 @@
 				"<option value='LT'>LITRO</option>" +
 				"</datalist> </td>" +
 				
-				"<td> <input class='form-control dinheiro' type='text' id=''  placeholder='R$' value='' name='solRegPrec[]'  required/> </td>" +
-				"<td> <input class='form-control' type='text' id='qtdItemi' placeholder='' name='solRegPrec[]' value='' required /> </td>" +
-				"<td> <input class='form-control dinheiro' id='valorTotal' placeholder='R$' name='solRegPrec[]' value='' required /> </td>" +
+				"<td> <input class='form-control dinheiro' type='text' id='valorUni"+[i]+"' placeholder='R$' value='' name='solRegPrec[]'  required/> </td>" +
+				"<td> <input class='form-control' type='text' id='qtdItem[i]' placeholder='' name='solRegPrec[]' value='' required /> </td>" +
+				"<td> <input class='form-control dinheiro' id='valorTotal[i]' placeholder='R$' name='solRegPrec[]' value='' required /> </td>" +
 				"<td>&nbsp;&nbsp;</td>" +
-				"<td>&nbsp;&nbsp;</td></tr>";
+				"<td><input class='btn-rmv' type='button' id='' name='' value='Rmv'></td></tr>";
 
-				$("#table01:last").append(row);
+				$("#table01:last").append(row);	
+
+				i+=1;
+
+				 } while (i < 1);
 				
+				})		
 				
 		})
 
-		//REMOVE LINE OF ITEM IN TABLE
-		$("#btn-rmv").click(function(){
-			
-    			$("#table01 tr:last").remove();
-  			})
+		
+
 				 
-		})
+
 
 
 			
@@ -251,11 +264,11 @@
 
 							</td>
 							
-							<td data-field="text" style="width: 120px"><input class="form-control dinheiro valorUni" type="text" id=""  name="solRegPrec[]" placeholder="R$" value="" required/></td>
-							<td data-field="text" style="width: 100px"><input class="form-control qtdItem" type="text" id="" placeholder="" name="solRegPrec[]" value="" required /></td>
-							<td data-field="text" style="width: 120px"><input class="form-control dinheiro valorTotal " id="" placeholder="R$" name="solRegPrec[]" value="" required /></td>
+							<td data-field="text" style="width: 120px"><input class="form-control dinheiro" type="text" id="valorUni"  name="solRegPrec[]" placeholder="R$" value="" required/></td>
+							<td data-field="text" style="width: 100px"><input class="form-control" type="text" id="qtdItem" placeholder="" name="solRegPrec[]" value="" required /></td>
+							<td data-field="text" style="width: 120px"><input class="form-control dinheiro" id="valorTotal" placeholder="R$" name="solRegPrec[]" value="" required /></td>
 							<td data-field="text" style="width: 70px">&nbsp;&nbsp;<input type="button" id="btn-add" value='add' name="" /></td>
-							<td data-field="text" style="width: 70px"><input type="button" id="btn-rmv" name="" value='Rmv'></button></td>
+							<td data-field="text" style="width: 70px"><input class="btn-rmv" type="button" id="" name="" value='Rmv'></button></td>
 
 						</tr>
 				</table>

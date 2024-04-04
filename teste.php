@@ -4,24 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="data/data0.json"></script>
+ 
 </head>
 
 <?php
 
-        function plus(int $n1 , int $n2) {
-                $n3 = $n1 + $n2;
-                return $n3;
-        }
-
-        function getData() {
-                $data = $_POST['data'];
-                return $data;
-        }
-
+ 
 
 ?>
 
+
 <script src="./js/jquery-1.11.1.min.js"></script>
+
+<script>
+
+//Input Autocomplete field Jquery
+
+  $(document).ready(function (){
+
+        url = 'data/data0.json';
+        $.getJSON(url, function(data) {
+        $(data.registros).each(function(obj) {
+            carsOption = "<option value=\"" + data.registros[obj]['sigla'] + " - " + data.registros[obj]['uniGestora'].toUpperCase() + "\"></option>";
+            $('#orgaos').append(carsOption);
+           
+        })
+    })
+})
+      
+       
+        
+
+ 
+ 
+
+</script>
+
+
+
 
 <script>
 
@@ -68,10 +89,9 @@ $(document).ready(function (){
 
 </div>
 
-<input type='text' width='100px' id='box0' name='data' /><button type='button' id='bt1' >Adicionar</button>
-
-<p id="demo"></p>
-
+<label>Auto Fill</label><BR><BR>
+<input list='orgaos' autocomplete='true' style='width:500px;'/>
+<datalist id='orgaos'></datalist>
 </form>   
 </body>
 </html>
