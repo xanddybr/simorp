@@ -12,6 +12,7 @@
 
 [
 
+0504.1902 : implemented select tipo objeto
 0404.1945 : autofill and refinament
 0403.2117 : create field autofill and refinament
 0402.1747 : request fill .json file

@@ -32,12 +32,16 @@
         })
     })
 })
-      
-       
-        
 
- 
- 
+
+$(document).ready(function () {
+  
+    $("#btn").click(function(){
+        var fruta = $('#select').val();
+        alert(fruta);
+        })
+
+    })
 
 </script>
 
@@ -45,8 +49,6 @@
 
 
 <script>
-
-const d = new Date();
 
 /*        
 $(document).ready(function (){
@@ -90,8 +92,16 @@ $(document).ready(function (){
 </div>
 
 <label>Auto Fill</label><BR><BR>
-<input list='orgaos' autocomplete='true' style='width:500px;'/>
-<datalist id='orgaos'></datalist>
+<select id="select" style="width:500px;">
+
+<option value='maçã' >maçã</option>
+<option value='limão' >limão</option>
+<option value='canela' >canela</option>
+
+</select>
+
+<input type='button' value='acionar' id='btn' />
+
 </form>   
 </body>
 </html>

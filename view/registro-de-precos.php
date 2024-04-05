@@ -21,7 +21,7 @@
 
 		$(document).ready(function(){
   			$("#add").click(function(){
-				$("#obs").val($(".valorUni").val());
+				alert($("#tipoObjeto").val());
 			})
 		})
 
@@ -55,6 +55,7 @@
 	})
 
 
+
 	$(document).ready(function (){
 			var orgao;
 			var url = 'data/orgaos.json';
@@ -68,18 +69,27 @@
     })
 
 
-	$(document).ready(function (){
-			var itenList;
-			var url = 'data/itens.json';
-			$.getJSON(url, function(data) {
-		$(data.itens).each(function(obj) {
-		itenList = "<option value=\"" + data.itens[obj]['idItem'] + " - " + data.itens[obj]['artigo'].toUpperCase() + "\">\"" + data.itens[obj]['descricao_completa'].toUpperCase() + "\"</option>";
-		$('#itens').append(itenList);
-   
-		})	
-	  })
-    })
 	
+function changeObjeto(tpObj) {
+	$(document).ready(function (){
+		var itenList;
+		var url = 'data/itens.json';
+	$.getJSON(url, function(data) {
+		$(data.itens).each(function(obj) {
+		if(data.itens[obj]['tipo'] == tpObj) {
+			itenList = "<option value=\"" + data.itens[obj]['id'] + " - " + data.itens[obj]['artigo'].toUpperCase() + " (" + data.itens[obj]['tipo'].toUpperCase() + ")\">\"" + data.itens[obj]['descricao'].toUpperCase() + "\"</option>";
+	}		
+
+	$('#itens').append(itenList);
+
+	})	
+  })
+})
+
+	}		
+		
+  
+
 	$(document).ready(function (){
 			var itenList;
 			var url = 'data/unidades.json';
@@ -103,15 +113,10 @@
 				var row = "<tr>" +
 				"<td> <input class='form-control' name='solRegPrec[]' list='itens' placeholder='INFORME O ITEM...' />" +
 				"<datalist id='itens'></datalist> </td>" + 
-
-				"<td>" +
-				"<select id='tpObjeto' class='form-control' name='solRegPrec[]' >" +
-				"<option value=''></option>" +
-				"<option value='MATERIAL'>MATERIAL</option>" +
-				"<option value='SERVIÇO'>SERVIÇO</option>" +
-				"</select></td>" +
 				
-				"<td> <select id='unidades' class='form-control' name='solRegPrec[]'></select></td>" +
+				"<td> <input list='unidades' class='form-control' placeholder='' name='solRegPrec[]'>" +
+				"<datalist id='unidades'></datalist>"+
+				"</td>" +
 				"<td> <input class='form-control dinheiro' type='text' id='valorUni' placeholder='R$' value='' name='solRegPrec[]'  required/> </td>" +
 				"<td> <input class='form-control' type='text' id='qtdItem' placeholder='' name='solRegPrec[]' value='' required /> </td>" +
 				"<td> <input class='form-control dinheiro' id='valorTotal' placeholder='R$' name='solRegPrec[]' value='' required /> </td>" +
@@ -128,11 +133,6 @@
 				})		
 				
 		})
-
-
-			
-
-
 
 </script>
 
@@ -169,17 +169,14 @@
 
 												<div class="col-lg-3">
 													<label>Tipo de Objeto</label>
-													<select id='tipoObjeto' class="form-control" placeholder="INFORME O TIPO DE OBJETO"  name='solRegPrec[]'>
-															<option value="OBJETO NÃO INFOMRADO"><< SELECIONE O TIPO DE OBJETO >></option>
-															<option value="MATERIAL">MATERIAL</option>
-															<option value="SERVIÇOS">SERVIÇOS</option>
-															<option value="MATERIAL/SERVIÇOS">MATERIAL/SERVIÇO</option>
+													<select id='tipoObjeto' class="form-control" placeholder="INFORME O TIPO DE OBJETO" onChange="changeObjeto($(this).val());"  name='solRegPrec[]'>
+															<option value="material">MATERIAL</option>
+															<option value="serviço">SERVIÇOS</option>
+															<option value="material">MATERIAL/SERVIÇO</option>
 													</select>
 												</div>
 
-												
-
-   											   <div class="col-lg-2">
+												<div class="col-lg-2">
 													<label>Data Recebimento</label>
 													<input class="form-control mskdate" placeholder="      /      /" type="" id='' name='solRegPrec[]' maxlength="10" required>
 												</div>
@@ -190,14 +187,13 @@
 												</div>
 										</div>
 												
-								    
 
 								  <br><br><br><br>
 								  
 								 <div class="form-group col-lg-12">
 									    <label>Orgão Solicitante</label> <!-- Componente alimentado pela Api com id e descrião dos orgãos -->
 									    <input type='text' class="form-control" list='orgaos' name='solRegPrec[]'>
-									<datalist id='orgaos'></datalist>
+								 <datalist id='orgaos'></datalist>
 								 </div>
 								
 								 <div class="form-group col-lg-12">
@@ -224,7 +220,7 @@
 						
 						<tr>
 							<th data-field="name">ID/Descricão</th>
-							<th data-field="name">Tipo Objeto</th>
+						<!--<th data-field="name">Tipo Objeto</th> -->
 							<th data-field="name">Uni</th>
 							<th data-field="name">Valor Item</th>
 							<th data-field="name">Qtd</th>
@@ -235,25 +231,25 @@
 						
 						<tr> 
 							<td data-field="text">
-								<input class="form-control" placeholder="INFORME O ITEM..." list='itens' style='width: 800px;' name="solRegPrec[]" />
+								<input class="form-control" placeholder="INFORME O ITEM..." list='itens' style='width: 760px;' name="solRegPrec[]" />
 								<datalist id='itens'></datalist>
 							</td>
 							
-							<td data-field="text">
+							<!--<td data-field="text">
 								<select id='tpObjeto' class="form-control" list='tpObjeto' name="solRegPrec[]">
 									<option value=""></option>
 									<option value="MATERIAL">MATERIAL</option>
 									<option value="SERVIÇO">SERVIÇO</option>
 								</select>
-							</td>
+							</td>-->
 							
 							<td data-field="text">
-								<select id='unidades' class="form-control" name="solRegPrec[]" placeholder=''></select>
+								<input list='unidades' class="form-control" style='width:250px' name="solRegPrec[]" placeholder=''><datalist id="unidades"></datalist>
 
 						</td>
-							<td data-field="text" style="width: 120px"><input class="form-control dinheiro" type="text" id="valorUni"  name="solRegPrec[]" placeholder="R$" value="" required/></td>
-							<td data-field="text" style="width: 100px"><input class="form-control" type="text" id="qtdItem" placeholder="" name="solRegPrec[]" value="" required /></td>
-							<td data-field="text" style="width: 120px"><input class="form-control dinheiro" id="valorTotal" placeholder="R$" name="solRegPrec[]" value="" required /></td>
+							<td data-field="text" style="width: 120px"><input class="form-control dinheiro" style='width:150px' type="text" id="valorUni"  name="solRegPrec[]" placeholder="R$" value="" required/></td>
+							<td data-field="text" style="width: 100px"><input class="form-control"  type="text" id="qtdItem" placeholder="" name="solRegPrec[]" value="" required /></td>
+							<td data-field="text" style="width: 120px"><input class="form-control dinheiro" style='width:150px' id="valorTotal" placeholder="R$" name="solRegPrec[]" value="" required /></td>
 							<td data-field="text" style="width: 70px">&nbsp;&nbsp;<input type="button" id="btn-add" value='add' name="" /></td>
 							<td data-field="text" style="width: 70px"><input class="btn-rmv" type="button" id="" name="" value='Rmv'></button></td>
 						</tr>
