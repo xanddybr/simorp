@@ -20,8 +20,8 @@
 <script>
 
 		$(document).ready(function(){
-  			$("#add").click(function(){
-				alert($("#tipoObjeto").val());
+  			$("#itenList").click(function(){
+				alert("ok");
 			})
 		})
 
@@ -53,12 +53,11 @@
 	  	})
 
 	})
-
-
+	
 
 	$(document).ready(function (){
-			var orgao;
-			var url = 'data/orgaos.json';
+		var orgao, url;
+			url = 'data/orgaos.json';
 			$.getJSON(url, function(data) {
 		$(data.registros).each(function(obj) {
 		orgao = "<option value=\"" + data.registros[obj]['sigla'] + " - " + data.registros[obj]['uniGestora'].toUpperCase() + "\"></option>";
@@ -68,38 +67,47 @@
 	  })
     })
 
-
 	
-function changeObjeto(tpObj) {
 	$(document).ready(function (){
-		var itenList;
-		var url = 'data/itens.json';
-	$.getJSON(url, function(data) {
-		$(data.itens).each(function(obj) {
-		if(data.itens[obj]['tipo'] == tpObj) {
-			itenList = "<option value=\"" + data.itens[obj]['id'] + " - " + data.itens[obj]['artigo'].toUpperCase() + " (" + data.itens[obj]['tipo'].toUpperCase() + ")\">\"" + data.itens[obj]['descricao'].toUpperCase() + "\"</option>";
-	}		
-
-	$('#itens').append(itenList);
-
-	})	
-  })
-})
-
-	}		
+		$('#tipoObjeto').change(function (){
+		var itenList, url, option;
+		option = $("#tipoObjeto").val();
+		url  = 'data/itens.json';	
+		$('#itens').empty();
 		
-  
+		$.getJSON(url, function(data) {
+		$(data.itens).each(function(obj) {
+
+		if(data.itens[obj]['tipo'] == option) {
+		itenList = "<option value=\"" + data.itens[obj]['id'] + " - " + data.itens[obj]['artigo'].toUpperCase() + " (" + data.itens[obj]['tipo'].toUpperCase() + ")\">\"" + data.itens[obj]['descricao'].toUpperCase() + "\"</option>";
+			$('#itens').append(itenList);
+	    }
+
+		if(option == 'ambos') {
+		itenList = "<option value=\"" + data.itens[obj]['id'] + " - " + data.itens[obj]['artigo'].toUpperCase() + " (" + data.itens[obj]['tipo'].toUpperCase() + ")\">\"" + data.itens[obj]['descricao'].toUpperCase() + "\"</option>";
+			$('#itens').append(itenList);
+	    }
+
+		if(option == '') {
+			$('#itens').empty();
+	    }
+
+				})
+			})	
+		})
+	})
+
 
 	$(document).ready(function (){
-			var itenList;
-			var url = 'data/unidades.json';
-			$.getJSON(url, function(data) {
+		var itenList, url;
+		url = 'data/unidades.json';
+		$.getJSON(url, function(data) {
 		$(data.unidades).each(function(obj) {
-		unidadesList = "<option value=" + data.unidades[obj]['sigla'] + ">" + data.unidades[obj]['sigla'].toUpperCase() + "</option>";
+		unidadesList = "<option value=" + data.unidades[obj]['sigla'] + ">" + data.unidades[obj]['descricao'] + "</option>";
 		$('#unidades').append(unidadesList);
    
-		})	
-	  })
+			})	
+	  	})
     })
 
 
@@ -169,10 +177,11 @@ function changeObjeto(tpObj) {
 
 												<div class="col-lg-3">
 													<label>Tipo de Objeto</label>
-													<select id='tipoObjeto' class="form-control" placeholder="INFORME O TIPO DE OBJETO" onChange="changeObjeto($(this).val());"  name='solRegPrec[]'>
+													<select id='tipoObjeto' class="form-control" placeholder="INFORME O TIPO DE OBJETO" onChange="";  name='solRegPrec[]'>
+														    <option value="selecione"><< SELECIONE UM TIPO >></option>
 															<option value="material">MATERIAL</option>
 															<option value="serviço">SERVIÇOS</option>
-															<option value="material">MATERIAL/SERVIÇO</option>
+															<option value="ambos">MATERIAL/SERVIÇO</option>
 													</select>
 												</div>
 
@@ -231,22 +240,17 @@ function changeObjeto(tpObj) {
 						
 						<tr> 
 							<td data-field="text">
-								<input class="form-control" placeholder="INFORME O ITEM..." list='itens' style='width: 760px;' name="solRegPrec[]" />
+								<input class="form-control" id='listItens' placeholder="INFORME O ITEM..." list='itens'  style='width: 760px;' name="solRegPrec[]" autocomplete="off" />
 								<datalist id='itens'></datalist>
 							</td>
-							
-							<!--<td data-field="text">
-								<select id='tpObjeto' class="form-control" list='tpObjeto' name="solRegPrec[]">
-									<option value=""></option>
-									<option value="MATERIAL">MATERIAL</option>
-									<option value="SERVIÇO">SERVIÇO</option>
-								</select>
-							</td>-->
-							
+																				
 							<td data-field="text">
-								<input list='unidades' class="form-control" style='width:250px' name="solRegPrec[]" placeholder=''><datalist id="unidades"></datalist>
 
-						</td>
+								<input list='unidades' class="form-control" style='width:250px' name="solRegPrec[]" placeholder=''>
+								<datalist id="unidades" ></datalist>
+ 
+    						</td>
+
 							<td data-field="text" style="width: 120px"><input class="form-control dinheiro" style='width:150px' type="text" id="valorUni"  name="solRegPrec[]" placeholder="R$" value="" required/></td>
 							<td data-field="text" style="width: 100px"><input class="form-control"  type="text" id="qtdItem" placeholder="" name="solRegPrec[]" value="" required /></td>
 							<td data-field="text" style="width: 120px"><input class="form-control dinheiro" style='width:150px' id="valorTotal" placeholder="R$" name="solRegPrec[]" value="" required /></td>

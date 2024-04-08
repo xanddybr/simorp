@@ -12,6 +12,7 @@
 
 [
 
+0408.1743 : autofill and refinament filterring for selectbox
 0504.1902 : implemented select tipo objeto
 0404.1945 : autofill and refinament
 0403.2117 : create field autofill and refinament

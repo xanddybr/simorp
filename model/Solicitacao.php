@@ -6,17 +6,19 @@ require_once 'ConnectAPI.php';
 Class Solicitacao extends ObjetoItens {
 
 
-          private int $idSol;    
+          private int    $idSol;    
+          private string $tipoSol;
           private string $nProcesso;
           private string $uniGestora;
-          private int $nAta;
+          private string $orgaoAderente;
+          private int    $nAta;
           private string $tipoObjeto;
           private string $tipoAta;
-          private array $itens;
+          private string $itens;
           private string $dataReceb;
           private string $dataEncam;
           private string $obs;
-          private float $valor;
+          private float  $valor;
 
 
     /* public function __construct(int $idSol, string $nProcesso, string $uniGestora, int $nAta, string $tipoObjeto, string $tipoAta, array $itens, string $dataReceb, string $dataEncam, string $obs, float $valor) {
@@ -42,7 +44,14 @@ Class Solicitacao extends ObjetoItens {
       public function get_idSol() {
           return $this->idSol;
         }
-        
+      
+      public function set_tipoSol(string $tipoSol) {
+          $this->tipoSol = strtoupper($tipoSol);
+        }
+      public function get_tipoSol() {
+          return $this->tipoSol;
+        }
+
       public function set_nProcesso(string $nProcesso) {
           $this->nProcesso = strtoupper($nProcesso);
         }
@@ -55,6 +64,13 @@ Class Solicitacao extends ObjetoItens {
         }
       public function get_uniGestora() {
           return $this->uniGestora;
+        }
+
+      public function set_orgaoAderente(string $orgaoAderente) {
+          $this->uniGestora = strtoupper($orgaoAderente);
+        }
+      public function get_orgaoAderente() {
+          return $this->orgaoAderente;
         }
 
       public function set_nAta(int $nAta) {
@@ -136,6 +152,7 @@ Class Solicitacao extends ObjetoItens {
             $this->dataEncam = $data['data_encaminhamento'];
             $this->obs = $data['observacao'];
             $this->valor = $data['valor_total'];
+
             
                 
           }

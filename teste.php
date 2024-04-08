@@ -21,27 +21,29 @@
 
 //Input Autocomplete field Jquery
 
-  $(document).ready(function (){
+    $(document).ready(function (){
 
-        url = 'data/data0.json';
-        $.getJSON(url, function(data) {
-        $(data.registros).each(function(obj) {
-            carsOption = "<option value=\"" + data.registros[obj]['sigla'] + " - " + data.registros[obj]['uniGestora'].toUpperCase() + "\"></option>";
-            $('#orgaos').append(carsOption);
-           
+            url = 'data/data0.json';
+            $.getJSON(url, function(data) {
+            $(data.registros).each(function(obj) {
+                carsOption = "<option value=\"" + data.registros[obj]['sigla'] + " - " + data.registros[obj]['uniGestora'].toUpperCase() + "\"></option>";
+                $('#orgaos').append(carsOption);
+              
+            })
         })
     })
-})
 
 
-$(document).ready(function () {
-  
-    $("#btn").click(function(){
-        var fruta = $('#select').val();
-        alert(fruta);
-        })
-
-    })
+    $("button").click(function(){
+      $.post("data/unidades.json",
+      {
+        name: "Donald Duck",
+        city: "Duckburg"
+      },
+      function(data, status){
+        alert("Data: " + data + "\nStatus: " + status);
+      });
+    });
 
 </script>
 

@@ -103,17 +103,18 @@
 						<table data-toggle="table" data-url="data/registros.json" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
 						    <thead>
 						    <tr>
-						        <th data-field="nsol" data-sortable="true">Nº Reg</th>
+						        <th data-field="idSol" data-sortable="true">Nº Reg</th>
 								<th data-field="usuario" data-sortable="true">Usuario</th>
-						        <th data-field="process" data-sortable="true">Processo SEI</th>
+						        <th data-field="processo" data-sortable="true">Processo SEI</th>
 						        <th data-field="orgaoSol" data-sortable="true">Orgão Solicitante</th>
 								<th data-field="tipObj" data-sortable="true">Tipo Objeto</th>
 								<th data-field="dataRec" data-sortable="true">Data Rec</th>
 								<th data-field="dataEnc" data-sortable="true">Data Enc</th>
 								<th data-field="valor" data-sortable="true">Valor</th>
-								
-						    </tr>
+							</tr>
 						    </thead>
+
+
 						<input type='button' value='imprimir' />	
 						</table>
 						
@@ -153,7 +154,7 @@
 			}
 			return {};
 		}
-	</script>
+		</script>
 	
 	
 </div><!--/.main-->

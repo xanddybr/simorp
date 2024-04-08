@@ -130,7 +130,7 @@ Class Usuario {
         if($this->usuario == "homolog" && $this->senha == "123") {
 
           $_SESSION["login"] = ['HOMOLOGAÇÃO','logado'];
-          setcookie('timeUser', $this->usuario , time() + 7200); // time duration 10hs 
+          setcookie('timeUser', $this->usuario , time() + 7200); // time duration 1:00h 
 
         if(isset($_SESSION['login'])){
           
@@ -175,7 +175,7 @@ Class Usuario {
 
 
       
-       public function TimeOutSession() {
+       public function LogoutSessionTimeOut() {
         $_SESSION['login'] = [null, null, null];
         session_destroy();
       }
