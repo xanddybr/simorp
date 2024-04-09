@@ -33,7 +33,7 @@ Class ControllerUsuario {
 
     public static function TimeOut() {
         $usuario = new Usuario();
-        $usuario->TimeOutSession();
+        $usuario->LogoutSessionTimeOut();
     }
 
    

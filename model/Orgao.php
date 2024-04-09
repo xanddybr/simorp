@@ -6,16 +6,18 @@ class Orgao {
 
   
         private int $idOrg;
-        private string $sigla;
+        private string $idorgao;
         private string $descricao;
+        private string $orgaoGestor;
+        private string $orgaoAderente;
        
         
-    function __construct(int $idOrg, string $sigla, string $descricao) {
+    /*function __construct(int $idOrg, string $sigla, string $descricao) {
 
         $this->idOrg = $idOrg;
         $this->sigla = $sigla;
         $this->descricao = $descricao;
-    }
+    }*/
    
     public function set_idOrg(int $idOrg) {
         $this->idOrg = $idOrg;
@@ -41,6 +43,21 @@ class Orgao {
         return $this->descricao;
       }
     
+    public function set_orgaoGestor(string $orgaoGestor) {
+        $this->orgaoGestor = $orgaoGestor;
+      }
+
+    public function get_orgaoGestor() {
+        return $this->orgaoGestor;
+      }
+
+    public function set_orgaoAderente(string $orgaoAderente) {
+        $this->orgaoAderente = $orgaoAderente;
+      }
+
+    public function get_orgaoAderente() {
+        return $this->orgaoAderente;
+      }
   }
 
 
