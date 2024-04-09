@@ -1,32 +1,61 @@
 [ 
         
         {
-
-        "idSol" : 9,  
-        "data_recebimento": " 15:43 02/04/2024",
-        "data_encaminhamento": " 15:43 02/04/2024 ",
-        "tipo_solicitacao": "REGISTRO DE PRECO",
-        "tipo_objeto": "MATERIAL",
+        "idSol" : 1,  
+        "tipoSol": "REGISTRO DE PRECO",
         "processo": "SEI-0402.1531/15252/2024",
-        "tipo_ata": "INTERNA",
-        "observacao": "TESTE DE INCLUSÃO DE SOLICITAÇÃO",
-        "valor_total": 4.00,
+        "orgaoGestor" : "SEPLAG",
+        "orgaoAderente" : "CEPOL",
+        "nAta" : "126458",
+        "tipoObjeto": "MATERIAL",
+        "tipoAta": "INTERNA",
+        "dataReceb": " 15:43 02/04/2024",
+        "dataEncam": " 15:43 02/04/2024",
+        "obs": "TESTE DE INCLUSÃO DE SOLICITAÇÃO",
+        "valorTotal": 4.00,
         "usuario": "ALEXANDRE",
-        "orgao": "SEPLAG",
-        "orgao_aderente": "n/a",
-        "ObjetoItens" : [
-             {
-                "id": 3,
-                "tipo": "servico",
-                "artigo" : "serviços de ensino ",
-                "descricao": "Curso de Django rest Framework",
-                "quantidade": 1,
-                "unidade": "uni",
+        "itens" :[
+                {
+                "idItem": 133019,
+                "descricao": "IDENTIDADE FUNCIONAL, PESSOA JRIDICA",
+                "tipo": "SERVIÇO",
+                "artigo" : "SERVICO CONFECCAO CEDULA IDENTIDADE ",
+                "quantidade": 10,
+                "unidade": "UNI",
                 "valor_unitario": "4.00",
-                "sub_total": "4.00"
-             } 
-            ]
-        }
-
+                "sub_total": "40.00"
+                } 
+                ]
+        },
+        {
+        "idSol" : 1,  
+        "tipoSol": "REGISTRO DE PRECO",
+        "processo": "SEI-0402.1531/15252/2024",
+        "orgaoGestor" : "SEPLAG",
+        "orgaoAderente" : "CEPOL",
+        "nAta" : "126458",
+        "tipoObjeto": "MATERIAL",
+        "tipoAta": "INTERNA",
+        "dataReceb": " 15:43 02/04/2024",
+        "dataEncam": " 15:43 02/04/2024",
+        "obs": "TESTE DE INCLUSÃO DE SOLICITAÇÃO",
+        "valorTotal": 4.00,
+        "usuario": "ALEXANDRE",
+        "itens" :[
+                {
+                "idItem": 133019,
+                "descricao": "IDENTIDADE FUNCIONAL, PESSOA JRIDICA",
+                "tipo": "SERVIÇO",
+                "artigo" : "SERVICO CONFECCAO CEDULA IDENTIDADE ",
+                "quantidade": 10,
+                "unidade": "UNI",
+                "valor_unitario": "4.00",
+                "sub_total": "40.00"
+                } 
+               ]
+        
+        } 
 ]
-   
+        
+
+

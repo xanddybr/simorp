@@ -33,17 +33,24 @@
         })
     })
 
-
     $("button").click(function(){
       $.post("data/unidades.json",
       {
         name: "Donald Duck",
         city: "Duckburg"
       },
+
       function(data, status){
         alert("Data: " + data + "\nStatus: " + status);
       });
     });
+
+
+    $(document).ready(function (){
+      $("#btn").click(function (){
+        $("#select").append("<option value='goiaba' >goiaba</option>");
+      })
+    })
 
 </script>
 

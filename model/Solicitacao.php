@@ -9,23 +9,23 @@ Class Solicitacao extends ObjetoItens {
           private int    $idSol;    
           private string $tipoSol;
           private string $nProcesso;
-          private string $uniGestora;
+          private string $orgaoGestor;
           private string $orgaoAderente;
           private int    $nAta;
           private string $tipoObjeto;
           private string $tipoAta;
-          private string $itens;
           private string $dataReceb;
           private string $dataEncam;
           private string $obs;
-          private float  $valor;
+          private float  $valorTotal;
+          private array $itens;
 
 
-    /* public function __construct(int $idSol, string $nProcesso, string $uniGestora, int $nAta, string $tipoObjeto, string $tipoAta, array $itens, string $dataReceb, string $dataEncam, string $obs, float $valor) {
+    /* public function __construct(int $idSol, string $nProcesso, string $orgaoGestor, int $nAta, string $tipoObjeto, string $tipoAta, array $itens, string $dataReceb, string $dataEncam, string $obs, float $valor) {
 
           $this->idReg = $idSol;   
           $this->Processo = $nProcesso;
-          $this->uniGestora = $uniGestora;
+          $this->orgaoGestor = $orgaoGestor;
           $this->nAta = $nAta;
           $this->tipoObjeto = $tipoObjeto;
           $this->tipoAta = $tipoAta;
@@ -59,15 +59,15 @@ Class Solicitacao extends ObjetoItens {
           return $this->nProcesso;
         }
 
-      public function set_uniGestora(string $uniGestora) {
-          $this->uniGestora = strtoupper($uniGestora);
+      public function set_orgaoGestor(string $orgaoGestor) {
+          $this->orgaoGestor = strtoupper($orgaoGestor);
         }
-      public function get_uniGestora() {
-          return $this->uniGestora;
+      public function get_orgaoGestor() {
+          return $this->orgaoGestor;
         }
 
       public function set_orgaoAderente(string $orgaoAderente) {
-          $this->uniGestora = strtoupper($orgaoAderente);
+          $this->orgaoAderente = strtoupper($orgaoAderente);
         }
       public function get_orgaoAderente() {
           return $this->orgaoAderente;
@@ -122,11 +122,11 @@ Class Solicitacao extends ObjetoItens {
           return $this->obs;
         }
 
-      public function set_valor(float $valor) {
-          $this->valor = $valor;
+      public function set_valorTotal(float $valorTotal) {
+          $this->valor = $valorTotal;
         }
-      public function get_valor() {
-          return $this->valor;
+      public function get_valorTotal() {
+          return $this->valorTotal;
         }
 
 
@@ -144,7 +144,7 @@ Class Solicitacao extends ObjetoItens {
           } else {
                          
             $this->nProcesso = $data['processo'];
-            $this->uniGestora = $data['orgao'];
+            $this->orgaoGestor = $data['orgao'];
             $this->nAta = $data['numero_ata'];
             $this->tipoObjeto = $data['tipo_objeto'];
             $this->tipoAta = $data['tipo_ata'];
@@ -178,7 +178,7 @@ Class Solicitacao extends ObjetoItens {
 
             
          /* echo $this->nProcesso . "  ";
-            echo $this->uniGestora . "  ";
+            echo $this->orgaoGestor . "  ";
             echo $this->tipoObjeto . "  ";
             echo $this->dataReceb . "  ";
             echo $this->dataEncam . "  ";

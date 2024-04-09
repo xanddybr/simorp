@@ -91,7 +91,6 @@
 									</div>-->
 
 								</form>
-	
 				
 								
 			<div class="col-lg-13">
@@ -103,19 +102,27 @@
 						<table data-toggle="table" data-url="data/registros.json" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
 						    <thead>
 						    <tr>
-						        <th data-field="idSol" data-sortable="true">Nº Reg</th>
-								<th data-field="usuario" data-sortable="true">Usuario</th>
-						        <th data-field="processo" data-sortable="true">Processo SEI</th>
-						        <th data-field="orgaoSol" data-sortable="true">Orgão Solicitante</th>
-								<th data-field="tipObj" data-sortable="true">Tipo Objeto</th>
-								<th data-field="dataRec" data-sortable="true">Data Rec</th>
-								<th data-field="dataEnc" data-sortable="true">Data Enc</th>
-								<th data-field="valor" data-sortable="true">Valor</th>
+						        <th data-field="usuario" data-sortable="true"><b>Usuário</b></b></th>
+						        <th data-field="tipoSol" data-sortable="true"><b>Tipo de Solicitação</b></th>
+						        <th data-field="orgaoGestor" data-sortable="true"><b>Orgão Gestor</b></th>
+								<th data-field="orgaoAderente" data-sortable="true"><b>Orgão Aderente</b></th>
+								<th data-field="tipoObjeto" data-sortable="true"><b>Tipo de Objeto</b></th>
+								<th data-field="dataReceb" data-sortable="true"><b>Recebimento</b></th>
+								<th data-field="dataEncam" data-sortable="true"><b>Encaminhamento</b></th>
+								<th data-field="valorTotal" data- data-sortable="true"><b>Total</b></th>
 							</tr>
 						    </thead>
-
-
-						<input type='button' value='imprimir' />	
+							<div class="col-lg-3">
+								<select id='tipoObjeto' class="form-control" placeholder="INFORME O TIPO DE OBJETO" onChange="";  name='solRegPrec[]'>
+										<option value="selecione"><< SELECIONE UM TIPO DE RELATÓRIO >></option>
+										<option value="material">REGISTRO DE PREÇO</option>
+										<option value="serviço">ADESÃO A ATA</option>
+								</select>
+													
+							</div>
+							<div class="col-lg-2"><input type='button' value='Gerar Relatório' class="form-control" /></div>
+						
+						
 						</table>
 						
 					</div>
