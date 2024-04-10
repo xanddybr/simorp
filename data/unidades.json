@@ -42,29 +42,14 @@
 		"descricao": "CONJUNTO"
 	},
 	{
-		"id": 10,
-		"sigla": "ML",
-		"descricao": "MILILITRO"
-	},
-	{
-		"id": 11,
-		"sigla": "CL",
-		"descricao": "CENTILITRO"
-	},
-	{
-		"id": 12,
-		"sigla": "DL",
-		"descricao": "DECANLITRO"
-	},
-	{
 		"id": 14,
 		"sigla": "CX",
 		"descricao": "CAIXA"
 	},
 	{
 		"id": 17,
-		"sigla": "DZ",
-		"descricao": "DEZENA"
+		"sigla": "MT",
+		"descricao": "METRO"
 	},
 	{
 		"id": 22,
