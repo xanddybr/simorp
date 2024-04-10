@@ -22,10 +22,32 @@
 
 -->
 <script>
-	const userNow1 = sessionStorage.getItem("userNow")
-	$(document).ready(function(){
-	$("#demo").append(userNow1)
-})
+	
+		$(document).ready(function(){
+
+			$("#tabRel01").hide();
+			$("#tabRel02").hide();
+
+
+			$("#tpRel").change(function () {
+				if($("#tpRel").val() == "regPrec") {
+							$("#tabRel01").show();
+							$("#tabRel02").hide();
+			
+				}
+			})
+
+			$("#tpRel").change(function () {
+				if($("#tpRel").val() == "adesaoAta") {
+							$("#tabRel02").show();
+							$("#tabRel01").hide();
+				}
+
+			})
+
+		})
+
+
 </script>
 
 </head>
@@ -43,7 +65,7 @@
 		
 		
 		<div class="col-lg-13">
-			<div class="panel panel-default">
+			<div class="panel panel-d;efault">
 				<div class="panel-heading" class="form-group"><label> Relatórios</label> <!----> </div>
 				  <div class="panel-body">
 					
@@ -99,31 +121,54 @@
 				
 					<div class="panel-body">
 					
-						<table data-toggle="table" data-url="data/registros.json" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
-						    <thead>
+					<div class="col-lg-3">
+								<select id='tpRel' class="form-control" placeholder="" name='solRegPrec[]'>
+										<option value="selecione"><< SELECIONE UM TIPO DE RELATÓRIO >></option>
+										<option value="regPrec">REGISTRO DE PREÇO</option>
+										<option value="adesaoAta">ADESÃO A ATA</option>
+								</select>
+													
+							</div>
+					<div class="col-lg-2"><input type='button' value='Gerar Relatório' class="form-control" /></div>
+						
+					<div id="tabRel01"> 
+						<table id="tabRel01" data-toggle="table" data-url="data/registros.json" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
+
+						<thead>
 						    <tr>
-						        <th data-field="usuario" data-sortable="true"><b>Usuário</b></b></th>
-						        <th data-field="tipoSol" data-sortable="true"><b>Tipo de Solicitação</b></th>
-						        <th data-field="orgaoGestor" data-sortable="true"><b>Orgão Gestor</b></th>
-								<th data-field="orgaoAderente" data-sortable="true"><b>Orgão Aderente</b></th>
+								<th data-field="processo" data-sortable="true"><b>Processo SEI</b></b></th>
+						        <th data-field="orgaoGestor" data-sortable="true"><b>Orãgão Solicitante</b></b></th>
+								<th data-field="usuario" data-sortable="true"><b>Usuario</b></th>
+						        <th data-field="orgaoGestor" data-sortable="true"><b>Orgão Solicitante</b></th>
 								<th data-field="tipoObjeto" data-sortable="true"><b>Tipo de Objeto</b></th>
 								<th data-field="dataReceb" data-sortable="true"><b>Recebimento</b></th>
 								<th data-field="dataEncam" data-sortable="true"><b>Encaminhamento</b></th>
 								<th data-field="valorTotal" data- data-sortable="true"><b>Total</b></th>
 							</tr>
-						    </thead>
-							<div class="col-lg-3">
-								<select id='tipoObjeto' class="form-control" placeholder="INFORME O TIPO DE OBJETO" onChange="";  name='solRegPrec[]'>
-										<option value="selecione"><< SELECIONE UM TIPO DE RELATÓRIO >></option>
-										<option value="material">REGISTRO DE PREÇO</option>
-										<option value="serviço">ADESÃO A ATA</option>
-								</select>
-													
-							</div>
-							<div class="col-lg-2"><input type='button' value='Gerar Relatório' class="form-control" /></div>
-						
-						
+						</thead>
 						</table>
+						</div>
+
+
+						<div id="tabRel02"> 
+						<table id="tabRel02" data-toggle="table" data-url="data/registros.json" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
+
+						<thead>
+						    <tr>
+						        <th data-field="processo" data-sortable="true"><b>Processo SEI</b></b></th>
+								<th data-field="usuario" data-sortable="true"><b>Usuario</b></th>
+						        <th data-field="orgaoGestor" data-sortable="true"><b>Orgão Gestor</b></th>
+								<th data-field="nAta" data-sortable="true"><b>Nº Ata</b></th>
+								<th data-field="orgaoAderente" data-sortable="true"><b>Orgão Solicitante</b></th>
+								<th data-field="dataReceb" data-sortable="true"><b>Recebimento</b></th>
+								<th data-field="dataEncam" data-sortable="true"><b>Encaminhamento</b></th>
+								<th data-field="valorTotal" data- data-sortable="true"><b>Total</b></th>
+							</tr>
+						</thead>
+						</table>
+						</divr>
+						
+						
 						
 					</div>
 				</div>
