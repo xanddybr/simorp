@@ -74,21 +74,21 @@
 			itenList = "<option value=\"" + data.itens[obj]['id'] + " - " + data.itens[obj]['artigo'].toUpperCase() + "\">\"" + data.itens[obj]['descricao'].toUpperCase() + "\"</option>";
 			
 			$('#itens').append(itenList);
-				$("#listItens").focusout(function(){
-					let item = $('#listItens').val();
-					   const idItemNow = item.split(" ");
-					   let i = idItemNow[0];
-					$("#idItem").val(i);
-					$("#tpObjeto").val(data.itens[obj]['tipo'].toUpperCase());
+				$('#tipoObjeto').prop('disabled', true);
+					$("#listItens").focusout(function(){
+				   		$("#tpObjeto").val(data.itens[obj]['tipo'].toUpperCase());
 					   
 				})
 			}
 
 			if(option == 'ambos') {
 			itenList = "<option value=\"" + data.itens[obj]['id'] + " - " + data.itens[obj]['artigo'].toUpperCase() + "\">\"" + data.itens[obj]['descricao'].toUpperCase() + "\"</option>";
+			
+			
 			$('#itens').append(itenList);
-				$("#listItens").focusout(function(){
-					$("#tpObjeto").val(data.itens[obj]['tipo'].toUpperCase());
+				$('#tipoObjeto').prop('disabled', true);
+					$("#listItens").focusout(function(){
+						$("#tpObjeto").val(data.itens[obj]['tipo'].toUpperCase());
 					
 				});
 				
@@ -246,7 +246,6 @@
 				 		<table data-toggle="table" id='table01' class="col-lg-12">
 						
 						<tr>
-							<th data-field="name">Id</th>
 							<th data-field="name">Descricão</th>
 						<!--<th data-field="name">Tipo Objeto</th> -->
 							<th data-field="name">Tipo</th>
@@ -258,13 +257,8 @@
 							<th data-field="name"> - </th>
 						</tr>
 					<tr> 
-						<td>
-						<input type='text' id='idItem' value='' class="form-control" style='width: 100px;' name="solRegPrec[]" placeholder='' disabled>
-						</td>
-						
-						
 							<td data-field="text">
-								<input class="form-control" id='listItens' placeholder="INFORME O ITEM..." list='itens'  style='width: 660px;' name="solRegPrec[]" autocomplete="off" enable='false' />
+								<input class="form-control" id='listItens' placeholder="INFORME O ITEM..." list='itens'  style='width: 700px;' name="solRegPrec[]" autocomplete="off" enable='false' />
 								<datalist id='itens'></datalist>
 							</td>
 									

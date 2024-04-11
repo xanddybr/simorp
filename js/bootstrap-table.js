@@ -163,7 +163,7 @@
             return sprintf('Showing %s to %s of %s rows', pageFrom, pageTo, totalRows);
         },
         formatSearch: function () {
-            return 'Search';
+            return 'Pesquisa';
         },
         formatNoMatches: function () {
             return 'No matching records found';
@@ -370,7 +370,7 @@
 
             if (column.checkbox) {
                 if (!that.options.singleSelect && that.options.checkboxHeader) {
-                    text = '<input name="btSelectAll" type="checkbox" />';
+                    text = '<input name="btSelectAll" type="checkbox" placeholder=Pesquisar/>';
                 }
                 that.header.stateField = column.field;
             }

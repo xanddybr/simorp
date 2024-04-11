@@ -1,23 +1,25 @@
 [
 
-
         {
 
         "idSol" : 1,  
-        "tipoSol": "REGISTRO DE PRECO",
+        "tipoSol": "ADESÃO A ATA",
         "processo": "SEI-0402.1531/15252/2024",
         "orgaoGestor" : "SEPLAG",
+        "orgaoAderente" : "DETRAN",
+        "nAta" : "126458",
         "tipoObjeto": "MATERIAL",
+        "tipoAta": "INTERNA",
         "dataReceb": " 15:43 02/04/2024",
         "dataEncam": " 15:43 02/04/2024",
         "obs": "TESTE DE INCLUSÃO DE SOLICITAÇÃO",
         "valorTotal": "40,00",
-        "usuario": "ALEXANDRE",
+        "usuario": "CLAUDIA",
         "itens" :[
                 {
-                "idItem": 133019,
-                "descricao": "IDENTIDADE FUNCIONAL, PESSOA JRIDICA",
-                "tipo": "SERVIÇO",
+                "idItem": 152114,
+                "descricao": "MONITORES AMOLED 24º SANSUNG",
+                "tipo": "MATERIAL",
                 "artigo" : "SERVICO CONFECCAO CEDULA IDENTIDADE ",
                 "quantidade": 10,
                 "unidade": "UNI",
@@ -28,22 +30,22 @@
         },
         {
         "idSol" : 2,  
-        "tipoSol": "REGISTRO DE PRECO",
+        "tipoSol": "ADESÃO A ATA",
         "processo": "SEI-0402.1531/15252/2025",
-        "orgaoGestor" : "SEPLAG",
-        "orgaoAderente" : "CEPOL",
+        "orgaoGestor" : "FAPERJ",
+        "orgaoAderente" : "SEEDUC",
         "nAta" : "126458",
         "tipoObjeto": "MATERIAL",
-        "tipoAta": "INTERNA",
+        "tipoAta": "EXTERNA",
         "dataReceb": " 15:43 02/04/2024",
         "dataEncam": " 15:43 02/04/2024",
         "obs": "TESTE DE INCLUSÃO DE SOLICITAÇÃO",
         "valorTotal": "40.00",
-        "usuario": "GIANCARLO",
+        "usuario": "ANDREIA",
         "itens" :[
-                 {
-                "idItem": 133019,
-                "descricao": "IDENTIDADE FUNCIONAL, PESSOA JRIDICA",
+                {
+                "idItem": 156982,
+                "descricao": "SERVIÇO DE LIMPESA PATRIMONIAL",
                 "tipo": "SERVIÇO",
                 "artigo" : "SERVICO CONFECCAO CEDULA IDENTIDADE ",
                 "quantidade": 10,
@@ -53,4 +55,7 @@
                 } 
                 ]
         }
+        
+       
+
 ]

@@ -132,14 +132,13 @@
 					<div class="col-lg-2"><input type='button' value='Gerar Relatório' class="form-control" /></div>
 						
 					<div id="tabRel01"> 
-						<table id="tabRel01" data-toggle="table" data-url="data/registros.json" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
+						<table id="tabRel01" data-toggle="table" data-url="./data/registros.json" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
 
 						<thead>
 						    <tr>
 								<th data-field="processo" data-sortable="true"><b>Processo SEI</b></b></th>
-						        <th data-field="orgaoGestor" data-sortable="true"><b>Orãgão Solicitante</b></b></th>
 								<th data-field="usuario" data-sortable="true"><b>Usuario</b></th>
-						        <th data-field="orgaoGestor" data-sortable="true"><b>Orgão Solicitante</b></th>
+						        <th data-field="orgaoGestor" data-sortable="true"><b>Orgão Solicitante</b></b></th>
 								<th data-field="tipoObjeto" data-sortable="true"><b>Tipo de Objeto</b></th>
 								<th data-field="dataReceb" data-sortable="true"><b>Recebimento</b></th>
 								<th data-field="dataEncam" data-sortable="true"><b>Encaminhamento</b></th>
@@ -151,7 +150,7 @@
 
 
 						<div id="tabRel02"> 
-						<table id="tabRel02" data-toggle="table" data-url="data/registros.json" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
+						<table id="tabRel02" data-toggle="table" data-url="data/adesaoata.json" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
 
 						<thead>
 						    <tr>
@@ -159,6 +158,7 @@
 								<th data-field="usuario" data-sortable="true"><b>Usuario</b></th>
 						        <th data-field="orgaoGestor" data-sortable="true"><b>Orgão Gestor</b></th>
 								<th data-field="nAta" data-sortable="true"><b>Nº Ata</b></th>
+								<th data-field="tipoObjeto" data-sortable="true"><b>Tipo de Objeto</b></th>
 								<th data-field="orgaoAderente" data-sortable="true"><b>Orgão Solicitante</b></th>
 								<th data-field="dataReceb" data-sortable="true"><b>Recebimento</b></th>
 								<th data-field="dataEncam" data-sortable="true"><b>Encaminhamento</b></th>

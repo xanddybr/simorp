@@ -149,11 +149,7 @@ Class Usuario {
       }
       
     }  
-       
-
     }
-
-
 
     public function ValidateData($check) {
     
@@ -172,16 +168,12 @@ Class Usuario {
         }
       } 
 
-
-
-      
-       public function LogoutSessionTimeOut() {
+     
+    public function LogoutSessionTimeOut() {
         $_SESSION['login'] = [null, null, null];
         session_destroy();
       }
-    
-    
-       
+      
     
       // public function for logout user     
         public function LogoutSession() {
