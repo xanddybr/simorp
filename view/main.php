@@ -76,8 +76,8 @@
 				</ul>
 			</li>
 
-			<li><a href="<?php echo ('registro-de-precos'); ?>" ><svg class="glyph stroked line-graph"><use xlink:href="#stroked-pencil"></use></svg> Registro de preço</a></li>
-		    <li><a href="<?php echo ('adesao-ata'); ?>"><svg class="glyph stroked table"><use xlink:href="#stroked-pencil"></use></svg> Adesão a Ata</a></li>
+			<li><a href="<?php echo ('registro-de-precos'); ?>" ><svg class="glyph stroked line-graph"><use xlink:href="#stroked-pencil"></use></svg> Solicitação</a></li>
+		    <!-- <li><a href="<?php echo ('adesao-ata'); ?>"><svg class="glyph stroked table"><use xlink:href="#stroked-pencil"></use></svg> Adesão a Ata</a></li>-->
 			<li><a href="<?php echo ('relatorios'); ?>"><svg class="glyph stroked line-graph"><use xlink:href="#stroked-line-graph"></use></svg> Relatórios</a></li>
 			<!-- <li><a href="forms.php"><svg class="glyph stroked pencil"><use xlink:href="#stroked-pencil"></use></svg> Forms</a></li> -->
 			<!-- <li><a href="panels.php"><svg class="glyph stroked app-window"><use xlink:href="#stroked-app-window"></use></svg> Alerts &amp; Panels</a></li> -->

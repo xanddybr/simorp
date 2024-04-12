@@ -163,7 +163,7 @@
             return sprintf('Showing %s to %s of %s rows', pageFrom, pageTo, totalRows);
         },
         formatSearch: function () {
-            return 'Pesquisa';
+            return 'Pesquisar';
         },
         formatNoMatches: function () {
             return 'No matching records found';
@@ -370,7 +370,7 @@
 
             if (column.checkbox) {
                 if (!that.options.singleSelect && that.options.checkboxHeader) {
-                    text = '<input name="btSelectAll" type="checkbox" placeholder=Pesquisar/>';
+                    text = '<input name="btSelectAll" type="checkbox" />';
                 }
                 that.header.stateField = column.field;
             }
@@ -555,12 +555,12 @@
         }
 
         if (this.options.showRefresh) {
-            this.$toolbar.find('button[name="refresh"]')
+            this.$toolbar.find('button[name="atualizar"]')
                 .off('click').on('click', $.proxy(this.refresh, this));
         }
 
         if (this.options.showToggle) {
-            this.$toolbar.find('button[name="toggle"]')
+            this.$toolbar.find('button[name="agrupar"]')
                 .off('click').on('click', function () {
                     that.options.cardView = !that.options.cardView;
                     that.initHeader();

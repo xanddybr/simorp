@@ -151,7 +151,7 @@ Class Usuario {
     }  
     }
 
-    public function ValidateData($check) {
+      public function ValidateData($check) {
     
         //verify data coming of datasource and authentic user 
         if(Usuario::AuthenticUserAPI() != 'false')  {
@@ -169,14 +169,14 @@ Class Usuario {
       } 
 
      
-    public function LogoutSessionTimeOut() {
+      public function LogoutSessionTimeOut() {
         $_SESSION['login'] = [null, null, null];
         session_destroy();
       }
       
     
       // public function for logout user     
-        public function LogoutSession() {
+      public function LogoutSession() {
         
         $_SESSION['login'] = [null, null, null];
         setcookie('timeUser', null , null);  
@@ -186,14 +186,14 @@ Class Usuario {
        }
 
 
-       public function LogonSession() {
+      public function LogonSession() {
     
         if(!isset($_SESSION['login'])) {
 
          try {
                  $_SESSION["login"] = [$this->nome . " " . $this->sobrenome, $this->token,'logado'];
-                 setcookie('timeUser', $this->nome , time() + 43200); // time duration 10hs 
-
+                 setcookie('timeUser', $this->nome , time() + 43200); // time duration 10hs
+                 
          } catch(Exception $e){
 
                  echo "Erro na tentativa de criar a sessão!";
@@ -227,7 +227,7 @@ Class Usuario {
 
 
        //Create cookie for storage user and password in browser
-       public function MakeUserCookie($check) {
+      public function MakeUserCookie($check) {
         if(isset($check) && $check == true) {
           
           setcookie('rmb', 'checked', time() + 86400*90);
