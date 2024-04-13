@@ -11,7 +11,8 @@
 `Notes-release`:
 
 [
-
+0412.1801 : vide form
+0411.1811 : implemented fields table
 0410.1853 : implemented and set fields table report and build field id
 0409.1753 : implemented select type object and fix data-model solicitacação in json file
 0408.1743 : autofill and refinament filterring for selectbox

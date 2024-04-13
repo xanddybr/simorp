@@ -58,6 +58,21 @@
 		})
 	
         */
+
+		$(document).ready(function (){
+			$('#tipoSolici').change(function (){
+
+				if ($('#tipoSolici').val() == 'regPreco') {
+					alert($('#tipoSolici').val());
+				}
+				if ($('#tipoSolici').val() == 'adesaoAta') {
+					alert($('#tipoSolici').val());
+				}
+				
+			    })
+
+			})
+		
 		
 	
 		$(document).ready(function (){
@@ -74,21 +89,21 @@
 			itenList = "<option value=\"" + data.itens[obj]['id'] + " - " + data.itens[obj]['artigo'].toUpperCase() + "\">\"" + data.itens[obj]['descricao'].toUpperCase() + "\"</option>";
 			
 			$('#itens').append(itenList);
-				$("#listItens").focusout(function(){
-					let item = $('#listItens').val();
-					   const idItemNow = item.split(" ");
-					   let i = idItemNow[0];
-					$("#idItem").val(i);
-					$("#tpObjeto").val(data.itens[obj]['tipo'].toUpperCase());
+				$('#tipoObjeto').prop('disabled', true);
+					$("#listItens").focusout(function(){
+				   		$("#tpObjeto").val(data.itens[obj]['tipo'].toUpperCase());
 					   
 				})
 			}
 
 			if(option == 'ambos') {
 			itenList = "<option value=\"" + data.itens[obj]['id'] + " - " + data.itens[obj]['artigo'].toUpperCase() + "\">\"" + data.itens[obj]['descricao'].toUpperCase() + "\"</option>";
+			
+			
 			$('#itens').append(itenList);
-				$("#listItens").focusout(function(){
-					$("#tpObjeto").val(data.itens[obj]['tipo'].toUpperCase());
+				$('#tipoObjeto').prop('disabled', true);
+					$("#listItens").focusout(function(){
+						$("#tpObjeto").val(data.itens[obj]['tipo'].toUpperCase());
 					
 				});
 				
@@ -98,9 +113,6 @@
 				})	
 			})
 		})
-
-
-
 
 		$(document).ready(function (){
 			var orgao, url;
@@ -178,11 +190,26 @@
 				<div class="panel panel-default">
 						
 					<div class="panel-heading" class="form-group">
-						<label>Registro de preço Nº:</label>  </div>
+												
+						<label>Registro de preço Nº:</label>
+					
+					</div>
+
+								
 					   <div class="panel-body" style='height:500;'>
 								<form id='frm' method='POST' action=''>
 								 
 										<div class="form-group col-md-13">
+
+								<div class="col-lg-3">
+									<label>Tipo de Solicitação</label>
+								<select id='tipoSolici' class="form-control" name='solRegPrec[]'>
+								   <option value=""></option>
+								   <option value="regPreco">REGISTRO DE PREÇO</option>
+								   <option value="adesaoAta">ADESÃO A ATA</option>
+								</select>
+								</div>
+
 											
 												<div class="col-lg-2">
 													
@@ -203,22 +230,38 @@
 
 												<div class="col-lg-2">
 													<label>Data Recebimento</label>
-													<input class="form-control mskdate" placeholder="      /      /" type="" id='' name='solRegPrec[]' maxlength="10" required>
+													<input class="form-control" type="date" placeholder="" type="" id='' name='solRegPrec[]' maxlength="10" required>
 												</div>
 
 												<div class="col-lg-2">
 													<label>Data Encaminhamento</label>
-													<input class="form-control mskdate" placeholder="      /      /" type="" id='' name='solRegPrec[]' maxlength="10" required>
+													<input class="form-control" type="date" placeholder="" type="" id='' name='solRegPrec[]' maxlength="10" required>
 												</div>
 										</div>
 										
 								  <br><br><br><br>
 								  
-								 <div class="form-group col-lg-12">
+								 <div class="form-group col-lg-12" id='Org01'>
 									    <label>Orgão Solicitante</label> 
 									    <input type='text' class="form-control" list='orgaos' name='solRegPrec[]'>
 								 <datalist id='orgaos'></datalist>
 								 </div>
+
+								 <div class="form-group col-lg-6" id='Org02'>
+									    <label>Orgão Aderente</label> 
+									    <input type='text' class="form-control" list='orgaos' name='solRegPrec[]'>
+								 <datalist id='orgaos'></datalist>
+								 </div>
+
+								 <div class="col-lg-3">
+									<label>Tipo da Ata</label>
+									 <select class="form-control" name="tipoAta">
+									 <option value=''><< SELECIONE O TIPO >></option>
+									 <option value="INTERNA"> INTERNA </option>
+					                 <option value="EXTERNA"> EXTERNA </option>					
+								  </select> 
+							    </div>
+								 
 								
 								 <div class="form-group col-lg-12">
 									<label>Observação</label>
@@ -246,7 +289,6 @@
 				 		<table data-toggle="table" id='table01' class="col-lg-12">
 						
 						<tr>
-							<th data-field="name">Id</th>
 							<th data-field="name">Descricão</th>
 						<!--<th data-field="name">Tipo Objeto</th> -->
 							<th data-field="name">Tipo</th>
@@ -258,13 +300,8 @@
 							<th data-field="name"> - </th>
 						</tr>
 					<tr> 
-						<td>
-						<input type='text' id='idItem' value='' class="form-control" style='width: 100px;' name="solRegPrec[]" placeholder='' disabled>
-						</td>
-						
-						
 							<td data-field="text">
-								<input class="form-control" id='listItens' placeholder="INFORME O ITEM..." list='itens'  style='width: 660px;' name="solRegPrec[]" autocomplete="off" enable='false' />
+								<input class="form-control" id='listItens' placeholder="INFORME O ITEM..." list='itens'  style='width: 700px;' name="solRegPrec[]" autocomplete="off" enable='false' />
 								<datalist id='itens'></datalist>
 							</td>
 									

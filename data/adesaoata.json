@@ -1,0 +1,61 @@
+[
+
+        {
+
+        "idSol" : 1,  
+        "tipoSol": "ADESÃO A ATA",
+        "processo": "SEI-0402.1531/15252/2024",
+        "orgaoGestor" : "SEPLAG",
+        "orgaoAderente" : "DETRAN",
+        "nAta" : "126458",
+        "tipoObjeto": "MATERIAL",
+        "tipoAta": "INTERNA",
+        "dataReceb": " 15:43 02/04/2024",
+        "dataEncam": " 15:43 02/04/2024",
+        "obs": "TESTE DE INCLUSÃO DE SOLICITAÇÃO",
+        "valorTotal": "40,00",
+        "usuario": "CLAUDIA",
+        "itens" :[
+                {
+                "idItem": 152114,
+                "descricao": "MONITORES AMOLED 24º SANSUNG",
+                "tipo": "MATERIAL",
+                "artigo" : "SERVICO CONFECCAO CEDULA IDENTIDADE ",
+                "quantidade": 10,
+                "unidade": "UNI",
+                "valor_unitario": "4.00",
+                "sub_total": "40.00"
+                } 
+                ]
+        },
+        {
+        "idSol" : 2,  
+        "tipoSol": "ADESÃO A ATA",
+        "processo": "SEI-0402.1531/15252/2025",
+        "orgaoGestor" : "FAPERJ",
+        "orgaoAderente" : "SEEDUC",
+        "nAta" : "126458",
+        "tipoObjeto": "MATERIAL",
+        "tipoAta": "EXTERNA",
+        "dataReceb": " 15:43 02/04/2024",
+        "dataEncam": " 15:43 02/04/2024",
+        "obs": "TESTE DE INCLUSÃO DE SOLICITAÇÃO",
+        "valorTotal": "40.00",
+        "usuario": "ANDREIA",
+        "itens" :[
+                {
+                "idItem": 156982,
+                "descricao": "SERVIÇO DE LIMPESA PATRIMONIAL",
+                "tipo": "SERVIÇO",
+                "artigo" : "SERVICO CONFECCAO CEDULA IDENTIDADE ",
+                "quantidade": 10,
+                "unidade": "UNI",
+                "valor_unitario": "4.00",
+                "sub_total": "40.00"
+                } 
+                ]
+        }
+        
+       
+
+]
