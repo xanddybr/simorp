@@ -1,16 +1,11 @@
+    
 
-function load() {
+        $(document).ready(function(){
 
-}
-
-function update(id) {
-
-}
-
-function delet(id) {
-
-}
-
-function insert(id) {
-
-}
+            $("#valorTotal").focus(function(){
+        
+              alert("foco recebido!");
+        
+            })
+        
+        })

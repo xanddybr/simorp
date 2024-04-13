@@ -1,0 +1,81 @@
+{
+"unidades": [
+
+	{
+        "id": 0,
+		"sigla": "UN",
+		"descricao": "UNIDADE"
+	},
+	{
+		"id": 1,
+		"sigla": "PC",
+		"descricao": "PACOTE"
+	},
+	{
+		"id": 3,
+		"sigla": "AN",
+		"descricao": "ANUIDADE"
+	},
+	{
+		"id": 4,
+		"sigla": "KT",
+		"descricao": "KIT"
+	},
+	{
+		"id": 5,
+		"sigla": "PR",
+		"descricao": "PAR"
+	},
+	{
+		"id": 6,
+		"sigla": "KG",
+		"descricao": "KILO"
+	},
+	{
+		"id": 7,
+		"sigla": "%",
+		"descricao": "PORCENTAGEM"
+	},
+	{
+		"id": 8,
+		"sigla": "CJ",
+		"descricao": "CONJUNTO"
+	},
+	{
+		"id": 14,
+		"sigla": "CX",
+		"descricao": "CAIXA"
+	},
+	{
+		"id": 17,
+		"sigla": "MT",
+		"descricao": "METRO"
+	},
+	{
+		"id": 22,
+		"sigla": "JG",
+		"descricao": "JOGO"
+	},
+	{
+		"id": 36,
+		"sigla": "MM",
+		"descricao": "MILIMETRO"
+	},
+	{
+		"id": 37,
+		"sigla": "CT",
+		"descricao": "CARTELA"
+	},
+	{
+		"id": 40,
+		"sigla": "FD",
+		"descricao": "FARDO"
+	},
+	{
+		"id": 41,
+		"sigla": "BL",
+		"descricao": "BLOCO"
+	}
+	
+  ] 
+}

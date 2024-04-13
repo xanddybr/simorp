@@ -1,12 +1,11 @@
 <!-- Start the session -->
 <?php session_start(); ?>
 
+<?php include_once "./controller/ControllerSolicitacao.php"; ?>
+<?php include_once "./controller/ControllerUsuario.php"; ?>
+<?php include_once "./router/Router.php"; ?>
 
-<?php require ("./controller/controllerUsuarios.php"); ?>
-<?php require ("./router/Router.php"); ?>
-
-
-
+ 
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,57 +17,62 @@
 <link href="./css/bootstrap.min.css" rel="stylesheet">
 <link href="./css/bootstrap.css" rel="stylesheet">
 <link href="./css/styles.css" rel="stylesheet">
+<link href="./img/ico/pencil.ico" rel="icon" type="image/x-icon" >
 
 <!--load Icons and javascripts-->
-<link rel="icon" type="image/x-icon" href="img/ico/pencil.ico">
 <script src="./js/lumino.glyphs.js"></script>
-<script src="./js/jquery-1.11.1.min.js"></script>
+<script src="./js/jquery-1.9.0.min.js" type="text/javascript" charset="utf-8"></script>
 
 </head>
 
 <?php
 
-      $userControl = new ControllerUsuarios();
-      $rota = new Router();
 
+      $rota = new Router();
       $rota->set_url($_SERVER['SERVER_NAME']);
       $rota->set_uri($_SERVER['REQUEST_URI']);
            
      
-   if(!isset($_SESSION["login"])) {
+   if(!isset($_SESSION["login"]) && !isset($_COOKIE['timeUser'])) {
       
       if(isset($_POST['acao'])) {
       
       //CALL FUNCTION LOGIN USER
-      
-      $userControl->Logon($_POST['usuario'], $_POST['senha'], isset($_POST['remember']));
-      
+            
+            ControllerUsuario::Logon($_POST['usuario'], $_POST['senha'], isset($_POST['remember'])); 
+                       
       } else { 
                              
-}
+      }
       // START APP IN PAGE LOGIN
       $rota->StartAppLogin();
       
-} else {
+      } else {
 
-      // ENABLE ROUTES FOR NAVIGATION AFTER CREATED SESSION
+      // ENABLE ROUTES BY NAVIGATION AND LOAD PAGE HOME
       $rota->setRouter();
+
+      if(!isset($_COOKIE['timeUser'])){
+            ControllerUsuario::TimeOut();
+      }
                         
       if(isset($_GET['url']) && $_GET['url'] == "logout"){
-      $userControl->Logout();
+            ControllerUsuario::Logout();
       }
       
       if(isset($_GET['url']) && $_GET['url'] == "login"){
-      $userControl->Logout();
+            ControllerUsuario::Logout();
       }
 
       if(!isset($_GET['url']) && $_GET['url'] == NULL ){
-            $userControl->Logout();
+            ControllerUsuario::Logout();
       }
+     
+
+     
 }
    
 ?>
 
-<!-- BEGIN BODY HERE -->
 
 </html>

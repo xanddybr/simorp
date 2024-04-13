@@ -49,7 +49,7 @@ class Router {
     
     
     // DEFINE ROUTES TO ACCESS OF APPLICATION
-   function setRouter() {
+   function setRouter(){
        
     $dir = __DIR__ ;
     $rtdir = (explode("router", $dir));
@@ -62,13 +62,13 @@ class Router {
           require $rtdir[0].'\view\login.php';
             break;
 
+    case $this->url ."/simorp_beta/login":
+            require $rtdir[0].'\view\login.php';
+            break;
+
     case $this->url ."/simorp_beta/home":
             require $rtdir[0].'\view\home.php';
             require $rtdir[0].'\view\main.php';
-            break;
-
-    case $this->url ."/simorp_beta/login":
-            require $rtdir[0].'\view\login.php';
             break;
 
     case $this->url ."/simorp_beta/registro-de-precos":
