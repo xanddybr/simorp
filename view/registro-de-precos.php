@@ -21,12 +21,7 @@
 
 <script>
 
-		$(document).ready(function(){
 		
-			
-		})
-			
-	
 
 		//MASK DATE
 		$(function() {
@@ -60,13 +55,32 @@
         */
 
 		$(document).ready(function (){
+
+					$("#tipoAta").hide();
+					$("#l_tipoAta").hide();
+					$("#nata").hide();
+					$("#l_nata").hide();
+					$("#aderente").hide();
+					$("#l_aderente").hide();
+				
 			$('#tipoSolici').change(function (){
 
 				if ($('#tipoSolici').val() == 'regPreco') {
-					alert($('#tipoSolici').val());
+					$("#tipoAta").hide();
+					$("#l_tipoAta").hide();
+					$("#nata").hide();
+					$("#l_nata").hide();
+					$("#aderente").hide();
+					$("#l_aderente").hide();
 				}
+
 				if ($('#tipoSolici').val() == 'adesaoAta') {
-					alert($('#tipoSolici').val());
+					$("#tipoAta").show();
+					$("#l_tipoAta").show();
+					$("#nata").show();
+					$("#l_nata").show();
+					$("#aderente").show();
+					$("#l_aderente").show();
 				}
 				
 			    })
@@ -199,24 +213,24 @@
 					   <div class="panel-body" style='height:500;'>
 								<form id='frm' method='POST' action=''>
 								 
-										<div class="form-group col-md-13">
+								<div class="form-group col-md-13">
+
+								<div class="col-lg-2">
+											
+								<label>Nº do Processo</label>
+													
+								<input class="form-control" placeholder="LOCALIZADO NO SEI" name='solRegPrec[]' id='processo' value="" required></div>
+
 
 								<div class="col-lg-3">
 									<label>Tipo de Solicitação</label>
 								<select id='tipoSolici' class="form-control" name='solRegPrec[]'>
-								   <option value=""></option>
 								   <option value="regPreco">REGISTRO DE PREÇO</option>
 								   <option value="adesaoAta">ADESÃO A ATA</option>
 								</select>
 								</div>
 
-											
-												<div class="col-lg-2">
-													
-														<label>Nº do Processo</label>
-														
-														<input class="form-control" placeholder="LOCALIZADO NO SEI" name='solRegPrec[]' id='processo' value="" required>
-												</div>
+
 
 												<div class="col-lg-3">
 													<label>Tipo de Objeto</label>
@@ -227,7 +241,7 @@
 															<option value="ambos">MATERIAL/SERVIÇO</option>
 													</select>
 												</div>
-
+											
 												<div class="col-lg-2">
 													<label>Data Recebimento</label>
 													<input class="form-control" type="date" placeholder="" type="" id='' name='solRegPrec[]' maxlength="10" required>
@@ -240,28 +254,37 @@
 										</div>
 										
 								  <br><br><br><br>
-								  
-								 <div class="form-group col-lg-12" id='Org01'>
+
+								  <div class="col-lg-6">
+									<label id='l_tipoAta'>Tipo da Ata</label>
+									 <select id='tipoAta' class="form-control" name="tipoAta">
+									 <option value=''><< SELECIONE O TIPO >></option>
+									 <option value="INTERNA"> INTERNA - ORGÃO ADERERINDO A ATA DE OUTRO ORGÃO DO MESMO ESTADO </option>
+					                 <option value="EXTERNA"> EXTERNA - ORGÃO ADERERINDO A ATA DE OUTRO ORGÃO DE OUTRO ESTADO </option>					
+								  </select> 
+							    </div>
+
+								<div class="col-lg-2">
+											
+								<label id='l_nata'>Nº DA ATA</label>
+													
+								<input class="form-control col-lg-6" placeholder="Nº DA ATA" name='solRegPrec[]' id='nata' value="" required>
+							    </div>
+
+								<br><br><br><br>
+								<div class="form-group col-lg-6" id='Org01'>
 									    <label>Orgão Solicitante</label> 
 									    <input type='text' class="form-control" list='orgaos' name='solRegPrec[]'>
 								 <datalist id='orgaos'></datalist>
 								 </div>
+				 	 
 
 								 <div class="form-group col-lg-6" id='Org02'>
-									    <label>Orgão Aderente</label> 
-									    <input type='text' class="form-control" list='orgaos' name='solRegPrec[]'>
+									    <label id='l_aderente'>Orgão Aderente</label> 
+									    <input id='aderente' type='text' class="form-control" list='orgaos' name='solRegPrec[]'>
 								 <datalist id='orgaos'></datalist>
 								 </div>
-
-								 <div class="col-lg-3">
-									<label>Tipo da Ata</label>
-									 <select class="form-control" name="tipoAta">
-									 <option value=''><< SELECIONE O TIPO >></option>
-									 <option value="INTERNA"> INTERNA </option>
-					                 <option value="EXTERNA"> EXTERNA </option>					
-								  </select> 
-							    </div>
-								 
+						 
 								
 								 <div class="form-group col-lg-12">
 									<label>Observação</label>
@@ -269,11 +292,9 @@
 								 </div><br>
 								 <div>
 								</label>
-								
-								<input type='button' class='btn-primary' name='' id='adicionar' value='Add Unid.'/>
+																
 								<input type="button" class="btn-primary pull-right" name='salvar' value='Salvar'></div>
-				
-					
+									
 				</div>
 			</div><!-- /.col-->
 		</div><!-- /.row-->

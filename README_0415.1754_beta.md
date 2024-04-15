@@ -11,7 +11,9 @@
 `Notes-release`:
 
 [
-0412.1801 : vide form
+
+0415.1754 : refinament fields forms and implemented form msgbox modal for login
+0412.1801 : refinament fields forms 
 0411.1811 : implemented fields table
 0410.1853 : implemented and set fields table report and build field id
 0409.1753 : implemented select type object and fix data-model solicitacação in json file
