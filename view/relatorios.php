@@ -11,6 +11,7 @@
 <script src="js/lumino.glyphs.js"></script>
 <link href="css/styles.css" rel="stylesheet">
 <link href="css/bootstrap-table.css" rel="stylesheet">
+<script src="./js/fieldsettings.js"></script>
 
 <!--<link href="./css/datepicker3.css" rel="stylesheet"> -->
 
@@ -21,34 +22,7 @@
 <script src="js/respond.min.js"></script>
 
 -->
-<script>
-	
-		$(document).ready(function(){
 
-			$("#tabRel01").hide();
-			$("#tabRel02").hide();
-
-
-			$("#tpRel").change(function () {
-				if($("#tpRel").val() == "regPrec") {
-							$("#tabRel01").show();
-							$("#tabRel02").hide();
-			
-				}
-			})
-
-			$("#tpRel").change(function () {
-				if($("#tpRel").val() == "adesaoAta") {
-							$("#tabRel02").show();
-							$("#tabRel01").hide();
-				}
-
-			})
-
-		})
-
-
-</script>
 
 </head>
 
@@ -61,9 +35,7 @@
 				<li class="active"></li>
 			</ol>/.row-->
 		</div>
-		
-		
-		
+				
 		<div class="col-lg-13">
 			<div class="panel panel-d;efault">
 				<div class="panel-heading" class="form-group"><label> Relatórios</label> <!----> </div>
@@ -113,8 +85,7 @@
 									</div>-->
 
 								</form>
-				
-								
+												
 			<div class="col-lg-13">
 			
 				<div class="panel panel-default">
@@ -148,7 +119,6 @@
 						</table>
 						</div>
 
-
 						<div id="tabRel02"> 
 						<table id="tabRel02" data-toggle="table" data-url="./data/adesaoata.json" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
 
@@ -159,7 +129,7 @@
 						        <th data-field="orgaoGestor" data-sortable="true"><b>Orgão Gestor</b></th>
 								<th data-field="nAta" data-sortable="true"><b>Nº Ata</b></th>
 								<th data-field="tipoObjeto" data-sortable="true"><b>Tipo de Objeto</b></th>
-								<th data-field="orgaoAderente" data-sortable="true"><b>Orgão Solicitante</b></th>
+								<th data-field="orgaoAderente" data-sortable="true"><b>Orgão Aderente</b></th>
 								<th data-field="dataReceb" data-sortable="true"><b>Recebimento</b></th>
 								<th data-field="dataEncam" data-sortable="true"><b>Encaminhamento</b></th>
 								<th data-field="valorTotal" data- data-sortable="true"><b>Total</b></th>
@@ -167,16 +137,11 @@
 						</thead>
 						</table>
 						</divr>
-						
-						
-						
+					
 					</div>
 				</div>
 			</div>
 		
-
-
-
 	<script>
 		$(function () {
 			$('#hover, #striped, #condensed').click(function () {
@@ -207,8 +172,7 @@
 			return {};
 		}
 		</script>
-	
-	
+		
 </div><!--/.main-->
 
 	<script src="js/jquery-1.11.1.min.js"></script>

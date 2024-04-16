@@ -21,7 +21,7 @@
 
 <!--load Icons and javascripts-->
 <script src="./js/lumino.glyphs.js"></script>
-<script src="./js/jquery-1.9.0.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="./js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
 
 </head>
 

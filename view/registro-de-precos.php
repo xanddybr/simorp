@@ -15,178 +15,9 @@
 <!-- libraires -->
 <script src="../js/lumino.glyphs.js"></script>
 <script src="../js/bootstrap.min.js"></script>
-<script src="../js/jquery-1.9.0.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-1.8.3.min.js" charset="utf-8"></script>
+<script src="./js/fieldsettings.js"></script>
 <script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
-
-
-<script>
-
-		
-
-		//MASK DATE
-		$(function() {
-			$(".mskdate").mask("99/99/9999");
-		});
-
-
-		//MASK CURRENCY REAL-BR
-		$(function() {
-			$('.dinheiro').mask('#.##9,99', {reverse: true});
-		});
-
-
-		/*
-			$(document).ready(function (){
-				$('.valorTotal').focus(function (){
-				var v1 = $(".valorUni").val();
-				var v2 = $(".qtdItem").val();
-				var vlitem = parseFloat(v1) * v2;
-				$(".valorTotal").val(parseFloat(vlitem));
-
-			})
-
-				//REMOVE LINE OF ITEM IN TABLE
-				$(".btn-rmv").click(function(){
-				$("#table01 tr:last").remove();
-			})
-
-		})
-	
-        */
-
-		$(document).ready(function (){
-
-					$("#tipoAta").hide();
-					$("#l_tipoAta").hide();
-					$("#nata").hide();
-					$("#l_nata").hide();
-					$("#aderente").hide();
-					$("#l_aderente").hide();
-				
-			$('#tipoSolici').change(function (){
-
-				if ($('#tipoSolici').val() == 'regPreco') {
-					$("#tipoAta").hide();
-					$("#l_tipoAta").hide();
-					$("#nata").hide();
-					$("#l_nata").hide();
-					$("#aderente").hide();
-					$("#l_aderente").hide();
-				}
-
-				if ($('#tipoSolici').val() == 'adesaoAta') {
-					$("#tipoAta").show();
-					$("#l_tipoAta").show();
-					$("#nata").show();
-					$("#l_nata").show();
-					$("#aderente").show();
-					$("#l_aderente").show();
-				}
-				
-			    })
-
-			})
-		
-		
-	
-		$(document).ready(function (){
-			$('#tipoObjeto').change(function (){
-			var itenList, url, option;
-			option = $("#tipoObjeto").val();
-			url  = 'data/itens.json';	
-			$('#itens').empty();
-			
-			$.getJSON(url, function(data) {
-			$(data.itens).each(function(obj) {
-
-			if(data.itens[obj]['tipo'] == option) {
-			itenList = "<option value=\"" + data.itens[obj]['id'] + " - " + data.itens[obj]['artigo'].toUpperCase() + "\">\"" + data.itens[obj]['descricao'].toUpperCase() + "\"</option>";
-			
-			$('#itens').append(itenList);
-				$('#tipoObjeto').prop('disabled', true);
-					$("#listItens").focusout(function(){
-				   		$("#tpObjeto").val(data.itens[obj]['tipo'].toUpperCase());
-					   
-				})
-			}
-
-			if(option == 'ambos') {
-			itenList = "<option value=\"" + data.itens[obj]['id'] + " - " + data.itens[obj]['artigo'].toUpperCase() + "\">\"" + data.itens[obj]['descricao'].toUpperCase() + "\"</option>";
-			
-			
-			$('#itens').append(itenList);
-				$('#tipoObjeto').prop('disabled', true);
-					$("#listItens").focusout(function(){
-						$("#tpObjeto").val(data.itens[obj]['tipo'].toUpperCase());
-					
-				});
-				
-					}
-
-					})
-				})	
-			})
-		})
-
-		$(document).ready(function (){
-			var orgao, url;
-				url = 'data/orgaos.json';
-				$.getJSON(url, function(data) {
-			$(data.registros).each(function(obj) {
-			orgao = "<option value=\"" + data.registros[obj]['sigla'] + " - " + data.registros[obj]['uniGestora'].toUpperCase() + "\"></option>";
-			$('#orgaos').append(orgao);
-	
-			})	
-		  })
-		})
-
-
-		$(document).ready(function (){
-			var itenList, url;
-			url = 'data/unidades.json';
-			$.getJSON(url, function(data) {
-			$(data.unidades).each(function(obj) {
-			unidadesList = "<option value=" + data.unidades[obj]['sigla'] + ">" + data.unidades[obj]['descricao'] + "</option>";
-			$('#unidades').append(unidadesList);
-	
-				})	
-			})
-		})
-
-
-		//INSERT LINE ITEM IN TABLE
-		$(document).ready(function(){
-  			$("#btn-add").click(function(){
-
-				let i = 0;
-				do { 
-
-				var row = "<tr>" +
-				"<td> <input class='form-control' name='solRegPrec[]' list='itens' placeholder='INFORME O ITEM...' />" +
-				"<datalist id='itens'></datalist> </td>" + 
-				"<td><input type='text' id='tpObjeto' value='' class='form-control' style='width:150px' name='solRegPrec[]' placeholder='' disabled></td>" +
-				"<td> <input list='unidades' class='form-control' placeholder='' name='solRegPrec[]'>" +
-				"<datalist id='unidades'></datalist>"+
-				"</td>" +
-				"<td> <input class='form-control dinheiro' type='text' id='valorUni' placeholder='R$' value='' name='solRegPrec[]' required/> </td>" +
-				"<td> <input class='form-control' type='text' id='qtdItem' placeholder='' name='solRegPrec[]' value='' required /> </td>" +
-				"<td> <input class='form-control dinheiro' id='valorTotal' placeholder='R$' name='solRegPrec[]' value='' required /> </td>" +
-				"<td>&nbsp;&nbsp;</td>" +
-				"<td><input class='btn-rmv' type='button' id='' name='' value='Rmv'></td></tr>";
-
-				//BIND NEW LINE	AT TABLE
-				$("#table01:last").append(row);	
-				i+=1;
-				 } while (i < 1);
-			})		
-			
-		})
-
-	
-</script>
-
-
-
 
 
 <body>
@@ -219,12 +50,13 @@
 											
 								<label>Nº do Processo</label>
 													
-								<input class="form-control" placeholder="LOCALIZADO NO SEI" name='solRegPrec[]' id='processo' value="" required></div>
+								<input class="form-control" placeholder="SEI-" name='solRegPrec[]' id='seiprocess' value="" required></div>
 
 
 								<div class="col-lg-3">
 									<label>Tipo de Solicitação</label>
 								<select id='tipoSolici' class="form-control" name='solRegPrec[]'>
+									<option value=""><< SELECIONE O TIPO DE SOLICITAÇÃO >></option>
 								   <option value="regPreco">REGISTRO DE PREÇO</option>
 								   <option value="adesaoAta">ADESÃO A ATA</option>
 								</select>
@@ -255,12 +87,12 @@
 										
 								  <br><br><br><br>
 
-								  <div class="col-lg-6">
+								  <div class="col-lg-5">
 									<label id='l_tipoAta'>Tipo da Ata</label>
-									 <select id='tipoAta' class="form-control" name="tipoAta">
-									 <option value=''><< SELECIONE O TIPO >></option>
-									 <option value="INTERNA"> INTERNA - ORGÃO ADERERINDO A ATA DE OUTRO ORGÃO DO MESMO ESTADO </option>
-					                 <option value="EXTERNA"> EXTERNA - ORGÃO ADERERINDO A ATA DE OUTRO ORGÃO DE OUTRO ESTADO </option>					
+									 <select id='tipoAta' class="form-control">
+									 	<option value="selecione"><< SELECIONE O TIPO >></option>
+									 	<option value="INTERNA"> INTERNA - ORGÃO ADERERINDO A ATA DE OUTRO ORGÃO DO MESMO ESTADO </option>
+					                 	<option value="EXTERNA"> EXTERNA - ORGÃO ADERERINDO A ATA DE OUTRO ORGÃO DE OUTRO ESTADO </option>					
 								  </select> 
 							    </div>
 
@@ -272,23 +104,27 @@
 							    </div>
 
 								<br><br><br><br>
-								<div class="form-group col-lg-6" id='Org01'>
-									    <label>Orgão Solicitante</label> 
-									    <input type='text' class="form-control" list='orgaos' name='solRegPrec[]'>
-								 <datalist id='orgaos'></datalist>
+								<div class="form-group col-lg-5" id='Org01'>
+									    <label id='l_OrgSol_Gestor'>Orgão Solicitante</label> 
+									    <input type='text' class="form-control" list='OrgSol_Gestor' name='solRegPrec[]' order='asc'>
+								 <datalist id='OrgSol_Gestor'></datalist>
 								 </div>
 				 	 
 
-								 <div class="form-group col-lg-6" id='Org02'>
+								 <div class="form-group col-lg-5" id='Org02'>
 									    <label id='l_aderente'>Orgão Aderente</label> 
-									    <input id='aderente' type='text' class="form-control" list='orgaos' name='solRegPrec[]'>
-								 <datalist id='orgaos'></datalist>
+									    <input id='aderente' type='text' class="form-control" list='Org_aderente' name='solRegPrec[]'>
+								 <datalist id='Org_aderente'></datalist>
+
 								 </div>
+
+								 <br>
+								 <input id='addOrg' type="button" class="btn" value='add'>
 						 
 								
 								 <div class="form-group col-lg-12">
-									<label>Observação</label>
-									<textarea class="form-control" id='obs' rows="2" name='solRegPrec[]' ></textarea>
+										<label>Observação</label>
+										<textarea class="form-control" id='obs' rows="2" name='solRegPrec[]' ></textarea>
 								 </div><br>
 								 <div>
 								</label>
@@ -333,7 +169,7 @@
     						</td>
 							<td data-field="text">
 
-								<input list='unidades' class="form-control" style='width:150px' name="solRegPrec[]" placeholder=''>
+								<input id='unid' list='unidades' class="form-control" style='width:150px' name="solRegPrec[]" placeholder='';>
 								<datalist id="unidades" ></datalist>
  
     						</td>

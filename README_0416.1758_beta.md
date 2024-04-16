@@ -12,6 +12,7 @@
 
 [
 
+0416.1758 : implemented select type requests and type ata (internal/external)
 0415.1754 : refinament fields forms and implemented form msgbox modal for login
 0412.1801 : refinament fields forms 
 0411.1811 : implemented fields table
