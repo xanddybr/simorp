@@ -16,7 +16,7 @@
 <script src="../js/lumino.glyphs.js"></script>
 <script src="../js/bootstrap.min.js"></script>
 <script src="../js/jquery-1.8.3.min.js" charset="utf-8"></script>
-<script src="./js/fieldsettings.js"></script>
+<script src="./js/solicitacao_settings.js"></script>
 <script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
 
 
@@ -56,7 +56,6 @@
 								<div class="col-lg-3">
 									<label>Tipo de Solicitação</label>
 								<select id='tipoSolici' class="form-control" name='solRegPrec[]'>
-									<option value=""><< SELECIONE O TIPO DE SOLICITAÇÃO >></option>
 								   <option value="regPreco">REGISTRO DE PREÇO</option>
 								   <option value="adesaoAta">ADESÃO A ATA</option>
 								</select>

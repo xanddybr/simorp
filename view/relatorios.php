@@ -11,7 +11,8 @@
 <script src="js/lumino.glyphs.js"></script>
 <link href="css/styles.css" rel="stylesheet">
 <link href="css/bootstrap-table.css" rel="stylesheet">
-<script src="./js/fieldsettings.js"></script>
+<script src="./js/relatorios_settings.js"></script>
+
 
 <!--<link href="./css/datepicker3.css" rel="stylesheet"> -->
 
