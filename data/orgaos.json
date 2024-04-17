@@ -1,854 +1,479 @@
+
 {
+
 "registros": [
-		{
-			"id": 103,
-			"sigla": "124100",
-			"uniGestora": "FUND CENTRO EST. ESTAT.  PESQ. SERV RJ"
-		},
-		{
-			"id": 131,
-			"sigla": "266500",
-			"uniGestora": "FUNDO ESP. POLÍCIA MILITAR RJ"
-		},
-		{
-			"id": 5,
-			"sigla": "247100",
-			"uniGestora": "Companhia Estadual de Águas e Esgotos"
-		},
-		{
-			"id": 6,
-			"sigla": "080100",
-			"uniGestora": "VICE-GOVERNADORIA"
-		},
-		{
-			"id": 48,
-			"sigla": "215300",
-			"uniGestora": "EMPRESA ESTADUAL DE VIAÇÃO - EM LIQUIDAÇÃO"
-		},
-		{
-			"id": 78,
-			"sigla": "300100",
-			"uniGestora": "SECRETARIA DE ESTADO DO TRABALHO E RENDA"
-		},
-		{
-			"id": 80,
-			"sigla": "313300",
-			"uniGestora": "DEP DE TRANSPORTES RODOVIÁRIOS DO EST DO RJ"
-		},
-		{
-			"id": 85,
-			"sigla": "324200",
-			"uniGestora": "FUNDAÇÃO LEÃO XIII"
-		},
-		{
-			"id": 91,
-			"sigla": "404100",
-			"uniGestora": "FUNDAÇÃO C.C.F. DE AMPARO À PESQUISA DO ERJ"
-		},
-		{
-			"id": 122,
-			"sigla": "294100",
-			"uniGestora": "FUNDAÇÃO ESTATAL HOSPITAIS GERAIS"
-		},
-		{
-			"id": 141,
-			"sigla": "266600",
-			"uniGestora": "FUNDO EST INVEST AÇÕES SEG PUB DES SOC  "
-		},
-		{
-			"id": 167,
-			"sigla": "556600",
-			"uniGestora": "Fundo Est Invest Ações Seg Pub e Des Soc"
-		},
-		{
-			"id": 139,
-			"sigla": "130200",
-			"uniGestora": "FUNDO ESTADUAL DE DEFESA AGROPECUÁRIA"
-		},
-		{
-			"id": 120,
-			"sigla": "213600",
-			"uniGestora": "Proteção e Defesa do Consumidor"
-		},
-		{
-			"id": 130,
-			"sigla": "240400",
-			"uniGestora": "FUNDO EST. CONSERV. AMBIENTAL (UEPSAM)"
-		},
-		{
-			"id": 121,
-			"sigla": "294300",
-			"uniGestora": "FUNDAÇÃO ESTATAL DOS INSTITUTOS DE SAÚDE"
-		},
-		{
-			"id": 101,
-			"sigla": "100100",
-			"uniGestora": "Ministério Público"
-		},
-		{
-			"id": 13,
-			"sigla": "123400",
-			"uniGestora": "FUNDO UNICO DE PREVIDENCIA DO ERJ"
-		},
-		{
-			"id": 17,
-			"sigla": "130900",
-			"uniGestora": "SEAAPI-PROJETO RIO RURAL/GES-SEP"
-		},
-		{
-			"id": 40,
-			"sigla": "390100",
-			"uniGestora": "Subsecretaria de Comunicação Social"
-		},
-		{
-			"id": 44,
-			"sigla": "263100",
-			"uniGestora": "DEPARTAMENTO DE TRÂNSITO DO ESTADO DO RJ"
-		},
-		{
-			"id": 46,
-			"sigla": "403200",
-			"uniGestora": "CENTRO DE TECN DE INFORMAÇÃO E COMUN DO ERJ"
-		},
-		{
-			"id": 56,
-			"sigla": "053100",
-			"uniGestora": "INSTITUTO DE PESOS E MEDIDAS DO ESTADO DO RJ"
-		},
-		{
-			"id": 62,
-			"sigla": "250100",
-			"uniGestora": "SECRETARIA DE ESTADO DE ADMIN.PENITENCIÁRIA"
-		},
-		{
-			"id": 65,
-			"sigla": "260100",
-			"uniGestora": "SECRETARIA DE ESTADO DE SEGURANÇA"
-		},
-		{
-			"id": 70,
-			"sigla": "266200",
-			"uniGestora": "FUNDO ESPECIAL DA POLÍCIA CIVIL"
-		},
-		{
-			"id": 76,
-			"sigla": "166100",
-			"uniGestora": "FUNDO ESPECIAL DO CORPO DE BOMBEIROS"
-		},
-		{
-			"id": 82,
-			"sigla": "317200",
-			"uniGestora": "COMP EST DE ENGENH DE TRANSPORTES E LOGÍSTICA"
-		},
-		{
-			"id": 88,
-			"sigla": "370100",
-			"uniGestora": "Encargos Gerais Est sob Superv da SECCG"
-		},
-		{
-			"id": 92,
-			"sigla": "144100",
-			"uniGestora": "FUNDAÇÃO ESTADUAL DO NORTE-FLUMINENSE"
-		},
-		{
-			"id": 93,
-			"sigla": "404310",
-			"uniGestora": "ADMINISTRACAO CENTRAL"
-		},
-		{
-			"id": 95,
-			"sigla": "404330",
-			"uniGestora": "NUCLEO SUPERIOR DE ESTUDOS GOVERNAMENTAIS"
-		},
-		{
-			"id": 106,
-			"sigla": "227200",
-			"uniGestora": "Agência de Fomento do ERJ SA"
-		},
-		{
-			"id": 116,
-			"sigla": "210105",
-			"uniGestora": "SUPEM"
-		},
-		{
-			"id": 143,
-			"sigla": "506100",
-			"uniGestora": "FUNDO DE APRIMORAMENTO CONTROLE INTERNO"
-		},
-		{
-			"id": 138,
-			"sigla": "426100",
-			"uniGestora": "FUNDO PARA A INFÂNCIA E ADOLESCÊNCIA"
-		},
-		{
-			"id": 156,
-			"sigla": "210200",
-			"uniGestora": "Subsecretaria de Comunicação Social"
-		},
-		{
-			"id": 144,
-			"sigla": "390200",
-			"uniGestora": "SUBSECRETARIA COMUNIC.SOCIAL DESCENTRAL."
-		},
-		{
-			"id": 179,
-			"sigla": "210110",
-			"uniGestora": "SUBSECRETARIA DE PLANEJAMENTO E ORÇAMENTO"
-		},
-		{
-			"id": 189,
-			"sigla": "650100",
-			"uniGestora": "Secretaria de Estado de Habitação de Interesse Social"
-		},
-		{
-			"id": 110,
-			"sigla": "120102",
-			"uniGestora": "SUPLA (ALMOXARIFADO)"
-		},
-		{
-			"id": 114,
-			"sigla": "210103",
-			"uniGestora": "PALACIO DAS LARANJEIRAS"
-		},
-		{
-			"id": 7,
-			"sigla": "090100",
-			"uniGestora": "PROCURADORIA GERAL DO ESTADO"
-		},
-		{
-			"id": 1,
-			"sigla": "070100",
-			"uniGestora": "Secretaria de Estado de Infra e Obras"
-		},
-		{
-			"id": 19,
-			"sigla": "135300",
-			"uniGestora": "EMPR DE ASSIST TÉCN E EXT RURAL DO EST DO RJ"
-		},
-		{
-			"id": 24,
-			"sigla": "150100",
-			"uniGestora": "Sec de Estado de Cultura e Econ Criativa"
-		},
-		{
-			"id": 28,
-			"sigla": "154400",
-			"uniGestora": "FUNDAÇÃO MUSEU DA IMAGEM E DO SOM"
-		},
-		{
-			"id": 32,
-			"sigla": "180100",
-			"uniGestora": "SECRETARIA DE ESTADO DE EDUCAÇÃO"
-		},
-		{
-			"id": 33,
-			"sigla": "210700",
-			"uniGestora": "Dep Geral de Ações Socioeducativas"
-		},
-		{
-			"id": 63,
-			"sigla": "254100",
-			"uniGestora": "FUNDAÇÃO SANTA CABRINI"
-		},
-		{
-			"id": 72,
-			"sigla": "290100",
-			"uniGestora": "SECRET ESTADO  SAÚDE "
-		},
-		{
-			"id": 84,
-			"sigla": "320100",
-			"uniGestora": "SECRETARIA DE ESTAD ASSIST SOC E DIR HUMANOS"
-		},
-		{
-			"id": 89,
-			"sigla": "370200",
-			"uniGestora": "ENCARGOS GERAIS DO ESTADO SOB SUPERV DA SEFAZ"
-		},
-		{
-			"id": 96,
-			"sigla": "404340",
-			"uniGestora": "HOSPITAL UNIVERSITARIO PEDRO ERNESTO"
-		},
-		{
-			"id": 168,
-			"sigla": "156100",
-			"uniGestora": "Fundo Estadual da Cultura"
-		},
-		{
-			"id": 180,
-			"sigla": "570100",
-			"uniGestora": "Secretaria de Estado de Governo"
-		},
-		{
-			"id": 134,
-			"sigla": "226100",
-			"uniGestora": "Fundo Recup Econ Munic Fluminenses-FREMF"
-		},
-		{
-			"id": 136,
-			"sigla": "216100",
-			"uniGestora": "FUNDO ESPECIAL DO DEPÓSITO PUBLICO"
-		},
-		{
-			"id": 135,
-			"sigla": "020100",
-			"uniGestora": "TRIBUNAL DE CONTAS DO ESTADO"
-		},
-		{
-			"id": 126,
-			"sigla": "480100",
-			"uniGestora": "SEC EST DE PREVENÇÃO A DEP QUÍMICA "
-		},
-		{
-			"id": 21,
-			"sigla": "137100",
-			"uniGestora": "COMPANHIA DE ARMAZÉNS E SILOS DO EST DO RJ"
-		},
-		{
-			"id": 39,
-			"sigla": "210100",
-			"uniGestora": "Secretaria de Estado de Planejamento e Gestão"
-		},
-		{
-			"id": 42,
-			"sigla": "043400",
-			"uniGestora": "Agência Reg Ser Púb Trans Aqua Fer Met Ro"
-		},
-		{
-			"id": 49,
-			"sigla": "217100",
-			"uniGestora": "COMP DO METROPOLITANO DO RJ - EM LIQUIDAÇÃO"
-		},
-		{
-			"id": 67,
-			"sigla": "261100",
-			"uniGestora": "POLÍCIA MILITAR DO ESTADO DO RIO DE JANEIRO"
-		},
-		{
-			"id": 74,
-			"sigla": "293100",
-			"uniGestora": "INSTITUTO DE ASSIST DOS SERVID DO EST RJ"
-		},
-		{
-			"id": 79,
-			"sigla": "310100",
-			"uniGestora": "SECRETARIA DE ESTADO DE TRANSPORTES"
-		},
-		{
-			"id": 81,
-			"sigla": "317100",
-			"uniGestora": "COMP DE DESENV RODOV E TERMINAIS DO EST DO RJ"
-		},
-		{
-			"id": 86,
-			"sigla": "424100",
-			"uniGestora": "FUNDAÇÃO PARA A INFÂNCIA E ADOLESCÊNCIA"
-		},
-		{
-			"id": 102,
-			"sigla": "404700",
-			"uniGestora": "Centro Universitário Estadual Zona Oeste"
-		},
-		{
-			"id": 128,
-			"sigla": "470100",
-			"uniGestora": "SEC EST PROTEÇÃO DE DEFESA DO CONSUMIDOR"
-		},
-		{
-			"id": 140,
-			"sigla": "490100",
-			"uniGestora": "SEC EST DIR HUM E POL PARA MUL E IDOSOS"
-		},
-		{
-			"id": 142,
-			"sigla": "500100",
-			"uniGestora": "CONTROLADORIA GERAL DO ESTADO DO RJ"
-		},
-		{
-			"id": 23,
-			"sigla": "140100",
-			"uniGestora": "Secretaria de Estado da Casa Civil (Antiga SEGOV)"
-		},
-		{
-			"id": 182,
-			"sigla": "590100",
-			"uniGestora": "SECRETARIA DE ESTADO DA MULHER"
-		},
-		{
-			"id": 184,
-			"sigla": "600100",
-			"uniGestora": "Secretaria de Estado Intergeracional de Juventude e Envelhecimento Saudável"
-		},
-		{
-			"id": 164,
-			"sigla": "404300",
-			"uniGestora": "UERJ"
-		},
-		{
-			"id": 191,
-			"sigla": "580100",
-			"uniGestora": "SECRETARIA DE ESTADO DE TRANSFORMACAO DIGITAL"
-		},
-		{
-			"id": 111,
-			"sigla": "120103",
-			"uniGestora": "COMAP (ALMOXARIFADO)"
-		},
-		{
-			"id": 4,
-			"sigla": "045200",
-			"uniGestora": "EMPRESA DE OBRAS PÚBLICAS DO ESTADO DO RJ"
-		},
-		{
-			"id": 8,
-			"sigla": "096100",
-			"uniGestora": "FUNDO ESPECIAL DA PROCURADORIA GERAL DO ERJ"
-		},
-		{
-			"id": 16,
-			"sigla": "130100",
-			"uniGestora": "Secretaria de Estado de Agricultura, Pecuária, Pesca e Abastastecimento"
-		},
-		{
-			"id": 22,
-			"sigla": "137200",
-			"uniGestora": "CENTRAIS DE ABASTECIMENTO DO ESTADO DO RJ"
-		},
-		{
-			"id": 25,
-			"sigla": "154100",
-			"uniGestora": "FUND ANITA MANTUANO DE ARTES DO EST DO RJ"
-		},
-		{
-			"id": 29,
-			"sigla": "170100",
-			"uniGestora": "SEC DE EST  ESPORTE, LAZER E JUVENTUDE"
-		},
-		{
-			"id": 30,
-			"sigla": "173100",
-			"uniGestora": "SUPERINTENDÊNCIA DE DESPORTOS DO ESTADO DO RJ"
-		},
-		{
-			"id": 34,
-			"sigla": "190100",
-			"uniGestora": "SECRETARIA DE ESTADO DE HABITAÇÃO"
-		},
-		{
-			"id": 43,
-			"sigla": "043500",
-			"uniGestora": "AG REGUL ENERGIA E SANEAMENTO DO EST RJ"
-		},
-		{
-			"id": 51,
-			"sigla": "217300",
-			"uniGestora": "COMP FLUMIN DE TRENS URBANOS - EM LIQUIDAÇÃO"
-		},
-		{
-			"id": 58,
-			"sigla": "240100",
-			"uniGestora": "SEC DE EST DO AMBIENT E SUSTENTABILIDADE"
-		},
-		{
-			"id": 59,
-			"sigla": "243200",
-			"uniGestora": "INSTITUTO ESTADUAL DO AMBIENTE"
-		},
-		{
-			"id": 71,
-			"sigla": "266400",
-			"uniGestora": "FUNDO ESPECIAL DA SEC DE SEGURANÇA PÚBLICA"
-		},
-		{
-			"id": 77,
-			"sigla": "297100",
-			"uniGestora": "INSTITUTO VITAL BRAZIL SA."
-		},
-		{
-			"id": 83,
-			"sigla": "317300",
-			"uniGestora": "COMP DE TRANSP SOBRE TRILHOS DO EST DO RJ"
-		},
-		{
-			"id": 175,
-			"sigla": "550100",
-			"uniGestora": "Secretaria de Estado de Vitimados"
-		},
-		{
-			"id": 178,
-			"sigla": "060100",
-			"uniGestora": "Gabinete de Segurança Institucional do Governo do Estado do Rio de Janeiro"
-		},
-		{
-			"id": 160,
-			"sigla": "240400",
-			"uniGestora": "Fundo Est de Cons Amb e Desenv Urbano"
-		},
-		{
-			"id": 185,
-			"sigla": "123499",
-			"uniGestora": "FUNDO DO PLANO PREVIDENCIÁRIO DO ERJ"
-		},
-		{
-			"id": 173,
-			"sigla": "510100",
-			"uniGestora": "Secretaria de Estado de Polícia Militar"
-		},
-		{
-			"id": 193,
-			"sigla": "660100",
-			"uniGestora": "SECRETARIA DE ESTADO DAS CIDADES "
-		},
-		{
-			"id": 107,
-			"sigla": "450100",
-			"uniGestora": "SEC EST DESEN REG  ABASTEC E PESCA"
-		},
-		{
-			"id": 129,
-			"sigla": "316100",
-			"uniGestora": "FUNDO ESTADUAL DE TRANSPORTES"
-		},
-		{
-			"id": 100,
-			"sigla": "404600",
-			"uniGestora": "FUND CENTRO CIÊN EDUC SUP DISTÂN DO EST RJ"
-		},
-		{
-			"id": 3,
-			"sigla": "044100",
-			"uniGestora": "FUND DEP ESTRADAS DE RODAGEM DO ESTADO DO RJ"
-		},
-		{
-			"id": 12,
-			"sigla": "120200",
-			"uniGestora": "SUBSECRETARIA DE LOGÍSTICA"
-		},
-		{
-			"id": 18,
-			"sigla": "134100",
-			"uniGestora": "FUNDAÇÃO INSTITUTO DE PESCA DO ESTADO DO RJ"
-		},
-		{
-			"id": 27,
-			"sigla": "154300",
-			"uniGestora": "FUNDAÇÃO TEATRO MUNICIPAL DO RIO DE JANEIRO"
-		},
-		{
-			"id": 31,
-			"sigla": "437100",
-			"uniGestora": "COMPANHIA DE TURISMO DO EST RJ"
-		},
-		{
-			"id": 37,
-			"sigla": "200100",
-			"uniGestora": "SECRETARIA DE ESTADO DE FAZENDA"
-		},
-		{
-			"id": 41,
-			"sigla": "210600",
-			"uniGestora": "Subsecretaria Militar do Gab de Seg Inst"
-		},
-		{
-			"id": 45,
-			"sigla": "203100",
-			"uniGestora": "LOTERIA DO ESTADO DO RIO DE JANEIRO     "
-		},
-		{
-			"id": 57,
-			"sigla": "227100",
-			"uniGestora": "COMP DE DESENV INDUSTRIAL DO ESTADO DO RJ"
-		},
-		{
-			"id": 60,
-			"sigla": "244100",
-			"uniGestora": "FUND ESTADUAL DE ENGENHARIA DO MEIO AMBIENTE"
-		},
-		{
-			"id": 64,
-			"sigla": "256100",
-			"uniGestora": "FUNDO ESPECIAL PENITENCIÁRIO"
-		},
-		{
-			"id": 87,
-			"sigla": "326100",
-			"uniGestora": "FUNDO ESTADUAL DE ASSISTÊNCIA SOCIAL"
-		},
-		{
-			"id": 109,
-			"sigla": "120101",
-			"uniGestora": "INFORMÁTICA (ALMOXARIFADO)"
-		},
-		{
-			"id": 112,
-			"sigla": "210101",
-			"uniGestora": "PROCON"
-		},
-		{
-			"id": 117,
-			"sigla": "206100",
-			"uniGestora": "Fundo Especial de Adm Fazendária"
-		},
-		{
-			"id": 118,
-			"sigla": "240200",
-			"uniGestora": "Unidade Executora do PSAM"
-		},
-		{
-			"id": 174,
-			"sigla": "540100",
-			"uniGestora": "SECRET EXTR DE REPRES DO GOV EM BSB"
-		},
-		{
-			"id": 183,
-			"sigla": "620100",
-			"uniGestora": "SECRETARIA DE ESTADO DE DEFESA DO CONSUMIDOR"
-		},
-		{
-			"id": 169,
-			"sigla": "406100",
-			"uniGestora": "Fundo de Apoio ao Desen Tecnológico"
-		},
-		{
-			"id": 176,
-			"sigla": "136200",
-			"uniGestora": "Fundo Estadual de Defesa Agropecuária"
-		},
-		{
-			"id": 190,
-			"sigla": "640100",
-			"uniGestora": "SECRETARIA DE ESTADO DE ENERGIA E ECONOMIA DO MAR"
-		},
-		{
-			"id": 194,
-			"sigla": "260100",
-			"uniGestora": "SECRETARIA DE ESTADO DE SEGURANCA PUBLICA"
-		},
-		{
-			"id": 113,
-			"sigla": "210102",
-			"uniGestora": "APERJ"
-		},
-		{
-			"id": 133,
-			"sigla": "476100",
-			"uniGestora": "Fundo Esp de Apo a Prog Prot e Def Cons"
-		},
-		{
-			"id": 127,
-			"sigla": "124200",
-			"uniGestora": "Fundação de Previdência Complem do ERJ"
-		},
-		{
-			"id": 108,
-			"sigla": "430100",
-			"uniGestora": "SECRETARIA DE TURISMO"
-		},
-		{
-			"id": 99,
-			"sigla": "404500",
-			"uniGestora": "Univ Est do Norte Fluminense Darcy Rib"
-		},
-		{
-			"id": 2,
-			"sigla": "243100",
-			"uniGestora": "INST ESTADUAL DE ENGENHARIA E ARQUITETURA"
-		},
-		{
-			"id": 11,
-			"sigla": "120100",
-			"uniGestora": "SEC DE EST DE PLANEJAMENTO E GESTÃO (Antiga SEPLAG)"
-		},
-		{
-			"id": 26,
-			"sigla": "154200",
-			"uniGestora": "FUNDAÇÃO CASA FRANÇA BRASIL"
-		},
-		{
-			"id": 38,
-			"sigla": "200900",
-			"uniGestora": "SUBSECRETARIA ADJUNTA DO TESOURO ESTADUAL"
-		},
-		{
-			"id": 55,
-			"sigla": "223200",
-			"uniGestora": "JUNTA COMERCIAL DO ESTADO DO RIO DE JANEIRO"
-		},
-		{
-			"id": 61,
-			"sigla": "246300",
-			"uniGestora": "FUNDO ESTADUAL DE RECURSOS HÍDRICOS"
-		},
-		{
-			"id": 66,
-			"sigla": "260400",
-			"uniGestora": "POLÍCIA CIVIL DO ESTADO DO RIO DE JANEIRO"
-		},
-		{
-			"id": 68,
-			"sigla": "263200",
-			"uniGestora": "Instituto de Segurança Pública - ISP"
-		},
-		{
-			"id": 69,
-			"sigla": "266100",
-			"uniGestora": "FUNDO ESPECIAL DA ACADEPOL"
-		},
-		{
-			"id": 75,
-			"sigla": "296100",
-			"uniGestora": "FUNDO ESTADUAL DE SAÚDE"
-		},
-		{
-			"id": 90,
-			"sigla": "400100",
-			"uniGestora": "SECRETARIA DE ESTADO DE CIÊNCIA TECNOLOGIA"
-		},
-		{
-			"id": 124,
-			"sigla": "460100",
-			"uniGestora": "SEC EST ENVELHECIMTO SAUDÁVEL QUAL VIDA"
-		},
-		{
-			"id": 145,
-			"sigla": "300100",
-			"uniGestora": "Sec de Est de Dse Econ Emp e Rel Int"
-		},
-		{
-			"id": 137,
-			"sigla": "000002",
-			"uniGestora": "COMPANHIA FLUMINENSE DE SECURITIZAÇÃO "
-		},
-		{
-			"id": 148,
-			"sigla": "490100",
-			"uniGestora": "SEC ESTADO DESEN SOCIAL E DE DIR HUM"
-		},
-		{
-			"id": 170,
-			"sigla": "306100",
-			"uniGestora": "Fundo Est Fomento Econ Popular Solidária"
-		},
-		{
-			"id": 187,
-			"sigla": "630100 ",
-			"uniGestora": "Secretaria de Estado de Ação Comunitária e Juventude"
-		},
-		{
-			"id": 195,
-			"sigla": "123425",
-			"uniGestora": "FUNDO UNICO DE PREVIDENCIA SOCIAL DO ESTADO DO RIO DE JANEIRO"
-		},
-		{
-			"id": 132,
-			"sigla": "226200",
-			"uniGestora": "FUNDO UPP EMPREENDEDOR"
-		},
-		{
-			"id": 9,
-			"sigla": "110100",
-			"uniGestora": "DEFENSORIA PÚBLICA GERAL DO ESTADO"
-		},
-		{
-			"id": 10,
-			"sigla": "116100",
-			"uniGestora": "FUNDO ESPECIAL DA DEFENSORIA PÚBLICA DO ERJ"
-		},
-		{
-			"id": 20,
-			"sigla": "135400",
-			"uniGestora": "EMPR DE PESQUISA AGROPECUÁRIA DO EST DO RJ"
-		},
-		{
-			"id": 35,
-			"sigla": "133100",
-			"uniGestora": "INSTIT DE TERRAS E CARTOGRAFIA DO EST DO RJ"
-		},
-		{
-			"id": 36,
-			"sigla": "197100",
-			"uniGestora": "COMPANHIA ESTADUAL DE HABITAÇÃO DO RJ"
-		},
-		{
-			"id": 47,
-			"sigla": "215100",
-			"uniGestora": "IMPRENSA OFICIAL DO ESTADO DO RIO DE JANEIRO"
-		},
-		{
-			"id": 50,
-			"sigla": "217200",
-			"uniGestora": "CIA TRANSP COLET DO EST RJ-EM LIQUIDAÇÃO"
-		},
-		{
-			"id": 53,
-			"sigla": "220100",
-			"uniGestora": "SEC DE EST DE DESENV ECONÔM INDU COMERC E SERV"
-		},
-		{
-			"id": 54,
-			"sigla": "353100",
-			"uniGestora": "DEPART RECURSOS MINERAIS ESTADO RJ"
-		},
-		{
-			"id": 73,
-			"sigla": "160100",
-			"uniGestora": "Sec Est Def Civil e Corpo Bomb Militar"
-		},
-		{
-			"id": 94,
-			"sigla": "404320",
-			"uniGestora": "CENTRO DE PRODUCAO DA UERJ"
-		},
-		{
-			"id": 97,
-			"sigla": "404400",
-			"uniGestora": "FUND DE APOIO À ESCOLA TÉCNICA DO EST DO RJ"
-		},
-		{
-			"id": 115,
-			"sigla": "210104",
-			"uniGestora": "INFORMATICA"
-		},
-		{
-			"id": 119,
-			"sigla": "294200",
-			"uniGestora": "FUNDAÇÃO SAÚDE DO EST. DO RIO DE JANEIRO"
-		},
-		{
-			"id": 177,
-			"sigla": "213200",
-			"uniGestora": "Instituto Rio Metrópole"
-		},
-		{
-			"id": 181,
-			"sigla": "216500",
-			"uniGestora": "Fundo de Desenv. da Região Metropolitana do RJ"
-		},
-		{
-			"id": 172,
-			"sigla": "520100",
-			"uniGestora": "Secretaria de Estado de Policia Civil"
-		},
-		{
-			"id": 171,
-			"sigla": "530100",
-			"uniGestora": "SECRETARIA DE ESTADO DE INFRAESTRUTURA E OBRAS PUBLICAS - SEIOP"
-		},
-		{
-			"id": 186,
-			"sigla": "404350",
-			"uniGestora": "CAMPUS UERJ - ZONA OESTE"
-		},
-		{
-			"id": 188,
-			"sigla": "636100",
-			"uniGestora": "Fundo Estadual de Juventude do Estado do Rio de Janeiro"
-		},
-		{
-			"id": 192,
-			"sigla": "496420",
-			"uniGestora": "Fundo Estadual de Defesa dos Direitos da Pessoa Idosa"
-		}
-	]
+	
+	{
+	  "sigla": "AGENERSA",
+	  "descricao": "AGÊNCIA REGULADORA DE ENERGIA E SANEAMENTO BÁSICO"
+	},
+	{
+	  "sigla": "AGERIO",
+	  "descricao": "AGÊNCIA ESTADUAL DE FOMENTO"
+	},
+	{
+	  "sigla": "AGETRANSP",
+	  "descricao": "AG. REG. DE SERV PÚB. CONC. DE TRANSP. AQUAV., FERROV., METROVIÁRIOS E DE RODOVIAS DO RJ"
+	},
+	{
+	  "sigla": "CASERJ",
+	  "descricao": "COMPANHIA DE ARMAZÉNS E SILOS DO ESTADO DO RIO DE JANEIRO"
+	},
+	{
+	  "sigla": "CEASA",
+	  "descricao": "CENTRAIS DE ABASTECIMENTO DO ESTADO DO RIO DE JANEIRO"
+	},
+	{
+	  "sigla": "CECIERJ",
+	  "descricao": "FUND. CENTRO DE CIÊNCIAS E DE EDUC. SUPERIOR A DISTÂNCIA DO ESTADO DO RIO DE JANEIRO"
+	},
+	{
+	  "sigla": "CEDAE",
+	  "descricao": "COMPANHIA ESTADUAL DE ÁGUAS E ESGOTOS"
+	},
+	{
+	  "sigla": "CEHAB",
+	  "descricao": "COMPANHIA ESTADUAL DE HABITAÇÃO DO ESTADO DO RIO DE JANEIRO"
+	},
+	{
+	  "sigla": "CENTRAL",
+	  "descricao": "COMPANHIA ESTADUAL DE ENGENHARIA DE TRANSPORTES E LOGÍSTICA"
+	},
+	{
+	  "sigla": "CEPERJ",
+	  "descricao": "FUND. CENTRO ESTADUAL DE ESTATÍSTICAS, PESQ. E FORMAÇÃO DE SERV. PÚB. DO RJ - CEPERJ"
+	},
+	{
+	  "sigla": "CFSEC",
+	  "descricao": "COMPANHIA FLUMINENSE DE SECURITIZAÇÃO S/A"
+	},
+	{
+	  "sigla": "CGE",
+	  "descricao": "CONTROLADORIA GERAL DO ESTADO DO RIO DE JANEIRO – CGE"
+	},
+	{
+	  "sigla": "CODERTE",
+	  "descricao": "COMPANHIA DE DESENVOLVIMENTO RODOVIÁRIO E TERMINAIS DO ESTADO DO RIO DE JANEIRO"
+	},
+	{
+	  "sigla": "CODIN",
+	  "descricao": "COMPANHIA DE DESENVOLVIMENTO INDUSTRIAL DO ESTADO DO RIO DE JANEIRO"
+	},
+	{
+	  "sigla": "CTC",
+	  "descricao": "COMPANHIA DE TRANSPORTES COLETIVOS DO ESTADO DO RIO DE JANEIRO"
+	},
+	{
+	  "sigla": "DEGASE",
+	  "descricao": "DEPARTAMENTO GERAL DE AÇÕES SOCIOEDUCATIVAS"
+	},
+	{
+	  "sigla": "DER",
+	  "descricao": "FUNDAÇÃO DEPARTAMENTO DE ESTRADA DE RODAGEM DO ESTADO DO RIO DE JANEIRO"
+	},
+	{
+	  "sigla": "DETRAN",
+	  "descricao": "DEPARTAMENTO DE TRÂNSITO DO ESTADO DO RIO DE JANEIRO"
+	},
+	{
+	  "sigla": "DETRO",
+	  "descricao": "DEPARTAMENTO DE TRANSPORTES RODOVIÁRIOS DO ESTADO DO RIO DE JANEIRO"
+	},
+	{
+	  "sigla": "DPGE",
+	  "descricao": "DEFENSORIA PÚBLICA GERAL DO ESTADO"
+	},
+	{
+	  "sigla": "DPGE/FUNDPERJ",
+	  "descricao": "FUNDO ESPECIAL DA DEFENSORIA PÚBLICA GERAL DO ERJ"
+	},
+	{
+	  "sigla": "DRM",
+	  "descricao": "DEPARTAMENTO DE RECURSOS MINERAIS DO ESTADO DO RIO DE JANEIRO"
+	},
+	{
+	  "sigla": "EMATER",
+	  "descricao": "EMPRESA DE ASSISTÊNCIA TÉCNICA E EXTENSÃO RURAL DO ESTADO DO RIO DE JANEIRO"
+	},
+	{
+	  "sigla": "EMOP",
+	  "descricao": "EMPRESA DE OBRAS PÚBLICAS DO ESTADO DO RIO DE JANEIRO"
+	},
+	{
+	  "sigla": "FAETEC",
+	  "descricao": "FUNDAÇÃO DE APOIO À ESCOLA TÉCNICA DO ESTADO DO RIO DE JANEIRO"
+	},
+	{
+	  "sigla": "FAPERJ",
+	  "descricao": "FUNDAÇÃO CARLOS CHAGAS FILHO DE AMPARO A PESQUISA DO ESTADO DO RIO DE JANEIRO"
+	},
+	{
+	  "sigla": "FCFB",
+	  "descricao": "FUNDAÇÃO CASA FRANÇA BRASIL"
+	},
+	{
+	  "sigla": "FEAS",
+	  "descricao": "FUNDO ESTADUAL DE ASSISTÊNCIA SOCIAL"
+	},
+	{
+	  "sigla": "FES",
+	  "descricao": "FUNDO ESTADUAL DE SAÚDE"
+	},
+	{
+	  "sigla": "FIA",
+	  "descricao": "FUNDAÇÃO PARA A INFÂNCIA E ADOLESCÊNCIA"
+	},
+	{
+	  "sigla": "FIPERJ",
+	  "descricao": "FUNDAÇÃO INSTITUTO DE PESCA DO ESTADO DO RIO DE JANEIRO"
+	},
+	{
+	  "sigla": "FLUMITRENS",
+	  "descricao": "COMPANHIA FLUMINENSE DE TRENS URBANOS"
+	},
+	{
+	  "sigla": "FLXIII",
+	  "descricao": "FUNDAÇÃO LEÃO XIII"
+	},
+	{
+	  "sigla": "FMIS",
+	  "descricao": "FUNDAÇÃO MUSEU DA IMAGEM E DO SOM - FMIS/RJ"
+	},
+	{
+	  "sigla": "FSC",
+	  "descricao": "FUNDAÇÃO SANTA CABRINI"
+	},
+	{
+	  "sigla": "FSERJ",
+	  "descricao": "FUNDAÇÃO SAÚDE DO ESTADO DO RIO DE JANEIRO"
+	},
+	{
+	  "sigla": "FTM",
+	  "descricao": "FUNDAÇÃO THEATRO MUNICIPAL DO RIO DE JANEIRO"
+	},
+	{
+	  "sigla": "FUNARJ",
+	  "descricao": "FUNDAÇÃO ANITA MANTUANO DE ARTES DO ESTADO DO RIO DE JANEIRO"
+	},
+	{
+	  "sigla": "FUNDEAGRO",
+	  "descricao": "FUNDO PARA DESENVOLVIMENTO DO AGRONEGÓCIO DO ALGODÃO"
+	},
+	{
+	  "sigla": "FUNDPERJ",
+	  "descricao": "FUNDO ESPECIAL DA DEFENSORIA PÚBLICA DO ESTADO DO RIO DE JANEIRO"
+	},
+	{
+	  "sigla": "FUNDRHI",
+	  "descricao": "FUNDO ESTADUAL DE RECURSOS HÍDRICOS"
+	},
+	{
+	  "sigla": "FUNPERJ",
+	  "descricao": "FUNDO ESPECIAL DA PROCURADORIA GERAL DO ERJ"
+	},
+	{
+	  "sigla": "GSI",
+	  "descricao": "GABINETE DE SEGURANÇA INSTITUCIONAL DO GOVERNO DO ERJ"
+	},
+	{
+	  "sigla": "IASERJ",
+	  "descricao": "INSTITUTO DE ASSISTÊNCIA DOS SERVIDORES DO ESTADO DO RIO DE JANEIRO"
+	},
+	{
+	  "sigla": "IEEA",
+	  "descricao": "INSTITUTO ESTADUAL DE ENGENHARIA E ARQUITETURA"
+	},
+	{
+	  "sigla": "INEA",
+	  "descricao": "INSTITUTO ESTADUAL DO AMBIENTE"
+	},
+	{
+	  "sigla": "IOERJ",
+	  "descricao": "IMPRENSA OFICIAL DO ESTADO DO RIO DE JANEIRO"
+	},
+	{
+	  "sigla": "IPEM",
+	  "descricao": "INSTITUTO DE PESOS E MEDIDAS"
+	},
+	{
+	  "sigla": "IRM",
+	  "descricao": "INSTITUTO RIO METRÓPOLE"
+	},
+	{
+	  "sigla": "ISP",
+	  "descricao": "INSTITUTO DE SEGURANÇA PÚBLICA - RIOSEGURANÇA"
+	},
+	{
+	  "sigla": "ITERJ",
+	  "descricao": "INSTITUTO DE TERRAS E CARTOGRAFIA DO ESTADO DO RIO DE JANEIRO"
+	},
+	{
+	  "sigla": "IVB",
+	  "descricao": "INSTITUTO VITAL BRASIL S/A"
+	},
+	{
+	  "sigla": "JUCERJA",
+	  "descricao": "JUNTA COMERCIAL DO ESTADO DO RIO DE JANEIRO"
+	},
+	{
+	  "sigla": "LOTERJ",
+	  "descricao": "LOTERIA DO ESTADO DO RIO DE JANEIRO"
+	},
+	{
+	  "sigla": "METRORIO",
+	  "descricao": "COMPANHIA DO METROVIÁRIO DO ESTADO DO RIO DE JANEIRO"
+	},
+	{
+	  "sigla": "PESAGRO",
+	  "descricao": "EMPRESA DE PESQUISA AGROPECUÁRIA DO ESTADO DO RIO DE JANEIRO"
+	},
+	{
+	  "sigla": "PGE",
+	  "descricao": "PROCURADORIA GERAL DO ESTADO DO RIO DE JANEIRO"
+	},
+	{
+	  "sigla": "PGE/FUNPERJ",
+	  "descricao": "FUNDO ESPECIAL DA PROCURADORIA GERAL DO ERJ"
+	},
+	{
+	  "sigla": "PROCON",
+	  "descricao": "AUTARQUIA DE PROTECAO E DEFESA DO CONSUMIDOR DO ESTADO DO RIO DE JANEIRO"
+	},
+	{
+	  "sigla": "PRODERJ",
+	  "descricao": "CENTRO DE TECNOLOGIA DE INFORMAÇÃO E COMUNICAÇÃO DO ESTADO DO RIO DE JANEIRO"
+	},
+	{
+	  "sigla": "RIOPREVIDENCIA",
+	  "descricao": "FUNDO ÚNICO DE PREVIDÊNCIA SOCIAL DO ESTADO DO RIO DE JANEIRO"
+	},
+	{
+	  "sigla": "RIOSEGURANÇA",
+	  "descricao": "INST DE SEGURANÇA PÚBLICA DO ESTADO DO RJ"
+	},
+	{
+	  "sigla": "RIOTRILHOS",
+	  "descricao": "COMPANHIA DE TRANSPORTES SOBRE TRILHOS DO ESTADO DO RIO DE JANEIRO"
+	},
+	{
+	  "sigla": "RJPREV",
+	  "descricao": "FUNDAÇÃO DE PREVIDÊNCIA COMPLEMENTAR DO ESTADO DO RIO DE JANEIRO"
+	},
+	{
+	  "sigla": "SEA/PSAM",
+	  "descricao": "SEA/PROGRAMA DE SANEAMENTO AMBIENTAL DA BAÍA GUANABARA"
+	},
+	{
+	  "sigla": "SEAP",
+	  "descricao": "SECRETARIA DE ESTADO DE ADMINISTRAÇÃO PENITENCIÁRIA"
+	},
+	{
+	  "sigla": "SEAP/FUESP",
+	  "descricao": "SEAP/ FUNDO ESPECIAL PENITENCIÁRIO"
+	},
+	{
+	  "sigla": "SEAPPA",
+	  "descricao": "SECRETARIA DE ESTADO DE AGRICULTURA, PECUÁRIA, PESCA E ABASTECIMENTO"
+	},
+	{
+	  "sigla": "SEAS",
+	  "descricao": "SECRETARIA DE ESTADO DO AMBIENTE E SUSTENTABILIDADE"
+	},
+	{
+	  "sigla": "SECC",
+	  "descricao": "SECRETARIA DE ESTADO DA CASA CIVIL"
+	},
+	{
+	  "sigla": "SECEC",
+	  "descricao": "SECRETARIA DE ESTADO DE CULTURA E ECONOMIA CRIATIVA"
+	},
+	{
+	  "sigla": "SECID",
+	  "descricao": "SECRETARIA DE ESTADO DE CIDADES"
+	},
+	{
+	  "sigla": "SECTI",
+	  "descricao": "SECRETARIA DE ESTADO DE CIÊNCIA, TECNOLOGIA E INOVAÇÃO"
+	},
+	{
+	  "sigla": "SEDCON",
+	  "descricao": "SECRETARIA DE ESTADO DE DEFESA DO CONSUMIDOR"
+	},
+	{
+	  "sigla": "SEDEC/CBMERJ",
+	  "descricao": "SECRETARIA DE ESTADO DE DEFESA CIVIL E CORPO DE BOMBEIROS MILITAR"
+	},
+	{
+	  "sigla": "SEDEC/FUNESBOM",
+	  "descricao": "FUNDO ESPECIAL DO CORPO DE BOMBEIROS"
+	},
+	{
+	  "sigla": "SEDEERI",
+	  "descricao": "SECRETARIA DE ESTADO DE DESENVOLVIMENTO ECONOMICO E GERACAO DE EMPREGO E RELAÇÕES INTERNACIONAIS"
+	},
+	{
+	  "sigla": "SEDEICS",
+	  "descricao": "SECRETARIA DE ESTADO DE DESENVOLVIMENTO ECONÔMICO, INDÚSTRIA, COMÉRCIO E SERVIÇOS"
+	},
+	{
+	  "sigla": "SEDEIS",
+	  "descricao": "SUBSECRETARIA DE DESENVOLVIMENTO ECONÔMICO"
+	},
+	{
+	  "sigla": "SEDSODH",
+	  "descricao": "SECRETARIA DE ESTADO DE DESENVOLVIMENTO SOCIAL E DIREITOS HUMANOS"
+	},
+	{
+	  "sigla": "SEEDUC",
+	  "descricao": "SECRETARIA DE ESTADO DE EDUCAÇÃO"
+	},
+	{
+	  "sigla": "SEEL",
+	  "descricao": "SECRETARIA DE ESTADO DE ESPORTE E LAZER"
+	},
+	{
+	  "sigla": "SEENEMAR",
+	  "descricao": "SECRETARIA DE ESTADO DE ENERGIA E ECONOMIA DO MAR"
+	},
+	{
+	  "sigla": "SEENVS",
+	  "descricao": "SECRETARIA DE"
+	},
+	{
+	  "sigla": "SEFAZ",
+	  "descricao": "SECRETARIA DE ESTADO DE FAZENDA"
+	},
+	{
+	  "sigla": "SEFAZ/FAF",
+	  "descricao": "FUNDO DE ADMINISTRAÇÃO FAZENDARIA"
+	},
+	{
+	  "sigla": "SEGOV",
+	  "descricao": "SECRETARIA DE ESTADO DE GOVERNO E RELAÇOES INSTITUCIONAIS"
+	},
+	{
+	  "sigla": "SEHIS",
+	  "descricao": "SECRETARIA DE HABITAÇÃO E INTERESSE SOCIAL"
+	},
+	{
+	  "sigla": "SEIC",
+	  "descricao": "SECRETARIA DE ESTADO DE INFRAESTRUTURA E CIDADES"
+	},
+	{
+	  "sigla": "SEIJES",
+	  "descricao": "SECRETARIA DE JUVENTUDE E ENVELHECIMENTO SAUDÁVEL"
+	},
+	{
+	  "sigla": "SEINFRA",
+	  "descricao": "SECRETARIA DE ESTADO DE INFRAESTRUTURA E OBRAS"
+	},
+	{
+	  "sigla": "SEIOP",
+	  "descricao": "SECRETARIA DE ESTADO DE INFRAESTRUTURA E OBRAS PUBLICAS"
+	},
+	{
+	  "sigla": "SEM",
+	  "descricao": "SECRETARIA DE ESTADO DA MULHER"
+	},
+	{
+	  "sigla": "SEPLAG",
+	  "descricao": "SECRETARIA DE ESTADO DE PLANEJAMENTO E GESTÃO"
+	},
+	{
+	  "sigla": "SEPM",
+	  "descricao": "SECRETARIA DE ESTADO DE POLÍCIA MILITAR"
+	},
+	{
+	  "sigla": "SEPM/FUNESPOM",
+	  "descricao": "FUNDO ESPECIAL DA POLÍCIA MILITAR DO ESTADO DO RIO DE JANEIRO"
+	},
+	{
+	  "sigla": "SEPOL",
+	  "descricao": "SECRETARIA DE ESTADO DE POLÍCIA CIVIL"
+	},
+	{
+	  "sigla": "SEPOL/FUNESPOL",
+	  "descricao": "FUNDO ESPECIAL DA POLÍCIA CIVIL"
+	},
+	{
+	  "sigla": "SEPREDEQ",
+	  "descricao": "SECRETARIA DE ESTADO DE PREVENÇÃO A DEPENDÊNCIA QUÍMICA"
+	},
+	{
+	  "sigla": "SEPROCON/FEPROCON",
+	  "descricao": "FUNCO ESP. DE APOIO A PROGR. DE PROTEÇÃO E DEFESA DO CONSUMIDOR"
+	},
+	{
+	  "sigla": "SERGB",
+	  "descricao": "SECRETARIA EXTRAORDINÁRIA DE REPRESENTAÇÃO DO GOVERNO DO RJ EM BRASÍLIA"
+	},
+	{
+	  "sigla": "SERVE",
+	  "descricao": "EMPRESA ESTADUAL DE VIAÇÃO SERVE EM LIQUIDAÇÃO\""
+	},
+	{
+	  "sigla": "SES",
+	  "descricao": "SECRETARIA DE ESTADO DE SAÚDE"
+	},
+	{
+	  "sigla": "SES/FES",
+	  "descricao": "FUNDO ESTADUAL DE SAÚDE"
+	},
+	{
+	  "sigla": "SESP",
+	  "descricao": "SECRETARIA DE ESTADO DE SEGURANÇA PÚBLICA"
+	},
+	{
+	  "sigla": "SETD",
+	  "descricao": "SECRETARIA DE ESTADO DE TRANSFORMAÇÃO DIGITAL"
+	},
+	{
+	  "sigla": "SETRAB",
+	  "descricao": "SECRETARIA DE ESTADO DE TRABALHO E RENDA"
+	},
+	{
+	  "sigla": "SETRAM",
+	  "descricao": "SECRETARIA DE ESTADO DE TRANSPORTE E MOBILIDADE URBANA"
+	},
+	{
+	  "sigla": "SETUR",
+	  "descricao": "SECRETARIA DE ESTADO DE TURISMO"
+	},
+	{
+	  "sigla": "SEVIT",
+	  "descricao": "SECRETARIA DE ESTADO DE VITIMADOS"
+	},
+	{
+	  "sigla": "SSMGSI",
+	  "descricao": "SUBSECRETARIA MILITAR DO GABINETE DE SEGURANÇA INSTITUCIONAL"
+	},
+	{
+	  "sigla": "SUDERJ",
+	  "descricao": "SUPERINTENDÊNCIA DE DESPORTOS DO ESTADO DO RIO DE JANEIRO"
+	},
+	{
+	  "sigla": "TURISRIO",
+	  "descricao": "COMPANHIA DE TURISMO DO ESTADO DO RIO DE JANEIRO"
+	},
+	{
+	  "sigla": "UENF",
+	  "descricao": "UNIVERSIDADE ESTADUAL DO NORTE FLUMINENSE DARCY RIBEIRO"
+	},
+	{
+	  "sigla": "UERJ",
+	  "descricao": "FUNDAÇÃO UNIVERSIDADE DO ESTADO DO RIO DE JANEIRO"
+	},
+	{
+	  "sigla": "UERJ/HUPE",
+	  "descricao": "HOSPITAL UNIVERSITÁRIO PEDRO ERNESTO"
+	},
+	{
+	  "sigla": "UEZO",
+	  "descricao": "FUNDAÇÃO CENTRO UNIVERSITÁRIO ESTADUAL DA ZONA OESTE"
+	},
+	{
+	  "sigla": "VGE",
+	  "descricao": "VICE-GOVERNADORIA"
+	}
+  ]
 }

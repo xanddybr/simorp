@@ -14,12 +14,6 @@
 
 <script src="../js/lumino.glyphs.js"></script>
 
-<!--Icons
-
-<script src="js/html5shiv.js"></script>
-<script src="js/respond.min.js"></script>
-
--->
 <script>
 	
 </script>

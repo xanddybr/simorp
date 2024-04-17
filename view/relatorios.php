@@ -14,16 +14,6 @@
 <script src="./js/relatorios_settings.js"></script>
 
 
-<!--<link href="./css/datepicker3.css" rel="stylesheet"> -->
-
-
-<!--Icons
-
-<script src="js/html5shiv.js"></script>
-<script src="js/respond.min.js"></script>
-
--->
-
 
 </head>
 

@@ -1,6 +1,7 @@
 <?php
 
 require_once 'ConnectAPI.php';
+require_once 'Modal.php';
 
 Class Usuario {
   
@@ -96,7 +97,7 @@ Class Usuario {
 
  
 //Exec connection with data-source API
-        public function AuthenticUserAPI() {
+        public function AuthenticUserAPI($check) {
 
             /* $dataUser = array('username'	=> $this->_usuario, 'password'  => $this->_senha); */
 
@@ -109,7 +110,7 @@ Class Usuario {
                           
           if(isset($data['detail'])) {
 
-            return 'false';
+                 echo Modal::MsgBox('Por favor, verifique o seu usuario e senha!');
 
             } else {
 
@@ -117,6 +118,8 @@ Class Usuario {
                   $this->set_sobrenome($data['sobrenome']);
                   $this->set_perfil($data['perfil']);
                   $this->set_token($data['access']);
+                    
+                  Usuario::LogonSession($check);
 
               }
 
@@ -151,24 +154,7 @@ Class Usuario {
     }  
     }
 
-      public function ValidateData($check) {
-    
-        //verify data coming of datasource and authentic user 
-        if(Usuario::AuthenticUserAPI() != 'false')  {
-
-            // Message if user and password diferent
-                Usuario::LogonSession();
-                Usuario::MakeUserCookie($check);
-                
-             
-            } else {
-              
-              echo "<script>alert('Usuário e senha estão inválidos!');</script>";
-                       
-        }
-      } 
-
-     
+        
       public function LogoutSessionTimeOut() {
         $_SESSION['login'] = [null, null, null];
         session_destroy();
@@ -186,14 +172,15 @@ Class Usuario {
        }
 
 
-      public function LogonSession() {
+      public function LogonSession($check) {
     
         if(!isset($_SESSION['login'])) {
 
          try {
                  $_SESSION["login"] = [$this->nome . " " . $this->sobrenome, $this->token,'logado'];
                  setcookie('timeUser', $this->nome , time() + 43200); // time duration 10hs
-                 
+                 Usuario::MakeUserCookie($check);
+
          } catch(Exception $e){
 
                  echo "Erro na tentativa de criar a sessão!";

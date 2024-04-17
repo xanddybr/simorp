@@ -13,7 +13,7 @@
             $('#seiprocess').mask('SEI-999999/999999/9999');
         });
 
-
+        
         $(document).ready(function (){
 
             $("#tipoAta").hide();
@@ -128,35 +128,36 @@
 
 
         $(document).ready(function (){
-            $("#tipoAta").change(function() { 
+           
                 var orgao, url;
                 url = 'data/orgaos.json';
                 $.getJSON(url, function(data) {
                 $(data.registros).each(function(obj) {
 
 
-                    if($("#tipoAta").val() == "INTERNA") {
-                        orgao = "<option value=\"" + data.registros[obj]['sigla'] + " - " + data.registros[obj]['uniGestora'].toUpperCase() + "\"></option>";
+                    orgao = "<option value=\"" + data.registros[obj]['sigla'].toUpperCase() + " - " + data.registros[obj]['descricao'] + "\">" + data.registros[obj]['sigla'] + "</option>";
                         $("#OrgSol_Gestor").append(orgao);
+
+                $("#tipoAta").change(function() {      
+
+                    if($("#tipoAta").val() == "INTERNA") {
+                        orgao = "<option value=\"" + data.registros[obj]['sigla'].toUpperCase() + " - " + data.registros[obj]['descricao'] + "\">" + data.registros[obj]['sigla'] + "</option>";
                         $("#Org_aderente").append(orgao);	
                     }
 
                     if($("#tipoAta").val() == "EXTERNA") {
-                        orgao = "<option value=\"" + data.registros[obj]['sigla'] + " - " + data.registros[obj]['uniGestora'].toUpperCase() + "\"></option>";
-                        $("#OrgSol_Gestor").append(orgao);
                         $("#Org_aderente").empty();
                     }
 
-                    if($("#tipoAta").val() == "selecione") {
-                        orgao = "<option value=\"" + data.registros[obj]['sigla'] + " - " + data.registros[obj]['uniGestora'].toUpperCase() + "\"></option>";
+                    if($("#tipoAta").val() == "") {
                         $("#Org_aderente").empty();
                     }
-
-
+           
+                    }) 
                 })
             })
         })
-        })
+  
 
     
 

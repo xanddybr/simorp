@@ -7,11 +7,15 @@
 <link rel="icon" type="image/x-icon" href="img/ico/pencil.ico">
 <link href="./css/bootstrap.min.css" rel="stylesheet">
 <link href="./css/styles.css" rel="stylesheet">
-<script src="./js/jquery-1.11.1.min.js"></script>
+
+
+<script src="./js/jquery.min.js"></script>
+<script src="./js/bootstrap.min.js"></script>
+<script src="./js/login_settings.js"></script>
+
 
 <!--chamada para API-->
 <script src="./js/authAPI.js"></script>
-
 <!--Icons-->
 <script src="js/lumino.glyphs.js"></script>
 
@@ -20,17 +24,16 @@
 
 
 </script>
-
 </head>
 
 
 
-<body class="minhaclasse">
+<body>
 	
 	<div class="row">
 		<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4" style='position: absolute; width:500px;'>
 			<div class="login-panel panel panel-default">
-				<div class="panel-heading"><b>SIMORP</b>_beta</div>
+				<div class="panel-heading"><b>SIMORP</b> beta</div>
 				<div class="panel-body">
 					<form id="form" method="POST">
 						<div class="form-group" >
@@ -52,16 +55,11 @@
 				</div>
 				
 			</div>
-			<?php echo "<center><span style='text-aling: center'><h6>v1.0.0 build 0416.1758</h6></span></center>"; ?>
+			<?php echo "<center><span style='text-aling: center'><h6>v1.0.0 build 0417.1753</h6></span></center>"; ?>
 		</div><!-- /.col-->
 		
 	</div><!-- /.row -->	
 	 
-	<script>
-
-	</script>	
-
-	
-	
+		
 
 </html>

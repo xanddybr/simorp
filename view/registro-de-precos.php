@@ -15,9 +15,9 @@
 <!-- libraires -->
 <script src="../js/lumino.glyphs.js"></script>
 <script src="../js/bootstrap.min.js"></script>
-<script src="../js/jquery-1.8.3.min.js" charset="utf-8"></script>
+<script src="../js/jquery.min.js" charset="utf-8"></script>
 <script src="./js/solicitacao_settings.js"></script>
-<script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
+<script src="./js/jquery.mask.min.js"></script>
 
 
 <body>
@@ -110,7 +110,7 @@
 								 </div>
 				 	 
 
-								 <div class="form-group col-lg-5" id='Org02'>
+								 <div class="form-group col-lg-6" id='Org02'>
 									    <label id='l_aderente'>Orgão Aderente</label> 
 									    <input id='aderente' type='text' class="form-control" list='Org_aderente' name='solRegPrec[]'>
 								 <datalist id='Org_aderente'></datalist>
