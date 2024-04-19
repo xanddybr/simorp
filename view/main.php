@@ -63,7 +63,7 @@
 				</a> -->
 				<ul class="children collapse" id="sub-item-1">
 					<li>
-						<a class="" href="<?php echo ('registro-de-precos'); ?>">
+						<a class="" href="<?php echo ('solicitacoes'); ?>">
 							<svg class="glyph stroked chevron-right"><use xlink:href="#stroked-pencil"></use></svg> Registro de preço
 						</a>
 					</li>
@@ -75,7 +75,7 @@
 				</ul>
 			</li>
 
-			<li><a href="<?php echo ('registro-de-precos'); ?>" ><svg class="glyph stroked line-graph"><use xlink:href="#stroked-pencil"></use></svg> Solicitações</a></li>
+			<li><a href="<?php echo ('solicitacoes'); ?>" ><svg class="glyph stroked line-graph"><use xlink:href="#stroked-pencil"></use></svg> Solicitações</a></li>
 		    <!-- <li><a href="<?php echo ('adesao-ata'); ?>"><svg class="glyph stroked table"><use xlink:href="#stroked-pencil"></use></svg> Adesão a Ata</a></li>-->
 			<li><a href="<?php echo ('relatorios'); ?>"><svg class="glyph stroked line-graph"><use xlink:href="#stroked-line-graph"></use></svg> Relatórios</a></li>
 			<!-- <li><a href="forms.php"><svg class="glyph stroked pencil"><use xlink:href="#stroked-pencil"></use></svg> Forms</a></li> -->

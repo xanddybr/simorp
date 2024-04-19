@@ -30,8 +30,8 @@
 
 <body>
 	
-	<div class="row">
-		<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4" style='position: absolute; width:500px;'>
+	<div class="row" style='width:500px; margin-left: 714px;'>
+		<div class="" >
 			<div class="login-panel panel panel-default">
 				<div class="panel-heading"><b>SIMORP</b> beta</div>
 				<div class="panel-body">
@@ -55,7 +55,7 @@
 				</div>
 				
 			</div>
-			<?php echo "<center><span style='text-aling: center'><h6>v1.0.0 build 0417.1753</h6></span></center>"; ?>
+			<?php echo "<center><span style='text-aling: center'><h6>v1.0.0 build 0419.1818</h6></span></center>"; ?>
 		</div><!-- /.col-->
 		
 	</div><!-- /.row -->	

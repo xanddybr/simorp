@@ -15,6 +15,7 @@
 
 
 
+
 </head>
 
 <body>
@@ -91,10 +92,9 @@
 								</select>
 													
 							</div>
-					<div class="col-lg-2"><input type='button' value='Gerar Relatório' class="form-control" /></div>
-						
+				<div class="col-lg-2"><button id='makeReport' type='button' value='' class="" >Gerar Relatório</button></div>
 					<div id="tabRel01"> 
-						<table id="tabRel01" data-toggle="table" data-url="./data/registropreco.json" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
+						<table id='rel01' data-toggle="table" data-url="./data/registropreco.json" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
 
 						<thead>
 						    <tr>
@@ -111,7 +111,8 @@
 						</div>
 
 						<div id="tabRel02"> 
-						<table id="tabRel02" data-toggle="table" data-url="./data/adesaoata.json" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
+
+						<table id='rel02' data-toggle="table" data-url="./data/adesaoata.json" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
 
 						<thead>
 						    <tr>
@@ -126,8 +127,8 @@
 								<th data-field="valorTotal" data- data-sortable="true"><b>Total</b></th>
 							</tr>
 						</thead>
-						</table>
-						</divr>
+					</table>
+				</divr>
 					
 					</div>
 				</div>

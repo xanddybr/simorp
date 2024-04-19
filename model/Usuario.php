@@ -120,13 +120,12 @@ Class Usuario {
                   $this->set_token($data['access']);
                     
                   Usuario::LogonSession($check);
-
+                  
               }
-
+              
           }
 
-
-
+          
     public function Homologation() {
       if(!isset($_SESSION['login'] )) {
 

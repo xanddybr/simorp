@@ -159,7 +159,7 @@ Class Solicitacao extends ObjetoItens {
 
      }
 
-      public function LoadAll($tpSolicitacao) {
+      public function LoadAll($tpSolici) {
             
       
       }

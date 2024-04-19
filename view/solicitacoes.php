@@ -36,7 +36,7 @@
 						
 					<div class="panel-heading" class="form-group">
 												
-						<label>Registro de preço Nº:</label>
+						<label>Solicitação Nº:</label>
 					
 					</div>
 
@@ -100,7 +100,9 @@
 								<label id='l_nata'>Nº DA ATA</label>
 													
 								<input class="form-control col-lg-6" placeholder="Nº DA ATA" name='solRegPrec[]' id='nata' value="" required>
-							    </div>
+								
+							    </div><br>
+								<input id='desfOptions' type="button" class="btn" value='DESFAZER'>
 
 								<br><br><br><br>
 								<div class="form-group col-lg-5" id='Org01'>
@@ -145,6 +147,7 @@
 				 		<table data-toggle="table" id='table01' class="col-lg-12">
 						
 						<tr>
+							<th data-field="name"><input type='checkbox' id='chekIten'  class=""></th>
 							<th data-field="name">Descricão</th>
 						<!--<th data-field="name">Tipo Objeto</th> -->
 							<th data-field="name">Tipo</th>
@@ -152,32 +155,30 @@
 							<th data-field="name">Valor Item</th>
 							<th data-field="name">Qtd</th>
 							<th data-field="name">Sub.Total</th>
-							<th data-field="name"> + </th>
-							<th data-field="name"> - </th>
+							<th data-field="name"></th>
+							<th data-field="name"></th>
 						</tr>
-					<tr> 
-							<td data-field="text">
+						 <tr> 
+							<td data-field="text" style='width:20px'>
+								<input type='checkbox' id='chekIten'  class="">
+							</td>
+						   	<td data-field="text">
 								<input class="form-control" id='listItens' placeholder="INFORME O ITEM..." list='itens'  style='width: 700px;' name="solRegPrec[]" autocomplete="off" enable='false' />
 								<datalist id='itens'></datalist>
 							</td>
 									
 							<td data-field="text">
-
 								<input type='text' id='tpObjeto' value='' class="form-control" style='width:150px' name="solRegPrec[]" placeholder='' disabled>
-								 
     						</td>
 							<td data-field="text">
-
 								<input id='unid' list='unidades' class="form-control" style='width:150px' name="solRegPrec[]" placeholder='';>
 								<datalist id="unidades" ></datalist>
- 
     						</td>
-							
 							<td data-field="text" style="width: 120px"><input class="form-control dinheiro" style='width:150px' type="text" id="valorUni"  name="solRegPrec[]" placeholder="R$" value="" required/></td>
 							<td data-field="text" style="width: 100px"><input class="form-control"  type="text" id="qtdItem" placeholder="" name="solRegPrec[]" value="" required /></td>
 							<td data-field="text" style="width: 120px"><input class="form-control dinheiro" style='width:150px' id="valorTotal" placeholder="R$" name="solRegPrec[]" value="" required /></td>
-							<td data-field="text" style="width: 70px">&nbsp;&nbsp;<input type="button" id="btn-add" value='add' name="" /></td>
-							<td data-field="text" style="width: 70px"><input class="btn-rmv" type="button" id="" name="" value='Rmv'></button></td>
+							<td data-field="text" style="width: 70px">&nbsp;&nbsp;<input type="button" id="btn-add" value=' + ' name="" /></td>
+							<td data-field="text" style="width: 70px"><input type="button" id="btn-add" value=' - ' name="" /></td>
 						</tr>
 				</table>
 				</form>

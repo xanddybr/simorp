@@ -1,11 +1,14 @@
+       
+
+
         //MASK DATE
-        $(function() {
-            $(".mskdate").mask("99/99/9999");
-        });
+       // $(function() {
+      //    $(".mskdate").mask("99/99/9999");
+    //  });
 
         //MASK CURRENCY REAL-BR
         $(function() {
-            $('.dinheiro').mask('#.##9,99', {reverse: true});
+           
         });
 
         //MASK PROCESS NUMBER SEI
@@ -13,8 +16,63 @@
             $('#seiprocess').mask('SEI-999999/999999/9999');
         });
 
+
+    $("#listItens").on('load',function () {
+        alert("loading");
+    })
+
+
+        //INSERT LINE ITEM IN TABLE
+        $(document).ready(function(){
+                
+            
+
+            var i = 0;
+            $("#btn-add").click(function(){
+                   
+                var row = "<tr>"+
+                
+                "<td data-field='text' style='width:20px'>"+
+                "<input type='checkbox' id='chekIten'  class=''>"+
+                "</td>"+
+                "<td data-field='text'>"+
+                "<input class='form-control' id='listItens' placeholder='INFORME O ITEM...' list='itens'  style='width: 700px;' name='solRegPrec[]' autocomplete='off' enable='false' />"+
+                "<datalist id='itens'></datalist>"+
+                "</td>"+
+                "<td data-field='text'>"+
+                "<input type='text' id='tpObjeto' value='' class='form-control' style='width:150px' name='solRegPrec[]' placeholder='' disabled>"+
+                "</td>"+
+                "<td data-field='text'>"+
+                "<input id='unid' list='unidades' class='form-control' style='width:150px' name='solRegPrec[]' placeholder='';>"+
+                "<datalist id='unidades' ></datalist>"+
+                "</td>"+
+                "<td data-field='text' style='width: 120px'><input class='form-control' style='width:150px' type='text' id=''  name='solRegPrec[]' placeholder='R$' value='' required/></td>"+
+                "<td data-field='text' style='width: 100px'><input class='form-control'  type='text' id='qtdItem' placeholder='' name='solRegPrec[]' value='' required /></td>"+
+                "<td data-field='text' style='width: 120px'><input class='form-control' style='width:150px' id=dinheiro" +i+ " placeholder='R$' name='solRegPrec[]' value='' required /></td>"+
+                "<td data-field='text' style='width: 70px'></td>"+
+                "<td data-field='text' style='width: 70px'></td>"+
+                "</tr>";
+                
+                $("#table01:last").append(row);
+                $('#dinheiro'+i).mask('#.##9,99',{reverse: true});
+
+                i++;
+                                
+                }) 
+                       $("#btn-rmv"+i).click(function(){
+                            $("#table01").hide();
+                
+                        })                       
+         
+
+    })      
+       
+       
+       
+     
+
         
-        $(document).ready(function (){
+    $(document).ready(function (){
 
             $("#tipoAta").hide();
             $("#l_tipoAta").hide();
@@ -23,8 +81,9 @@
             $("#aderente").hide();
             $("#l_aderente").hide();
             $("#addOrg").hide();
+            $("#desfOptions").hide();
         
-            $('#tipoSolici').change(function (){
+    $('#tipoSolici').change(function (){
 
         if ($('#tipoSolici').val() == 'regPreco') {
             $("#tipoAta").val('');
@@ -37,9 +96,9 @@
             $("#aderente").hide();
             $("#l_aderente").hide();
             $("#addOrg").hide();
+            $("#desfOptions").hide();
             $("#l_OrgSol_Gestor").empty();
             $("#l_OrgSol_Gestor").append("Orgão Solicitante");
-            
         }
 
         if ($('#tipoSolici').val() == 'adesaoAta') {
@@ -50,8 +109,10 @@
             $("#aderente").show();
             $("#l_aderente").show();
             $("#addOrg").show();
+            $("#desfOptions").show();
             $("#l_OrgSol_Gestor").empty();
             $("#l_OrgSol_Gestor").append("Orgão Gestor");
+            
             }
         
         })
@@ -175,33 +236,17 @@
         })
 
 
-        //INSERT LINE ITEM IN TABLE
-        $(document).ready(function(){
-            $("#btn-add").click(function(){
+       
+               
+     
 
-                let i = 0;
-                do { 
+     
 
-                var row = "<tr>" +
-                "<td> <input class='form-control' name='solRegPrec[]' list='itens' placeholder='INFORME O ITEM...' />" +
-                "<datalist id='itens'></datalist> </td>" + 
-                "<td><input type='text' id='tpObjeto' value='' class='form-control' style='width:150px' name='solRegPrec[]' placeholder='' disabled></td>" +
-                "<td> <input list='unidades' class='form-control' placeholder='' name='solRegPrec[]'>" +
-                "<datalist id='unidades'></datalist>"+
-                "</td>" +
-                "<td> <input class='form-control dinheiro' type='text' id='valorUni' placeholder='R$' value='' name='solRegPrec[]' required/> </td>" +
-                "<td> <input class='form-control' type='text' id='qtdItem' placeholder='' name='solRegPrec[]' value='' required /> </td>" +
-                "<td> <input class='form-control dinheiro' id='valorTotal' placeholder='R$' name='solRegPrec[]' value='' required /> </td>" +
-                "<td>&nbsp;&nbsp;</td>" +
-                "<td><input class='btn-rmv' type='button' id='' name='' value='Rmv'></td></tr>";
+        
+       
 
-                //BIND NEW LINE	AT TABLE
-                $("#table01:last").append(row);	
-                i+=1;
-                } while (i < 1);
-            })		
-            
-        })
+    
+               
 
 
   
