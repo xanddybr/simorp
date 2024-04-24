@@ -138,19 +138,12 @@ Class Usuario {
           
              header("location:/simorp_beta/home");
 
-        } else { 
-
-              echo "<div class='col-lg-12'>";
-              echo "<div class='alert bg-danger' role='alert'>";
-              echo "<svg class='glyph stroked cancel'><use xlink:href='#stroked-cancel'></use></svg>Dados de homologação incorretos!!!<a href='' class='pull-right'><span class='glyphicon glyphicon-remove'></span></a>";
-              echo  "</div>";
-              echo "</div>";
-
+            } else { 
         }
 
-      }
+        } else { echo Modal::MsgBox('Usuario ou senha do Homologador inválidos!'); }
       
-    }  
+      }  
     }
 
         
@@ -191,23 +184,13 @@ Class Usuario {
 
            } else {
 
-             echo "<div class='col-lg-12'>";
-             echo "<div class='alert bg-danger' role='alert'>";
-             echo "<svg class='glyph stroked cancel'><use xlink:href='#stroked-cancel'></use></svg>Erro ao tentar iniciar a sessão, Já existe uma sessão iniciada!!!<a href='' class='pull-right'><span class='glyphicon glyphicon-remove'></span></a>";
-             echo  "</div>";
-             echo "</div>";
-
+                echo Modal::MsgBox('Erro ao tentar iniciar outra sessão, Porque existe uma sessão iniciada!!!');
            }
         
 
        } else {
    
-             echo "<div class='col-lg-12'>";
-             echo "<div class='alert bg-danger' role='alert'>";
-             echo "<svg class='glyph stroked cancel'><use xlink:href='#stroked-cancel'></use></svg> Já existe uma sessão iniciada, ou usuário já esta logado!!!<a href='' class='pull-right'><span class='glyphicon glyphicon-remove'></span></a>";
-             echo "</div>";
-             echo "</div>";
-                     
+               echo Modal::MsgBox('Já existe uma sessão iniciada, ou usuário já esta logado!!!');
          }
      }
 

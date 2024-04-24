@@ -1,77 +1,46 @@
-       
-
-
-        //MASK DATE
-       // $(function() {
-      //    $(".mskdate").mask("99/99/9999");
-    //  });
-
-        //MASK CURRENCY REAL-BR
-        $(function() {
-           
-        });
-
+      
+   
+    
         //MASK PROCESS NUMBER SEI
-        $(function() {
+    $(function() {
             $('#seiprocess').mask('SEI-999999/999999/9999');
         });
 
 
-    $("#listItens").on('load',function () {
-        alert("loading");
-    })
-
-
         //INSERT LINE ITEM IN TABLE
         $(document).ready(function(){
-                
-            
-
             var i = 0;
             $("#btn-add").click(function(){
                    
-                var row = "<tr>"+
-                
-                "<td data-field='text' style='width:20px'>"+
-                "<input type='checkbox' id='chekIten'  class=''>"+
-                "</td>"+
-                "<td data-field='text'>"+
-                "<input class='form-control' id='listItens' placeholder='INFORME O ITEM...' list='itens'  style='width: 700px;' name='solRegPrec[]' autocomplete='off' enable='false' />"+
-                "<datalist id='itens'></datalist>"+
-                "</td>"+
-                "<td data-field='text'>"+
-                "<input type='text' id='tpObjeto' value='' class='form-control' style='width:150px' name='solRegPrec[]' placeholder='' disabled>"+
-                "</td>"+
-                "<td data-field='text'>"+
-                "<input id='unid' list='unidades' class='form-control' style='width:150px' name='solRegPrec[]' placeholder='';>"+
-                "<datalist id='unidades' ></datalist>"+
-                "</td>"+
-                "<td data-field='text' style='width: 120px'><input class='form-control' style='width:150px' type='text' id=''  name='solRegPrec[]' placeholder='R$' value='' required/></td>"+
-                "<td data-field='text' style='width: 100px'><input class='form-control'  type='text' id='qtdItem' placeholder='' name='solRegPrec[]' value='' required /></td>"+
-                "<td data-field='text' style='width: 120px'><input class='form-control' style='width:150px' id=dinheiro" +i+ " placeholder='R$' name='solRegPrec[]' value='' required /></td>"+
-                "<td data-field='text' style='width: 70px'></td>"+
-                "<td data-field='text' style='width: 70px'></td>"+
+                var row = "<tr id=listN"+ i +">"+
+                "<td data-field='text' style='width:20px'><input type='checkbox' id='chekIten'  class=''></td>"+
+                "<td data-field='text'><input class='form-control' id='listItens' placeholder='INFORME O ITEM...' list='itens'  style='width: 738px;' name='solRegPrec[]' /><datalist id='itens'></datalist></td>"+
+                "<td data-field='text'><input type='text' id='tpObjeto' value='' class='form-control' style='width:143px' name='solRegPrec[]' placeholder='' disabled></td>"+
+                "<td data-field='text'><input id='unid' list='unidades' class='form-control' style='width:148px' name='solRegPrec[]' placeholder='';><datalist id='unidades'></datalist></td>"+
+                "<td data-field='text'><input class='form-control dinheiro' style='width:148px' type='text' id=''  name='solRegPrec[]' placeholder='R$' value=''/></td>"+
+                "<td data-field='text'><input class='form-control' type='text' style='width:48px;' id='qtdItem' placeholder='' name='solRegPrec[]' value='' required /></td>"+
+                "<td data-field='text'><input class='form-control dinheiro' style='width:148px'  placeholder='R$' name='solRegPrec[]' value='' disabled/></td>"+
+                "<td data-field='text' style='width: 70px;'>&nbsp&nbsp</td>"+
+                "<td data-field='text' style='width: 70px;'>&nbsp&nbsp</td>"+
                 "</tr>";
                 
                 $("#table01:last").append(row);
-                $('#dinheiro'+i).mask('#.##9,99',{reverse: true});
-
+                $(".dinheiro").mask('#.##9,99',{reverse: true});
+                
+                
                 i++;
                                 
                 }) 
                        $("#btn-rmv"+i).click(function(){
                             $("#table01").hide();
                 
-                        })                       
-         
+           })                       
+     })      
 
-    })      
-       
-       
-       
-     
-
-        
+     $(document).ready(function(){
+        $(".dinheiro").mask('#.##9,99',{reverse: true});
+    })
+               
     $(document).ready(function (){
 
             $("#tipoAta").hide();
@@ -156,7 +125,6 @@
             
             $.getJSON(url, function(data) {
             $(data.itens).each(function(obj) {
-
             if(data.itens[obj]['tipo'] == option) {
             itenList = "<option value=\"" + data.itens[obj]['id'] + " - " + data.itens[obj]['artigo'].toUpperCase() + "\">\"" + data.itens[obj]['descricao'].toUpperCase() + "\"</option>";
             
@@ -171,8 +139,7 @@
 
             if(option == 'ambos') {
             itenList = "<option value=\"" + data.itens[obj]['id'] + " - " + data.itens[obj]['artigo'].toUpperCase() + "\">\"" + data.itens[obj]['descricao'].toUpperCase() + "\"</option>";
-            
-            
+                        
             $('#itens').append(itenList);
                 $('#tipoObjeto').prop('disabled', true);
                 $("#tipoSolici").prop('disabled', true);
@@ -218,9 +185,7 @@
                 })
             })
         })
-  
-
-    
+      
 
         $(document).ready(function (){
             var itenList, url;
@@ -235,15 +200,39 @@
             })
         })
 
-
-       
-               
-     
-
-     
-
+        /*         
         
-       
+        class datalist {
+
+            id;
+            url;
+            file;
+            value;
+            desc;
+            ArrayJson;
+           
+            constructor(id,url,file,ArrayJson) {
+              this.id = id;
+              this.url = url;
+              this.file = file;
+              this.ArrayJsonv = ArrayJson;
+           }
+        
+            static AppendDataList(){
+              
+              $.getJSON(this.url, function(data) {
+                 $(data.this.ArrayJson).each(function(obj) {
+                  let itenList = "<option value=\"" + data.this.ArrayJson[obj][this.value] + "\">\"" + data.this.ArrayJson[obj][this.desc].toUpperCase() + "\"</option>";
+                  $(id).append(orgao);
+        
+                 })
+              })
+            }
+        
+             
+        
+        }
+       */ 
 
     
                

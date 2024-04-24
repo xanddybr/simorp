@@ -20,6 +20,18 @@
 <script src="./js/jquery.mask.min.js"></script>
 
 
+<script>
+
+	$(document).ready(function (){
+
+		dataList.AppendDataList('#unidades','./data/','orgaos.json','sigla', 'descricao','unidades');
+			
+	})
+
+
+</script>
+
+
 <body>
 
 	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">			
@@ -147,39 +159,17 @@
 				 		<table data-toggle="table" id='table01' class="col-lg-12">
 						
 						<tr>
-							<th data-field="name"><input type='checkbox' id='chekIten'  class=""></th>
-							<th data-field="name">Descricão</th>
-						<!--<th data-field="name">Tipo Objeto</th> -->
-							<th data-field="name">Tipo</th>
-							<th data-field="name">Uni</th>
-							<th data-field="name">Valor Item</th>
-							<th data-field="name">Qtd</th>
-							<th data-field="name">Sub.Total</th>
-							<th data-field="name"></th>
-							<th data-field="name"></th>
+							<th data-field="name" style='width: 20px'><input type='checkbox' id='chekIten'  class=""></th>
+							<th data-field="name" style='width: 680px;'>Descricão</th>
+    						<th data-field="name" style='width: 110px'>Tipo</th>
+							<th data-field="name" style='width: 120px'>Uni</th>
+							<th data-field="name" style='width: 120px'>Valor Item</th>
+							<th data-field="name" style='width: 50px'>Qtd</th>
+							<th data-field="name" style='width: 150px'>Sub.Total</th>
+							<th data-field="name" style='width: 70px;'>&nbsp&nbsp<input type="button" id="btn-add" value=' + ' name="" /></th>
+							<th data-field="name" style='width: 70px;'><input type="button" id="btn-add" value=' - ' name="" /></th>
 						</tr>
-						 <tr> 
-							<td data-field="text" style='width:20px'>
-								<input type='checkbox' id='chekIten'  class="">
-							</td>
-						   	<td data-field="text">
-								<input class="form-control" id='listItens' placeholder="INFORME O ITEM..." list='itens'  style='width: 700px;' name="solRegPrec[]" autocomplete="off" enable='false' />
-								<datalist id='itens'></datalist>
-							</td>
-									
-							<td data-field="text">
-								<input type='text' id='tpObjeto' value='' class="form-control" style='width:150px' name="solRegPrec[]" placeholder='' disabled>
-    						</td>
-							<td data-field="text">
-								<input id='unid' list='unidades' class="form-control" style='width:150px' name="solRegPrec[]" placeholder='';>
-								<datalist id="unidades" ></datalist>
-    						</td>
-							<td data-field="text" style="width: 120px"><input class="form-control dinheiro" style='width:150px' type="text" id="valorUni"  name="solRegPrec[]" placeholder="R$" value="" required/></td>
-							<td data-field="text" style="width: 100px"><input class="form-control"  type="text" id="qtdItem" placeholder="" name="solRegPrec[]" value="" required /></td>
-							<td data-field="text" style="width: 120px"><input class="form-control dinheiro" style='width:150px' id="valorTotal" placeholder="R$" name="solRegPrec[]" value="" required /></td>
-							<td data-field="text" style="width: 70px">&nbsp;&nbsp;<input type="button" id="btn-add" value=' + ' name="" /></td>
-							<td data-field="text" style="width: 70px"><input type="button" id="btn-add" value=' - ' name="" /></td>
-						</tr>
+				
 				</table>
 				</form>
 					<script>
@@ -237,6 +227,7 @@
 		$(window).on('resize', function () {
 		  if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide');
 		})
+
 
 	</script>	
 
