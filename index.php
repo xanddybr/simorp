@@ -15,18 +15,19 @@
 
 <!-- Load dependency Bootstraps Framewoks  -->
 <link href="./css/bootstrap.min.css" rel="stylesheet">
-<link href="./css/bootstrap.css" rel="stylesheet">
 <link href="./css/styles.css" rel="stylesheet">
 <link href="./img/ico/pencil.ico" rel="icon" type="image/x-icon" >
 
 <!--load Icons and javascripts-->
 <script src="./js/lumino.glyphs.js"></script>
-<script src="./js/jquery-1.9.0.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="./js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="./js/index_settings.js"></script>
 
 </head>
 
-<?php
 
+
+<?php
 
       $rota = new Router();
       $rota->set_url($_SERVER['SERVER_NAME']);
@@ -45,8 +46,11 @@
                              
       }
       // START APP IN PAGE LOGIN
-      $rota->StartAppLogin();
+     
       
+       $rota->StartAppLogin();
+
+
       } else {
 
       // ENABLE ROUTES BY NAVIGATION AND LOAD PAGE HOME
@@ -67,9 +71,7 @@
       if(!isset($_GET['url']) && $_GET['url'] == NULL ){
             ControllerUsuario::Logout();
       }
-     
-
-     
+      
 }
    
 ?>

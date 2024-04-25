@@ -71,8 +71,8 @@ class Router {
             require $rtdir[0].'\view\main.php';
             break;
 
-    case $this->url ."/simorp_beta/registro-de-precos":
-            require $rtdir[0].'\view\registro-de-precos.php';
+    case $this->url ."/simorp_beta/solicitacao":
+            require $rtdir[0].'\view\solicitacao.php';
             require $rtdir[0].'\view\main.php';
             break;
 
@@ -84,6 +84,8 @@ class Router {
     case $this->url ."/simorp_beta/relatorios":
             require $rtdir[0].'\view\relatorios.php';
             require $rtdir[0].'\view\main.php';
+            
+            
             break;
     
       

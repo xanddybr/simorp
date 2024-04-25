@@ -4,60 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="data/data0.json"></script>
- 
 </head>
 
-<?php
-
- 
-
-?>
-
-
-<script src="./js/jquery-1.11.1.min.js"></script>
+ <script src="./js/jquery.min.js"></script>
+ <script src="./js/teste.js"></script>
 
 <script>
 
 //Input Autocomplete field Jquery
-
-    $(document).ready(function (){
-
-            url = 'data/data0.json';
-            $.getJSON(url, function(data) {
-            $(data.registros).each(function(obj) {
-                carsOption = "<option value=\"" + data.registros[obj]['sigla'] + " - " + data.registros[obj]['uniGestora'].toUpperCase() + "\"></option>";
-                $('#orgaos').append(carsOption);
-              
-            })
-        })
-    })
-
-    $("button").click(function(){
-      $.post("data/unidades.json",
-      {
-        name: "Donald Duck",
-        city: "Duckburg"
-      },
-
-      function(data, status){
-        alert("Data: " + data + "\nStatus: " + status);
-      });
-    });
-
-
-    $(document).ready(function (){
-      $("#btn").click(function (){
-        $("#select").append("<option value='goiaba' >goiaba</option>");
-      })
-    })
-
-</script>
-
-
-
-
-<script>
 
 /*        
 $(document).ready(function (){
@@ -90,7 +44,24 @@ $(document).ready(function (){
 
         })
 })
+
+
+CALLING FUNCTION PHP WITH JAVASCRIPT
+
+
+$.ajax({
+  url: 'test.php',
+  success: function(data) {
+    $('.result').html(data);
+  }
+});
+
+
+
+
 */
+
+console.log('Running..')
 
 </script>
 

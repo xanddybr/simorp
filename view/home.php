@@ -8,22 +8,30 @@
 <title>Bem Vindo ao SIMORP</title>
 <link rel="icon" type="image/x-icon" href="img/ico/pencil.ico">
 
-<script src="../js/jquery-1.11.1.min.js"></script>
+<script src="../js/jquery.min.js"></script>
 <link href="../css/bootstrap.min.css" rel="stylesheet">
-<!--<link href="../css/datepicker3.css" rel="stylesheet">
-<link href="../css/styles.css" rel="stylesheet"> -->
+
+<script>
+
+      $(document).ready(function (){
+	
+            
+            
+      
+      
+      
+      
+      
+      
+      
+      
+            
+      });
+</script>
+
 
 <!--Icons-->
 <script src="../js/lumino.glyphs.js"></script>
-<script> 
-
-
-</script>
-
-<!--[if lt IE 9]>
-<script src="js/html5shiv.js"></script>
-<script src="js/respond.min.js"></script>
-<![endif]-->
 
 </head>
 

@@ -11,7 +11,13 @@
 `Notes-release`:
 
 [
-0412.1801 : vide form
+
+0425.1755 : implemented function loadDataList generic and separate events in page requests
+0419.1818 : create simple model print report
+0417.1753 : create class modal implemented msgbox modal and refinament autocomplet orgaos
+0416.1758 : implemented select type requests and type ata (internal/external)
+0415.1754 : refinament fields forms and implemented form msgbox modal for login
+0412.1801 : refinament fields forms 
 0411.1811 : implemented fields table
 0410.1853 : implemented and set fields table report and build field id
 0409.1753 : implemented select type object and fix data-model solicitacação in json file

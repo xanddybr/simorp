@@ -11,8 +11,9 @@ Class ControllerUsuario {
         
         $usuario->set_usuario($user);
         $usuario->set_senha($pass);
-        $usuario->ValidateData($check);
-       
+        $usuario->AuthenticUserAPI($check);
+           
+               
     }
 
     public static function LogonTeste($user,$pass,$check) {
