@@ -1,8 +1,28 @@
-      
-   
     
+    
+
+        function loadDataList(id, url, value, desc){
+            $.getJSON(url[0], function(data) {
+                $(data.registros).each(function(obj) {
+                  option = "<option value=\"" + data.registros[obj][value].toUpperCase() + " - " + data.registros[obj][desc] + "\">" + data.registros[obj][value] + "</option>";
+                           $("#"+id).append(option);
+            })
+        })
+    }
+
+        function showFields() {
+
+        }
+
+
+        function hideFields() {
+
+        }
+
+
+
         //MASK PROCESS NUMBER SEI
-    $(function() {
+     $(function() {
             $('#seiprocess').mask('SEI-999999/999999/9999');
         });
 
@@ -26,7 +46,6 @@
                 
                 $("#table01:last").append(row);
                 $(".dinheiro").mask('#.##9,99',{reverse: true});
-                
                 
                 i++;
                                 
@@ -52,41 +71,40 @@
             $("#addOrg").hide();
             $("#desfOptions").hide();
         
-    $('#tipoSolici').change(function (){
+        $('#tipoSolici').change(function (){
 
-        if ($('#tipoSolici').val() == 'regPreco') {
-            $("#tipoAta").val('');
-            $("#tipoAta").hide();
-            $("#l_tipoAta").hide();
-            $("#nata").val('');
-            $("#nata").hide();
-            $("#l_nata").hide();
-            $("#aderente").val('');
-            $("#aderente").hide();
-            $("#l_aderente").hide();
-            $("#addOrg").hide();
-            $("#desfOptions").hide();
-            $("#l_OrgSol_Gestor").empty();
-            $("#l_OrgSol_Gestor").append("Orgão Solicitante");
-        }
-
-        if ($('#tipoSolici').val() == 'adesaoAta') {
-            $("#tipoAta").show();
-            $("#l_tipoAta").show();
-            $("#nata").show();
-            $("#l_nata").show();
-            $("#aderente").show();
-            $("#l_aderente").show();
-            $("#addOrg").show();
-            $("#desfOptions").show();
-            $("#l_OrgSol_Gestor").empty();
-            $("#l_OrgSol_Gestor").append("Orgão Gestor");
-            
+            if ($('#tipoSolici').val() == 'regPreco') {
+                $("#tipoAta").val('');
+                $("#tipoAta").hide();
+                $("#l_tipoAta").hide();
+                $("#nata").val('');
+                $("#nata").hide();
+                $("#l_nata").hide();
+                $("#aderente").val('');
+                $("#aderente").hide();
+                $("#l_aderente").hide();
+                $("#addOrg").hide();
+                $("#desfOptions").hide();
+                $("#l_OrgSol_Gestor").empty();
+                $("#l_OrgSol_Gestor").append("Orgão Solicitante");
             }
-        
-        })
 
-    })
+            if ($('#tipoSolici').val() == 'adesaoAta') {
+                $("#tipoAta").show();
+                $("#l_tipoAta").show();
+                $("#nata").show();
+                $("#l_nata").show();
+                $("#aderente").show();
+                $("#l_aderente").show();
+                $("#addOrg").show();
+                $("#desfOptions").show();
+                $("#l_OrgSol_Gestor").empty();
+                $("#l_OrgSol_Gestor").append("Orgão Gestor");
+                
+                }
+            
+            })
+       })
 
         $(document).ready(function (){
             $('#seiprocess').focus(function (){
@@ -100,20 +118,6 @@
             })
         })
 
-        $(document).ready(function (){
-                var orgao, url;
-                url = 'data/orgaos.json';
-                $.getJSON(url, function(data) {
-                $(data.registros).each(function(obj) {
-
-                        orgao = "<option value=\"" + data.registros[obj]['sigla'] + " - " + data.registros[obj]['uniGestora'].toUpperCase() + "\"></option>";
-                        $("#OrgSol_Gestor").append(orgao);
-                    
-                })
-                  
-             })
-            
-          })
         
 
         $(document).ready(function (){
@@ -154,37 +158,32 @@
             })
         })
 
+        
 
-        $(document).ready(function (){
-           
-                var orgao, url;
-                url = 'data/orgaos.json';
-                $.getJSON(url, function(data) {
-                $(data.registros).each(function(obj) {
+            /*
+                    $("#tipoAta").change(function() {      
 
+                        if($("#tipoAta").val() == "INTERNA") {
+                        option = "<option value=\"" + data.registros[obj]['sigla'].toUpperCase() + " - " + data.registros[obj]['descricao'] + "\">" + data.registros[obj]['sigla'] + "</option>";
+                            $("#Org_aderente").append(option);	
+                        }
 
-                    orgao = "<option value=\"" + data.registros[obj]['sigla'].toUpperCase() + " - " + data.registros[obj]['descricao'] + "\">" + data.registros[obj]['sigla'] + "</option>";
-                        $("#OrgSol_Gestor").append(orgao);
+                        if($("#tipoAta").val() == "EXTERNA") {
+                            $("#Org_aderente").empty();
+                        }
 
-                $("#tipoAta").change(function() {      
-
-                    if($("#tipoAta").val() == "INTERNA") {
-                        orgao = "<option value=\"" + data.registros[obj]['sigla'].toUpperCase() + " - " + data.registros[obj]['descricao'] + "\">" + data.registros[obj]['sigla'] + "</option>";
-                        $("#Org_aderente").append(orgao);	
-                    }
-
-                    if($("#tipoAta").val() == "EXTERNA") {
-                        $("#Org_aderente").empty();
-                    }
-
-                    if($("#tipoAta").val() == "") {
-                        $("#Org_aderente").empty();
-                    }
-           
-                    }) 
+                        if($("#tipoAta").val() == "") {
+                            $("#Org_aderente").empty();
+                        }
+            
+                        }) 
+                    })
                 })
-            })
-        })
+           
+
+            
+*/
+       
       
 
         $(document).ready(function (){
@@ -200,39 +199,8 @@
             })
         })
 
-        /*         
         
-        class datalist {
-
-            id;
-            url;
-            file;
-            value;
-            desc;
-            ArrayJson;
-           
-            constructor(id,url,file,ArrayJson) {
-              this.id = id;
-              this.url = url;
-              this.file = file;
-              this.ArrayJsonv = ArrayJson;
-           }
-        
-            static AppendDataList(){
-              
-              $.getJSON(this.url, function(data) {
-                 $(data.this.ArrayJson).each(function(obj) {
-                  let itenList = "<option value=\"" + data.this.ArrayJson[obj][this.value] + "\">\"" + data.this.ArrayJson[obj][this.desc].toUpperCase() + "\"</option>";
-                  $(id).append(orgao);
-        
-                 })
-              })
-            }
-        
-             
-        
-        }
-       */ 
+     
 
     
                

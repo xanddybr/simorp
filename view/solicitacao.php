@@ -15,18 +15,60 @@
 <!-- libraires -->
 <script src="../js/lumino.glyphs.js"></script>
 <script src="../js/bootstrap.min.js"></script>
-<script src="../js/jquery.min.js" charset="utf-8"></script>
-<script src="./js/solicitacao_settings.js"></script>
+<script src="../js/jquery.min.js"></script>
 <script src="./js/jquery.mask.min.js"></script>
-
+<script src="./js/solicitacao_set.js"></script>
 
 <script>
 
-	$(document).ready(function (){
+// PAGE EVENTS
+$(document).ready(function (){
+	
+	loadDataList("OrgSol_Gestor","data/orgaos.json","sigla","descricao");
+	
 
-		dataList.AppendDataList('#unidades','./data/','orgaos.json','sigla', 'descricao','unidades');
-			
+	$('#tipoSolici').change(function(){
+
 	})
+
+
+	$('#tipoObjeto').change(function(){
+
+	})
+
+
+	$("#tipoAta").change(function(){
+
+	})
+
+
+	$("#checkAll").change(function(){
+		
+	})
+
+
+	$("#btn-add").click(function(){
+
+	}) 
+
+
+	$("#btn-rmv").click(function(){
+
+	})
+	
+
+	$("#salvar").click(function(){
+		
+	})
+
+
+	$("#reset").click(function(){
+		
+	})
+
+
+
+});
 
 
 </script>
@@ -114,7 +156,7 @@
 								<input class="form-control col-lg-6" placeholder="Nº DA ATA" name='solRegPrec[]' id='nata' value="" required>
 								
 							    </div><br>
-								<input id='desfOptions' type="button" class="btn" value='DESFAZER'>
+								<input id='desfOptions' id='reset' type="button" class="btn" value='DESFAZER'>
 
 								<br><br><br><br>
 								<div class="form-group col-lg-5" id='Org01'>
@@ -142,7 +184,7 @@
 								 <div>
 								</label>
 																
-								<input type="button" class="btn-primary pull-right" name='salvar' value='Salvar'></div>
+								<input type="button" class="btn-primary pull-right" id='salvar' name='salvar' value='Salvar'></div>
 									
 				</div>
 			</div><!-- /.col-->
@@ -159,7 +201,7 @@
 				 		<table data-toggle="table" id='table01' class="col-lg-12">
 						
 						<tr>
-							<th data-field="name" style='width: 20px'><input type='checkbox' id='chekIten'  class=""></th>
+							<th data-field="name" style='width: 20px'><input type='checkbox' id='checkAll'  class=""></th>
 							<th data-field="name" style='width: 680px;'>Descricão</th>
     						<th data-field="name" style='width: 110px'>Tipo</th>
 							<th data-field="name" style='width: 120px'>Uni</th>

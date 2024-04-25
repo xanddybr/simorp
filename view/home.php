@@ -11,6 +11,24 @@
 <script src="../js/jquery.min.js"></script>
 <link href="../css/bootstrap.min.css" rel="stylesheet">
 
+<script>
+
+      $(document).ready(function (){
+	
+            
+            
+      
+      
+      
+      
+      
+      
+      
+      
+            
+      });
+</script>
+
 
 <!--Icons-->
 <script src="../js/lumino.glyphs.js"></script>

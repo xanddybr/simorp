@@ -23,7 +23,6 @@
 <script src="./js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="./js/index_settings.js"></script>
 
-
 </head>
 
 
@@ -47,8 +46,11 @@
                              
       }
       // START APP IN PAGE LOGIN
-      $rota->StartAppLogin();
+     
       
+       $rota->StartAppLogin();
+
+
       } else {
 
       // ENABLE ROUTES BY NAVIGATION AND LOAD PAGE HOME

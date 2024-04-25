@@ -6,13 +6,8 @@
     <title>Document</title>
 </head>
 
-
-
  <script src="./js/jquery.min.js"></script>
  <script src="./js/teste.js"></script>
-
-
-
 
 <script>
 
@@ -65,6 +60,8 @@ $.ajax({
 
 
 */
+
+console.log('Running..')
 
 </script>
 
