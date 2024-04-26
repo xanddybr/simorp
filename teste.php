@@ -74,10 +74,6 @@ console.log('Running..')
 <label>Auto Fill</label><BR><BR>
 <select id="select" style="width:500px;">
 
-<option value='maçã' >maçã</option>
-<option value='limão' >limão</option>
-<option value='canela' >canela</option>
-
 </select>
 
 <input type='button' value='acionar' id='btn' />

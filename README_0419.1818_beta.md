@@ -12,6 +12,7 @@
 
 [
 
+0426.1800 : implemented refinament list itens requests
 0425.1755 : implemented function loadDataList generic and separate events in page requests
 0419.1818 : create simple model print report
 0417.1753 : create class modal implemented msgbox modal and refinament autocomplet orgaos

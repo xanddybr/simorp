@@ -10,10 +10,9 @@
 <!-- libraires  -->
 <link href="./css/bootstrap.min.css" rel="stylesheet">
 <link href="./css/styles.css" rel="stylesheet">
-<link href="./css/bootstrap-table.css" rel="stylesheet">
+
 
 <!-- libraires -->
-<script src="../js/lumino.glyphs.js"></script>
 <script src="../js/bootstrap.min.js"></script>
 <script src="../js/jquery.min.js"></script>
 <script src="./js/jquery.mask.min.js"></script>
@@ -21,44 +20,76 @@
 
 <script>
 
-// PAGE EVENTS
-$(document).ready(function (){
+	$(document).ready(function(){
+		$("#qtdItem1").focusin(function(){
+			alert("caixa1");
+		})
+
+	})
 	
-	loadDataList("OrgSol_Gestor","data/orgaos.json","sigla","descricao");
+	// LOAD PAGE EVENTS
+	$(document).ready(function (){
+		
+		HideFieldsAdesaoAta();
+		
 	
-
-	$('#tipoSolici').change(function(){
-
 	})
 
+	//TYPE SOLICITACAO
+	$(document).ready(function (){
+		$('#tipoSolici').change(function(){
+			if($('#tipoSolici').val()=='adesaoAta'){
+				ShowFieldsAdesaoAta();
+			}
 
-	$('#tipoObjeto').change(function(){
+			if($('#tipoSolici').val()=='regPreco'){
+				HideFieldsAdesaoAta();
+			}
+		})
+	})
+	
+	//TYPE ATA
+	$(document).ready(function (){
+		$('#tipoAta').change(function(){
+			if($('#tipoAta').val()=='interna'){
+				$('#OrgSol_Gestor').empty();
+				$('#Org_Aderente').empty();
+				loadDataList("#OrgSol_Gestor", "#Org_Aderente", "data/orgaos.json","sigla","descricao");
+				
+				$('#addOrg').hide();
+			}
 
+			if($('#tipoAta').val()=='externa'){
+				$('#OrgSol_Gestor').empty();
+				$('#Org_Aderente').empty();
+				$('#OrgSol_Gestor').append("<option value='SEPLAG - SECRETARIA DE ESTADO DE PLANEJAMENTO E GESTÃO' selected='selected'>SEPLAG</option>");
+				$('#addOrg').show();
+			}
+			$('#OrgSol_Gestor').val("SEPLAG");
+		})
 	})
 
-
-	$("#tipoAta").change(function(){
-
-	})
-
-
+	
 	$("#checkAll").change(function(){
 		
 	})
 
-
-	$("#btn-add").click(function(){
-
-	}) 
-
+	$(document).ready(function (){
+		$("#btn-add").click(function(){
+			insertItem();
+			
+			
+		}) 
+	})
 
 	$("#btn-rmv").click(function(){
 
 	})
 	
-
-	$("#salvar").click(function(){
-		
+	$(document).ready(function(){
+		$("#salvar").click(function(){
+				teste();
+		})
 	})
 
 
@@ -66,9 +97,14 @@ $(document).ready(function (){
 		
 	})
 
+	$(document).ready(function(){
+        $(".dinheiro").mask('#.##9,99',{reverse: true});
+    })
 
 
-});
+	
+
+
 
 
 </script>
@@ -95,7 +131,7 @@ $(document).ready(function (){
 					</div>
 
 								
-					   <div class="panel-body" style='height:500;'>
+					   <div class="panel-body" style=''>
 								<form id='frm' method='POST' action=''>
 								 
 								<div class="form-group col-md-13">
@@ -143,9 +179,9 @@ $(document).ready(function (){
 								  <div class="col-lg-5">
 									<label id='l_tipoAta'>Tipo da Ata</label>
 									 <select id='tipoAta' class="form-control">
-									 	<option value="selecione"><< SELECIONE O TIPO >></option>
-									 	<option value="INTERNA"> INTERNA - ORGÃO ADERERINDO A ATA DE OUTRO ORGÃO DO MESMO ESTADO </option>
-					                 	<option value="EXTERNA"> EXTERNA - ORGÃO ADERERINDO A ATA DE OUTRO ORGÃO DE OUTRO ESTADO </option>					
+									 	<option value=""><< SELECIONE O TIPO >></option>
+										<option value="interna"> INTERNA - ORGÃO ADERERINDO A ATA DE OUTRO ORGÃO DO MESMO ESTADO </option>
+										<option value="externa"> EXTERNA - ORGÃO ADERERINDO A ATA DE OUTRO ORGÃO DE OUTRO ESTADO </option>	
 								  </select> 
 							    </div>
 
@@ -168,8 +204,8 @@ $(document).ready(function (){
 
 								 <div class="form-group col-lg-6" id='Org02'>
 									    <label id='l_aderente'>Orgão Aderente</label> 
-									    <input id='aderente' type='text' class="form-control" list='Org_aderente' name='solRegPrec[]'>
-								 <datalist id='Org_aderente'></datalist>
+									    <input id='aderente' type='text' class="form-control" list='Org_Aderente' name='solRegPrec[]'>
+								 <datalist id='Org_Aderente'></datalist>
 
 								 </div>
 
@@ -206,16 +242,17 @@ $(document).ready(function (){
     						<th data-field="name" style='width: 110px'>Tipo</th>
 							<th data-field="name" style='width: 120px'>Uni</th>
 							<th data-field="name" style='width: 120px'>Valor Item</th>
-							<th data-field="name" style='width: 50px'>Qtd</th>
+							<th data-field="name" style='width: 100px'>Qtd</th>
 							<th data-field="name" style='width: 150px'>Sub.Total</th>
-							<th data-field="name" style='width: 70px;'>&nbsp&nbsp<input type="button" id="btn-add" value=' + ' name="" /></th>
-							<th data-field="name" style='width: 70px;'><input type="button" id="btn-add" value=' - ' name="" /></th>
+							<th data-field="name" style='width: 10px;'><input type="button" id="btn-add" value=' + ' name="" /></th>
+							<th data-field="name" style='width: 10px;'><input type="button" id="btn-rmv" value=' - ' name="" /></th>
 						</tr>
 				
 				</table>
+
 				</form>
 					<script>
-						$(function () {
+					/*	$(function () {
 							$('#hover, #striped, #condensed').click(function () {
 								var classes = 'table';
 					
@@ -242,7 +279,7 @@ $(document).ready(function (){
 								};
 							}
 							return {};
-						}
+						}*/
 					</script>
 				</div>
 			</div>
@@ -251,43 +288,7 @@ $(document).ready(function (){
 		
 </div><!--/.main-->
 
-	<script src="../lib/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
-    <script src="../js/jquery-1.11.1.min.js"></script>
 	
-	
-	<script>
-		!function ($) {
-			$(document).on("click","ul.nav li.parent > a > span.icon", function(){		  
-				$(this).find('em:first').toggleClass("glyphicon-minus");	  
-			}); 
-			$(".sidebar span.icon").find('em:first').addClass("glyphicon-plus")
-		}(window.jQuery);
-
-		$(window).on('resize', function () {
-		  if ($(window).width() > 768) $('#sidebar-collapse').collapse('show');
-		})
-		$(window).on('resize', function () {
-		  if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide');
-		})
-
-
-	</script>	
-
-	<script>
-		!function ($) {
-			$(document).on("click","ul.nav li.parent > a > span.icon", function(){		  
-				$(this).find('em:first').toggleClass("glyphicon-minus");	  
-			}); 
-			$(".sidebar span.icon").find('em:first').addClass("glyphicon-plus")
-		}(window.jQuery);
-
-		$(window).on('resize', function () {
-		  if ($(window).width() > 768) $('#sidebar-collapse').collapse('show');
-		})
-		$(window).on('resize', function () {
-		  if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide');
-		})
-	</script>
 </body>
 
 </html>
