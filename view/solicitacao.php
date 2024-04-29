@@ -21,21 +21,15 @@
 <script>
 
 	$(document).ready(function(){
-		$("#qtdItem1").focusin(function(){
-			alert("caixa1");
+		$("#checkAll").click(function(){
+			$("input[type=checkbox]").prop('checked', $(this).prop('checked'));
 		})
-
 	})
 	
-	// LOAD PAGE EVENTS
 	$(document).ready(function (){
-		
 		HideFieldsAdesaoAta();
-		
-	
 	})
 
-	//TYPE SOLICITACAO
 	$(document).ready(function (){
 		$('#tipoSolici').change(function(){
 			if($('#tipoSolici').val()=='adesaoAta'){
@@ -48,7 +42,6 @@
 		})
 	})
 	
-	//TYPE ATA
 	$(document).ready(function (){
 		$('#tipoAta').change(function(){
 			if($('#tipoAta').val()=='interna'){
@@ -69,41 +62,32 @@
 		})
 	})
 
-	
-	$("#checkAll").change(function(){
-		
-	})
-
 	$(document).ready(function (){
 		$("#btn-add").click(function(){
 			insertItem();
-			
-			
 		}) 
 	})
 
-	$("#btn-rmv").click(function(){
+	$(document).ready(function (){
+		$("#btn-rmv").click(function(){
 
+		})
 	})
 	
 	$(document).ready(function(){
 		$("#salvar").click(function(){
-				teste();
+			
 		})
 	})
 
-
-	$("#reset").click(function(){
-		
+	$(document).ready(function (){
+			$("#reset").click(function(){	
+		})	
 	})
 
 	$(document).ready(function(){
         $(".dinheiro").mask('#.##9,99',{reverse: true});
     })
-
-
-	
-
 
 
 

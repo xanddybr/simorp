@@ -54,15 +54,15 @@
     function insertItem(){
 
         var row = "<tr id=item_N"+ i +">"+
-                    "<td data-field='text' style='width:20px'><input type='checkbox' id='chekIten'  class=''></td>"+
+                    "<td data-field='text' style='width:50px'><input type='checkbox' id='chekIten'  class='chbox'></td>"+
                     "<td data-field='text'><input class='form-control' id='listItens' placeholder='INFORME O ITEM...' list='itens'  style='width: 738px;' name='solRegPrec[]' /><datalist id='itens'></datalist></td>"+
                     "<td data-field='text'><input type='text' id='tpObjeto' value='' class='form-control' style='width:143px' name='solRegPrec[]' placeholder='' disabled></td>"+
                     "<td data-field='text'><input id='uni' list='unidades' class='form-control' style='width:148px' name='solRegPrec[]' placeholder='';><datalist id='unidades'></datalist></td>"+
                     "<td data-field='text'><input class='form-control dinheiro' style='width:148px' id=valorItem"+ i +" name='solRegPrec[]' placeholder='R$' value=''/></td>"+
                     "<td data-field='text'><input class='form-control' style='width:100px;' id=qtdItem"+ i +" placeholder='' name='solRegPrec[]' value='' required /></td>"+
                     "<td data-field='text'><input class='form-control dinheiro' style='width:148px' id=subTotal"+ i +" placeholder='R$' name='solRegPrec[]' value='' disabled/></td>"+
-                    "<td data-field='text' style='width: 70px;'></td>"+
-                    "<td data-field='text' style='width: 70px;'></td>"+
+                    "<td data-field='text' style='width: 10px;'></td>"+
+                    "<td data-field='text' style='width: 10px;'></td>"+
                   "</tr>";
 
                   $("#table01:last").append(row);
@@ -72,9 +72,7 @@
      
     }
 
-
-
-
+   
     function teste(){
 
        $("#subTotal"+2).val(parseInt($("#qtdItem"+2).val()) * parseInt($("#valorItem"+2).val()));
@@ -82,25 +80,35 @@
     }
 
     
+	$(document).ready(function(){
+		$("#valorItem2").click(function(){
+			alert("vc clicou em qtd 2");
+		})
+	})
+
+    
         //MASK PROCESS NUMBER SEI
-     $(function() {
+    $(function() {
             $('#seiprocess').mask('SEI-999999/999999/9999');
-     });
+    });
+
+
+
 
 
                  
  
-        $(document).ready(function (){
+    $(document).ready(function (){
             $('#seiprocess').focus(function (){
                 $('#seiprocess').val("SEI-");
-            })
         })
+    })
 
-        $(document).ready(function (){
-            $('#seiprocess').focusout(function (){
-                $('#seiprocess').val("");
-            })
+    $(document).ready(function (){
+        $('#seiprocess').focusout(function (){
+            $('#seiprocess').val("");
         })
+    })
 
         
 /*
