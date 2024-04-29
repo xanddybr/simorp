@@ -55,7 +55,7 @@
 				</div>
 				
 			</div>
-			<?php echo "<center><span style='text-aling: center'><h6>v1.0.0 build 0426.1800</h6></span></center>"; ?>
+			<?php echo "<center><span style='text-aling: center'><h6>v1.0.0 build 0429.1752</h6></span></center>"; ?>
 		</div><!-- /.col-->
 		
 	</div><!-- /.row -->	

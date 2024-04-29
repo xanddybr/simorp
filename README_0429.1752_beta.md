@@ -4,14 +4,15 @@
 `type`: web-app
 `Description`: Sistema de Monitoramento de Registro de Preço
 `version`: 1.0.0
-`languges`: PHP, Javascritp, Html, CSS
+`languges`: PHP Version 8.0.28, Javascritp v21.6.1, CSS v3.4.1, Html
 `Framework`: none
-`Libraries-use`: Bootstraps,JQuery
+`Libraries-use`: Bootstraps v3.4.1, JQueryv3.7.1
 `Architecture`: MVC
 `Notes-release`:
 
 [
 
+0429.1752 : list item implemented (refinament)
 0426.1800 : implemented refinament list itens requests
 0425.1755 : implemented function loadDataList generic and separate events in page requests
 0419.1818 : create simple model print report
