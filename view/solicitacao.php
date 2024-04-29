@@ -20,20 +20,25 @@
 
 <script>
 
+	//LOAD PAGE EVENTS TYPE REQUEST
+	$(document).ready(function(){
+		HideFieldsAdesaoAta();
+		loadDataList("#OrgSol_Gestor", "", "data/orgaos.json","sigla","descricao");
+	})
+
+	//CHECK ALL CHECKBOXES
 	$(document).ready(function(){
 		$("#checkAll").click(function(){
 			$("input[type=checkbox]").prop('checked', $(this).prop('checked'));
 		})
 	})
-	
-	$(document).ready(function (){
-		HideFieldsAdesaoAta();
-	})
 
-	$(document).ready(function (){
+	//CHANGE TYPE REQUEST
+	$(document).ready(function(){
 		$('#tipoSolici').change(function(){
 			if($('#tipoSolici').val()=='adesaoAta'){
 				ShowFieldsAdesaoAta();
+				
 			}
 
 			if($('#tipoSolici').val()=='regPreco'){
@@ -42,52 +47,63 @@
 		})
 	})
 	
-	$(document).ready(function (){
+	//CHANGE TYPE ATA
+	$(document).ready(function(){
 		$('#tipoAta').change(function(){
 			if($('#tipoAta').val()=='interna'){
-				$('#OrgSol_Gestor').empty();
-				$('#Org_Aderente').empty();
-				loadDataList("#OrgSol_Gestor", "#Org_Aderente", "data/orgaos.json","sigla","descricao");
+				AtaInterna();
 				
-				$('#addOrg').hide();
 			}
 
 			if($('#tipoAta').val()=='externa'){
-				$('#OrgSol_Gestor').empty();
-				$('#Org_Aderente').empty();
-				$('#OrgSol_Gestor').append("<option value='SEPLAG - SECRETARIA DE ESTADO DE PLANEJAMENTO E GESTÃO' selected='selected'>SEPLAG</option>");
-				$('#addOrg').show();
+				AtaExterna();
 			}
-			$('#OrgSol_Gestor').val("SEPLAG");
 		})
 	})
 
-	$(document).ready(function (){
+	//INSERT ITEM IN LIST
+	$(document).ready(function(){
 		$("#btn-add").click(function(){
-			insertItem();
+			lineItem();
+						
 		}) 
 	})
 
-	$(document).ready(function (){
-		$("#btn-rmv").click(function(){
-
-		})
-	})
-	
+	 //INSERT MASK SEI NUMBER PROCESS
 	$(document).ready(function(){
-		$("#salvar").click(function(){
+            $('#seiprocess').focus(function (){
+              $('#seiprocess').val("SEI-");
+              $('#seiprocess').mask('SEI-999999/999999/9999'); 
+        })
+    })
+
+    //CLEAR MASK SEI
+    $(document).ready(function(){
+        $('#seiprocess').focusout(function (){
+            $('#seiprocess').val("");
+        })
+    })
+
+	
+	//SAVE REQUEST
+	$(document).ready(function(){
+		$("#salvar").ready(function(){
 			
 		})
 	})
 
 	$(document).ready(function (){
-			$("#reset").click(function(){	
-		})	
-	})
-
+		$("#btn-rmv").click(function(){
+			removeItem();
+						
+		}) 			
+	})	
+	
 	$(document).ready(function(){
         $(".dinheiro").mask('#.##9,99',{reverse: true});
     })
+
+	
 
 
 
@@ -124,7 +140,7 @@
 											
 								<label>Nº do Processo</label>
 													
-								<input class="form-control" placeholder="SEI-" name='solRegPrec[]' id='seiprocess' value="" required></div>
+								<input class="form-control" placeholder="SEI-999999/999999/9999" name='solRegPrec[]' id='seiprocess' value="" required></div>
 
 
 								<div class="col-lg-3">
@@ -163,9 +179,8 @@
 								  <div class="col-lg-5">
 									<label id='l_tipoAta'>Tipo da Ata</label>
 									 <select id='tipoAta' class="form-control">
-									 	<option value=""><< SELECIONE O TIPO >></option>
-										<option value="interna"> INTERNA - ORGÃO ADERERINDO A ATA DE OUTRO ORGÃO DO MESMO ESTADO </option>
-										<option value="externa"> EXTERNA - ORGÃO ADERERINDO A ATA DE OUTRO ORGÃO DE OUTRO ESTADO </option>	
+									 	<option value="interna" selected> INTERNA - ÓRGÃOS OU ENTIDADES DA ADMINISTRAÇÃO PÚBLICA ESTADUAL DIRETA, AUTÁRQUICA E FUNDACIONAL </option>
+										<option value="externa"> EXTERNA - ÓRGÃOS OU ENTIDADES MUNICIPAIS, DISTRITAIS, DE OUTROS ESTADOS E FEDERAIS. </option>	
 								  </select> 
 							    </div>
 
@@ -176,18 +191,18 @@
 								<input class="form-control col-lg-6" placeholder="Nº DA ATA" name='solRegPrec[]' id='nata' value="" required>
 								
 							    </div><br>
-								<input id='desfOptions' id='reset' type="button" class="btn" value='DESFAZER'>
+								&nbsp&nbsp&nbsp&nbsp<input type='reset' id='desfOptions' id='reset' type="button" class="btn" value='DESFAZER'>
 
 								<br><br><br><br>
 								<div class="form-group col-lg-5" id='Org01'>
-									    <label id='l_OrgSol_Gestor'>Orgão Solicitante</label> 
+									    <label id='orgao01'></label> 
 									    <input type='text' class="form-control" list='OrgSol_Gestor' name='solRegPrec[]' order='asc'>
 								 <datalist id='OrgSol_Gestor'></datalist>
 								 </div>
 				 	 
 
 								 <div class="form-group col-lg-6" id='Org02'>
-									    <label id='l_aderente'>Orgão Aderente</label> 
+									    <label id='orgao02'></label> 
 									    <input id='aderente' type='text' class="form-control" list='Org_Aderente' name='solRegPrec[]'>
 								 <datalist id='Org_Aderente'></datalist>
 
@@ -231,7 +246,17 @@
 							<th data-field="name" style='width: 10px;'><input type="button" id="btn-add" value=' + ' name="" /></th>
 							<th data-field="name" style='width: 10px;'><input type="button" id="btn-rmv" value=' - ' name="" /></th>
 						</tr>
-				
+					 <tr id='item_N1'>
+							<td data-field='text' style='width:50px'><input type='checkbox' id='chekItem1'  class='chbox'></td>
+							<td data-field='text'><input class='form-control' id='listItens' placeholder='INFORME O ITEM...' list='itens'  style='width: 738px;' name='solRegPrec[]' /><datalist id='itens'></datalist></td>
+							<td data-field='text'><input type='text' id='tpObjeto' value='' class='form-control' style='width:143px' name='solRegPrec[]' placeholder='' disabled></td>
+							<td data-field='text'><input id='uni' list='unidades' class='form-control' style='width:148px' name='solRegPrec[]' placeholder='';><datalist id='unidades'></datalist></td>
+							<td data-field='text'><input class='form-control dinheiro' style='width:148px' id='valorItem1' name='solRegPrec[]' placeholder='R$' value=''/></td>
+							<td data-field='text'><input class='form-control' style='width:100px;' id='qtdItem1' placeholder='' name='solRegPrec[]' value='' required /></td>
+							<td data-field='text'><input class='form-control dinheiro' style='width:148px' id='subTotal1' placeholder='R$' name='solRegPrec[]' value='' disabled/></td>
+							<td data-field='text' style='width: 10px;'></td>
+							<td data-field='text' style='width: 10px;'></td>
+						</tr>
 				</table>
 
 				</form>

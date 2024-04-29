@@ -1,4 +1,34 @@
     
+    var i = 2;
+    function lineItem(){
+                   
+                $qtdItem = $("#qtdItem"+(i-1)).val();
+                $valorItem = $("#valorItem"+(i-1)).val();
+
+                var row = "<tr id='item_N"+ i +"'>"+
+                "<td data-field='text' style='width:50px'><input type='checkbox' id='chekItem"+ i +"'  class='chbox'></td>"+
+                "<td data-field='text'><input class='form-control' id='listItens' placeholder='INFORME O ITEM...' list='itens'  style='width: 738px;' name='solRegPrec[]' /><datalist id='itens'></datalist></td>"+
+                "<td data-field='text'><input type='text' id='tpObjeto' value='' class='form-control' style='width:143px' name='solRegPrec[]' placeholder='' disabled></td>"+
+                "<td data-field='text'><input id='uni' list='unidades' class='form-control' style='width:148px' name='solRegPrec[]' placeholder='';><datalist id='unidades'></datalist></td>"+
+                "<td data-field='text'><input class='form-control dinheiro' style='width:148px' id='valorItem"+ i +"' name='solRegPrec[]' placeholder='R$' value=''/></td>"+
+                "<td data-field='text'><input class='form-control' style='width:100px;' id='qtdItem"+ i +"' placeholder='' name='solRegPrec[]' value='' required /></td>"+
+                "<td data-field='text'><input class='form-control dinheiro' style='width:148px' id='subTotal"+ i +"' placeholder='R$' name='solRegPrec[]' value='' disabled/></td>"+
+                "<td data-field='text' style='width: 10px;'></td>"+
+                "<td data-field='text' style='width: 10px;'></td>"+
+                "</tr>";
+
+                $("#table01:last").append(row);  
+                $(".dinheiro").mask('#.##9,99',{reverse: true});
+                $("#subTotal"+(i-1)).val(parseInt($("#qtdItem"+(i-1)).val()) * parseInt($("#valorItem"+(i-1)).val()));
+
+                i++;
+
+               } 
+               
+    function removeItem(){
+        $(this).parent().remove();
+    }
+
     function loadDataList(id1, id2, url, value, desc){
                 $.getJSON(url, function(data) {
                 $(data.registros).each(function(obj) {
@@ -15,11 +45,11 @@
         $("#nata").show();
         $("#l_nata").show();
         $("#aderente").show();
-        $("#l_aderente").show();
-        $("#addOrg").show();
         $("#desfOptions").show();
-        $("#l_OrgSol_Gestor").empty();
-        $("#l_OrgSol_Gestor").append("Orgão Gestor");
+        $('#orgao01').empty()
+        $('#orgao02').empty()
+        $('#orgao01').append("Aderente");
+        $('#orgao02').append("Orgão Gestor");
     }
 
     function HideFieldsAdesaoAta(){
@@ -31,146 +61,51 @@
         $("#l_nata").hide();
         $("#aderente").val('');
         $("#aderente").hide();
-        $("#l_aderente").hide();
         $("#addOrg").hide();
-        $("#desfOptions").hide();
-        $("#l_OrgSol_Gestor").empty();
-        $("#l_OrgSol_Gestor").append("Orgão Solicitante");
+        $("#orgao01").empty();
+        $("#orgao02").empty();
+        $("#orgao01").append("Orgao Solicitante");
     }
 
     function MaskField(){
 
     }
 
-    function UperCaseFields(){
-
+    function AtaInterna(){
+        $('#OrgSol_Gestor').empty();
+        $('#Org_Aderente').empty();
+        $('#orgao01').empty()
+        $('#orgao02').empty()
+        $('#orgao01').append("Aderente");
+        $('#orgao02').append("Orgão Gestor");
+        $('#addOrg').hide();
+        loadDataList("#OrgSol_Gestor", "#Org_Aderente", "data/orgaos.json","sigla","descricao");
     }
 
-    function Multiplicador(){
+    function AtaExterna(){
+        $('#OrgSol_Gestor').empty();
+        $('#Org_Aderente').empty();
+        $('#orgao01').empty()
+        $('#orgao02').empty()
+        $('#orgao01').append("Aderente");
+        $('#orgao02').append("Orgão Gestor");
+        $('#addOrg').show();
+        loadDataList("#OrgSol_Gestor", "", "data/orgaos.json","sigla","descricao");
 
     }
-
-    var i = 1;
-    function insertItem(){
-
-        var row = "<tr id=item_N"+ i +">"+
-                    "<td data-field='text' style='width:50px'><input type='checkbox' id='chekIten'  class='chbox'></td>"+
-                    "<td data-field='text'><input class='form-control' id='listItens' placeholder='INFORME O ITEM...' list='itens'  style='width: 738px;' name='solRegPrec[]' /><datalist id='itens'></datalist></td>"+
-                    "<td data-field='text'><input type='text' id='tpObjeto' value='' class='form-control' style='width:143px' name='solRegPrec[]' placeholder='' disabled></td>"+
-                    "<td data-field='text'><input id='uni' list='unidades' class='form-control' style='width:148px' name='solRegPrec[]' placeholder='';><datalist id='unidades'></datalist></td>"+
-                    "<td data-field='text'><input class='form-control dinheiro' style='width:148px' id=valorItem"+ i +" name='solRegPrec[]' placeholder='R$' value=''/></td>"+
-                    "<td data-field='text'><input class='form-control' style='width:100px;' id=qtdItem"+ i +" placeholder='' name='solRegPrec[]' value='' required /></td>"+
-                    "<td data-field='text'><input class='form-control dinheiro' style='width:148px' id=subTotal"+ i +" placeholder='R$' name='solRegPrec[]' value='' disabled/></td>"+
-                    "<td data-field='text' style='width: 10px;'></td>"+
-                    "<td data-field='text' style='width: 10px;'></td>"+
-                  "</tr>";
-
-                  $("#table01:last").append(row);
-                  $(".dinheiro").mask('#.##9,99',{reverse: true});
-                
-                  i++;
-     
-    }
-
    
-    function teste(){
+    function calcula(){
 
-       $("#subTotal"+2).val(parseInt($("#qtdItem"+2).val()) * parseInt($("#valorItem"+2).val()));
+       
               
     }
 
     
-	$(document).ready(function(){
-		$("#valorItem2").click(function(){
-			alert("vc clicou em qtd 2");
-		})
-	})
+	    
 
-    
-        //MASK PROCESS NUMBER SEI
-    $(function() {
-            $('#seiprocess').mask('SEI-999999/999999/9999');
-    });
+                   
+   
 
-
-
-
-
-                 
- 
-    $(document).ready(function (){
-            $('#seiprocess').focus(function (){
-                $('#seiprocess').val("SEI-");
-        })
-    })
-
-    $(document).ready(function (){
-        $('#seiprocess').focusout(function (){
-            $('#seiprocess').val("");
-        })
-    })
-
-        
-/*
-        $(document).ready(function (){
-            $('#tipoObjeto').change(function (){
-            var itenList, url, option;
-            option = $("#tipoObjeto").val();
-            url  = 'data/itens.json';	
-            $('#itens').empty();
-            
-            $.getJSON(url, function(data) {
-            $(data.itens).each(function(obj) {
-            if(data.itens[obj]['tipo'] == option) {
-            itenList = "<option value=\"" + data.itens[obj]['id'] + " - " + data.itens[obj]['artigo'].toUpperCase() + "\">\"" + data.itens[obj]['descricao'].toUpperCase() + "\"</option>";
-            
-            $('#itens').append(itenList);
-                $('#tipoObjeto').prop('disabled', true);
-                    $("#tipoSolici").prop('disabled', true);
-                        $("#listItens").focusout(function(){
-                            $("#tpObjeto").val(data.itens[obj]['tipo'].toUpperCase());
-                    
-                })
-            }
-
-            if(option == 'ambos') {
-            itenList = "<option value=\"" + data.itens[obj]['id'] + " - " + data.itens[obj]['artigo'].toUpperCase() + "\">\"" + data.itens[obj]['descricao'].toUpperCase() + "\"</option>";
-                        
-            $('#itens').append(itenList);
-                $('#tipoObjeto').prop('disabled', true);
-                $("#tipoSolici").prop('disabled', true);
-                    $("#listItens").focusout(function(){
-                        $("#tpObjeto").val(data.itens[obj]['tipo'].toUpperCase());
-                    
-
-                        })
-                        }
-                    })
-                })	
-            })
-        })
-       
-
-  
-
-            
-*/
-      
-      
-/*
-        $(document).ready(function (){
-            var itenList, url;
-            url = 'data/unidades.json';
-            $.getJSON(url, function(data) {
-            $(data.unidades).each(function(obj) {
-            unidadesList = "<option value=" + data.unidades[obj]['sigla'] + ">" + data.unidades[obj]['descricao'] + "</option>";
-            $('#unidades').append(unidadesList);
-            
-
-                })	
-            })
-        })
-*/
         
      
 

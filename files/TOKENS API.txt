@@ -1,8 +1,0 @@
-myAPI - Postman - https://api.getpostman.com/me
-PMAK-65e4f061772b1900015a8dbd-8b1ba63eefb4c15913ca87b39382d191a2
-
-myGit - Github - https://api.github.com/user/repos
-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
-
-
-outro endereço!
