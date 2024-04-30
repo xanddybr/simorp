@@ -64,7 +64,7 @@
 	//INSERT ITEM IN LIST
 	$(document).ready(function(){
 		$("#btn-add").click(function(){
-			lineItem();
+			Insert(rowItem());
 						
 		}) 
 	})
@@ -73,7 +73,7 @@
 	$(document).ready(function(){
             $('#seiprocess').focus(function (){
               $('#seiprocess').val("SEI-");
-              $('#seiprocess').mask('SEI-999999/999999/9999'); 
+              	$('#seiprocess').mask('SEI-999999/999999/9999');
         })
     })
 
@@ -84,21 +84,28 @@
         })
     })
 
+	//RESET FIELDS
+	$(document).ready(function(){
+		$("#reset").click(function(){
+			HideFieldsAdesaoAta();
+		})
+	})
 	
+	//REMOVE ITEM IN LIST
+	$(document).ready(function (){
+		$("#btn-rmv").click(function(){
+			removeItens();
+		})
+	})
+
 	//SAVE REQUEST
 	$(document).ready(function(){
 		$("#salvar").ready(function(){
 			
 		})
 	})
-
-	$(document).ready(function (){
-		$("#btn-rmv").click(function(){
-			removeItem();
-						
-		}) 			
-	})	
 	
+	//MASK CURRENCY FORMAT
 	$(document).ready(function(){
         $(".dinheiro").mask('#.##9,99',{reverse: true});
     })
@@ -189,9 +196,7 @@
 								<label id='l_nata'>Nº DA ATA</label>
 													
 								<input class="form-control col-lg-6" placeholder="Nº DA ATA" name='solRegPrec[]' id='nata' value="" required>
-								
-							    </div><br>
-								&nbsp&nbsp&nbsp&nbsp<input type='reset' id='desfOptions' id='reset' type="button" class="btn" value='DESFAZER'>
+							    </div>
 
 								<br><br><br><br>
 								<div class="form-group col-lg-5" id='Org01'>
@@ -199,26 +204,25 @@
 									    <input type='text' class="form-control" list='OrgSol_Gestor' name='solRegPrec[]' order='asc'>
 								 <datalist id='OrgSol_Gestor'></datalist>
 								 </div>
-				 	 
 
-								 <div class="form-group col-lg-6" id='Org02'>
+								 <div class="form-group col-lg-5" id='Org02'>
 									    <label id='orgao02'></label> 
 									    <input id='aderente' type='text' class="form-control" list='Org_Aderente' name='solRegPrec[]'>
 								 <datalist id='Org_Aderente'></datalist>
-
 								 </div>
 
 								 <br>
 								 <input id='addOrg' type="button" class="btn" value='add'>
-						 
-								
+
 								 <div class="form-group col-lg-12">
 										<label>Observação</label>
 										<textarea class="form-control" id='obs' rows="2" name='solRegPrec[]' ></textarea>
+										
 								 </div><br>
 								 <div>
+								 
 								</label>
-																
+											
 								<input type="button" class="btn-primary pull-right" id='salvar' name='salvar' value='Salvar'></div>
 									
 				</div>
@@ -234,7 +238,7 @@
 		<div class="panel panel-default">
 					<div class="panel-body">
 				 		<table data-toggle="table" id='table01' class="col-lg-12">
-						
+							
 						<tr>
 							<th data-field="name" style='width: 20px'><input type='checkbox' id='checkAll'  class=""></th>
 							<th data-field="name" style='width: 680px;'>Descricão</th>
@@ -242,11 +246,12 @@
 							<th data-field="name" style='width: 120px'>Uni</th>
 							<th data-field="name" style='width: 120px'>Valor Item</th>
 							<th data-field="name" style='width: 100px'>Qtd</th>
-							<th data-field="name" style='width: 150px'>Sub.Total</th>
-							<th data-field="name" style='width: 10px;'><input type="button" id="btn-add" value=' + ' name="" /></th>
-							<th data-field="name" style='width: 10px;'><input type="button" id="btn-rmv" value=' - ' name="" /></th>
+							<th data-field="name" style='width: 140px'>Sub.Total</th>
+							<th data-field="name" style='width: 15px;'><input type="button" id="btn-add" value=' + ' name="" /></th>
+							<th data-field="name" style='width: 15px;'><input type="button" id="btn-rmv" value=' - ' name="" /></th>
 						</tr>
-					 <tr id='item_N1'>
+
+						<!-- <tr id='item_N1'>
 							<td data-field='text' style='width:50px'><input type='checkbox' id='chekItem1'  class='chbox'></td>
 							<td data-field='text'><input class='form-control' id='listItens' placeholder='INFORME O ITEM...' list='itens'  style='width: 738px;' name='solRegPrec[]' /><datalist id='itens'></datalist></td>
 							<td data-field='text'><input type='text' id='tpObjeto' value='' class='form-control' style='width:143px' name='solRegPrec[]' placeholder='' disabled></td>
@@ -256,11 +261,12 @@
 							<td data-field='text'><input class='form-control dinheiro' style='width:148px' id='subTotal1' placeholder='R$' name='solRegPrec[]' value='' disabled/></td>
 							<td data-field='text' style='width: 10px;'></td>
 							<td data-field='text' style='width: 10px;'></td>
-						</tr>
+						</tr>row-->	
 				</table>
 
 				</form>
 					<script>
+
 					/*	$(function () {
 							$('#hover, #striped, #condensed').click(function () {
 								var classes = 'table';
@@ -289,6 +295,7 @@
 							}
 							return {};
 						}*/
+
 					</script>
 				</div>
 			</div>

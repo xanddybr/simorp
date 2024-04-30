@@ -12,6 +12,7 @@
 
 [
 
+0430.1803 : implemented Delete single and multiple
 0429.1752 : list item implemented (refinament)
 0426.1800 : implemented refinament list itens requests
 0425.1755 : implemented function loadDataList generic and separate events in page requests

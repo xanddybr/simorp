@@ -1,13 +1,39 @@
     
-    var i = 2;
-    function lineItem(){
-                   
-                $qtdItem = $("#qtdItem"+(i-1)).val();
-                $valorItem = $("#valorItem"+(i-1)).val();
+    var i = 0;
+    function Insert(item){
+    
+    let qtdItem = $("#qtdItem"+(i-1)).val();
+    let valorItem = $("#valorItem"+(i-1)).val();
 
-                var row = "<tr id='item_N"+ i +"'>"+
-                "<td data-field='text' style='width:50px'><input type='checkbox' id='chekItem"+ i +"'  class='chbox'></td>"+
-                "<td data-field='text'><input class='form-control' id='listItens' placeholder='INFORME O ITEM...' list='itens'  style='width: 738px;' name='solRegPrec[]' /><datalist id='itens'></datalist></td>"+
+        if(qtdItem == "" || valorItem == "") {
+            
+            alert("O campo quantidade e valor do item, não podem ficar em branco!");
+            
+         } else {
+
+            let row = item;
+
+            $("#table01:last").append(row);
+            $("#subTotal"+(i-1)).val(parseInt($("#qtdItem"+(i-1)).val()) * parseInt($("#valorItem"+(i-1)).val()));    
+            $(".dinheiro").mask('#.##9,99',{reverse: true})
+
+            i++;
+            exit();
+        }  
+          
+    } 
+
+    function removeItens(){
+        $(".chbox:checked").each(function(){
+		   let item = $(this).attr("id");
+               $("#"+item).remove();
+            })	
+    }
+
+    function rowItem() {
+        var row = "<tr id='item_N"+ i +"'>"+
+                "<td data-field='text' style='width:20px'><input type='checkbox' id='item_N"+ i +"'  class='chbox' name=check[]></td>"+
+                "<td data-field='text'><input class='form-control' id='listItens' placeholder='INFORME O ITEM...' list='itens'  style='width: 770px;' name='solRegPrec[]' /><datalist id='itens'></datalist></td>"+
                 "<td data-field='text'><input type='text' id='tpObjeto' value='' class='form-control' style='width:143px' name='solRegPrec[]' placeholder='' disabled></td>"+
                 "<td data-field='text'><input id='uni' list='unidades' class='form-control' style='width:148px' name='solRegPrec[]' placeholder='';><datalist id='unidades'></datalist></td>"+
                 "<td data-field='text'><input class='form-control dinheiro' style='width:148px' id='valorItem"+ i +"' name='solRegPrec[]' placeholder='R$' value=''/></td>"+
@@ -16,14 +42,8 @@
                 "<td data-field='text' style='width: 10px;'></td>"+
                 "<td data-field='text' style='width: 10px;'></td>"+
                 "</tr>";
-
-                $("#table01:last").append(row);  
-                $(".dinheiro").mask('#.##9,99',{reverse: true});
-                $("#subTotal"+(i-1)).val(parseInt($("#qtdItem"+(i-1)).val()) * parseInt($("#valorItem"+(i-1)).val()));
-
-                i++;
-
-               } 
+                return row;
+    }
                
     function removeItem(){
         $(this).parent().remove();
@@ -31,10 +51,10 @@
 
     function loadDataList(id1, id2, url, value, desc){
                 $.getJSON(url, function(data) {
-                $(data.registros).each(function(obj) {
-                  option = "<option value=\"" + data.registros[obj][value].toUpperCase() + " - " + data.registros[obj][desc] + "\">" + data.registros[obj][value] + "</option>";
-                    $(id1).append(option);
-                    $(id2).append(option);
+                    $(data.registros).each(function(obj) {
+                        option = "<option value=\"" + data.registros[obj][value].toUpperCase() + " - " + data.registros[obj][desc] + "\">" + data.registros[obj][value] + "</option>";
+                            $(id1).append(option);
+                                $(id2).append(option);
             })
         })
     }
