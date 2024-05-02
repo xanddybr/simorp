@@ -45,19 +45,21 @@
                 return row;
     }
                
-    function removeItem(){
-        $(this).parent().remove();
-    }
-
-    function loadDataList(id1, id2, url, value, desc){
-                $.getJSON(url, function(data) {
-                    $(data.registros).each(function(obj) {
-                        option = "<option value=\"" + data.registros[obj][value].toUpperCase() + " - " + data.registros[obj][desc] + "\">" + data.registros[obj][value] + "</option>";
-                            $(id1).append(option);
-                                $(id2).append(option);
+    function loadDataList(){
+              $.ajax({
+              type: 'GET',
+              url: 'data/orgaos.json',
+              dataType: 'json',
+              async: false,
+              contentType: "application/json; charset=utf-8",
+              success: function(data){
+              
+                return data;
+              }
             })
-        })
+            
     }
+          
 
     function ShowFieldsAdesaoAta(){
         $("#tipoAta").show();
@@ -87,10 +89,6 @@
         $("#orgao01").append("Orgao Solicitante");
     }
 
-    function MaskField(){
-
-    }
-
     function AtaInterna(){
         $('#OrgSol_Gestor').empty();
         $('#Org_Aderente').empty();
@@ -113,28 +111,9 @@
         loadDataList("#OrgSol_Gestor", "", "data/orgaos.json","sigla","descricao");
 
     }
-   
-    function calcula(){
 
-       
-              
+    function appendField(data){
+        $(data.registros).each(function(obj){
+            alert(data.registros[obj]['sigla']);
+        })
     }
-
-    
-	    
-
-                   
-   
-
-        
-     
-
-    
-               
-
-
-  
-
-
-
-	

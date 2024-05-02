@@ -22,8 +22,12 @@
 
 	//LOAD PAGE EVENTS TYPE REQUEST
 	$(document).ready(function(){
-		HideFieldsAdesaoAta();
-		loadDataList("#OrgSol_Gestor", "", "data/orgaos.json","sigla","descricao");
+
+	HideFieldsAdesaoAta();
+
+	alert(loadDataList());
+		
+
 	})
 
 	//CHECK ALL CHECKBOXES
@@ -247,8 +251,8 @@
 							<th data-field="name" style='width: 120px'>Valor Item</th>
 							<th data-field="name" style='width: 100px'>Qtd</th>
 							<th data-field="name" style='width: 140px'>Sub.Total</th>
-							<th data-field="name" style='width: 15px;'><input type="button" id="btn-add" value=' + ' name="" /></th>
-							<th data-field="name" style='width: 15px;'><input type="button" id="btn-rmv" value=' - ' name="" /></th>
+							<th data-field="name" style='width: 0px;'><input type="button" id="btn-add" value=' + ' name="" /></th>
+							<th data-field="name" style='width: 10px;'><input type="button" id="btn-rmv" value=' - ' name="" /></th>
 						</tr>
 
 						<!-- <tr id='item_N1'>

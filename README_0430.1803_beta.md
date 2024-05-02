@@ -12,7 +12,7 @@
 
 [
 
-0430.1803 : implemented Delete single and multiple
+0430.1803 : implemented Delete single and multiple itens list
 0429.1752 : list item implemented (refinament)
 0426.1800 : implemented refinament list itens requests
 0425.1755 : implemented function loadDataList generic and separate events in page requests
@@ -184,15 +184,15 @@ http://10.3.15.200:8002/
 
 "solicitacoeslogs": "http://10.3.15.200:8002/solicitacoeslogs/",
 
-{
-"id": 230,
-"usuario": "Alexandre",
-"data_hora": "2024-03-15T22:17:09",
-"operacao": "VISUALIZADO",
-"solicitacao": null,
-"solicitacao_data": null,
-"solicitacao_id": null
-}
+    {
+        "id": 230,
+        "usuario": "Alexandre",
+        "data_hora": "2024-03-15T22:17:09",
+        "operacao": "VISUALIZADO",
+        "solicitacao": null,
+        "solicitacao_data": null,
+        "solicitacao_id": null
+    }
 
 --------------------------------------------------------------------------
 
@@ -233,23 +233,25 @@ function getCars() {
 $(data.osCars).each(function (idx, o) {
 carsOption = "<option value='" + this.name + "'>" + this.name + "</option>";
 $('#carList').append(carsOption);
-});
-}
+
+    };
+
 
 --------------------------------------------------------------------------
 
 <script>
-$(document).ready(function(){
-  $("#btn1").click(function(){
-    $("ol").append("<li>List item</li>");
-  });
-  $("#btn2").click(function(){
-    $("li:last").remove();
-  })
-})
 
+    $(document).ready(function(){
+        $("#btn1").click(function(){
+            $("ol").append("<li>List item</li>");
+    });
+        $("#btn2").click(function(){
+            $("li:last").remove();
+        })
+    })
 
 </script>
+
 </head>
 <body>
 
