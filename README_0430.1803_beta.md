@@ -12,6 +12,7 @@
 
 [
 
+0503.1749 : refinament form solicitacoes
 0430.1803 : implemented Delete single and multiple itens list
 0429.1752 : list item implemented (refinament)
 0426.1800 : implemented refinament list itens requests

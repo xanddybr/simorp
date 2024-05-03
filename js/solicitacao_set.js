@@ -1,14 +1,14 @@
     
-    var i = 0;
+    var i = 1;
     function Insert(item){
     
     let qtdItem = $("#qtdItem"+(i-1)).val();
     let valorItem = $("#valorItem"+(i-1)).val();
 
         if(qtdItem == "" || valorItem == "") {
-            
-            alert("O campo quantidade e valor do item, não podem ficar em branco!");
-            
+         
+          alert("O campo valor e quantidade não pode ficar em branco!");
+
          } else {
 
             let row = item;
@@ -30,10 +30,10 @@
             })	
     }
 
-    function rowItem() {
+    function rowItem(){
         var row = "<tr id='item_N"+ i +"'>"+
                 "<td data-field='text' style='width:20px'><input type='checkbox' id='item_N"+ i +"'  class='chbox' name=check[]></td>"+
-                "<td data-field='text'><input class='form-control' id='listItens' placeholder='INFORME O ITEM...' list='itens'  style='width: 770px;' name='solRegPrec[]' /><datalist id='itens'></datalist></td>"+
+                "<td data-field='text'><input class='form-control itens' id='listItens' placeholder='INFORME O ITEM...' list='itens'  style='width: 770px;' name='solRegPrec[]' /><datalist id='itens'></datalist></td>"+
                 "<td data-field='text'><input type='text' id='tpObjeto' value='' class='form-control' style='width:143px' name='solRegPrec[]' placeholder='' disabled></td>"+
                 "<td data-field='text'><input id='uni' list='unidades' class='form-control' style='width:148px' name='solRegPrec[]' placeholder='';><datalist id='unidades'></datalist></td>"+
                 "<td data-field='text'><input class='form-control dinheiro' style='width:148px' id='valorItem"+ i +"' name='solRegPrec[]' placeholder='R$' value=''/></td>"+
@@ -45,22 +45,33 @@
                 return row;
     }
                
-    function loadDataList(){
-              $.ajax({
-              type: 'GET',
-              url: 'data/orgaos.json',
-              dataType: 'json',
-              async: false,
-              contentType: "application/json; charset=utf-8",
-              success: function(data){
-              
-                return data;
-              }
-            })
-            
+    function loadTwoDataList(id1, id2, url, value, desc){
+        $.getJSON(url, function(data) {
+            $(data.registros).each(function(obj) {
+               option = "<option value=\"" + data.registros[obj][value].toUpperCase() + " - " + data.registros[obj][desc] + "\">" + data.registros[obj][value] + "</option>";
+                    $(id1).append(option) + $(id2).append(option);
+                    
+        })
+      })
+    }
+
+    function loadOneDataList(idf, url, desc1, desc2, desc3){
+      $.getJSON(url, function(data) {
+          $(data.registros).each(function(obj) {
+             option = "<option value=\"" + data.registros[obj][desc1] + " - " + data.registros[obj][desc2] + "\">" + data.registros[obj][desc3] + "</option>";
+
+          $(idf).append(option);
+          $("#tpObjeto").val(data.registros[obj]['tipo']);          
+
+          })
+           
+        })
+ 
+    }
+
+    function appendfield(){
     }
           
-
     function ShowFieldsAdesaoAta(){
         $("#tipoAta").show();
         $("#l_tipoAta").show();
@@ -97,7 +108,7 @@
         $('#orgao01').append("Aderente");
         $('#orgao02').append("Orgão Gestor");
         $('#addOrg').hide();
-        loadDataList("#OrgSol_Gestor", "#Org_Aderente", "data/orgaos.json","sigla","descricao");
+        loadTwoDataList("#OrgSol_Gestor", "#Org_Aderente", "data/orgaos.json","sigla","descricao");
     }
 
     function AtaExterna(){
@@ -108,12 +119,31 @@
         $('#orgao01').append("Aderente");
         $('#orgao02').append("Orgão Gestor");
         $('#addOrg').show();
-        loadDataList("#OrgSol_Gestor", "", "data/orgaos.json","sigla","descricao");
+        loadTwoDataList("#OrgSol_Gestor","","data/orgaos.json","sigla","descricao");
 
     }
 
-    function appendField(data){
-        $(data.registros).each(function(obj){
-            alert(data.registros[obj]['sigla']);
-        })
+    function MsgBoxModal($msg) {
+
+    var modal = "<div class='modal fade' id='myModal' role='dialog' style='margim-left:10px;'>"+
+                   "<div class='modal-dialog'>"+
+                     "<div class='modal-content'>"+
+                       "<div class='modal-header'>"+
+                         "<button type='button' class='close' data-dismiss='modal'>&times;</button>"+
+                           "<h4 class=modal-title>SIMORP beta</h4>"+
+                             "</div>"+
+                               "<div class=modal-body>"+
+                               "<p>" + $msg + "</p>"+
+                             "</div>"+
+                           "<div class=modal-footer>"+
+                         "<input id='fechar' type='button' class='btn btn-default' data-dismiss='modal' value='Fechar' >"+
+                       "</div>"+
+                     "</div>"+
+                   "</div>"+
+                 "</div>";
+    return modal;
+   
     }
+      
+   
+   

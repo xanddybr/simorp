@@ -81,19 +81,19 @@ Class Usuario {
     }
 
 /*
-    public function __construct($idUser, $usuario, $nome, $sobrenome, $senha, $token, $perfil, $status) {
+          public function __construct($idUser, $usuario, $nome, $sobrenome, $senha, $token, $perfil, $status) {
 
-        $this->idUser = $idUser;
-        $this->usuario = $usuario;
-        $this->nome = $nome;
-        $this->sobrenome = $sobrenome;
-        $this->senha = $senha;
-        $this->token = $token;
-        $this->perfil = $perfil;
-        $this->status = $status;
+              $this->idUser = $idUser;
+              $this->usuario = $usuario;
+              $this->nome = $nome;
+              $this->sobrenome = $sobrenome;
+              $this->senha = $senha;
+              $this->token = $token;
+              $this->perfil = $perfil;
+              $this->status = $status;
 
-    }
- */ 
+          }
+      */ 
 
  
 //Exec connection with data-source API

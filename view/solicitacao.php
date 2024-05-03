@@ -8,13 +8,12 @@
 <link rel="icon" type="image/x-icon" href="img/ico/pencil.ico">
 
 <!-- libraires  -->
-<link href="./css/bootstrap.min.css" rel="stylesheet">
+
 <link href="./css/styles.css" rel="stylesheet">
+<link href="./css/bootstrap.min.css" rel="stylesheet">
+<script src="./js/bootstrap.min.js"></script>
+<script src="./js/jquery.min.js"></script>
 
-
-<!-- libraires -->
-<script src="../js/bootstrap.min.js"></script>
-<script src="../js/jquery.min.js"></script>
 <script src="./js/jquery.mask.min.js"></script>
 <script src="./js/solicitacao_set.js"></script>
 
@@ -23,17 +22,17 @@
 	//LOAD PAGE EVENTS TYPE REQUEST
 	$(document).ready(function(){
 
-	HideFieldsAdesaoAta();
-
-	alert(loadDataList());
-		
+		HideFieldsAdesaoAta();
+		loadTwoDataList("#OrgSol_Gestor","","data/orgaos.json","sigla","descricao");
+		loadTwoDataList("#unidades","","data/unidades.json","sigla","descricao");
+		loadOneDataList("#itens","data/itens.json","id","artigo","descricao");
 
 	})
 
 	//CHECK ALL CHECKBOXES
 	$(document).ready(function(){
 		$("#checkAll").click(function(){
-			$("input[type=checkbox]").prop('checked', $(this).prop('checked'));
+			$("input:checkbox").prop('checked', $(this).prop('checked'));
 		})
 	})
 
@@ -42,9 +41,7 @@
 		$('#tipoSolici').change(function(){
 			if($('#tipoSolici').val()=='adesaoAta'){
 				ShowFieldsAdesaoAta();
-				
 			}
-
 			if($('#tipoSolici').val()=='regPreco'){
 				HideFieldsAdesaoAta();
 			}
@@ -56,9 +53,7 @@
 		$('#tipoAta').change(function(){
 			if($('#tipoAta').val()=='interna'){
 				AtaInterna();
-				
 			}
-
 			if($('#tipoAta').val()=='externa'){
 				AtaExterna();
 			}
@@ -69,11 +64,11 @@
 	$(document).ready(function(){
 		$("#btn-add").click(function(){
 			Insert(rowItem());
-						
+			
 		}) 
 	})
 
-	 //INSERT MASK SEI NUMBER PROCESS
+	//INSERT MASK SEI NUMBER PROCESS
 	$(document).ready(function(){
             $('#seiprocess').focus(function (){
               $('#seiprocess').val("SEI-");
@@ -120,7 +115,10 @@
 
 </script>
 
-
+<!-- Modal -->
+<div id="mydiv"><div>
+			
+<!-- Modal -->
 <body>
 
 	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">			
@@ -223,6 +221,7 @@
 										<textarea class="form-control" id='obs' rows="2" name='solRegPrec[]' ></textarea>
 										
 								 </div><br>
+								 <label id='qtd'>Valor total:</label> 
 								 <div>
 								 
 								</label>
@@ -254,18 +253,18 @@
 							<th data-field="name" style='width: 0px;'><input type="button" id="btn-add" value=' + ' name="" /></th>
 							<th data-field="name" style='width: 10px;'><input type="button" id="btn-rmv" value=' - ' name="" /></th>
 						</tr>
-
-						<!-- <tr id='item_N1'>
-							<td data-field='text' style='width:50px'><input type='checkbox' id='chekItem1'  class='chbox'></td>
-							<td data-field='text'><input class='form-control' id='listItens' placeholder='INFORME O ITEM...' list='itens'  style='width: 738px;' name='solRegPrec[]' /><datalist id='itens'></datalist></td>
+							<tr id='item_N0'>
+							<td data-field='text' style='width:20px'><input type='checkbox' id='item_N0'  class='chbox' name=check[]></td>
+							<td data-field='text'><input class='form-control itens' id='listItens' placeholder='INFORME O ITEM...' list='itens'  style='width: 770px;' name='solRegPrec[]' /><datalist id='itens'></datalist></td>
 							<td data-field='text'><input type='text' id='tpObjeto' value='' class='form-control' style='width:143px' name='solRegPrec[]' placeholder='' disabled></td>
 							<td data-field='text'><input id='uni' list='unidades' class='form-control' style='width:148px' name='solRegPrec[]' placeholder='';><datalist id='unidades'></datalist></td>
-							<td data-field='text'><input class='form-control dinheiro' style='width:148px' id='valorItem1' name='solRegPrec[]' placeholder='R$' value=''/></td>
-							<td data-field='text'><input class='form-control' style='width:100px;' id='qtdItem1' placeholder='' name='solRegPrec[]' value='' required /></td>
-							<td data-field='text'><input class='form-control dinheiro' style='width:148px' id='subTotal1' placeholder='R$' name='solRegPrec[]' value='' disabled/></td>
+							<td data-field='text'><input class='form-control dinheiro' style='width:148px' id='valorItem0' name='solRegPrec[]' placeholder='R$' value=''/></td>
+							<td data-field='text'><input class='form-control' style='width:100px;' id='qtdItem0' placeholder='' name='solRegPrec[]' value='' required /></td>
+							<td data-field='text'><input class='form-control dinheiro' style='width:148px' id='subTotal0' placeholder='R$' name='solRegPrec[]' value='' disabled/></td>
 							<td data-field='text' style='width: 10px;'></td>
 							<td data-field='text' style='width: 10px;'></td>
-						</tr>row-->	
+							</tr>
+						</tr>
 				</table>
 
 				</form>
