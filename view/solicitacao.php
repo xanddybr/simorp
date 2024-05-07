@@ -11,24 +11,22 @@
 
 <link href="./css/styles.css" rel="stylesheet">
 <link href="./css/bootstrap.min.css" rel="stylesheet">
-<script src="./js/bootstrap.min.js"></script>
-<script src="./js/jquery.min.js"></script>
+
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/jquery.min.js"></script>
 
 <script src="./js/jquery.mask.min.js"></script>
 <script src="./js/solicitacao_set.js"></script>
 
 <script>
 
+	
 	//LOAD PAGE EVENTS TYPE REQUEST
 	$(document).ready(function(){
-
-		HideFieldsAdesaoAta();
-		loadTwoDataList("#OrgSol_Gestor","","data/orgaos.json","sigla","descricao");
-		loadTwoDataList("#unidades","","data/unidades.json","sigla","descricao");
-		loadOneDataList("#itens","data/itens.json","id","artigo","descricao");
-
+		
 	})
-
+		
+	
 	//CHECK ALL CHECKBOXES
 	$(document).ready(function(){
 		$("#checkAll").click(function(){
@@ -63,11 +61,11 @@
 	//INSERT ITEM IN LIST
 	$(document).ready(function(){
 		$("#btn-add").click(function(){
-			Insert(rowItem());
+			InsertItem(rowItem());
 			
 		}) 
 	})
-
+		
 	//INSERT MASK SEI NUMBER PROCESS
 	$(document).ready(function(){
             $('#seiprocess').focus(function (){
@@ -93,15 +91,18 @@
 	//REMOVE ITEM IN LIST
 	$(document).ready(function (){
 		$("#btn-rmv").click(function(){
-			removeItens();
+		RemoveItens();
 		})
 	})
 
 	//SAVE REQUEST
 	$(document).ready(function(){
-		$("#salvar").ready(function(){
-			
-		})
+		$("#salvar").click(function (){
+			$(".datalist").each(function(){
+				let item = $(this).attr("id");
+						alert(item);
+			})
+		})						
 	})
 	
 	//MASK CURRENCY FORMAT
@@ -110,9 +111,16 @@
     })
 
 	
+	$(document).ready(function(){
+		
+		HideFieldsAdesaoAta();
+		LodaDataList("#OrgSol_Gestor","","data/orgaos.json","sigla","descricao","sigla");
+		LodaDataList(null,"#unidades","data/unidades.json","sigla","descricao","sigla");
+		LodaDataList(null, "#itens","data/itens.json","id","descricao","");
 
+	})
 
-
+		
 </script>
 
 <!-- Modal -->
@@ -159,8 +167,7 @@
 								   <option value="adesaoAta">ADESÃO A ATA</option>
 								</select>
 								</div>
-
-
+										
 
 												<div class="col-lg-3">
 													<label>Tipo de Objeto</label>
@@ -174,12 +181,12 @@
 											
 												<div class="col-lg-2">
 													<label>Data Recebimento</label>
-													<input class="form-control" type="date" placeholder="" type="" id='' name='solRegPrec[]' maxlength="10" required>
+													<input class="form-control" type="date" placeholder="" type="" id='dtRec' name='solRegPrec[]' maxlength="10" required>
 												</div>
 
 												<div class="col-lg-2">
 													<label>Data Encaminhamento</label>
-													<input class="form-control" type="date" placeholder="" type="" id='' name='solRegPrec[]' maxlength="10" required>
+													<input class="form-control" type="date" placeholder="" type="" id='idEnc' name='solRegPrec[]' maxlength="10" required>
 												</div>
 										</div>
 										
@@ -239,10 +246,9 @@
 	<div class="col-lg-13">
 		
 		<div class="panel panel-default">
-					<div class="panel-body">
-				 		<table data-toggle="table" id='table01' class="col-lg-12">
-							
-						<tr>
+				<div class="panel-body">
+					<table data-toggle="table" id='table01' class="col-lg-12">
+						<tr style="width:800px;">
 							<th data-field="name" style='width: 20px'><input type='checkbox' id='checkAll'  class=""></th>
 							<th data-field="name" style='width: 680px;'>Descricão</th>
     						<th data-field="name" style='width: 110px'>Tipo</th>
@@ -255,7 +261,7 @@
 						</tr>
 							<tr id='item_N0'>
 							<td data-field='text' style='width:20px'><input type='checkbox' id='item_N0'  class='chbox' name=check[]></td>
-							<td data-field='text'><input class='form-control itens' id='listItens' placeholder='INFORME O ITEM...' list='itens'  style='width: 770px;' name='solRegPrec[]' /><datalist id='itens'></datalist></td>
+							<td data-field='text'><input class='form-control datalist' id='listItens0' placeholder='INFORME O ITEM...' list='itens'  style='width: 770px;' name='solRegPrec[]' /><datalist id='itens'></datalist></td>
 							<td data-field='text'><input type='text' id='tpObjeto' value='' class='form-control' style='width:143px' name='solRegPrec[]' placeholder='' disabled></td>
 							<td data-field='text'><input id='uni' list='unidades' class='form-control' style='width:148px' name='solRegPrec[]' placeholder='';><datalist id='unidades'></datalist></td>
 							<td data-field='text'><input class='form-control dinheiro' style='width:148px' id='valorItem0' name='solRegPrec[]' placeholder='R$' value=''/></td>
@@ -263,11 +269,11 @@
 							<td data-field='text'><input class='form-control dinheiro' style='width:148px' id='subTotal0' placeholder='R$' name='solRegPrec[]' value='' disabled/></td>
 							<td data-field='text' style='width: 10px;'></td>
 							<td data-field='text' style='width: 10px;'></td>
-							</tr>
 						</tr>
-				</table>
+						<tr><td></td><td id='item0N' class="RowDesc" colspan='7'></td></tr>						
+					</table>
+			    </form>
 
-				</form>
 					<script>
 
 					/*	$(function () {
@@ -307,7 +313,10 @@
 		
 </div><!--/.main-->
 
+
 	
 </body>
+
+
 
 </html>

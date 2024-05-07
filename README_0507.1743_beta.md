@@ -12,6 +12,7 @@
 
 [
 
+0507.1743 : refinament Description list intens
 0503.1749 : refinament form solicitacoes
 0430.1803 : implemented Delete single and multiple itens list
 0429.1752 : list item implemented (refinament)
@@ -235,37 +236,21 @@ $(data.osCars).each(function (idx, o) {
 carsOption = "<option value='" + this.name + "'>" + this.name + "</option>";
 $('#carList').append(carsOption);
 
-    };
+};
 
 
 --------------------------------------------------------------------------
 
-<script>
+TREE VIEW 
 
-    $(document).ready(function(){
-        $("#btn1").click(function(){
-            $("ol").append("<li>List item</li>");
-    });
-        $("#btn2").click(function(){
-            $("li:last").remove();
-        })
-    })
+<ul id="myUL">
+  <li><span class="caret">Beverages</span>
+    <ul class="nested">
+      <li>Water</li>
+         
+   </ul>
+   </li>  
+</ul>
 
-</script>
-
-</head>
-<body>
-
-<p>This is a paragraph.</p>
-<p>This is another paragraph.</p>
-
-<ol id='my'>
-  <li>List item</li>
-  <li>List item</li>
-  <li>List item</li>
-</ol>
-
-<button id="btn1">Append text</button>
-<button id="btn2">Append list item</button>
-
+--------------------------------------------------------------------------
 
