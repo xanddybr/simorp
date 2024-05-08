@@ -61,7 +61,22 @@ $.ajax({
 
 */
 
-console.log('Running..')
+let v1 = prompt("Digite o primeiro valor");
+let v2 = prompt("Digite o segundo valor");
+
+
+if(v1 !== "" && v2 !== "") {
+    
+ var v3 = parseInt(v1) / parseInt(v2);   
+  alert("A soma dos valores que vc digitou é "+ v3);
+
+} 
+else{
+  alert("Faltou informar um campo");
+}
+
+
+
 
 </script>
 
@@ -73,10 +88,6 @@ console.log('Running..')
 
 <label>Auto Fill</label><BR><BR>
 <select id="select" style="width:500px;">
-
-<option value='maçã' >maçã</option>
-<option value='limão' >limão</option>
-<option value='canela' >canela</option>
 
 </select>
 

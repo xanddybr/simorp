@@ -7,10 +7,9 @@
 <link rel="icon" type="image/x-icon" href="img/ico/pencil.ico">
 <link href="./css/bootstrap.min.css" rel="stylesheet">
 <link href="./css/styles.css" rel="stylesheet">
-
-
 <script src="./js/jquery.min.js"></script>
 <script src="./js/bootstrap.min.js"></script>
+
 <script src="./js/login_settings.js"></script>
 
 
@@ -55,11 +54,11 @@
 				</div>
 				
 			</div>
-			<?php echo "<center><span style='text-aling: center'><h6>v1.0.0 build 0425.1755</h6></span></center>"; ?>
+			<?php echo "<center><span style='text-aling: center'><h6>v1.0.0 build 0508.2007</h6></span></center>"; ?>
 		</div><!-- /.col-->
 		
 	</div><!-- /.row -->	
-	 
+	
 		
 
 </html>

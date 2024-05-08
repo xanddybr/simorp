@@ -10,23 +10,11 @@
 
 <script src="../js/jquery.min.js"></script>
 <link href="../css/bootstrap.min.css" rel="stylesheet">
+<script src="./js/solicitacao_set.js"></script>
 
 <script>
 
-      $(document).ready(function (){
-	
-            
-            
-      
-      
-      
-      
-      
-      
-      
-      
-            
-      });
+     
 </script>
 
 
@@ -50,16 +38,14 @@
 		
 		<div class="row"><!--/.row-->
 			<div class="col-lg-12">
-				
-			
 					
-						<div class="panel panel-info">
-							<div class="panel-heading">
-								<b>Bem vindo ao</b> SIMORP <?php ?>
-							</div>
-							<div class="panel-body">
-								<p>Sistema de Monitoramento de Registro de Preços!</p><p><br></p>
-							</div>
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					<b>Bem vindo ao</b> SIMORP <?php ?>
+				</div>
+				<div class="panel-body">
+					<p>Sistema de Monitoramento de Registro de Preços!</p><p><br></p>
+			</div>
 					
 		</div>
 		

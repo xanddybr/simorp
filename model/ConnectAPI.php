@@ -3,12 +3,10 @@
 Class DataSourceAPI {
 
                        
-            private string $_customrequest;
             private string $_url;
             private array $_httpheader;
             private array $_postfields;
-            private bool $_returntransfer = true;
-                       
+                                   
 
             public function get_url(){
                 return $this->_url;
@@ -33,16 +31,7 @@ Class DataSourceAPI {
             public function set_postfields($_postfields){
                 $this->_postfields = $_postfields;
             }
-
-            public function get_customrequest(){
-              return $this->_customrequest;
-            }
-      
-            public function set_customrequest($_customrequest){
-              $this->_customrequest = $_customrequest;
-            }
-           
-           
+                    
 
       public function AuthAPI() {
 
@@ -51,7 +40,7 @@ Class DataSourceAPI {
                         curl_setopt($curl, CURLOPT_POST, true);
                         curl_setopt($curl, CURLOPT_URL, $this->_url);
                         curl_setopt($curl, CURLOPT_POSTFIELDS, $this->_postfields);
-                        curl_setopt($curl, CURLOPT_RETURNTRANSFER, $this->_returntransfer);
+                        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
                         curl_setopt($curl, CURLOPT_CONNECTTIMEOUT, 10);
                         curl_setopt($curl, CURLOPT_TIMEOUT, 30);
                         curl_close ($curl);                       
@@ -59,7 +48,7 @@ Class DataSourceAPI {
 
                         if(!$result = curl_exec($curl)){
                           
-                          die('A aplicação não pode ser iniciada, porque a API não responde!!');
+                          die('<script>alert("A aplicação não pode ser iniciada, porque a API não responde!!")</script>');
                        
                         } else {
                           $result_json = json_decode($result, true);
@@ -75,7 +64,7 @@ Class DataSourceAPI {
                                     
                       curl_setopt($curl, CURLOPT_HTTPHEADER, $this->_httpheader); 
                       curl_setopt($curl, CURLOPT_URL, $this->_url);
-                      curl_setopt($curl, CURLOPT_RETURNTRANSFER, $this->_returntransfer);
+                      curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
                       curl_setopt($curl, CURLOPT_CONNECTTIMEOUT, 10);
                       curl_setopt($curl, CURLOPT_TIMEOUT, 30);
                       curl_close($curl);
@@ -98,15 +87,17 @@ Class DataSourceAPI {
                     
                       curl_setopt($curl, CURLOPT_HTTPHEADER, $this->_httpheader); 
                       curl_setopt($curl, CURLOPT_URL, $this->_url . $id .'/');
-                      curl_setopt($curl, CURLOPT_RETURNTRANSFER, $this->_returntransfer);
+                      curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
                       curl_setopt($curl, CURLOPT_CONNECTTIMEOUT, 10);
                       curl_setopt($curl, CURLOPT_TIMEOUT, 30);
                       curl_close($curl);
 
                       if(!$result = curl_exec($curl)){
-                          
+                         
+                        header("location:/simorp_beta/login");
                         die('Erro na integração com a API na tentativa de carregamento da informação');
-                     
+                        
+
                       } else {
                         $result_json = json_decode($result, true);
                         return $result_json;
@@ -125,7 +116,7 @@ Class DataSourceAPI {
                       curl_setopt($curl, CURLOPT_HTTPHEADER, $this->_httpheader); 
                       curl_setopt($curl, CURLOPT_URL, $this->_url);
                       curl_setopt($curl, CURLOPT_POSTFIELDS, $array_Data);
-                      curl_setopt($curl, CURLOPT_RETURNTRANSFER, $this->_returntransfer);
+                      curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
                       curl_setopt($curl, CURLOPT_CONNECTTIMEOUT, 10);
                       curl_setopt($curl, CURLOPT_TIMEOUT, 30);
                       curl_close($curl);
@@ -154,7 +145,7 @@ Class DataSourceAPI {
                       curl_setopt($curl, CURLOPT_HTTPHEADER, $this->_httpheader); 
                       curl_setopt($curl, CURLOPT_URL, $this->_url . $arrayData['id'] .'/');
                       curl_setopt($curl, CURLOPT_POSTFIELDS, $array_Data);
-                      curl_setopt($curl, CURLOPT_RETURNTRANSFER, $this->_returntransfer);
+                      curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
                       curl_setopt($curl, CURLOPT_CONNECTTIMEOUT, 10);
                       curl_setopt($curl, CURLOPT_TIMEOUT, 30);
                       curl_close($curl);
@@ -180,7 +171,7 @@ Class DataSourceAPI {
                       curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'DELETE');
                       curl_setopt($curl, CURLOPT_HTTPHEADER, $this->_httpheader); 
                       curl_setopt($curl, CURLOPT_URL, $this->_url . $id .'/');
-                      curl_setopt($curl, CURLOPT_RETURNTRANSFER, $this->_returntransfer);
+                      curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
                       curl_setopt($curl, CURLOPT_CONNECTTIMEOUT, 10);
                       curl_setopt($curl, CURLOPT_TIMEOUT, 30);
                       curl_close($curl);
