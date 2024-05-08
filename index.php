@@ -5,7 +5,6 @@
 <?php include_once "./controller/ControllerUsuario.php"; ?>
 <?php include_once "./router/Router.php"; ?>
 
- 
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,7 +24,6 @@
 
 </head>
 <script>
-
 
 
 </script>

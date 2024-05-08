@@ -48,7 +48,7 @@ Class DataSourceAPI {
 
                         if(!$result = curl_exec($curl)){
                           
-                          die('A aplicação não pode ser iniciada, porque a API não responde!!');
+                          die('<script>alert("A aplicação não pode ser iniciada, porque a API não responde!!")</script>');
                        
                         } else {
                           $result_json = json_decode($result, true);
@@ -93,9 +93,11 @@ Class DataSourceAPI {
                       curl_close($curl);
 
                       if(!$result = curl_exec($curl)){
-                          
+                         
+                        header("location:/simorp_beta/login");
                         die('Erro na integração com a API na tentativa de carregamento da informação');
-                     
+                        
+
                       } else {
                         $result_json = json_decode($result, true);
                         return $result_json;
