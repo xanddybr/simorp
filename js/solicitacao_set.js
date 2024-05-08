@@ -1,33 +1,18 @@
-
-
-        i = 1;
-        function InsertItem(item){
+        i = 0;
+        function Insert(row){
         
-        let qtdItem = $("#qtdItem"+(i-1)).val();
-        let valorItem = $("#valorItem"+(i-1)).val();
+             $("#table01:last").append(row);
 
-            if(qtdItem == "" || valorItem == "") {
-            
-              alert("O campo valor e quantidade não pode ficar em branco!");
+             $("#idItem"+i).append($("#idItem").val());
+             $("#descricao"+i).append($("#descricao").val());
+             $("#tpObjeto"+i).append($("#tpObjeto").val());
+             $("#unidade"+i).append($("#unidade").val());
+             $("#qtdItens"+i).append($("#qtdItens").val());
 
-            } else {
-
-                CalculateFields();
-                $("#table01:last").append(item);
-                $("#item"+(i-1)+"N").append("Running..."+(i-1));
-                $(".dinheiro").mask('#.##9,99',{reverse: true});
-                                           
-                            
-            }  
-
-            i++;
-            exit();
+           i++;
+           exit();
               
         } 
-
-        function InsertDesc(id, desc){
-          $(id).append(desc);
-        }
 
         function CalculateFields(){
           $("#subTotal"+(i-1)).val(parseInt($("#qtdItem"+(i-1)).val()) * parseInt($("#valorItem"+(i-1)).val()));
@@ -45,27 +30,20 @@
           })
         }
 
-
-
-        function rowItem(){
-            let row = "<tr id='item"+ i +"'>"+
-                    "<td data-field='text' style='width:20px'><input type='checkbox' id='item"+ i +"'  class='chbox' name=check[]></td>"+
-                    "<td data-field='text'><input class='form-control datalist' id=listItens"+ i +" placeholder='INFORME O ITEM...' list='itens' style='width: 770px;' name='solRegPrec[]'/><datalist id='itens'></datalist></td>"+
-                    "<td data-field='text'><input type='text' id='tpObjeto' value='' class='form-control' style='width:143px' name='solRegPrec[]' placeholder='' disabled></td>"+
-                    "<td data-field='text'><input id='uni' list='unidades' class='form-control' style='width:148px' name='solRegPrec[]' placeholder='';><datalist id='unidades'></datalist></td>"+
-                    "<td data-field='text'><input class='form-control dinheiro' style='width:148px' id='valorItem"+ i +"' name='solRegPrec[]' placeholder='R$' value=''/></td>"+
-                    "<td data-field='text'><input class='form-control' style='width:100px;' id='qtdItem"+ i +"' placeholder='' name='solRegPrec[]' value='' required /></td>"+
-                    "<td data-field='text'><input class='form-control dinheiro' style='width:148px' id='subTotal"+ i +"' placeholder='R$' name='solRegPrec[]' value='' disabled/></td>"+
-                    "<td data-field='text' style='width: 10px;'></td>"+
-                    "<td data-field='text' style='width: 10px;'></td></tr>"+
-                    "<tr><td></td><td id='item"+ i +"N' class='RowDesc' colspan='7'></td></tr>";
-
-                return row;
+        function Row(){
+               var row =  "<tr id='item"+ i +"' style='height:30px;'>"+
+                          "<td style='width:40px;'><input type='checkbox' class='chbox' id='check"+ i +"' name=check[]></td>"+
+                          "<td style='width:100px;' id='idItem"+ i +"' >&nbsp&nbsp&nbsp</td>"+
+                          "<td style='width:800px;' id='descricao"+ i +"' style='width: 800px;'> &nbsp&nbsp&nbsp</td>"+
+                          "<td style='width:150px;' id='tpObjeto"+ i +"'> &nbsp&nbsp&nbsp</td>"+
+                          "<td style='width:200px;' id='unidade"+ i +"'> &nbsp&nbsp&nbsp</td>"+
+                          "<td style='width:150px;' id='qtdItens"+ i +"'> &nbsp&nbsp&nbsp</td>"+
+                          "<td style='width: 0px;'></td>"+
+                          "<td style='width: 10px;'></td></tr>";
+               return row;
         }
-
-      
                   
-        function LodaDataList(id1, id2, url, valueField, field1, field2){
+        function LodaDataList(id1, id2, url, valueField, field1){
             $.getJSON(url, function(data) {
                 $(data.registros).each(function(obj) {
                   option = "<option value=\"" + data.registros[obj][valueField] + "\">" + data.registros[obj][field1] + "</option>";
@@ -100,7 +78,7 @@
             $("#addOrg").hide();
             $("#orgao01").empty();
             $("#orgao02").empty();
-            $("#orgao01").append("Orgao Solicitante");
+            $("#orgao01").append("Orgão Solicitante");
         }
 
         function AtaInterna(){

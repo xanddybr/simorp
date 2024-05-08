@@ -54,33 +54,48 @@
                 ]
         },
         {
-                "idSol" : 3,  
-                "tipoSol": "REGISTRO DE PRECO",
-                "processo": "SEI-0402.1531/15252/2026",
-                "orgaoGestor" : "SEPLAG",
-                "orgaoAderente" : "DETRAN",
-                "nAta" : "126458",
-                "tipoObjeto": "MATERIAL",
-                "tipoAta": "INTERNA",
-                "dataReceb": " 10:43 02/04/2024",
-                "dataEncam": " 10:43 02/04/2024",
-                "obs": "TESTE DE INCLUSÃO DE SOLICITAÇÃO",
-                "valorTotal": "500.00",
-                "usuario": "ANTERO",
-                "itens" :[
-                         {
-                        "idItem": 133019,
-                        "descricao": "IDENTIDADE FUNCIONAL, PESSOA JRIDICA",
-                        "tipo": "SERVIÇO",
-                        "artigo" : "SERVICO CONFECCAO CEDULA IDENTIDADE ",
-                        "quantidade": 10,
-                        "unidade": "UNI",
-                        "valor_unitario": "4.00",
-                        "sub_total": "500.00"
-                        } 
-                        ]
+        "idSol" : 3,  
+        "tipoSol": "REGISTRO DE PRECO",
+        "processo": "SEI-0402.1531/15252/2026",
+        "orgaoGestor" : "SEPLAG",
+        "orgaoAderente" : "DETRAN",
+        "nAta" : "126458",
+        "tipoObjeto": "MATERIAL",
+        "tipoAta": "INTERNA",
+        "dataReceb": " 10:43 02/04/2024",
+        "dataEncam": " 10:43 02/04/2024",
+        "obs": "TESTE DE INCLUSÃO DE SOLICITAÇÃO",
+        "valorTotal": "500.00",
+        "usuario": "ANTERO",
+        "itens" :[
+                        {
+                "idItem": 133019,
+                "descricao": "IDENTIDADE FUNCIONAL, PESSOA JRIDICA",
+                "tipo": "SERVIÇO",
+                "artigo" : "SERVICO CONFECCAO CEDULA IDENTIDADE ",
+                "quantidade": 10,
+                "unidade": "UNI",
+                "valor_unitario": "4.00",
+                "sub_total": "500.00"
+                } 
+                ]
+                },
+                {
+        "idSol" : 3,  
+        "tipoSol": "REGISTRO DE PRECO",
+        "processo": "SEI-0402.1531/15252/2026",
+        "orgaoGestor" : "SEPLAG",
+        "orgaoAderente" : "DETRAN",
+        "nAta" : "126458",
+        "tipoObjeto": "MATERIAL",
+        "tipoAta": "INTERNA",
+        "dataReceb": " 10:43 02/04/2024",
+        "dataEncam": " 10:43 02/04/2024",
+        "obs": "TESTE DE INCLUSÃO DE SOLICITAÇÃO",
+        "valorTotal": "500.00",
+        "usuario": "MARLON",
+        "itens" :[]
                 }
-
-
+                
 
 ]

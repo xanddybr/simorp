@@ -12,6 +12,7 @@
 
 [
 
+0508.2007 : refinament list intens
 0507.1743 : refinament Description list intens
 0503.1749 : refinament form solicitacoes
 0430.1803 : implemented Delete single and multiple itens list
