@@ -2,20 +2,21 @@
         function Insert(row){
         
              $("#table01:last").append(row);
-
-             $("#idItem"+i).append($("#idItem").val());
-             $("#descricao"+i).append($("#descricao").val());
-             $("#tpObjeto"+i).append($("#tpObjeto").val());
-             $("#unidade"+i).append($("#unidade").val());
-             $("#qtdItens"+i).append($("#qtdItens").val());
+             BindItensRow();
 
            i++;
            exit();
               
         } 
 
-        function CalculateFields(){
-          $("#subTotal"+(i-1)).val(parseInt($("#qtdItem"+(i-1)).val()) * parseInt($("#valorItem"+(i-1)).val()));
+        function BindItensRow(){
+
+            $("#idItem"+i).append($("#idItem").val());
+            $("#descricao"+i).append($("#descricao").val());
+            $("#tpObjeto"+i).append($("#tpObjeto").val());
+            $("#unidade"+i).append($("#unidade").val());
+            $("#qtdItens"+i).append($("#qtdItens").val());
+
         }
 
         function RemoveItens(){
@@ -43,14 +44,31 @@
                return row;
         }
                   
-        function LodaDataList(id1, id2, url, valueField, field1){
+        function LodaDataList(id1, id2, url, valueField, desc1, desc2){
             $.getJSON(url, function(data) {
                 $(data.registros).each(function(obj) {
-                  option = "<option value=\"" + data.registros[obj][valueField] + "\">" + data.registros[obj][field1] + "</option>";
+                  option = "<option value=\"" + data.registros[obj][valueField] + " - " + data.registros[obj][desc1] + "\">" + data.registros[obj][desc2] + "</option>";
                       $(id1).append(option) + $(id2).append(option);
                         
             })
           })
+        }
+
+        function LodaDataListKey(key1, id1, url, valueField, desc1, desc2){
+          
+          $.getJSON(url, function(data) {
+              $(data.registros).each(function(obj){
+                
+                if(data.registros[obj]['tipo'] == 'SERVICO'){
+
+                    option = "<option value=\"" + data.registros[obj][valueField] + " - " + data.registros[obj][desc1] + "\">" + data.registros[obj][desc2] + "</option>";
+                    $(id1).append(option);
+                }
+          
+             })
+          })
+
+
         }
                          
         function ShowFieldsAdesaoAta(){

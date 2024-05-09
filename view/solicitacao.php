@@ -38,7 +38,7 @@
 		})
 	})
 
-	//CHANGE TYPE REQUEST
+	//TYPE REQUESTING
 	$(document).ready(function(){
 		$('#tipoSolici').change(function(){
 			if($('#tipoSolici').val()=='adesaoAta'){
@@ -58,6 +58,43 @@
 			}
 			if($('#tipoAta').val()=='externa'){
 				AtaExterna();
+			}
+		})
+	})
+
+	//CHANGE FAMILY
+	$(document).ready(function(){
+		$('#familiaList').change(function(){
+	
+			let tpObjKey = $('#tipoObjeto').val();
+			let familyKey = $('#familiaList').val();
+			let TpOb = familyKey.split("-");
+			familyKey = TpOb[1];
+			
+			LodaDataListKey(familyKey,"#itens","data/itens.json","id","descricao","tipo");
+			//tpObjKey,familyKey
+		})
+	})
+
+	//CHANGE TYPE OBJECT
+	$(document).ready(function(){
+
+		$('#tipoObjeto').change(function(){
+			if($('#tipoObjeto').val()=='selecione'){
+				$('#familia').empty();
+				exit();
+			}
+
+			if($('#tipoObjeto').val()=='MATERIAL'){
+				$('#familia').empty();
+				LodaDataList(null, "#familia","data/familiaMaterial.json","id","familia","tipo");
+				exit();
+			}
+
+			if($('#tipoObjeto').val()=='SERVICO'){
+				$('#familia').empty();
+				LodaDataList(null, "#familia","data/familiaServicos.json","id","familia","tipo");
+				exit();
 			}
 		})
 	})
@@ -94,7 +131,7 @@
 	//SAVE REQUEST
 	$(document).ready(function(){
 		$("#salvar").click(function (){
-			alert($("#vTotal").val());
+			
 		})						
 	})
 	
@@ -107,10 +144,10 @@
 	$(document).ready(function(){
 		
 		HideFieldsAdesaoAta();
-
+		$('#familia').empty();
 		LodaDataList("#OrgSol_Gestor","","data/orgaos.json","sigla","descricao","sigla");
-		LodaDataList(null,"#unidades","data/unidades.json","sigla","descricao","sigla");
-		//LodaDataList(null, "#itens","data/itens.json","id","descricao","");
+		LodaDataList(null,"#unidades","data/unidades.json","sigla","descricao");
+		//LodaDataList(null, "#itens","data/itens.json","id","familia","tipo");
 
 	})
 
@@ -157,8 +194,8 @@
 								<div class="col-lg-3">
 									<label>Tipo de Solicitação</label>
 								<select id='tipoSolici' class="form-control" name='solRegPrec[]'>
-								   <option value="regPreco">REGISTRO DE PREÇO</option>
-								   <option value="adesaoAta">ADESÃO A ATA</option>
+								   <option value="regPreco">1 - REGISTRO DE PREÇO</option>
+								   <option value="adesaoAta">2 - ADESÃO A ATA</option>
 								</select>
 								</div>
 										
@@ -167,9 +204,9 @@
 													<label>Tipo de Objeto</label>
 													<select id='tipoObjeto' class="form-control" placeholder="INFORME O TIPO DE OBJETO" onChange="";  name='solRegPrec[]'>
 														    <option value="selecione"><< SELECIONE UM TIPO >></option>
-															<option value="material">MATERIAL</option>
-															<option value="serviço">SERVIÇOS</option>
-															<option value="ambos">MATERIAL/SERVIÇO</option>
+															<option value="MATERIAL">1 - MATERIAL</option>
+															<option value="SERVICO">2 - SERVIÇOS</option>
+															<option value="selecione">3 - MATERIAL/SERVIÇO</option>
 													</select>
 												</div>
 											
@@ -205,7 +242,7 @@
 											
 								<label id='l_familia'>Familia</label>
 													
-								<input class="form-control col-lg-3" placeholder="Informe uma família" name='solRegPrec[]' id='familia' value="" required>
+								<input class="form-control col-lg-3" placeholder="Informe uma família" name='solRegPrec[]' id='familiaList' list='familia' required><datalist id='familia'></datalist>
 							    </div>
 
 								<div class="col-md-2">
@@ -234,7 +271,7 @@
 								 <div class="form-group col-lg-12">
 										<label>Observação</label>
 										<textarea class="form-control" id='obs' rows="2" name='solRegPrec[]' ></textarea>
-										<label id='qtd'>Quantidade Total de Itens:</label>
+										<label id='qtd'>Quantidade Total de Itens: ?</label>
 										
 								 </div><br>
 								 
@@ -274,8 +311,8 @@
 							<tr id='item_N0' >
 							<td style='width:40px;'><input type='checkbox' class='' id='check'></td>
 							<td><input class='form-control' id='idItem' list='itens' style='width:100px;'  placeholder='ID ITEM' name='solRegPrec[]' required><datalist id='itens'></datalist></td>
-							<td><input class='form-control'  placeholder='Descrição' type='text' id='descricao' style='width: 800px;' name='solRegPrec[]' onkeypress="return false;"/></td>
-							<td><input type='text' class='form-control' id='tpObjeto' placeholder='MATERIAL' style='width:150px' name='solRegPrec[]' onkeypress="return false;"></td>
+							<td><input class='form-control'  placeholder='DESCRIÇÃO' type='text' id='descricao' style='width: 800px;' name='solRegPrec[]' onkeypress="return false;"/></td>
+							<td><input type='text' class='form-control' id='tpObjeto' placeholder='TIPO PRODUTO' style='width:150px' name='solRegPrec[]' onkeypress="return false;"></td>
 							<td><input list='unidade' class='form-control' id='unidade' placeholder='UNIDADE' style='width:200px' name='solRegPrec[]'><datalist id='unidades'></datalist></td>
 							<td><input class='form-control' id='qtdItens' style='width:150px;'  placeholder='QUANTIDADE' name='solRegPrec[]' value='' required /></td>
 							<td style='width: 10px;'></td>
