@@ -11,7 +11,7 @@
 
         function BindItensRow(){
 
-            $("#idItem"+i).append($("#idItem").val());
+            $("#idItens"+i).append($("#idItens").val());
             $("#descricao"+i).append($("#descricao").val());
             $("#tpObjeto"+i).append($("#tpObjeto").val());
             $("#unidade"+i).append($("#unidade").val());
@@ -34,7 +34,7 @@
         function Row(){
                var row =  "<tr id='item"+ i +"' style='height:30px;'>"+
                           "<td style='width:40px;'><input type='checkbox' class='chbox' id='check"+ i +"' name=check[]></td>"+
-                          "<td style='width:100px;' id='idItem"+ i +"' >&nbsp&nbsp&nbsp</td>"+
+                          "<td style='width:100px;' id='idItens"+ i +"' >&nbsp&nbsp&nbsp</td>"+
                           "<td style='width:800px;' id='descricao"+ i +"' style='width: 800px;'> &nbsp&nbsp&nbsp</td>"+
                           "<td style='width:150px;' id='tpObjeto"+ i +"'> &nbsp&nbsp&nbsp</td>"+
                           "<td style='width:200px;' id='unidade"+ i +"'> &nbsp&nbsp&nbsp</td>"+
@@ -44,27 +44,24 @@
                return row;
         }
                   
-        function LodaDataList(id1, id2, url, valueField, desc1, desc2){
+        function LodaDataList(id1, id2, url, valueField, desc1){
             $.getJSON(url, function(data) {
                 $(data.registros).each(function(obj) {
-                  option = "<option value=\"" + data.registros[obj][valueField] + " - " + data.registros[obj][desc1] + "\">" + data.registros[obj][desc2] + "</option>";
+                  option = "<option value=\"" + data.registros[obj][valueField] + "\">" + data.registros[obj][desc1] + "</option>";
                       $(id1).append(option) + $(id2).append(option);
                         
             })
           })
         }
 
-        function LodaDataListKey(key1, id1, url, valueField, desc1, desc2){
+        function LodaDataListKey(key1, key2, id1, url, valueField, desc1){
           
           $.getJSON(url, function(data) {
-              $(data.registros).each(function(obj){
-                
-                if(data.registros[obj]['tipo'] == 'SERVICO'){
-
-                    option = "<option value=\"" + data.registros[obj][valueField] + " - " + data.registros[obj][desc1] + "\">" + data.registros[obj][desc2] + "</option>";
-                    $(id1).append(option);
+              $(data.registros).each(function(obj){ 
+                if(data.registros[obj]['familia'] == key1 || data.registros[obj]['tipo'] == key2){
+                  option = "<option value=\"" + data.registros[obj][valueField] + " | " + data.registros[obj][desc1] + "\">" + data.registros[obj][desc1] + "</option>";
+                  $(id1).append(option);
                 }
-          
              })
           })
 

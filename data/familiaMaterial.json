@@ -1,5 +1,5 @@
 {
-  "registros" : [  
+  "registros": [
     {
       "id": 1,
       "tipo": "MATERIAL",
@@ -38,7 +38,7 @@
     {
       "id": 8,
       "tipo": "MATERIAL",
-      "familia": "AERONAVAES E EMBARCACOES"
+      "familia": "AERONAVES E EMBARCACOES"
     },
     {
       "id": 9,
@@ -123,7 +123,7 @@
     {
       "id": 25,
       "tipo": "MATERIAL",
-      "familia": "MATERIA PRIMA"
+      "familia": "MATERIA-PRIMA"
     },
     {
       "id": 26,

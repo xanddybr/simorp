@@ -65,14 +65,11 @@
 	//CHANGE FAMILY
 	$(document).ready(function(){
 		$('#familiaList').change(function(){
-	
-			let tpObjKey = $('#tipoObjeto').val();
-			let familyKey = $('#familiaList').val();
-			let TpOb = familyKey.split("-");
-			familyKey = TpOb[1];
+			$("#itens").empty();
+			var tpObjKey = $('#tipoObjeto').val();
+			var familyKey = $('#familiaList').val();
+			LodaDataListKey(familyKey,tpObjKey,"#itens","data/itens.json","id","descricao");
 			
-			LodaDataListKey(familyKey,"#itens","data/itens.json","id","descricao","tipo");
-			//tpObjKey,familyKey
 		})
 	})
 
@@ -87,13 +84,13 @@
 
 			if($('#tipoObjeto').val()=='MATERIAL'){
 				$('#familia').empty();
-				LodaDataList(null, "#familia","data/familiaMaterial.json","id","familia","tipo");
+				LodaDataList(null, "#familia","data/familiaMaterial.json","familia","tipo");
 				exit();
 			}
 
 			if($('#tipoObjeto').val()=='SERVICO'){
 				$('#familia').empty();
-				LodaDataList(null, "#familia","data/familiaServicos.json","id","familia","tipo");
+				LodaDataList(null, "#familia","data/familiaServicos.json","familia","tipo");
 				exit();
 			}
 		})
@@ -147,8 +144,15 @@
 		$('#familia').empty();
 		LodaDataList("#OrgSol_Gestor","","data/orgaos.json","sigla","descricao","sigla");
 		LodaDataList(null,"#unidades","data/unidades.json","sigla","descricao");
-		//LodaDataList(null, "#itens","data/itens.json","id","familia","tipo");
+		
 
+	})
+
+	//APPEND CONTENT ITEN
+	$(document).ready(function(){
+		$("#idItens").focusout(function(){
+			$("#descricao").val($("#idItens").val());
+		})
 	})
 
 		
@@ -310,7 +314,7 @@
 						</tr>
 							<tr id='item_N0' >
 							<td style='width:40px;'><input type='checkbox' class='' id='check'></td>
-							<td><input class='form-control' id='idItem' list='itens' style='width:100px;'  placeholder='ID ITEM' name='solRegPrec[]' required><datalist id='itens'></datalist></td>
+							<td><input class='form-control' id='idItens' list='itens' style='width:100px;'  placeholder='ID ITEM' name='solRegPrec[]' required><datalist id='itens'></datalist></td>
 							<td><input class='form-control'  placeholder='DESCRIÇÃO' type='text' id='descricao' style='width: 800px;' name='solRegPrec[]' onkeypress="return false;"/></td>
 							<td><input type='text' class='form-control' id='tpObjeto' placeholder='TIPO PRODUTO' style='width:150px' name='solRegPrec[]' onkeypress="return false;"></td>
 							<td><input list='unidade' class='form-control' id='unidade' placeholder='UNIDADE' style='width:200px' name='solRegPrec[]'><datalist id='unidades'></datalist></td>
