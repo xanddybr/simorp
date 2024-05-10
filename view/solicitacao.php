@@ -3,7 +3,10 @@
 <head>
 
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv='cache-control' content='no-cache'>
+<meta http-equiv='expires' content='0'>
+<meta http-equiv='pragma' content='no-cache'>
+
 <title>Bem Vindo ao SIMORP</title>
 <link rel="icon" type="image/x-icon" href="img/ico/pencil.ico">
 
@@ -65,10 +68,15 @@
 	//CHANGE FAMILY
 	$(document).ready(function(){
 		$('#familiaList').change(function(){
-			$("#itens").empty();
-			var tpObjKey = $('#tipoObjeto').val();
-			var familyKey = $('#familiaList').val();
-			LodaDataListKey(familyKey,tpObjKey,"#itens","data/itens.json","id","descricao");
+
+			if($('#familiaList').val() !=""){
+				$("#itens").empty();
+				let tpObjKey = $('#tipoObjeto').val();
+				let familyKey = $('#familiaList').val();
+				LodaDataListKey(familyKey,tpObjKey,"#descItem","data/itens.json","descricao","tipo");	
+			} else {
+				$("#itens").empty();
+			}
 			
 		})
 	})
@@ -142,7 +150,7 @@
 		
 		HideFieldsAdesaoAta();
 		$('#familia').empty();
-		LodaDataList("#OrgSol_Gestor","","data/orgaos.json","sigla","descricao","sigla");
+		LodaDataList("#OrgSol_Gestor","","data/orgaos.json","sigla","descricao");
 		LodaDataList(null,"#unidades","data/unidades.json","sigla","descricao");
 		
 
@@ -209,8 +217,8 @@
 													<select id='tipoObjeto' class="form-control" placeholder="INFORME O TIPO DE OBJETO" onChange="";  name='solRegPrec[]'>
 														    <option value="selecione"><< SELECIONE UM TIPO >></option>
 															<option value="MATERIAL">1 - MATERIAL</option>
-															<option value="SERVICO">2 - SERVIÇOS</option>
-															<option value="selecione">3 - MATERIAL/SERVIÇO</option>
+															<option value="SERVICO">2 - SERVICOS</option>
+															<option value="selecione">3 - MATERIAL/SERVICO</option>
 													</select>
 												</div>
 											
@@ -298,26 +306,23 @@
 
 			
 	<div class="col-lg-13">
-		
-		<div class="panel panel-default">
+		  <div class="panel panel-default">
 				<div class="panel-body">
 					<table data-toggle="table" id='table01' class="col-lg-12">
 						<tr style="width:800px;">
-							<th style='width: 40px;'><input type='checkbox' id='checkAll'  class=""></th>
-							<th style='width: 100px;'></th>
-							<th style='width: 800px;'></th>
-    						<th style='width: 150px;'></th>
+							<th style='width: 30px;'><input type='checkbox' id='checkAll'  class=""></th>
+							<th style='width: 700px;'></th>
+    						<th style='width: 400px;'></th>
 							<th style='width: 200px;'></th>
 							<th style='width: 150px;'></th>
 							<th style='width: 0px;'><input type="button" id="btn-add" value=' + ' name="" /></th>
 							<th style='width: 10px;'><input type="button" id="btn-rmv" value=' - ' name="" /></th>
 						</tr>
 							<tr id='item_N0' >
-							<td style='width:40px;'><input type='checkbox' class='' id='check'></td>
-							<td><input class='form-control' id='idItens' list='itens' style='width:100px;'  placeholder='ID ITEM' name='solRegPrec[]' required><datalist id='itens'></datalist></td>
-							<td><input class='form-control'  placeholder='DESCRIÇÃO' type='text' id='descricao' style='width: 800px;' name='solRegPrec[]' onkeypress="return false;"/></td>
-							<td><input type='text' class='form-control' id='tpObjeto' placeholder='TIPO PRODUTO' style='width:150px' name='solRegPrec[]' onkeypress="return false;"></td>
-							<td><input list='unidade' class='form-control' id='unidade' placeholder='UNIDADE' style='width:200px' name='solRegPrec[]'><datalist id='unidades'></datalist></td>
+							<td style='width:30px;'><input type='checkbox' class='' id='check'></td>
+							<td><input class='form-control' placeholder='DESCRIÇÃO' list='descItem' type='text' id='descricao' style='width: 700px;' name='solRegPrec[]'><datalist id='descItem'></datalist></td>
+							<td><input type='text' class='form-control' id='familiaItem' placeholder='FAMILIA' style='width:400px' name='solRegPrec[]' onkeypress="return false;"></td>
+							<td><input list='unidades' class='form-control' id='unidade' placeholder='UNIDADE' style='width:200px' name='solRegPrec[]'><datalist id='unidades'></datalist></td>
 							<td><input class='form-control' id='qtdItens' style='width:150px;'  placeholder='QUANTIDADE' name='solRegPrec[]' value='' required /></td>
 							<td style='width: 10px;'></td>
 							<td style='width: 10px;'></td>
@@ -327,36 +332,6 @@
 			    </form>
 
 					<script>
-
-					/*	$(function () {
-							$('#hover, #striped, #condensed').click(function () {
-								var classes = 'table';
-					
-								if ($('#hover').prop('checked')) {
-									classes += ' table-hover';
-								}
-								if ($('#condensed').prop('checked')) {
-									classes += ' table-condensed';
-								}
-								$('#table-style').bootstrapTable('destroy')
-									.bootstrapTable({
-										classes: classes,
-										striped: $('#striped').prop('checked')
-									});
-							});
-						});
-					
-						function rowStyle(row, index) {
-							var classes = ['active', 'success', 'info', 'warning', 'danger'];
-					
-							if (index % 2 === 0 && index / 2 < classes.length) {
-								return {
-									classes: classes[index / 2]
-								};
-							}
-							return {};
-						}*/
-
 					</script>
 				</div>
 			</div>

@@ -8,7 +8,7 @@
       {
         "id": 34,
         "tipo": "SERVICOS",
-        "familia": "SERVICO DE APOIO ADMINISTRATIVO, TECNICO E OPRACIONAL"
+        "familia": "SERVICO DE APOIO ADMINISTRATIVO, TECNICO E OPERACIONAL"
       },
       {
         "id": 35,
@@ -28,7 +28,7 @@
       {
         "id": 38,
         "tipo": "SERVICOS",
-        "familia": "SERVICOS AUDIO, VIDEO E FOTO"
+        "familia": "SERVICOS DE AUDIO, VIDEO E FOTO"
       },
       {
         "id": 39,
@@ -43,22 +43,22 @@
       {
         "id": 41,
         "tipo": "SERVICOS",
-        "familia": "SERVICOS DE COMFECCAO DE MATERIAL, ACONDICIONAMENTO E EMBALAGEM"
+        "familia": "SERVICOS DE CONFECCAO DE MATERIAL, ACONDICIONAMENTO E EMBALAGEM"
       },
       {
         "id": 42,
         "tipo": "SERVICOS",
-        "familia": "SERVICOS DISPESAS COM PESSOAL SALARIO E BOLSAS"
+        "familia": "SERVICOS DE DESPESAS COM PESSOAL SALARIOS E BOLSAS"
       },
       {
         "id": 43,
         "tipo": "SERVICOS",
-        "familia": "SERVICOS DE ENERGIA ELELTRICA, AGUA ESGOTO E GAZ"
+        "familia": "SERVICOS DE ENERGIA ELETRICA, AGUA, ESGOTO E GAS"
       },
       {
         "id": 44,
         "tipo": "SERVICOS",
-        "familia": "SERVICOS DE FRETES"
+        "familia": "SERVICOS DE FRETES E TRANSPORTES"
       },
       {
         "id": 45,
@@ -68,7 +68,7 @@
       {
         "id": 46,
         "tipo": "SERVICOS",
-        "familia": "SERVICOS LIMPEZA, ASSEIO E CONSERVACAO PREDIAL"
+        "familia": "SERVICOS DE LIMPEZA, ASSEIO E CONSERVACAO PREDIAL"
       },
       {
         "id": 47,
@@ -78,22 +78,22 @@
       {
         "id": 48,
         "tipo": "SERVICOS",
-        "familia": "SERVICOS DE LOCACAO E DESENVOLVIMENTO DE SOFTWARES"
+        "familia": "SERVICOS DE LOCACAO E DESENVOLVIMENTOS DE SOFTWARES"
       },
       {
         "id": 49,
         "tipo": "SERVICOS",
-        "familia": "SERVICOS OBRAS CONTRUCOES MANUTENCAO E INSTALACOES"
+        "familia": "SERVICOS DE OBRAS, CONSTRUCOES, MANUTENCAO E INSTALACOES"
       },
       {
         "id": 50,
         "tipo": "SERVICOS",
-        "familia": "SERVICOS DE PATRILHAMENTO, SALVAMENTO E SINALIZACAO"
+        "familia": "SERVICOS DE PATRULHAMENTO, SALVAMENTO E SINALIZACAO"
       },
       {
         "id": 51,
         "tipo": "SERVICOS",
-        "familia": "SERVICOS PESQUISAS, ESTUDOS E TREINAMENTOS"
+        "familia": "SERVICOS DE PESQUISAS, ESTUDOS E TREINAMENTOS"
       },
       {
         "id": 52,
@@ -118,7 +118,7 @@
       {
         "id": 56,
         "tipo": "SERVICOS",
-        "familia": "SERVICOS DE VIGILANCIA /SEGURANCA PATRIMONIAL"
+        "familia": "SERVICOS DE VIGILANCIA / SEGURANCA PATRIMONIAL"
       },
       {
         "id": 57,

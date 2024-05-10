@@ -4,7 +4,10 @@
 <html>
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv='cache-control' content='no-cache'>
+<meta http-equiv='expires' content='0'>
+<meta http-equiv='pragma' content='no-cache'>
+
 <title>Bem Vindo ao SIMORP</title>
 <link rel="icon" type="image/x-icon" href="img/ico/pencil.ico">
 
@@ -20,7 +23,7 @@
 </head>
 
 <body>
-<nav class="navbar navbar-inverse navbar-fixed-top" style="background-image: url('img/top_bar.jpg'); background-size: 53%; background-repeat: no-repeat; background-color: #192845;" role="navigation">
+<nav class="navbar navbar-inverse navbar-fixed-top" style="background-image: url('img/top_bar.jpg'); background-size: 44%; background-repeat: no-repeat; background-color: #192845;" role="navigation">
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse">

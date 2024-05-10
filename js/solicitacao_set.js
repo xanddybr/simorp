@@ -2,21 +2,24 @@
         function Insert(row){
         
              $("#table01:last").append(row);
-             BindItensRow();
+             AppendContent();
 
            i++;
            exit();
               
         } 
 
-        function BindItensRow(){
-
-            $("#idItens"+i).append($("#idItens").val());
+        function AppendContent(){
+                     
             $("#descricao"+i).append($("#descricao").val());
-            $("#tpObjeto"+i).append($("#tpObjeto").val());
+            $("#familiaItem"+i).append($("#familiaList").val());
             $("#unidade"+i).append($("#unidade").val());
             $("#qtdItens"+i).append($("#qtdItens").val());
 
+            $("#descricao").val("");
+            $("#familiaItem").val("");
+            $("#unidade").val("");
+            $("#qtdItens").val("");
         }
 
         function RemoveItens(){
@@ -34,11 +37,10 @@
         function Row(){
                var row =  "<tr id='item"+ i +"' style='height:30px;'>"+
                           "<td style='width:40px;'><input type='checkbox' class='chbox' id='check"+ i +"' name=check[]></td>"+
-                          "<td style='width:100px;' id='idItens"+ i +"' >&nbsp&nbsp&nbsp</td>"+
-                          "<td style='width:800px;' id='descricao"+ i +"' style='width: 800px;'> &nbsp&nbsp&nbsp</td>"+
-                          "<td style='width:150px;' id='tpObjeto"+ i +"'> &nbsp&nbsp&nbsp</td>"+
-                          "<td style='width:200px;' id='unidade"+ i +"'> &nbsp&nbsp&nbsp</td>"+
-                          "<td style='width:150px;' id='qtdItens"+ i +"'> &nbsp&nbsp&nbsp</td>"+
+                          "<td style='width:700px;' id='descricao"+ i +"' style='width: 800px;'></td>"+
+                          "<td style='width:400px; text-align:center;' id='familiaItem"+ i +"'></td>"+
+                          "<td style='width:200px; text-align:center;' id='unidade"+ i +"'></td>"+
+                          "<td style='width:150px; text-align:center;' id='qtdItens"+ i +"'></td>"+
                           "<td style='width: 0px;'></td>"+
                           "<td style='width: 10px;'></td></tr>";
                return row;
@@ -54,12 +56,12 @@
           })
         }
 
-        function LodaDataListKey(key1, key2, id1, url, valueField, desc1){
+        function LodaDataListKey(key1, key2, id1, url, desc1, desc2){
           
           $.getJSON(url, function(data) {
               $(data.registros).each(function(obj){ 
-                if(data.registros[obj]['familia'] == key1 || data.registros[obj]['tipo'] == key2){
-                  option = "<option value=\"" + data.registros[obj][valueField] + " | " + data.registros[obj][desc1] + "\">" + data.registros[obj][desc1] + "</option>";
+                if(data.registros[obj]['familia'] == key1 && data.registros[obj]['tipo'] == key2){
+                  option = "<option value=\"" + data.registros[obj]['id'] + " - " + data.registros[obj][desc1] + " - " + data.registros[obj][desc2] + "\">" + data.registros[obj]['familia'] + "</option>";
                   $(id1).append(option);
                 }
              })

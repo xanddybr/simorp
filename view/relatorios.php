@@ -4,7 +4,9 @@
 <!-- validate -->
 
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv='cache-control' content='no-cache'>
+<meta http-equiv='expires' content='0'>
+<meta http-equiv='pragma' content='no-cache'>
 <title>SIMORP-BETA</title>
 <link rel="icon" type="image/x-icon" href="img/ico/pencil.ico">
 <link href="css/bootstrap.min.css" rel="stylesheet">

@@ -63,7 +63,7 @@
     {
       "id": 13,
       "tipo": "MATERIAL",
-      "familia": "ARTIGOS DE AGRONEGOCIO"
+      "familia": "ARTIGOS DO AGRONEGOCIO"
     },
     {
       "id": 14,
@@ -93,7 +93,7 @@
     {
       "id": 19,
       "tipo": "MATERIAL",
-      "familia": "ESPORTE, CLTURA, LASER E TREINAMENTO"
+      "familia": "ESPORTE, CULTURA, LAZER E TREINAMENTO"
     },
     {
       "id": 20,
@@ -113,7 +113,7 @@
     {
       "id": 23,
       "tipo": "MATERIAL",
-      "familia": "MAQUINAS E EQUIPAMENTOS EM GERAL, COMPONENTES E ASSESSORIOS"
+      "familia": "MAQUINAS E EQUIPAMENTOS EM GERAL, COMPONENTES E ACESSORIOS"
     },
     {
       "id": 24,

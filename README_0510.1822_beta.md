@@ -12,7 +12,7 @@
 
 [
 
-    
+0510.1822 : implemented new resource list intens
 0509.1957 : fixed disposition fields form
 0508.2007 : refinament list intens
 0507.1743 : refinament Description list intens
