@@ -1,49 +1,64 @@
-        i = 0;
-        function Insert(row){
-        
-             $("#table01:last").append(row);
-             AppendContent();
+          var i = 0;
+          function Insert(){
 
-           i++;
-           exit();
-              
-        } 
+           if($("#descricao").val() == "" || $("#unidade").val() == "" || $("#qtdItens").val() == "") {
+
+            alert("Os campos descrição, unidade e quantidade não podem estar vazios!");
+           
+
+            } else {
+
+            RowEmpty()
+            AppendContent();
+            i++;
+            
+            $("#qtdItenslist").empty();
+            $("#qtdItenslist").append(parseInt(i));
+           
+                
+          } 
+        }
 
         function AppendContent(){
-                     
-            $("#descricao"+i).append($("#descricao").val());
-            $("#familiaItem"+i).append($("#familiaList").val());
-            $("#unidade"+i).append($("#unidade").val());
-            $("#qtdItens"+i).append($("#qtdItens").val());
+            
+            let desc = $("#descricao").val();
+            let descPart = desc.split("-",1);
+            let iditem = descPart[0];
+            
+                $("#idItem"+i).append("<b>" + iditem + "</b>");
+                $("#descricao"+i).append($("#descricao").val());
+                $("#familiaItem"+i).append($("#familiaList").val());
+                $("#unidade"+i).append($("#unidade").val());
+                $("#qtdItens"+i).append($("#qtdItens").val());
 
-            $("#descricao").val("");
-            $("#familiaItem").val("");
-            $("#unidade").val("");
-            $("#qtdItens").val("");
+                $("#idItem").val("");
+                $("#descricao").val("");
+                $("#familiaItem").val("");
+                $("#unidade").val("");
+                $("#qtdItens").val("");
+                      
         }
 
         function RemoveItens(){
           $(".chbox:checked").each(function(){
              let item = $(this).attr("id");
-             $("#"+item).remove();
+              $("#"+item).remove();
+              $("#checkAll").prop('checked',false);
+              $("#qtdItenslist").append(parseInt(i));
            })
-
-           $(".RowDesc").each(function(){
-            let item = $(this).attr("id");
-            $("#"+item +"N").remove();
-          })
         }
 
-        function Row(){
-               var row =  "<tr id='item"+ i +"' style='height:30px;'>"+
-                          "<td style='width:40px;'><input type='checkbox' class='chbox' id='check"+ i +"' name=check[]></td>"+
-                          "<td style='width:700px;' id='descricao"+ i +"' style='width: 800px;'></td>"+
-                          "<td style='width:400px; text-align:center;' id='familiaItem"+ i +"'></td>"+
-                          "<td style='width:200px; text-align:center;' id='unidade"+ i +"'></td>"+
-                          "<td style='width:150px; text-align:center;' id='qtdItens"+ i +"'></td>"+
-                          "<td style='width: 0px;'></td>"+
-                          "<td style='width: 10px;'></td></tr>";
-               return row;
+        function RowEmpty(){
+          var row =  "<tr id='item"+ i +"' style='height:30px; border: 1px solid #e4e2e2; border-collapse: collapse;'>"+
+                    "<td style='width:30px;'><input type='checkbox' class='chbox' id='item"+ i +"' name=check[]></td>"+
+                    "<td style='width:100px; text-align:center' id='idItem"+ i +"'></td>"+
+                    "<td style='width:700px; text-align:justify;' id='descricao"+ i +"'></td>"+
+                    "<td style='width:400px; text-align:center;' id='familiaItem"+ i +"'></td>"+
+                    "<td style='width:200px; text-align:center;' id='unidade"+ i +"'></td>"+
+                    "<td style='width:150px; text-align:center;' id='qtdItens"+ i +"'></td>"+
+                    "<td style='width: 0px;'></td>"+
+                    "<td style='width: 10px;'></td></tr>";
+                    $("#table01:last").append(row);
         }
                   
         function LodaDataList(id1, id2, url, valueField, desc1){
@@ -121,7 +136,7 @@
 
         }
 
-        function MsgBoxModal($msg) {
+        function MsgBoxModal($msg){
 
         var modal = "<div class='modal fade' id='myModal' role='dialog' style='margim-left:10px;'>"+
                       "<div class='modal-dialog'>"+
@@ -142,7 +157,14 @@
         return modal;
       
         }
-      
+        
+        function CountItem(){
+            
+        }
+
+        function QtdTotalItens(){
+
+        }
 
     
     

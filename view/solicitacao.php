@@ -32,7 +32,6 @@
 	
 
 <script>
-
 	
 	//CHECK ALL CHECKBOXES
 	$(document).ready(function(){
@@ -70,12 +69,13 @@
 		$('#familiaList').change(function(){
 
 			if($('#familiaList').val() !=""){
-				$("#itens").empty();
 				let tpObjKey = $('#tipoObjeto').val();
 				let familyKey = $('#familiaList').val();
+				$("#descItem").empty();
+					$("#descricao").val("");
 				LodaDataListKey(familyKey,tpObjKey,"#descItem","data/itens.json","descricao","tipo");	
 			} else {
-				$("#itens").empty();
+				$("#descItem").empty();
 			}
 			
 		})
@@ -92,22 +92,26 @@
 
 			if($('#tipoObjeto').val()=='MATERIAL'){
 				$('#familia').empty();
+				  	$('#descricao').val("");
+					  	$('#familiaList').val("");
 				LodaDataList(null, "#familia","data/familiaMaterial.json","familia","tipo");
 				exit();
 			}
 
 			if($('#tipoObjeto').val()=='SERVICO'){
 				$('#familia').empty();
+					$('#descricao').val("");
+						$('#familiaList').val("");
 				LodaDataList(null, "#familia","data/familiaServicos.json","familia","tipo");
 				exit();
 			}
 		})
 	})
 
-	//INSERT ITEM IN LIST
+	//INSERT LINE IN LIST
 	$(document).ready(function(){
 		$("#btn-add").click(function(){
-		Insert(Row());
+		Insert();
 			
 		}) 
 	})
@@ -157,11 +161,11 @@
 	})
 
 	//APPEND CONTENT ITEN
-	$(document).ready(function(){
+/*	$(document).ready(function(){
 		$("#idItens").focusout(function(){
 			$("#descricao").val($("#idItens").val());
 		})
-	})
+	})*/
 
 		
 </script>
@@ -279,13 +283,11 @@
 
 								 <br>
 								 <input id='addOrg' type="button" class="btn" value='add'>
-
 								 <div class="form-group col-lg-12">
 										<label>Observação</label>
 										<textarea class="form-control" id='obs' rows="2" name='solRegPrec[]' ></textarea>
-										<label id='qtd'>Quantidade Total de Itens: ?</label>
-										
-								 </div><br>
+										<label>Itens na lista: 0</label><label id='qtdItensTotal' ></label><br>
+								</div><br>
 								 
 								 <div>
 								 
@@ -309,23 +311,25 @@
 		  <div class="panel panel-default">
 				<div class="panel-body">
 					<table data-toggle="table" id='table01' class="col-lg-12">
-						<tr style="width:800px;">
-							<th style='width: 30px;'><input type='checkbox' id='checkAll'  class=""></th>
-							<th style='width: 700px;'></th>
-    						<th style='width: 400px;'></th>
-							<th style='width: 200px;'></th>
-							<th style='width: 150px;'></th>
-							<th style='width: 0px;'><input type="button" id="btn-add" value=' + ' name="" /></th>
-							<th style='width: 10px;'><input type="button" id="btn-rmv" value=' - ' name="" /></th>
+						<tr>
+							<th style='width: 30px;'></th>
+							<th class="col-lg-1"></th>
+							<th class="col-lg-5"></th>
+    						<th class="col-lg-4"></th>
+							<th class="col-lg-1"></th>
+							<th class="col-lg-1"></th>
+							<th><input type="button" id="btn-add" value=' + ' name="" /></th>
+							<th><input type="button" id="btn-rmv" value=' - ' name="" /></th>
 						</tr>
-							<tr id='item_N0' >
-							<td style='width:30px;'><input type='checkbox' class='' id='check'></td>
-							<td><input class='form-control' placeholder='DESCRIÇÃO' list='descItem' type='text' id='descricao' style='width: 700px;' name='solRegPrec[]'><datalist id='descItem'></datalist></td>
-							<td><input type='text' class='form-control' id='familiaItem' placeholder='FAMILIA' style='width:400px' name='solRegPrec[]' onkeypress="return false;"></td>
-							<td><input list='unidades' class='form-control' id='unidade' placeholder='UNIDADE' style='width:200px' name='solRegPrec[]'><datalist id='unidades'></datalist></td>
-							<td><input class='form-control' id='qtdItens' style='width:150px;'  placeholder='QUANTIDADE' name='solRegPrec[]' value='' required /></td>
-							<td style='width: 10px;'></td>
-							<td style='width: 10px;'></td>
+							<tr id='item' >
+							<td style='width:30px;'><input type='checkbox' class='' id='checkAll'></td>
+							<td><input class='form-control col-lg-1' placeholder='ID' type='text' id='idItem' name='solRegPrec[]' onkeypress="return false;"></td>
+							<td><input class='form-control col-lg-5' placeholder='DESCRIÇÃO' list='descItem' type='text' id='descricao' name='solRegPrec[]'><datalist id='descItem'></datalist></td>
+							<td><input class='form-control col-lg-4' type='text'  id='familiaItem' placeholder='FAMILIA' name='solRegPrec[]' onkeypress="return false;"></td>
+							<td><input class='form-control col-lg-1' list='unidades'  id='unidade' placeholder='UNIDADE' name='solRegPrec[]'><datalist id='unidades'></datalist></td>
+							<td><input class='form-control col-lg-1' id='qtdItens' placeholder='QUANTIDADE' name='solRegPrec[]' value='' required /></td>
+							<td></td>
+							<td></td>
 						</tr>
 						
 					</table>
