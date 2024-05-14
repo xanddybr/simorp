@@ -140,7 +140,7 @@ Class Usuario {
 
         if(isset($_SESSION['login'])){
           
-             header("location:/simorp_beta/home");
+             header("location:/simorp_beta2/home");
 
             } else { 
         }
@@ -163,7 +163,7 @@ Class Usuario {
         $_SESSION['login'] = [null, null, null];
         setcookie('timeUser', null , null);  
         session_destroy();
-        header("location:/simorp_beta/login");
+        header("location:/simorp_beta2/login");
 
        }
 
@@ -184,7 +184,7 @@ Class Usuario {
          
            if(isset($_SESSION['login'])){
              
-                header("location:/simorp_beta/home");
+                header("location:/simorp_beta2/home");
 
            } else {
 

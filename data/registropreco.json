@@ -11,20 +11,10 @@
         "dataReceb": " 15:43 02/04/2024",
         "dataEncam": " 15:43 02/04/2024",
         "obs": "COMPRA DE TELELVISÃO",
-        "valorTotal": "41,50",
+        "qtdPitens": "25,65,69,30,99",
+        "qtdItens": "5",
         "usuario": "ALEXANDRE",
-        "itens" :[
-                {
-                "idItem": 133019,
-                "descricao": "IDENTIDADE FUNCIONAL, PESSOA JRIDICA",
-                "tipo": "SERVIÇO",
-                "artigo" : "SERVICO CONFECCAO CEDULA IDENTIDADE ",
-                "quantidade": 10,
-                "unidade": "UNI",
-                "valor_unitario": "4.00",
-                "sub_total": "40.00"
-                } 
-                ]
+        "IdItens" : "182412-182411-182414-63502-182459"
         },
         {
         "idSol" : 2,  
@@ -37,21 +27,11 @@
         "tipoAta": "INTERNA",
         "dataReceb": " 15:43 02/04/2024",
         "dataEncam": " 15:43 02/04/2024",
-        "obs": "TESTE DE INCLUSÃO DE SOLICITAÇÃO",
-        "valorTotal": "40.00",
+        "obs": "COMPRA DE VEICULOS",
+        "qtdPitens": "45,60,98",
+        "qtdItens": "3",
         "usuario": "GIANCARLO",
-        "itens" :[
-                 {
-                "idItem": 133019,
-                "descricao": "IDENTIDADE FUNCIONAL, PESSOA JRIDICA",
-                "tipo": "SERVIÇO",
-                "artigo" : "SERVICO CONFECCAO CEDULA IDENTIDADE ",
-                "quantidade": 10,
-                "unidade": "UNI",
-                "valor_unitario": "4.00",
-                "sub_total": "40.00"
-                } 
-                ]
+        "IdItens" : "78577-86188-58569"
         },
         {
         "idSol" : 3,  
@@ -64,21 +44,11 @@
         "tipoAta": "INTERNA",
         "dataReceb": " 10:43 02/04/2024",
         "dataEncam": " 10:43 02/04/2024",
-        "obs": "TESTE DE INCLUSÃO DE SOLICITAÇÃO",
-        "valorTotal": "500.00",
+        "obs": "COMPRA DE MATERIAL DE INFORMATICA",
+        "qtdPitens": "12,4,50,20",
+        "qtdItens": "4",
         "usuario": "ANTERO",
-        "itens" :[
-                        {
-                "idItem": 133019,
-                "descricao": "IDENTIDADE FUNCIONAL, PESSOA JRIDICA",
-                "tipo": "SERVIÇO",
-                "artigo" : "SERVICO CONFECCAO CEDULA IDENTIDADE ",
-                "quantidade": 10,
-                "unidade": "UNI",
-                "valor_unitario": "4.00",
-                "sub_total": "500.00"
-                } 
-                ]
+        "IdItens" : "57644-85206-18594-154264"
                 },
                 {
         "idSol" : 3,  
@@ -91,10 +61,11 @@
         "tipoAta": "INTERNA",
         "dataReceb": " 10:43 02/04/2024",
         "dataEncam": " 10:43 02/04/2024",
-        "obs": "TESTE DE INCLUSÃO DE SOLICITAÇÃO",
-        "valorTotal": "500.00",
+        "obs": "COMPRA DE MATERIAL DE ALVENARIA",
+        "qtdPitens": "29,30,11,25",
+        "qtdItens": "4",
         "usuario": "MARLON",
-        "itens" :[]
+        "IdItens" : "178665-179352-179513-179351"
                 }
                 
 

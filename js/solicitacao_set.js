@@ -1,31 +1,30 @@
           var i = 0;
           function Insert(){
 
-           if($("#descricao").val() == "" || $("#unidade").val() == "" || $("#qtdItens").val() == "") {
+            let desc = $("#descricao").val()
+            let descPart = desc.split("-");
 
-            alert("Os campos descrição, unidade e quantidade não podem estar vazios!");
-           
-
-            } else {
-
-            RowEmpty()
-            AppendContent();
-            i++;
-            
-            $("#qtdItenslist").empty();
-            $("#qtdItenslist").append(parseInt(i));
-           
+            var i=0;
+            $(descPart).each(function (){
                 
-          } 
-        }
+                RowEmpty(i);
+                     
+            i++;
 
+            })
+
+            // RowEmpty()
+            //AppendContent();
+            //i++;
+         
+            }
+                
+             
         function AppendContent(){
+
+               
             
-            let desc = $("#descricao").val();
-            let descPart = desc.split("-",1);
-            let iditem = descPart[0];
-            
-                $("#idItem"+i).append("<b>" + iditem + "</b>");
+              $("#idItem"+i).append("<b>" + iditem + "</b>");
                 $("#descricao"+i).append($("#descricao").val());
                 $("#familiaItem"+i).append($("#familiaList").val());
                 $("#unidade"+i).append($("#unidade").val());
@@ -48,7 +47,7 @@
            })
         }
 
-        function RowEmpty(){
+        function RowEmpty(i){
           var row =  "<tr id='item"+ i +"' style='height:30px; border: 1px solid #e4e2e2; border-collapse: collapse;'>"+
                     "<td style='width:30px;'><input type='checkbox' class='chbox' id='item"+ i +"' name=check[]></td>"+
                     "<td style='width:100px; text-align:center' id='idItem"+ i +"'></td>"+

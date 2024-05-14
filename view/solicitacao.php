@@ -108,13 +108,24 @@
 		})
 	})
 
+	//EVENT KEY ENTER TRIGGER
+	$(document).ready(function(){	
+	$("#qtdItens").on( "keypress", function( event ) {
+		if ( event.which == 13 ) {
+			event.preventDefault();
+			Insert();
+			}
+		}) 
+	}) 
+
+
 	//INSERT LINE IN LIST
 	$(document).ready(function(){
 		$("#btn-add").click(function(){
-		Insert();
-			
+			Insert();
 		}) 
 	})
+
 		
 	//INSERT MASK SEI NUMBER PROCESS
 	$(document).ready(function(){
@@ -284,7 +295,7 @@
 								 <br>
 								 <input id='addOrg' type="button" class="btn" value='add'>
 								 <div class="form-group col-lg-12">
-										<label>Descrição do objeto de contratação:</label>
+										<label>Descrição do objeto:</label>
 										<textarea class="form-control" id='obs' rows="2" name='solRegPrec[]' ></textarea>
 										<label>Itens na lista: 0</label><label id='qtdItensTotal' ></label><br>
 								</div><br>
@@ -324,7 +335,7 @@
 							<tr id='item' >
 							<td style='width:30px;'><input type='checkbox' class='' id='checkAll'></td>
 							<td><input class='form-control col-lg-1' placeholder='ID' type='text' id='idItem' name='solRegPrec[]' onkeypress="return false;"></td>
-							<td><input class='form-control col-lg-5' placeholder='DESCRIÇÃO' list='descItem' type='text' id='descricao' name='solRegPrec[]'><datalist id='descItem'></datalist></td>
+							<td><input class='form-control col-lg-5' placeholder='Informe OS IDs que deseja adicionar a lista' list='descItem' type='text' id='descricao' name='solRegPrec[]'><datalist id='descItem'></datalist></td>
 							<td><input class='form-control col-lg-4' type='text'  id='familiaItem' placeholder='FAMILIA' name='solRegPrec[]' onkeypress="return false;"></td>
 							<td><input class='form-control col-lg-1' list='unidades'  id='unidade' placeholder='UNIDADE' name='solRegPrec[]'><datalist id='unidades'></datalist></td>
 							<td><input class='form-control col-lg-1' id='qtdItens' placeholder='QUANTIDADE' name='solRegPrec[]' value='' required /></td>

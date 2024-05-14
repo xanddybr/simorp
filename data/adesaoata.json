@@ -1,6 +1,5 @@
 [
-      {
-
+        {
         "idSol" : 1,  
         "tipoSol": "ADESÃO A ATA",
         "processo": "SEI-0402.1531/15252/2024",
@@ -11,21 +10,11 @@
         "tipoAta": "INTERNA",
         "dataReceb": " 15:43 02/04/2024",
         "dataEncam": " 15:43 02/04/2024",
-        "obs": "TESTE DE INCLUSÃO DE SOLICITAÇÃO",
-        "valorTotal": "40,00",
+        "obs": "COMPRA DE MAQUINAS DE IMPRESSÃO",
+        "qtdPitens": "127",
+        "qtdItens": "1",
         "usuario": "CLAUDIA",
-        "itens" :[
-                {
-                "idItem": 152114,
-                "descricao": "MONITORES AMOLED 24º SANSUNG",
-                "tipo": "MATERIAL",
-                "artigo" : "SERVICO CONFECCAO CEDULA IDENTIDADE ",
-                "quantidade": 10,
-                "unidade": "UNI",
-                "valor_unitario": "4.00",
-                "sub_total": "40.00"
-                } 
-                ]
+        "IdItens" : "143558"
         },
         {
         "idSol" : 2,  
@@ -38,23 +27,10 @@
         "tipoAta": "EXTERNA",
         "dataReceb": " 15:43 02/04/2024",
         "dataEncam": " 15:43 02/04/2024",
-        "obs": "TESTE DE INCLUSÃO DE SOLICITAÇÃO",
-        "valorTotal": "40.00",
+        "obs": "AQUISIÇÃO DE MATERIAL ALIMENTICIO",
+        "qtdPitens": "60,25,15,35",
+        "qtdItens": "4",
         "usuario": "ANDREIA",
-        "itens" :[
-                {
-                "idItem": 156982,
-                "descricao": "SERVIÇO DE LIMPESA PATRIMONIAL",
-                "tipo": "SERVIÇO",
-                "artigo" : "SERVICO CONFECCAO CEDULA IDENTIDADE ",
-                "quantidade": 10,
-                "unidade": "UNI",
-                "valor_unitario": "4.00",
-                "sub_total": "40.00"
-                } 
-                ]
+        "IdItens" :"143551-143565-143558-143559"
         }
-        
-       
-
 ]

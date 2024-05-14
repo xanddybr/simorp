@@ -58,33 +58,32 @@ class Router {
    switch ($request) {
 
 
-    case $this->url ."/simorp_beta/ ":
+    case $this->url ."/simorp_beta2/ ":
           require $rtdir[0].'\view\login.php';
             break;
 
-    case $this->url ."/simorp_beta/login":
+    case $this->url ."/simorp_beta2/login":
             require $rtdir[0].'\view\login.php';
             break;
 
-    case $this->url ."/simorp_beta/home":
+    case $this->url ."/simorp_beta2/home":
             require $rtdir[0].'\view\home.php';
             require $rtdir[0].'\view\main.php';
             break;
 
-    case $this->url ."/simorp_beta/solicitacao":
+    case $this->url ."/simorp_beta2/solicitacao":
             require $rtdir[0].'\view\solicitacao.php';
             require $rtdir[0].'\view\main.php';
             break;
 
-    case $this->url ."/simorp_beta/adesao-ata":
+    case $this->url ."/simorp_beta2/adesao-ata":
             require $rtdir[0].'\view\adesao-ata.php';
             require $rtdir[0].'\view\main.php';
             break;
         
-    case $this->url ."/simorp_beta/relatorios":
+    case $this->url ."/simorp_beta2/relatorios":
             require $rtdir[0].'\view\relatorios.php';
             require $rtdir[0].'\view\main.php';
-            
             
             break;
     

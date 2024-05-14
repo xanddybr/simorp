@@ -110,7 +110,9 @@
 								<th data-field="tipoObjeto" data-sortable="true"><b>Tipo Objeto</b></th>
 								<th data-field="obs" data-sortable="true"><b>Descrição Objeto</b></th>
 								<th data-field="dataReceb" data-sortable="true"><b>Recebimento</b></th>
-								<th data-field="valorTotal" data- data-sortable="true"><b>Itens</b></th>
+								<th data-field="IdItens" data- data-sortable="true"><b>Itens</b></th>
+								<th data-field="qtdPitens" data- data-sortable="true"><b>Qtd p/id</b></th>
+								<th data-field="qtdItens" data- data-sortable="true"><b>Qtd itens</b></th>
 							</tr>
 						</thead>
 						</table>
@@ -130,7 +132,9 @@
 								<th data-field="orgaoAderente" data-sortable="true"><b>Orgão Aderente</b></th>
 								<th data-field="dataReceb" data-sortable="true"><b>Recebimento</b></th>
 								<th data-field="dataEncam" data-sortable="true"><b>Encaminhamento</b></th>
-								<th data-field="valorTotal" data- data-sortable="true"><b>Itens</b></th>
+								<th data-field="IdItens" data- data-sortable="true"><b>Itens</b></th>
+								<th data-field="qtdPitens" data- data-sortable="true"><b>Qtd p/id</b></th>
+								<th data-field="qtdItens" data- data-sortable="true"><b>Qtd itens</b></th>
 							</tr>
 						</thead>
 					</table>
