@@ -284,7 +284,7 @@
 								 <br>
 								 <input id='addOrg' type="button" class="btn" value='add'>
 								 <div class="form-group col-lg-12">
-										<label>Observação</label>
+										<label>Descrição do objeto de contratação:</label>
 										<textarea class="form-control" id='obs' rows="2" name='solRegPrec[]' ></textarea>
 										<label>Itens na lista: 0</label><label id='qtdItensTotal' ></label><br>
 								</div><br>
@@ -318,8 +318,8 @@
     						<th class="col-lg-4"></th>
 							<th class="col-lg-1"></th>
 							<th class="col-lg-1"></th>
-							<th><input type="button" id="btn-add" value=' + ' name="" /></th>
-							<th><input type="button" id="btn-rmv" value=' - ' name="" /></th>
+							<th></th>
+							<th></th>
 						</tr>
 							<tr id='item' >
 							<td style='width:30px;'><input type='checkbox' class='' id='checkAll'></td>
@@ -328,8 +328,8 @@
 							<td><input class='form-control col-lg-4' type='text'  id='familiaItem' placeholder='FAMILIA' name='solRegPrec[]' onkeypress="return false;"></td>
 							<td><input class='form-control col-lg-1' list='unidades'  id='unidade' placeholder='UNIDADE' name='solRegPrec[]'><datalist id='unidades'></datalist></td>
 							<td><input class='form-control col-lg-1' id='qtdItens' placeholder='QUANTIDADE' name='solRegPrec[]' value='' required /></td>
-							<td></td>
-							<td></td>
+							<td><input type="button" id="btn-add" value=' + ' name="" /></td>
+							<td><input type="button" id="btn-rmv" value=' - ' name="" /></td>
 						</tr>
 						
 					</table>
