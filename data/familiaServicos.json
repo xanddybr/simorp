@@ -1,0 +1,149 @@
+{
+    "registros":[
+      {
+        "id": 33,
+        "tipo": "SERVICOS",
+        "familia": "SERVICO DE SAUDE"
+      },
+      {
+        "id": 34,
+        "tipo": "SERVICOS",
+        "familia": "SERVICO DE APOIO ADMINISTRATIVO, TECNICO E OPERACIONAL"
+      },
+      {
+        "id": 35,
+        "tipo": "SERVICOS",
+        "familia": "SERVICOS DE ALIMENTACAO"
+      },
+      {
+        "id": 36,
+        "tipo": "SERVICOS",
+        "familia": "SERVICO DE ARMAZENAGEM"
+      },
+      {
+        "id": 37,
+        "tipo": "SERVICOS",
+        "familia": "SERVICOS DE ASSISTENCIA SOCIAL E REABILITACAO PROFISSIONAL"
+      },
+      {
+        "id": 38,
+        "tipo": "SERVICOS",
+        "familia": "SERVICOS DE AUDIO, VIDEO E FOTO"
+      },
+      {
+        "id": 39,
+        "tipo": "SERVICOS",
+        "familia": "SERVICOS DE AUDITORIA, CONSULTORIA E SERVICOS JUDICIARIOS"
+      },
+      {
+        "id": 40,
+        "tipo": "SERVICOS",
+        "familia": "SERVICOS DE COMUNICACAO"
+      },
+      {
+        "id": 41,
+        "tipo": "SERVICOS",
+        "familia": "SERVICOS DE CONFECCAO DE MATERIAL, ACONDICIONAMENTO E EMBALAGEM"
+      },
+      {
+        "id": 42,
+        "tipo": "SERVICOS",
+        "familia": "SERVICOS DE DESPESAS COM PESSOAL SALARIOS E BOLSAS"
+      },
+      {
+        "id": 43,
+        "tipo": "SERVICOS",
+        "familia": "SERVICOS DE ENERGIA ELETRICA, AGUA, ESGOTO E GAS"
+      },
+      {
+        "id": 44,
+        "tipo": "SERVICOS",
+        "familia": "SERVICOS DE FRETES E TRANSPORTES"
+      },
+      {
+        "id": 45,
+        "tipo": "SERVICOS",
+        "familia": "SERVICOS DE IMPRESSAO E REPROGRAFIA CORPORATIVA"
+      },
+      {
+        "id": 46,
+        "tipo": "SERVICOS",
+        "familia": "SERVICOS DE LIMPEZA, ASSEIO E CONSERVACAO PREDIAL"
+      },
+      {
+        "id": 47,
+        "tipo": "SERVICOS",
+        "familia": "SERVICOS DE LOCACAO DE BENS MOVEIS E IMOVEIS"
+      },
+      {
+        "id": 48,
+        "tipo": "SERVICOS",
+        "familia": "SERVICOS DE LOCACAO E DESENVOLVIMENTOS DE SOFTWARES"
+      },
+      {
+        "id": 49,
+        "tipo": "SERVICOS",
+        "familia": "SERVICOS DE OBRAS, CONSTRUCOES, MANUTENCAO E INSTALACOES"
+      },
+      {
+        "id": 50,
+        "tipo": "SERVICOS",
+        "familia": "SERVICOS DE PATRULHAMENTO, SALVAMENTO E SINALIZACAO"
+      },
+      {
+        "id": 51,
+        "tipo": "SERVICOS",
+        "familia": "SERVICOS DE PESQUISAS, ESTUDOS E TREINAMENTOS"
+      },
+      {
+        "id": 52,
+        "tipo": "SERVICOS",
+        "familia": "SERVICOS DE PUBLICIDADE E PROPAGANDA"
+      },
+      {
+        "id": 53,
+        "tipo": "SERVICOS",
+        "familia": "SERVICOS DE TELECOMUNICACAO"
+      },
+      {
+        "id": 54,
+        "tipo": "SERVICOS",
+        "familia": "SERVICOS DE TI"
+      },
+      {
+        "id": 55,
+        "tipo": "SERVICOS",
+        "familia": "SERVICOS DE TRANSPORTE DE PESSOAS, LOCACAO DE VEICULOS E AFINS"
+      },
+      {
+        "id": 56,
+        "tipo": "SERVICOS",
+        "familia": "SERVICOS DE VIGILANCIA / SEGURANCA PATRIMONIAL"
+      },
+      {
+        "id": 57,
+        "tipo": "SERVICOS",
+        "familia": "SERVICOS FINANCEIROS"
+      },
+      {
+        "id": 58,
+        "tipo": "SERVICOS",
+        "familia": "SERVICOS PARA CONGRESSOS, CONFERENCIAS E HOMENAGENS"
+      },
+      {
+        "id": 59,
+        "tipo": "SERVICOS",
+        "familia": "SERVICOS PORTUARIOS"
+      },
+      {
+        "id": 60,
+        "tipo": "SERVICOS",
+        "familia": "SERVICOS TECNICOS PROFISSIONAIS"
+      },
+      {
+        "id": 61,
+        "tipo": "SERVICOS",
+        "familia": "OUTROS SERVICOS"
+      }
+    ]
+}

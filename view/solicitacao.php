@@ -3,7 +3,10 @@
 <head>
 
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv='cache-control' content='no-cache'>
+<meta http-equiv='expires' content='0'>
+<meta http-equiv='pragma' content='no-cache'>
+
 <title>Bem Vindo ao SIMORP</title>
 <link rel="icon" type="image/x-icon" href="img/ico/pencil.ico">
 
@@ -29,7 +32,6 @@
 	
 
 <script>
-
 	
 	//CHECK ALL CHECKBOXES
 	$(document).ready(function(){
@@ -38,7 +40,7 @@
 		})
 	})
 
-	//CHANGE TYPE REQUEST
+	//TYPE REQUESTING
 	$(document).ready(function(){
 		$('#tipoSolici').change(function(){
 			if($('#tipoSolici').val()=='adesaoAta'){
@@ -62,10 +64,54 @@
 		})
 	})
 
-	//INSERT ITEM IN LIST
+	//CHANGE FAMILY
+	$(document).ready(function(){
+		$('#familiaList').change(function(){
+
+			if($('#familiaList').val() !=""){
+				let tpObjKey = $('#tipoObjeto').val();
+				let familyKey = $('#familiaList').val();
+				$("#descItem").empty();
+					$("#descricao").val("");
+				LodaDataListKey(familyKey,tpObjKey,"#descItem","data/itens.json","descricao","tipo");	
+			} else {
+				$("#descItem").empty();
+			}
+			
+		})
+	})
+
+	//CHANGE TYPE OBJECT
+	$(document).ready(function(){
+
+		$('#tipoObjeto').change(function(){
+			if($('#tipoObjeto').val()=='selecione'){
+				$('#familia').empty();
+				exit();
+			}
+
+			if($('#tipoObjeto').val()=='MATERIAL'){
+				$('#familia').empty();
+				  	$('#descricao').val("");
+					  	$('#familiaList').val("");
+				LodaDataList(null, "#familia","data/familiaMaterial.json","familia","tipo");
+				exit();
+			}
+
+			if($('#tipoObjeto').val()=='SERVICO'){
+				$('#familia').empty();
+					$('#descricao').val("");
+						$('#familiaList').val("");
+				LodaDataList(null, "#familia","data/familiaServicos.json","familia","tipo");
+				exit();
+			}
+		})
+	})
+
+	//INSERT LINE IN LIST
 	$(document).ready(function(){
 		$("#btn-add").click(function(){
-		Insert(Row());
+		Insert();
 			
 		}) 
 	})
@@ -94,7 +140,7 @@
 	//SAVE REQUEST
 	$(document).ready(function(){
 		$("#salvar").click(function (){
-			alert($("#vTotal").val());
+			
 		})						
 	})
 	
@@ -107,12 +153,19 @@
 	$(document).ready(function(){
 		
 		HideFieldsAdesaoAta();
-
-		LodaDataList("#OrgSol_Gestor","","data/orgaos.json","sigla","descricao","sigla");
-		LodaDataList(null,"#unidades","data/unidades.json","sigla","descricao","sigla");
-		//LodaDataList(null, "#itens","data/itens.json","id","descricao","");
+		$('#familia').empty();
+		LodaDataList("#OrgSol_Gestor","","data/orgaos.json","sigla","descricao");
+		LodaDataList(null,"#unidades","data/unidades.json","sigla","descricao");
+		
 
 	})
+
+	//APPEND CONTENT ITEN
+/*	$(document).ready(function(){
+		$("#idItens").focusout(function(){
+			$("#descricao").val($("#idItens").val());
+		})
+	})*/
 
 		
 </script>
@@ -157,8 +210,8 @@
 								<div class="col-lg-3">
 									<label>Tipo de Solicitação</label>
 								<select id='tipoSolici' class="form-control" name='solRegPrec[]'>
-								   <option value="regPreco">REGISTRO DE PREÇO</option>
-								   <option value="adesaoAta">ADESÃO A ATA</option>
+								   <option value="regPreco">1 - REGISTRO DE PREÇO</option>
+								   <option value="adesaoAta">2 - ADESÃO A ATA</option>
 								</select>
 								</div>
 										
@@ -167,9 +220,9 @@
 													<label>Tipo de Objeto</label>
 													<select id='tipoObjeto' class="form-control" placeholder="INFORME O TIPO DE OBJETO" onChange="";  name='solRegPrec[]'>
 														    <option value="selecione"><< SELECIONE UM TIPO >></option>
-															<option value="material">MATERIAL</option>
-															<option value="serviço">SERVIÇOS</option>
-															<option value="ambos">MATERIAL/SERVIÇO</option>
+															<option value="MATERIAL">1 - MATERIAL</option>
+															<option value="SERVICO">2 - SERVICOS</option>
+															<option value="selecione">3 - MATERIAL/SERVICO</option>
 													</select>
 												</div>
 											
@@ -205,7 +258,7 @@
 											
 								<label id='l_familia'>Familia</label>
 													
-								<input class="form-control col-lg-3" placeholder="Informe uma família" name='solRegPrec[]' id='familia' value="" required>
+								<input class="form-control col-lg-3" placeholder="Informe uma família" name='solRegPrec[]' id='familiaList' list='familia' required><datalist id='familia'></datalist>
 							    </div>
 
 								<div class="col-md-2">
@@ -230,13 +283,11 @@
 
 								 <br>
 								 <input id='addOrg' type="button" class="btn" value='add'>
-
 								 <div class="form-group col-lg-12">
-										<label>Observação</label>
+										<label>Descrição do objeto de contratação:</label>
 										<textarea class="form-control" id='obs' rows="2" name='solRegPrec[]' ></textarea>
-										<label id='qtd'>Quantidade Total de Itens:</label>
-										
-								 </div><br>
+										<label>Itens na lista: 0</label><label id='qtdItensTotal' ></label><br>
+								</div><br>
 								 
 								 <div>
 								 
@@ -257,65 +308,34 @@
 
 			
 	<div class="col-lg-13">
-		
-		<div class="panel panel-default">
+		  <div class="panel panel-default">
 				<div class="panel-body">
 					<table data-toggle="table" id='table01' class="col-lg-12">
-						<tr style="width:800px;">
-							<th style='width: 40px;'><input type='checkbox' id='checkAll'  class=""></th>
-							<th style='width: 100px;'></th>
-							<th style='width: 800px;'></th>
-    						<th style='width: 150px;'></th>
-							<th style='width: 200px;'></th>
-							<th style='width: 150px;'></th>
-							<th style='width: 0px;'><input type="button" id="btn-add" value=' + ' name="" /></th>
-							<th style='width: 10px;'><input type="button" id="btn-rmv" value=' - ' name="" /></th>
+						<tr>
+							<th style='width: 30px;'></th>
+							<th class="col-lg-1"></th>
+							<th class="col-lg-5"></th>
+    						<th class="col-lg-4"></th>
+							<th class="col-lg-1"></th>
+							<th class="col-lg-1"></th>
+							<th></th>
+							<th></th>
 						</tr>
-							<tr id='item_N0' >
-							<td style='width:40px;'><input type='checkbox' class='' id='check'></td>
-							<td><input class='form-control' id='idItem' list='itens' style='width:100px;'  placeholder='ID ITEM' name='solRegPrec[]' required><datalist id='itens'></datalist></td>
-							<td><input class='form-control'  placeholder='Descrição' type='text' id='descricao' style='width: 800px;' name='solRegPrec[]' onkeypress="return false;"/></td>
-							<td><input type='text' class='form-control' id='tpObjeto' placeholder='MATERIAL' style='width:150px' name='solRegPrec[]' onkeypress="return false;"></td>
-							<td><input list='unidade' class='form-control' id='unidade' placeholder='UNIDADE' style='width:200px' name='solRegPrec[]'><datalist id='unidades'></datalist></td>
-							<td><input class='form-control' id='qtdItens' style='width:150px;'  placeholder='QUANTIDADE' name='solRegPrec[]' value='' required /></td>
-							<td style='width: 10px;'></td>
-							<td style='width: 10px;'></td>
+							<tr id='item' >
+							<td style='width:30px;'><input type='checkbox' class='' id='checkAll'></td>
+							<td><input class='form-control col-lg-1' placeholder='ID' type='text' id='idItem' name='solRegPrec[]' onkeypress="return false;"></td>
+							<td><input class='form-control col-lg-5' placeholder='DESCRIÇÃO' list='descItem' type='text' id='descricao' name='solRegPrec[]'><datalist id='descItem'></datalist></td>
+							<td><input class='form-control col-lg-4' type='text'  id='familiaItem' placeholder='FAMILIA' name='solRegPrec[]' onkeypress="return false;"></td>
+							<td><input class='form-control col-lg-1' list='unidades'  id='unidade' placeholder='UNIDADE' name='solRegPrec[]'><datalist id='unidades'></datalist></td>
+							<td><input class='form-control col-lg-1' id='qtdItens' placeholder='QUANTIDADE' name='solRegPrec[]' value='' required /></td>
+							<td><input type="button" id="btn-add" value=' + ' name="" /></td>
+							<td><input type="button" id="btn-rmv" value=' - ' name="" /></td>
 						</tr>
 						
 					</table>
 			    </form>
 
 					<script>
-
-					/*	$(function () {
-							$('#hover, #striped, #condensed').click(function () {
-								var classes = 'table';
-					
-								if ($('#hover').prop('checked')) {
-									classes += ' table-hover';
-								}
-								if ($('#condensed').prop('checked')) {
-									classes += ' table-condensed';
-								}
-								$('#table-style').bootstrapTable('destroy')
-									.bootstrapTable({
-										classes: classes,
-										striped: $('#striped').prop('checked')
-									});
-							});
-						});
-					
-						function rowStyle(row, index) {
-							var classes = ['active', 'success', 'info', 'warning', 'danger'];
-					
-							if (index % 2 === 0 && index / 2 < classes.length) {
-								return {
-									classes: classes[index / 2]
-								};
-							}
-							return {};
-						}*/
-
 					</script>
 				</div>
 			</div>

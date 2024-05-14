@@ -1,0 +1,144 @@
+{
+  "registros": [
+    {
+      "id": 1,
+      "tipo": "MATERIAL",
+      "familia": "MEDICAMENTOS"
+    },
+    {
+      "id": 2,
+      "tipo": "MATERIAL",
+      "familia": "MATERIAL DE ESCRITORIO, ESCOLAR E INFORMATICA"
+    },
+    {
+      "id": 3,
+      "tipo": "MATERIAL",
+      "familia": "COMBUSTIVEIS"
+    },
+    {
+      "id": 4,
+      "tipo": "MATERIAL",
+      "familia": "ARMAMENTO PORTATIL"
+    },
+    {
+      "id": 5,
+      "tipo": "MATERIAL",
+      "familia": "MUNICAO"
+    },
+    {
+      "id": 6,
+      "tipo": "MATERIAL",
+      "familia": "GENEROS ALIMENTICIOS"
+    },
+    {
+      "id": 7,
+      "tipo": "MATERIAL",
+      "familia": "VEICULOS"
+    },
+    {
+      "id": 8,
+      "tipo": "MATERIAL",
+      "familia": "AERONAVES E EMBARCACOES"
+    },
+    {
+      "id": 9,
+      "tipo": "MATERIAL",
+      "familia": "ARTIGOS DE COMUNICACAO"
+    },
+    {
+      "id": 10,
+      "tipo": "MATERIAL",
+      "familia": "ARTIGOS DE OFICINA"
+    },
+    {
+      "id": 11,
+      "tipo": "MATERIAL",
+      "familia": "ARTIGOS PROTECAO, SALVAMENTO E SINALIZACAO"
+    },
+    {
+      "id": 12,
+      "tipo": "MATERIAL",
+      "familia": "ARTIGOS DE USO DOMESTICO"
+    },
+    {
+      "id": 13,
+      "tipo": "MATERIAL",
+      "familia": "ARTIGOS DO AGRONEGOCIO"
+    },
+    {
+      "id": 14,
+      "tipo": "MATERIAL",
+      "familia": "ARTIGOS ELETRICO ELETRONICOS"
+    },
+    {
+      "id": 15,
+      "tipo": "MATERIAL",
+      "familia": "EQUIPAMENTOS E ARTIGOS MEDICOS, ODONTOLOGICOS E VETERINARIOS"
+    },
+    {
+      "id": 16,
+      "tipo": "MATERIAL",
+      "familia": "BOMBAS, COMPRESSORES E VALVULAS"
+    },
+    {
+      "id": 17,
+      "tipo": "MATERIAL",
+      "familia": "UNIFORMES, VESTUARIOS E TECIDOS"
+    },
+    {
+      "id": 18,
+      "tipo": "MATERIAL",
+      "familia": "EMBALAGENS"
+    },
+    {
+      "id": 19,
+      "tipo": "MATERIAL",
+      "familia": "ESPORTE, CULTURA, LAZER E TREINAMENTO"
+    },
+    {
+      "id": 20,
+      "tipo": "MATERIAL",
+      "familia": "FERRAMENTAS"
+    },
+    {
+      "id": 21,
+      "tipo": "MATERIAL",
+      "familia": "INSTRUMENTOS DE MEDICAO, ORIENTACAO E EQUIPAMENTOS E ARTIGOS DE LABORATORIO"
+    },
+    {
+      "id": 22,
+      "tipo": "MATERIAL",
+      "familia": "LIMPEZA E HIGIENE"
+    },
+    {
+      "id": 23,
+      "tipo": "MATERIAL",
+      "familia": "MAQUINAS E EQUIPAMENTOS EM GERAL, COMPONENTES E ACESSORIOS"
+    },
+    {
+      "id": 24,
+      "tipo": "MATERIAL",
+      "familia": "EQUIPAMENTOS E MATERIAL DE CONSTRUCAO, TINTAS E EQUIPAMENTOS PARA PINTURA"
+    },
+    {
+      "id": 25,
+      "tipo": "MATERIAL",
+      "familia": "MATERIA-PRIMA"
+    },
+    {
+      "id": 26,
+      "tipo": "MATERIAL",
+      "familia": "MOBILIARIOS EM GERAL"
+    },
+    {
+      "id": 27,
+      "tipo": "MATERIAL",
+      "familia": "PRODUTOS QUIMICOS"
+    },
+    {
+      "id": 28,
+      "tipo": "MATERIAL",
+      "familia": "OUTROS MATERIAIS"
+    }
+  ]
+}

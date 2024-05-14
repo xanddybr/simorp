@@ -4,15 +4,21 @@
 <!-- validate -->
 
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv='cache-control' content='no-cache'>
+<meta http-equiv='expires' content='0'>
+<meta http-equiv='pragma' content='no-cache'>
 <title>SIMORP-BETA</title>
-<link rel="icon" type="image/x-icon" href="img/ico/pencil.ico">
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<script src="js/lumino.glyphs.js"></script>
-<link href="css/styles.css" rel="stylesheet">
-<link href="css/bootstrap-table.css" rel="stylesheet">
-<script src="./js/relatorios_settings.js"></script>
 
+<link rel="icon" type="image/x-icon" href="img/ico/pencil.ico">
+
+<link href="./css/bootstrap.min.css" rel="stylesheet">
+<link href="./css/styles.css" rel="stylesheet">
+<link href="./css/bootstrap-table.css" rel="stylesheet">
+
+<script src="./js/jquery.min.js"></script>
+<script src="./js/lumino.glyphs.js"></script>
+<script src="./js/relatorios_settings.js"></script>
+<script src="./js/bootstrap-table.js"></script>
 
 
 
@@ -94,17 +100,17 @@
 							</div>
 				<div class="col-lg-2"><button id='makeReport' type='button' value='' class="" >Gerar Relatório</button></div>
 					<div id="tabRel01"> 
-						<table id='rel01' data-toggle="table" data-url="./data/registropreco.json" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
+						<table id='rel01' data-toggle="table" data-url="./data/registropreco.json" data-show-refresh="true" data-show-toggle="false" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
 
 						<thead>
 						    <tr>
 								<th data-field="processo" data-sortable="true"><b>Processo SEI</b></b></th>
 								<th data-field="usuario" data-sortable="true"><b>Usuario</b></th>
 						        <th data-field="orgaoGestor" data-sortable="true"><b>Orgão Solicitante</b></b></th>
-								<th data-field="tipoObjeto" data-sortable="true"><b>Tipo de Objeto</b></th>
+								<th data-field="tipoObjeto" data-sortable="true"><b>Tipo Objeto</b></th>
+								<th data-field="obs" data-sortable="true"><b>Descrição Objeto</b></th>
 								<th data-field="dataReceb" data-sortable="true"><b>Recebimento</b></th>
-								<th data-field="dataEncam" data-sortable="true"><b>Encaminhamento</b></th>
-								<th data-field="valorTotal" data- data-sortable="true"><b>Total</b></th>
+								<th data-field="valorTotal" data- data-sortable="true"><b>Itens</b></th>
 							</tr>
 						</thead>
 						</table>
@@ -112,7 +118,7 @@
 
 						<div id="tabRel02"> 
 
-						<table id='rel02' data-toggle="table" data-url="./data/adesaoata.json" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
+						<table id='rel02' data-toggle="table" data-url="./data/adesaoata.json" data-show-refresh="true" data-show-toggle="false" data-show-columns="true" data-search="true" data-select-item-name="toolbar2" data-pagination="true" data-sort-name="name" data-sort-order="desc">
 
 						<thead>
 						    <tr>
@@ -120,11 +126,11 @@
 								<th data-field="usuario" data-sortable="true"><b>Usuario</b></th>
 						        <th data-field="orgaoGestor" data-sortable="true"><b>Orgão Gestor</b></th>
 								<th data-field="nAta" data-sortable="true"><b>Nº Ata</b></th>
-								<th data-field="tipoObjeto" data-sortable="true"><b>Tipo de Objeto</b></th>
+								<th data-field="obs" data-sortable="true"><b>Descrição Objeto</b></th>
 								<th data-field="orgaoAderente" data-sortable="true"><b>Orgão Aderente</b></th>
 								<th data-field="dataReceb" data-sortable="true"><b>Recebimento</b></th>
 								<th data-field="dataEncam" data-sortable="true"><b>Encaminhamento</b></th>
-								<th data-field="valorTotal" data- data-sortable="true"><b>Total</b></th>
+								<th data-field="valorTotal" data- data-sortable="true"><b>Itens</b></th>
 							</tr>
 						</thead>
 					</table>
@@ -135,47 +141,38 @@
 			</div>
 		
 	<script>
-		$(function () {
-			$('#hover, #striped, #condensed').click(function () {
-				var classes = 'table';
-	
-				if ($('#hover').prop('checked')) {
-					classes += ' table-hover';
-				}
-				if ($('#condensed').prop('checked')) {
-					classes += ' table-condensed';
-				}
-				$('#table-style').bootstrapTable('destroy')
-					.bootstrapTable({
-						classes: classes,
-						striped: $('#striped').prop('checked')
-					});
-			    });
-		    });
-	
-		function rowStyle(row, index) {
-			var classes = ['active', 'success', 'info', 'warning', 'danger'];
-	
-			if (index % 2 === 0 && index / 2 < classes.length) {
-				return {
-					classes: classes[index / 2]
-				};
-			}
-			return {};
-		}
+	    $(function () {
+						        $('#hover, #striped, #condensed').click(function () {
+						            var classes = 'table';
+						
+						            if ($('#hover').prop('checked')) {
+						                classes += ' table-hover';
+						            }
+						            if ($('#condensed').prop('checked')) {
+						                classes += ' table-condensed';
+						            }
+						            $('#table-style').bootstrapTable('destroy')
+						                .bootstrapTable({
+						                    classes: classes,
+						                    striped: $('#striped').prop('checked')
+						                });
+						        });
+						    });
+						
+						    function rowStyle(row, index) {
+						        var classes = ['active', 'success', 'info', 'warning', 'danger'];
+						
+						        if (index % 2 === 0 && index / 2 < classes.length) {
+						            return {
+						                classes: classes[index / 2]
+						            };
+						        }
+						        return {};
+						    }
 		</script>
 		
 </div><!--/.main-->
 
-	<script src="js/jquery-1.11.1.min.js"></script>
-	<script src="../js/bootstrap.min.js"></script>
-	<script src="js/bootstrap-table.js"></script>
-	<!--<script src="./js/chart.min.js"></script> -->
-	<!--<script src="./js/chart-data.js"></script> -->
-	<!--<script src="./js/easypiechart.js"></script> -->
-	<!--<script src="./js/easypiechart-data.js"></script> -->
-	<!--<script src="./js/bootstrap-datepicker.js"></script> -->
-	
 	<script>
 		 !function ($) {
 			$(document).on("click","ul.nav li.parent > a > span.icon", function(){		  
