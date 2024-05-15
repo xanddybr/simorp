@@ -14,7 +14,8 @@
         "qtdPitens": "127",
         "qtdItens": "1",
         "usuario": "CLAUDIA",
-        "IdItens" : "143558"
+        "IdItens" : "143558",
+        "valor" : "12.000,00"
         },
         {
         "idSol" : 2,  
@@ -31,6 +32,7 @@
         "qtdPitens": "60,25,15,35",
         "qtdItens": "4",
         "usuario": "ANDREIA",
-        "IdItens" :"143551-143565-143558-143559"
+        "IdItens" :"143551-143565-143558-143559",
+        "valor" : "5.300,20"
         }
 ]

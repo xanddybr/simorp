@@ -94,7 +94,7 @@
 				$('#familia').empty();
 				  	$('#descricao').val("");
 					  	$('#familiaList').val("");
-				LodaDataList(null, "#familia","data/familiaMaterial.json","familia","tipo");
+						LodaDataListWithID(null, "#familia","data/familiaMaterial.json","familia","tipo");
 				exit();
 			}
 
@@ -102,7 +102,7 @@
 				$('#familia').empty();
 					$('#descricao').val("");
 						$('#familiaList').val("");
-				LodaDataList(null, "#familia","data/familiaServicos.json","familia","tipo");
+						LodaDataListWithID(null, "#familia","data/familiaServicos.json","familia","tipo");
 				exit();
 			}
 		})
@@ -110,14 +110,13 @@
 
 	//EVENT KEY ENTER TRIGGER
 	$(document).ready(function(){	
-	$("#qtdItens").on( "keypress", function( event ) {
+	$("#descricao").on( "keypress", function( event ) {
 		if ( event.which == 13 ) {
 			event.preventDefault();
 			Insert();
 			}
 		}) 
 	}) 
-
 
 	//INSERT LINE IN LIST
 	$(document).ready(function(){
@@ -126,7 +125,6 @@
 		}) 
 	})
 
-		
 	//INSERT MASK SEI NUMBER PROCESS
 	$(document).ready(function(){
             $('#seiprocess').focus(function (){
@@ -335,19 +333,17 @@
 							<tr id='item' >
 							<td style='width:30px;'><input type='checkbox' class='' id='checkAll'></td>
 							<td><input class='form-control col-lg-1' placeholder='ID' type='text' id='idItem' name='solRegPrec[]' onkeypress="return false;"></td>
-							<td><input class='form-control col-lg-5' placeholder='Informe OS IDs que deseja adicionar a lista' list='descItem' type='text' id='descricao' name='solRegPrec[]'><datalist id='descItem'></datalist></td>
-							<td><input class='form-control col-lg-4' type='text'  id='familiaItem' placeholder='FAMILIA' name='solRegPrec[]' onkeypress="return false;"></td>
+							<td><input class='form-control col-lg-5' placeholder='INFORME OS IDs SEPARADOS POR (-)' list='descItem' type='text' id='descricao' name='solRegPrec[]'><datalist id='descItem'></datalist></td>
+							<td><input class='form-control col-lg-4' type='text'  id='familiaItem' placeholder='INFORME A QUANTIDADE SEPARADO POR (,)' name='solRegPrec[]'></td>
 							<td><input class='form-control col-lg-1' list='unidades'  id='unidade' placeholder='UNIDADE' name='solRegPrec[]'><datalist id='unidades'></datalist></td>
 							<td><input class='form-control col-lg-1' id='qtdItens' placeholder='QUANTIDADE' name='solRegPrec[]' value='' required /></td>
 							<td><input type="button" id="btn-add" value=' + ' name="" /></td>
 							<td><input type="button" id="btn-rmv" value=' - ' name="" /></td>
 						</tr>
-						
 					</table>
 			    </form>
-
-					<script>
-					</script>
+				<script>
+				</script>
 				</div>
 			</div>
 		</div>

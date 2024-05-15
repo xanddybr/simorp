@@ -1,475 +1,593 @@
 {
 	"registros": [
 	{
+	  "id":"",
 	  "sigla": "AGENERSA",
 	  "descricao": "AGÊNCIA REGULADORA DE ENERGIA E SANEAMENTO BÁSICO"
 	},
 	{
-	  "sigla": "AGERIO",
+	  "id":"",
+	  "sigla":"AGERIO",
 	  "descricao": "AGÊNCIA ESTADUAL DE FOMENTO"
 	},
 	{
-	  "sigla": "AGETRANSP",
+	  "id":"",
+	  "sigla":"AGETRANSP",
 	  "descricao": "AG. REG. DE SERV PÚB. CONC. DE TRANSP. AQUAV., FERROV., METROVIÁRIOS E DE RODOVIAS DO RJ"
 	},
 	{
-	  "sigla": "CASERJ",
+	  "id":"",
+	  "sigla":"CASERJ",
 	  "descricao": "COMPANHIA DE ARMAZÉNS E SILOS DO ESTADO DO RIO DE JANEIRO"
 	},
 	{
-	  "sigla": "CEASA",
+	  "id":"",
+	  "sigla":"CEASA",
 	  "descricao": "CENTRAIS DE ABASTECIMENTO DO ESTADO DO RIO DE JANEIRO"
 	},
 	{
-	  "sigla": "CECIERJ",
+	  "id":"",
+	  "sigla":"CECIERJ",
 	  "descricao": "FUND. CENTRO DE CIÊNCIAS E DE EDUC. SUPERIOR A DISTÂNCIA DO ESTADO DO RIO DE JANEIRO"
 	},
 	{
-	  "sigla": "CEDAE",
+	  "id":"",
+	  "sigla":"CEDAE",
 	  "descricao": "COMPANHIA ESTADUAL DE ÁGUAS E ESGOTOS"
 	},
 	{
-	  "sigla": "CEHAB",
+	  "id":"",
+	  "sigla":"CEHAB",
 	  "descricao": "COMPANHIA ESTADUAL DE HABITAÇÃO DO ESTADO DO RIO DE JANEIRO"
 	},
 	{
-	  "sigla": "CENTRAL",
+	  "id":"",
+	  "sigla":"CENTRAL",
 	  "descricao": "COMPANHIA ESTADUAL DE ENGENHARIA DE TRANSPORTES E LOGÍSTICA"
 	},
 	{
-	  "sigla": "CEPERJ",
+	  "id":"",
+	  "sigla":"CEPERJ",
 	  "descricao": "FUND. CENTRO ESTADUAL DE ESTATÍSTICAS, PESQ. E FORMAÇÃO DE SERV. PÚB. DO RJ - CEPERJ"
 	},
 	{
-	  "sigla": "CFSEC",
+	  "id":"",
+	  "sigla":"CFSEC",
 	  "descricao": "COMPANHIA FLUMINENSE DE SECURITIZAÇÃO S/A"
 	},
 	{
-	  "sigla": "CGE",
+	  "id":"",
+	  "sigla":"CGE",
 	  "descricao": "CONTROLADORIA GERAL DO ESTADO DO RIO DE JANEIRO – CGE"
 	},
 	{
-	  "sigla": "CODERTE",
+	  "id":"",
+	  "sigla":"CODERTE",
 	  "descricao": "COMPANHIA DE DESENVOLVIMENTO RODOVIÁRIO E TERMINAIS DO ESTADO DO RIO DE JANEIRO"
 	},
 	{
-	  "sigla": "CODIN",
+	  "id":"",
+	  "sigla":"CODIN",
 	  "descricao": "COMPANHIA DE DESENVOLVIMENTO INDUSTRIAL DO ESTADO DO RIO DE JANEIRO"
 	},
 	{
-	  "sigla": "CTC",
+	  "id":"",
+	  "sigla":"CTC",
 	  "descricao": "COMPANHIA DE TRANSPORTES COLETIVOS DO ESTADO DO RIO DE JANEIRO"
 	},
 	{
-	  "sigla": "DEGASE",
+	  "id":"",
+	  "sigla":"DEGASE",
 	  "descricao": "DEPARTAMENTO GERAL DE AÇÕES SOCIOEDUCATIVAS"
 	},
 	{
-	  "sigla": "DER",
+	  "id":"",
+	  "sigla":"DER",
 	  "descricao": "FUNDAÇÃO DEPARTAMENTO DE ESTRADA DE RODAGEM DO ESTADO DO RIO DE JANEIRO"
 	},
 	{
-	  "sigla": "DETRAN",
+	  "id":"",
+	  "sigla":"DETRAN",
 	  "descricao": "DEPARTAMENTO DE TRÂNSITO DO ESTADO DO RIO DE JANEIRO"
 	},
 	{
-	  "sigla": "DETRO",
+	  "id":"",
+	  "sigla":"DETRO",
 	  "descricao": "DEPARTAMENTO DE TRANSPORTES RODOVIÁRIOS DO ESTADO DO RIO DE JANEIRO"
 	},
 	{
-	  "sigla": "DPGE",
+	  "id":"",
+	  "sigla":"DPGE",
 	  "descricao": "DEFENSORIA PÚBLICA GERAL DO ESTADO"
 	},
 	{
-	  "sigla": "DPGE/FUNDPERJ",
+	  "id":"",
+	  "sigla":"DPGE/FUNDPERJ",
 	  "descricao": "FUNDO ESPECIAL DA DEFENSORIA PÚBLICA GERAL DO ERJ"
 	},
 	{
-	  "sigla": "DRM",
+	  "id":"",
+	  "sigla":"DRM",
 	  "descricao": "DEPARTAMENTO DE RECURSOS MINERAIS DO ESTADO DO RIO DE JANEIRO"
 	},
 	{
-	  "sigla": "EMATER",
+	  "id":"",
+	  "sigla":"EMATER",
 	  "descricao": "EMPRESA DE ASSISTÊNCIA TÉCNICA E EXTENSÃO RURAL DO ESTADO DO RIO DE JANEIRO"
 	},
 	{
-	  "sigla": "EMOP",
+	  "id":"",
+	  "sigla":"EMOP",
 	  "descricao": "EMPRESA DE OBRAS PÚBLICAS DO ESTADO DO RIO DE JANEIRO"
 	},
 	{
-	  "sigla": "FAETEC",
+	  "id":"",
+	  "sigla":"FAETEC",
 	  "descricao": "FUNDAÇÃO DE APOIO À ESCOLA TÉCNICA DO ESTADO DO RIO DE JANEIRO"
 	},
 	{
-	  "sigla": "FAPERJ",
+	  "id":"",
+	  "sigla":"FAPERJ",
 	  "descricao": "FUNDAÇÃO CARLOS CHAGAS FILHO DE AMPARO A PESQUISA DO ESTADO DO RIO DE JANEIRO"
 	},
 	{
-	  "sigla": "FCFB",
+	  "id":"",
+	  "sigla":"FCFB",
 	  "descricao": "FUNDAÇÃO CASA FRANÇA BRASIL"
 	},
 	{
-	  "sigla": "FEAS",
+	  "id":"",
+	  "sigla":"FEAS",
 	  "descricao": "FUNDO ESTADUAL DE ASSISTÊNCIA SOCIAL"
 	},
 	{
-	  "sigla": "FES",
+	  "id":"",
+	  "sigla":"FES",
 	  "descricao": "FUNDO ESTADUAL DE SAÚDE"
 	},
 	{
-	  "sigla": "FIA",
+	  "id":"",
+	  "sigla":"FIA",
 	  "descricao": "FUNDAÇÃO PARA A INFÂNCIA E ADOLESCÊNCIA"
 	},
 	{
-	  "sigla": "FIPERJ",
+	  "id":"",
+	  "sigla":"FIPERJ",
 	  "descricao": "FUNDAÇÃO INSTITUTO DE PESCA DO ESTADO DO RIO DE JANEIRO"
 	},
 	{
-	  "sigla": "FLUMITRENS",
+	  "id":"",
+	  "sigla":"FLUMITRENS",
 	  "descricao": "COMPANHIA FLUMINENSE DE TRENS URBANOS"
 	},
 	{
-	  "sigla": "FLXIII",
+	  "id":"",
+	  "sigla":"FLXIII",
 	  "descricao": "FUNDAÇÃO LEÃO XIII"
 	},
 	{
-	  "sigla": "FMIS",
+	  "id":"",
+	  "sigla":"FMIS",
 	  "descricao": "FUNDAÇÃO MUSEU DA IMAGEM E DO SOM - FMIS/RJ"
 	},
 	{
-	  "sigla": "FSC",
+	  "id":"",
+	  "sigla":"FSC",
 	  "descricao": "FUNDAÇÃO SANTA CABRINI"
 	},
 	{
-	  "sigla": "FSERJ",
+	  "id":"",
+	  "sigla":"FSERJ",
 	  "descricao": "FUNDAÇÃO SAÚDE DO ESTADO DO RIO DE JANEIRO"
 	},
 	{
-	  "sigla": "FTM",
+	  "id":"",
+	  "sigla":"FTM",
 	  "descricao": "FUNDAÇÃO THEATRO MUNICIPAL DO RIO DE JANEIRO"
 	},
 	{
-	  "sigla": "FUNARJ",
+	  "id":"",
+	  "sigla":"FUNARJ",
 	  "descricao": "FUNDAÇÃO ANITA MANTUANO DE ARTES DO ESTADO DO RIO DE JANEIRO"
 	},
 	{
-	  "sigla": "FUNDEAGRO",
+	  "id":"",
+	  "sigla":"FUNDEAGRO",
 	  "descricao": "FUNDO PARA DESENVOLVIMENTO DO AGRONEGÓCIO DO ALGODÃO"
 	},
 	{
-	  "sigla": "FUNDPERJ",
+	  "id":"",
+	  "sigla":"FUNDPERJ",
 	  "descricao": "FUNDO ESPECIAL DA DEFENSORIA PÚBLICA DO ESTADO DO RIO DE JANEIRO"
 	},
 	{
-	  "sigla": "FUNDRHI",
+	  "id":"",
+	  "sigla":"FUNDRHI",
 	  "descricao": "FUNDO ESTADUAL DE RECURSOS HÍDRICOS"
 	},
 	{
-	  "sigla": "FUNPERJ",
+	  "id":"",
+	  "sigla":"FUNPERJ",
 	  "descricao": "FUNDO ESPECIAL DA PROCURADORIA GERAL DO ERJ"
 	},
 	{
-	  "sigla": "GSI",
+	  "id":"",
+	  "sigla":"GSI",
 	  "descricao": "GABINETE DE SEGURANÇA INSTITUCIONAL DO GOVERNO DO ERJ"
 	},
 	{
-	  "sigla": "IASERJ",
+	  "id":"",
+	  "sigla":"IASERJ",
 	  "descricao": "INSTITUTO DE ASSISTÊNCIA DOS SERVIDORES DO ESTADO DO RIO DE JANEIRO"
 	},
 	{
-	  "sigla": "IEEA",
+	  "id":"",
+	  "sigla":"IEEA",
 	  "descricao": "INSTITUTO ESTADUAL DE ENGENHARIA E ARQUITETURA"
 	},
 	{
-	  "sigla": "INEA",
+	  "id":"",
+	  "sigla":"INEA",
 	  "descricao": "INSTITUTO ESTADUAL DO AMBIENTE"
 	},
 	{
-	  "sigla": "IOERJ",
+	  "id":"",
+	  "sigla":"IOERJ",
 	  "descricao": "IMPRENSA OFICIAL DO ESTADO DO RIO DE JANEIRO"
 	},
 	{
-	  "sigla": "IPEM",
+	  "id":"",
+	  "sigla":"IPEM",
 	  "descricao": "INSTITUTO DE PESOS E MEDIDAS"
 	},
 	{
-	  "sigla": "IRM",
+	  "id":"",
+	  "sigla":"IRM",
 	  "descricao": "INSTITUTO RIO METRÓPOLE"
 	},
 	{
-	  "sigla": "ISP",
+	  "id":"",
+	  "sigla":"ISP",
 	  "descricao": "INSTITUTO DE SEGURANÇA PÚBLICA - RIOSEGURANÇA"
 	},
 	{
-	  "sigla": "ITERJ",
+	  "id":"",
+	  "sigla":"ITERJ",
 	  "descricao": "INSTITUTO DE TERRAS E CARTOGRAFIA DO ESTADO DO RIO DE JANEIRO"
 	},
 	{
-	  "sigla": "IVB",
+	  "id":"",
+	  "sigla":"IVB",
 	  "descricao": "INSTITUTO VITAL BRASIL S/A"
 	},
 	{
-	  "sigla": "JUCERJA",
+	  "id":"",
+	  "sigla":"JUCERJA",
 	  "descricao": "JUNTA COMERCIAL DO ESTADO DO RIO DE JANEIRO"
 	},
 	{
-	  "sigla": "LOTERJ",
+	  "id":"",
+	  "sigla":"LOTERJ",
 	  "descricao": "LOTERIA DO ESTADO DO RIO DE JANEIRO"
 	},
 	{
-	  "sigla": "METRORIO",
+	  "id":"",
+	  "sigla":"METRORIO",
 	  "descricao": "COMPANHIA DO METROVIÁRIO DO ESTADO DO RIO DE JANEIRO"
 	},
 	{
-	  "sigla": "PESAGRO",
+	  "id":"",
+	  "sigla":"PESAGRO",
 	  "descricao": "EMPRESA DE PESQUISA AGROPECUÁRIA DO ESTADO DO RIO DE JANEIRO"
 	},
 	{
-	  "sigla": "PGE",
+	  "id":"",
+	  "sigla":"PGE",
 	  "descricao": "PROCURADORIA GERAL DO ESTADO DO RIO DE JANEIRO"
 	},
 	{
-	  "sigla": "PGE/FUNPERJ",
+	  "id":"",
+	  "sigla":"PGE/FUNPERJ",
 	  "descricao": "FUNDO ESPECIAL DA PROCURADORIA GERAL DO ERJ"
 	},
 	{
-	  "sigla": "PROCON",
+	  "id":"",
+	  "sigla":"PROCON",
 	  "descricao": "AUTARQUIA DE PROTECAO E DEFESA DO CONSUMIDOR DO ESTADO DO RIO DE JANEIRO"
 	},
 	{
-	  "sigla": "PRODERJ",
+	  "id":"",
+	  "sigla":"PRODERJ",
 	  "descricao": "CENTRO DE TECNOLOGIA DE INFORMAÇÃO E COMUNICAÇÃO DO ESTADO DO RIO DE JANEIRO"
 	},
 	{
-	  "sigla": "RIOPREVIDENCIA",
+	  "id":"",
+	  "sigla":"RIOPREVIDENCIA",
 	  "descricao": "FUNDO ÚNICO DE PREVIDÊNCIA SOCIAL DO ESTADO DO RIO DE JANEIRO"
 	},
 	{
-	  "sigla": "RIOSEGURANÇA",
+	  "id":"",
+	  "sigla":"RIOSEGURANÇA",
 	  "descricao": "INST DE SEGURANÇA PÚBLICA DO ESTADO DO RJ"
 	},
 	{
-	  "sigla": "RIOTRILHOS",
+	  "id":"",
+	  "sigla":"RIOTRILHOS",
 	  "descricao": "COMPANHIA DE TRANSPORTES SOBRE TRILHOS DO ESTADO DO RIO DE JANEIRO"
 	},
 	{
-	  "sigla": "RJPREV",
+	  "id":"",
+	  "sigla":"RJPREV",
 	  "descricao": "FUNDAÇÃO DE PREVIDÊNCIA COMPLEMENTAR DO ESTADO DO RIO DE JANEIRO"
 	},
 	{
-	  "sigla": "SEA/PSAM",
+	  "id":"",
+	  "sigla":"SEA/PSAM",
 	  "descricao": "SEA/PROGRAMA DE SANEAMENTO AMBIENTAL DA BAÍA GUANABARA"
 	},
 	{
-	  "sigla": "SEAP",
+	  "id":"",
+	  "sigla":"SEAP",
 	  "descricao": "SECRETARIA DE ESTADO DE ADMINISTRAÇÃO PENITENCIÁRIA"
 	},
 	{
-	  "sigla": "SEAP/FUESP",
+	  "id":"",
+	  "sigla":"SEAP/FUESP",
 	  "descricao": "SEAP/ FUNDO ESPECIAL PENITENCIÁRIO"
 	},
 	{
-	  "sigla": "SEAPPA",
+	  "id":"",
+	  "sigla":"SEAPPA",
 	  "descricao": "SECRETARIA DE ESTADO DE AGRICULTURA, PECUÁRIA, PESCA E ABASTECIMENTO"
 	},
 	{
-	  "sigla": "SEAS",
+	  "id":"",
+	  "sigla":"SEAS",
 	  "descricao": "SECRETARIA DE ESTADO DO AMBIENTE E SUSTENTABILIDADE"
 	},
 	{
-	  "sigla": "SECC",
+	  "id":"",
+	  "sigla":"SECC",
 	  "descricao": "SECRETARIA DE ESTADO DA CASA CIVIL"
 	},
 	{
-	  "sigla": "SECEC",
+	  "id":"",
+	  "sigla":"SECEC",
 	  "descricao": "SECRETARIA DE ESTADO DE CULTURA E ECONOMIA CRIATIVA"
 	},
 	{
-	  "sigla": "SECID",
+	  "id":"",
+	  "sigla":"SECID",
 	  "descricao": "SECRETARIA DE ESTADO DE CIDADES"
 	},
 	{
-	  "sigla": "SECTI",
+	  "id":"",
+	  "sigla":"SECTI",
 	  "descricao": "SECRETARIA DE ESTADO DE CIÊNCIA, TECNOLOGIA E INOVAÇÃO"
 	},
 	{
-	  "sigla": "SEDCON",
+	  "id":"",
+	  "sigla":"SEDCON",
 	  "descricao": "SECRETARIA DE ESTADO DE DEFESA DO CONSUMIDOR"
 	},
 	{
-	  "sigla": "SEDEC/CBMERJ",
+	  "id":"",
+	  "sigla":"SEDEC/CBMERJ",
 	  "descricao": "SECRETARIA DE ESTADO DE DEFESA CIVIL E CORPO DE BOMBEIROS MILITAR"
 	},
 	{
-	  "sigla": "SEDEC/FUNESBOM",
+	  "id":"",
+	  "sigla":"SEDEC/FUNESBOM",
 	  "descricao": "FUNDO ESPECIAL DO CORPO DE BOMBEIROS"
 	},
 	{
-	  "sigla": "SEDEERI",
+	  "id":"",
+	  "sigla":"SEDEERI",
 	  "descricao": "SECRETARIA DE ESTADO DE DESENVOLVIMENTO ECONOMICO E GERACAO DE EMPREGO E RELAÇÕES INTERNACIONAIS"
 	},
 	{
-	  "sigla": "SEDEICS",
+	  "id":"",
+	  "sigla":"SEDEICS",
 	  "descricao": "SECRETARIA DE ESTADO DE DESENVOLVIMENTO ECONÔMICO, INDÚSTRIA, COMÉRCIO E SERVIÇOS"
 	},
 	{
-	  "sigla": "SEDEIS",
+	  "id":"",
+	  "sigla":"SEDEIS",
 	  "descricao": "SUBSECRETARIA DE DESENVOLVIMENTO ECONÔMICO"
 	},
 	{
-	  "sigla": "SEDSODH",
+	  "id":"",
+	  "sigla":"SEDSODH",
 	  "descricao": "SECRETARIA DE ESTADO DE DESENVOLVIMENTO SOCIAL E DIREITOS HUMANOS"
 	},
 	{
-	  "sigla": "SEEDUC",
+	  "id":"",
+	  "sigla":"SEEDUC",
 	  "descricao": "SECRETARIA DE ESTADO DE EDUCAÇÃO"
 	},
 	{
-	  "sigla": "SEEL",
+	  "id":"",
+	  "sigla":"SEEL",
 	  "descricao": "SECRETARIA DE ESTADO DE ESPORTE E LAZER"
 	},
 	{
-	  "sigla": "SEENEMAR",
+	  "id":"",
+	  "sigla":"SEENEMAR",
 	  "descricao": "SECRETARIA DE ESTADO DE ENERGIA E ECONOMIA DO MAR"
 	},
 	{
-	  "sigla": "SEENVS",
+	  "id":"",
+	  "sigla":"SEENVS",
 	  "descricao": "SECRETARIA DE"
 	},
 	{
-	  "sigla": "SEFAZ",
+	  "id":"",
+	  "sigla":"SEFAZ",
 	  "descricao": "SECRETARIA DE ESTADO DE FAZENDA"
 	},
 	{
-	  "sigla": "SEFAZ/FAF",
+	  "id":"",
+	  "sigla":"SEFAZ/FAF",
 	  "descricao": "FUNDO DE ADMINISTRAÇÃO FAZENDARIA"
 	},
 	{
-	  "sigla": "SEGOV",
+	  "id":"",
+	  "sigla":"SEGOV",
 	  "descricao": "SECRETARIA DE ESTADO DE GOVERNO E RELAÇOES INSTITUCIONAIS"
 	},
 	{
-	  "sigla": "SEHIS",
+	  "id":"",
+	  "sigla":"SEHIS",
 	  "descricao": "SECRETARIA DE HABITAÇÃO E INTERESSE SOCIAL"
 	},
 	{
-	  "sigla": "SEIC",
+	  "id":"",
+	  "sigla":"SEIC",
 	  "descricao": "SECRETARIA DE ESTADO DE INFRAESTRUTURA E CIDADES"
 	},
 	{
-	  "sigla": "SEIJES",
+	  "id":"",
+	  "sigla":"SEIJES",
 	  "descricao": "SECRETARIA DE JUVENTUDE E ENVELHECIMENTO SAUDÁVEL"
 	},
 	{
-	  "sigla": "SEINFRA",
+	  "id":"",
+	  "sigla":"SEINFRA",
 	  "descricao": "SECRETARIA DE ESTADO DE INFRAESTRUTURA E OBRAS"
 	},
 	{
-	  "sigla": "SEIOP",
+	  "id":"",
+	  "sigla":"SEIOP",
 	  "descricao": "SECRETARIA DE ESTADO DE INFRAESTRUTURA E OBRAS PUBLICAS"
 	},
 	{
-	  "sigla": "SEM",
+	  "id":"",
+	  "sigla":"SEM",
 	  "descricao": "SECRETARIA DE ESTADO DA MULHER"
 	},
 	{
-	  "sigla": "SEPLAG",
+	  "id":"",
+	  "sigla":"SEPLAG",
 	  "descricao": "SECRETARIA DE ESTADO DE PLANEJAMENTO E GESTÃO"
 	},
 	{
-	  "sigla": "SEPM",
+	  "id":"",
+	  "sigla":"SEPM",
 	  "descricao": "SECRETARIA DE ESTADO DE POLÍCIA MILITAR"
 	},
 	{
-	  "sigla": "SEPM/FUNESPOM",
+	  "id":"",
+	  "sigla":"SEPM/FUNESPOM",
 	  "descricao": "FUNDO ESPECIAL DA POLÍCIA MILITAR DO ESTADO DO RIO DE JANEIRO"
 	},
 	{
-	  "sigla": "SEPOL",
+	  "id":"",
+	  "sigla":"SEPOL",
 	  "descricao": "SECRETARIA DE ESTADO DE POLÍCIA CIVIL"
 	},
 	{
-	  "sigla": "SEPOL/FUNESPOL",
+	  "id":"",
+	  "sigla":"SEPOL/FUNESPOL",
 	  "descricao": "FUNDO ESPECIAL DA POLÍCIA CIVIL"
 	},
 	{
-	  "sigla": "SEPREDEQ",
+	  "id":"",
+	  "sigla":"SEPREDEQ",
 	  "descricao": "SECRETARIA DE ESTADO DE PREVENÇÃO A DEPENDÊNCIA QUÍMICA"
 	},
 	{
-	  "sigla": "SEPROCON/FEPROCON",
+	  "id":"",
+	  "sigla":"SEPROCON/FEPROCON",
 	  "descricao": "FUNCO ESP. DE APOIO A PROGR. DE PROTEÇÃO E DEFESA DO CONSUMIDOR"
 	},
 	{
-	  "sigla": "SERGB",
+	  "id":"",
+	  "sigla":"SERGB",
 	  "descricao": "SECRETARIA EXTRAORDINÁRIA DE REPRESENTAÇÃO DO GOVERNO DO RJ EM BRASÍLIA"
 	},
 	{
-	  "sigla": "SERVE",
+	  "id":"",
+	  "sigla":"SERVE",
 	  "descricao": "EMPRESA ESTADUAL DE VIAÇÃO SERVE EM LIQUIDAÇÃO\""
 	},
 	{
-	  "sigla": "SES",
+	  "id":"",
+	  "sigla":"SES",
 	  "descricao": "SECRETARIA DE ESTADO DE SAÚDE"
 	},
 	{
-	  "sigla": "SES/FES",
+	  "id":"",
+	  "sigla":"SES/FES",
 	  "descricao": "FUNDO ESTADUAL DE SAÚDE"
 	},
 	{
-	  "sigla": "SESP",
+	  "id":"",
+	  "sigla":"SESP",
 	  "descricao": "SECRETARIA DE ESTADO DE SEGURANÇA PÚBLICA"
 	},
 	{
-	  "sigla": "SETD",
+	  "id":"",
+	  "sigla":"SETD",
 	  "descricao": "SECRETARIA DE ESTADO DE TRANSFORMAÇÃO DIGITAL"
 	},
 	{
-	  "sigla": "SETRAB",
+	  "id":"",
+	  "sigla":"SETRAB",
 	  "descricao": "SECRETARIA DE ESTADO DE TRABALHO E RENDA"
 	},
 	{
-	  "sigla": "SETRAM",
+	  "id":"",
+	  "sigla":"SETRAM",
 	  "descricao": "SECRETARIA DE ESTADO DE TRANSPORTE E MOBILIDADE URBANA"
 	},
 	{
-	  "sigla": "SETUR",
+	  "id":"",
+	  "sigla":"SETUR",
 	  "descricao": "SECRETARIA DE ESTADO DE TURISMO"
 	},
 	{
-	  "sigla": "SEVIT",
+	  "id":"",
+	  "sigla":"SEVIT",
 	  "descricao": "SECRETARIA DE ESTADO DE VITIMADOS"
 	},
 	{
-	  "sigla": "SSMGSI",
+	  "id":"",
+	  "sigla":"SSMGSI",
 	  "descricao": "SUBSECRETARIA MILITAR DO GABINETE DE SEGURANÇA INSTITUCIONAL"
 	},
 	{
-	  "sigla": "SUDERJ",
+	  "id":"",
+	  "sigla":"SUDERJ",
 	  "descricao": "SUPERINTENDÊNCIA DE DESPORTOS DO ESTADO DO RIO DE JANEIRO"
 	},
 	{
-	  "sigla": "TURISRIO",
+	  "id":"",
+	  "sigla":"TURISRIO",
 	  "descricao": "COMPANHIA DE TURISMO DO ESTADO DO RIO DE JANEIRO"
 	},
 	{
-	  "sigla": "UENF",
+	  "id":"",
+	  "sigla":"UENF",
 	  "descricao": "UNIVERSIDADE ESTADUAL DO NORTE FLUMINENSE DARCY RIBEIRO"
 	},
 	{
-	  "sigla": "UERJ",
+	  "id":"",
+	  "sigla":"UERJ",
 	  "descricao": "FUNDAÇÃO UNIVERSIDADE DO ESTADO DO RIO DE JANEIRO"
 	},
 	{
-	  "sigla": "UERJ/HUPE",
+	  "id":"",
+	  "sigla":"UERJ/HUPE",
 	  "descricao": "HOSPITAL UNIVERSITÁRIO PEDRO ERNESTO"
 	},
 	{
-	  "sigla": "UEZO",
+	  "id":"",
+	  "sigla":"UEZO",
 	  "descricao": "FUNDAÇÃO CENTRO UNIVERSITÁRIO ESTADUAL DA ZONA OESTE"
 	},
 	{
-	  "sigla": "VGE",
+	  "id":"",
+	  "sigla":"VGE",
 	  "descricao": "VICE-GOVERNADORIA"
 	}
   ]

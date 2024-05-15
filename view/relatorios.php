@@ -104,27 +104,26 @@
 
 						<thead>
 						    <tr>
-								<th data-field="processo" data-sortable="true"><b>Processo SEI</b></b></th>
+								<th data-field="processo" data-sortable="true" style="width: 200px;"><b>Processo SEI</b></b></th>
 								<th data-field="usuario" data-sortable="true"><b>Usuario</b></th>
 						        <th data-field="orgaoGestor" data-sortable="true"><b>Orgão Solicitante</b></b></th>
 								<th data-field="tipoObjeto" data-sortable="true"><b>Tipo Objeto</b></th>
 								<th data-field="obs" data-sortable="true"><b>Descrição Objeto</b></th>
 								<th data-field="dataReceb" data-sortable="true"><b>Recebimento</b></th>
-								<th data-field="IdItens" data- data-sortable="true"><b>Itens</b></th>
+								<th data-field="IdItens" data- data-sortable="true"><b>ID Itens</b></th>
 								<th data-field="qtdPitens" data- data-sortable="true"><b>Qtd p/id</b></th>
-								<th data-field="qtdItens" data- data-sortable="true"><b>Qtd itens</b></th>
+								<th data-field="qtdItens" data- data-sortable="true"><b>Qtd</b></th>
+								<th data-field="valor" data- data-sortable="true"><b>Valor</b></th>
 							</tr>
 						</thead>
 						</table>
 						</div>
-
 						<div id="tabRel02"> 
 
 						<table id='rel02' data-toggle="table" data-url="./data/adesaoata.json" data-show-refresh="true" data-show-toggle="false" data-show-columns="true" data-search="true" data-select-item-name="toolbar2" data-pagination="true" data-sort-name="name" data-sort-order="desc">
-
 						<thead>
 						    <tr>
-						        <th data-field="processo" data-sortable="true"><b>Processo SEI</b></b></th>
+						        <th data-field="processo" data-sortable="true" style="width: 500px;"><b>Processo SEI</b></b></th>
 								<th data-field="usuario" data-sortable="true"><b>Usuario</b></th>
 						        <th data-field="orgaoGestor" data-sortable="true"><b>Orgão Gestor</b></th>
 								<th data-field="nAta" data-sortable="true"><b>Nº Ata</b></th>
@@ -132,9 +131,10 @@
 								<th data-field="orgaoAderente" data-sortable="true"><b>Orgão Aderente</b></th>
 								<th data-field="dataReceb" data-sortable="true"><b>Recebimento</b></th>
 								<th data-field="dataEncam" data-sortable="true"><b>Encaminhamento</b></th>
-								<th data-field="IdItens" data- data-sortable="true"><b>Itens</b></th>
+								<th data-field="IdItens" data- data-sortable="true"><b>ID Itens</b></th>
 								<th data-field="qtdPitens" data- data-sortable="true"><b>Qtd p/id</b></th>
-								<th data-field="qtdItens" data- data-sortable="true"><b>Qtd itens</b></th>
+								<th data-field="qtdItens" data- data-sortable="true"><b>Qtd</b></th>
+								<th data-field="valor" data- data-sortable="true"><b>Valor</b></th>
 							</tr>
 						</thead>
 					</table>

@@ -1,40 +1,24 @@
-          var i = 0;
-          function Insert(){
+        
+        var i = 0;
+        function Insert(){
 
-            let desc = $("#descricao").val()
-            let descPart = desc.split("-");
-
-            var i=0;
-            $(descPart).each(function (){
-                
+            var desc = $("#descricao").val();
+            var descPart = desc.split("-");
+                    
+           $(descPart).each(function(obj){
                 RowEmpty(i);
-                     
-            i++;
-
-            })
-
-            // RowEmpty()
-            //AppendContent();
-            //i++;
-         
-            }
-                
-             
-        function AppendContent(){
-
-               
+                AppendContent(descPart[obj]);
+                SearchforId(descPart[obj],i);
+             i++;
+          })
+        }                
+           
+        function AppendContent(content){
             
-              $("#idItem"+i).append("<b>" + iditem + "</b>");
-                $("#descricao"+i).append($("#descricao").val());
-                $("#familiaItem"+i).append($("#familiaList").val());
+                $("#idItem"+i).append("<b>"+ content +"</b>");
+                $("#familiaItem"+i).append($("#familiaItem").val());
                 $("#unidade"+i).append($("#unidade").val());
                 $("#qtdItens"+i).append($("#qtdItens").val());
-
-                $("#idItem").val("");
-                $("#descricao").val("");
-                $("#familiaItem").val("");
-                $("#unidade").val("");
-                $("#qtdItens").val("");
                       
         }
 
@@ -70,6 +54,16 @@
           })
         }
 
+        function LodaDataListWithID(id1, id2, url, valueField, desc1){
+          $.getJSON(url, function(data) {
+              $(data.registros).each(function(obj) {
+                option = "<option value=\"" + data.registros[obj]['id'] + " - " + data.registros[obj][valueField] + "\">" + data.registros[obj][desc1] + "</option>";
+                    $(id1).append(option) + $(id2).append(option);
+                      
+          })
+        })
+        }
+
         function LodaDataListKey(key1, key2, id1, url, desc1, desc2){
           
           $.getJSON(url, function(data) {
@@ -79,6 +73,19 @@
                   $(id1).append(option);
                 }
              })
+          })
+        }
+
+        function SearchforId(idItem,i){
+           $.getJSON('data/itens.json', function(data) {
+              $(data.registros).each(function(obj){ 
+                if(data.registros[obj]['id'] == idItem){
+                  option =  data.registros[obj]['descricao'] ;
+                 
+                  $("#descricao"+i).append(option);
+                 
+                }
+              })
           })
 
 
@@ -156,13 +163,11 @@
         return modal;
       
         }
-        
+
         function CountItem(){
-            
         }
 
         function QtdTotalItens(){
-
         }
 
     

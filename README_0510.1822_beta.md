@@ -12,6 +12,7 @@
 
 [
 
+0515.1759 : implemented multiple itens in list
 0510.1822 : implemented new resource list intens
 0509.1957 : fixed disposition fields form
 0508.2007 : refinament list intens
