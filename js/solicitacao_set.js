@@ -2,15 +2,7 @@
         var i = 0;
         function Insert(){
 
-            var desc = $("#descricao").val();
-            var descPart = desc.split("-");
-                    
-           $(descPart).each(function(obj){
-                RowEmpty(i);
-                AppendContent(descPart[obj]);
-                SearchforId(descPart[obj],i);
-             i++;
-          })
+            
         }                
            
         function AppendContent(content){
@@ -23,8 +15,8 @@
         }
 
         function RemoveItens(){
-          $(".chbox:checked").each(function(){
-             let item = $(this).attr("id");
+              $(".chbox:checked").each(function(){
+              let item = $(this).attr("id");
               $("#"+item).remove();
               $("#checkAll").prop('checked',false);
               $("#qtdItenslist").append(parseInt(i));
@@ -37,7 +29,7 @@
                     "<td style='width:100px; text-align:center' id='idItem"+ i +"'></td>"+
                     "<td style='width:700px; text-align:justify;' id='descricao"+ i +"'></td>"+
                     "<td style='width:400px; text-align:center;' id='familiaItem"+ i +"'></td>"+
-                    "<td style='width:200px; text-align:center;' id='unidade"+ i +"'></td>"+
+                    "<td style='width:200px; text-align:center;' id='unidade"+ i +"'><input class='form-control col-lg-1' list='unidades'  id='fdunidade"+ i +"' placeholder='UNIDADE' name='solRegPrec[]'><datalist id='unidades'></datalist></td>"+
                     "<td style='width:150px; text-align:center;' id='qtdItens"+ i +"'></td>"+
                     "<td style='width: 0px;'></td>"+
                     "<td style='width: 10px;'></td></tr>";
@@ -64,11 +56,11 @@
         })
         }
 
-        function LodaDataListKey(key1, key2, id1, url, desc1, desc2){
+        function LodaDataListKey(key1, idKey, id1, url, desc1, desc2){
           
           $.getJSON(url, function(data) {
               $(data.registros).each(function(obj){ 
-                if(data.registros[obj]['familia'] == key1 && data.registros[obj]['tipo'] == key2){
+                if(data.registros[obj]['familia'] == key1 && data.registros[obj]['tipo'] == idKey){
                   option = "<option value=\"" + data.registros[obj]['id'] + " - " + data.registros[obj][desc1] + " - " + data.registros[obj][desc2] + "\">" + data.registros[obj]['familia'] + "</option>";
                   $(id1).append(option);
                 }
@@ -76,21 +68,35 @@
           })
         }
 
-        function SearchforId(idItem,i){
+        function SearchforId(){
            $.getJSON('data/itens.json', function(data) {
-              $(data.registros).each(function(obj){ 
-                if(data.registros[obj]['id'] == idItem){
-                  option =  data.registros[obj]['descricao'] ;
-                 
-                  $("#descricao"+i).append(option);
-                 
-                }
+
+              $(data.registros).each(function(obj){
+                var desc = $("#descricao").val();
+                var qtd = $("#qtdItens").val();
+
+                var descPart = desc.split("-");
+                var qtdPart = qtd.split(',');
+                
+              $(descPart).each(function(x) {
+                if(data.registros[obj]['id'] == descPart[x]){
+                    let desc = data.registros[obj]['descricao'];
+                    let fam = data.registros[obj]['familia'];
+
+                      RowEmpty(i);
+                      $("#idItem"+i).append("<b>"+descPart[x]+"</b>");
+                      $("#descricao"+i).append(desc);
+                      $("#familiaItem"+i).append(fam);
+                      $("#fdunidade"+i).val($("#unidade").val());
+                      $("#qtdItens"+i).append(qtdPart[x]);
+                      i++; 
+              }
+                        
               })
+            })
           })
-
-
         }
-                         
+                             
         function ShowFieldsAdesaoAta(){
             $("#tipoAta").show();
             $("#l_tipoAta").show();

@@ -70,15 +70,7 @@
 								    
 
 								  <br><br><br><br>
-								  
-								
-								
-								
-								
-					
-								 
-
-								
+		
 						
 							
 
@@ -107,9 +99,9 @@
 							</tr>
 								<tr id='item' >
 								<td><input class='form-control col-lg-1' placeholder='ID' type='text' id='idItem' name='solRegPrec[]' onkeypress="return false;"></td>
-								<td><input class='form-control col-lg-6' placeholder='Informe OS IDs que deseja adicionar a lista' list='descItem' type='text' id='descricao' name='solRegPrec[]'><datalist id='descItem'></datalist></td>
-								<td><input class='form-control col-lg-4' type='text'  id='familiaItem' placeholder='FAMILIA' name='solRegPrec[]' onkeypress="return false;"></td>
-								<td><input class='form-control col-lg-1' list='unidades'  id='unidade' placeholder='UNIDADE' name='solRegPrec[]'><datalist id='unidades'></datalist></td>
+								<td><input class='form-control col-lg-6' placeholder='DESCRIÇÃO' type='text' id='descricao' name='solRegPrec[]' onkeypress="return false;"></td>
+								<td><input class='form-control col-lg-4' type='text' id='familiaItem' placeholder='FAMILIA' name='solRegPrec[]' onkeypress="return false;"></td>
+								<td><input class='form-control col-lg-1' id='unidade' placeholder='UNIDADE' name='solRegPrec[]' onkeypress="return false;"></td>
 														
 							</tr>
 							
