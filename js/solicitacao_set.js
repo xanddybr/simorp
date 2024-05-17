@@ -4,16 +4,7 @@
 
             
         }                
-           
-        function AppendContent(content){
-            
-                $("#idItem"+i).append("<b>"+ content +"</b>");
-                $("#familiaItem"+i).append($("#familiaItem").val());
-                $("#unidade"+i).append($("#unidade").val());
-                $("#qtdItens"+i).append($("#qtdItens").val());
-                      
-        }
-
+   
         function RemoveItens(){
               $(".chbox:checked").each(function(){
               let item = $(this).attr("id");
@@ -24,7 +15,8 @@
         }
 
         function RowEmpty(i){
-          var row =  "<tr id='item"+ i +"' style='height:30px; border: 1px solid #e4e2e2; border-collapse: collapse;'>"+
+
+          var row = "<tr id='item"+ i +"' style='height:30px; border: 1px solid #e4e2e2; border-collapse: collapse;'>"+
                     "<td style='width:30px;'><input type='checkbox' class='chbox' id='item"+ i +"' name=check[]></td>"+
                     "<td style='width:100px; text-align:center' id='idItem"+ i +"'></td>"+
                     "<td style='width:700px; text-align:justify;' id='descricao"+ i +"'></td>"+
@@ -33,6 +25,7 @@
                     "<td style='width:150px; text-align:center;' id='qtdItens"+ i +"'></td>"+
                     "<td style='width: 0px;'></td>"+
                     "<td style='width: 10px;'></td></tr>";
+
                     $("#table01:last").append(row);
         }
                   
@@ -45,24 +38,16 @@
             })
           })
         }
-
-        function LodaDataListWithID(id1, id2, url, valueField, desc1){
-          $.getJSON(url, function(data) {
-              $(data.registros).each(function(obj) {
-                option = "<option value=\"" + data.registros[obj]['id'] + " - " + data.registros[obj][valueField] + "\">" + data.registros[obj][desc1] + "</option>";
-                    $(id1).append(option) + $(id2).append(option);
-                      
-          })
-        })
-        }
-
-        function LodaDataListKey(key1, idKey, id1, url, desc1, desc2){
+  
+        function LodaDataListKey(key1, key2, id1, url, desc1){
           
           $.getJSON(url, function(data) {
+            $('#descItem').empty();
               $(data.registros).each(function(obj){ 
-                if(data.registros[obj]['familia'] == key1 && data.registros[obj]['tipo'] == idKey){
-                  option = "<option value=\"" + data.registros[obj]['id'] + " - " + data.registros[obj][desc1] + " - " + data.registros[obj][desc2] + "\">" + data.registros[obj]['familia'] + "</option>";
+                if(data.registros[obj]['familia'] == key1 && data.registros[obj]['tipo'] == key2){
+                  option = "<option value=\"" + data.registros[obj]['id'] + " - " + data.registros[obj][desc1] + "\">" + data.registros[obj]['familia'] + "</option>";
                   $(id1).append(option);
+
                 }
              })
           })
@@ -84,7 +69,7 @@
                     let fam = data.registros[obj]['familia'];
 
                       RowEmpty(i);
-                      $("#idItem"+i).append("<b>"+descPart[x]+"</b>");
+                      $("#idItem"+i).append("<b>"+ descPart[x] +"</b>");
                       $("#descricao"+i).append(desc);
                       $("#familiaItem"+i).append(fam);
                       $("#fdunidade"+i).val($("#unidade").val());
@@ -171,16 +156,38 @@
       
         }
 
-
         function CountItens(){
          
          let qtdItens = $(".chbox").length;
          $("#qtdItensTotal").empty();
-         $("#qtdItensTotal").append(qtdItens);
+         $("#qtdItensTotal").append("&nbsp;"+ qtdItens);
 
         }
     
-    
-    
+        function DefaultMultInsert(){
+          $("#familiaList").hide();
+            $("#l_familia").hide();
+            $("#descItem").empty();
+            $("#descricao").val("");
+         }
    
-   
+        function DefaultItemtoItem(){
+            $("#familiaList").show();
+            $("#l_familia").show();
+            $("#familiaList").val("");
+         
+        }
+        
+        function AppendItemSingle(){
+          var desc = $("#descricao").val();
+          var descPart = desc.split("-");
+
+          RowEmpty(i);
+          $("#idItem"+i).append("<b>"+ descPart[0] +"</b>");
+          $("#descricao"+i).append(descPart[1]);
+          $("#familiaItem"+i).append($("#familiaList").val());
+          $("#fdunidade"+i).val($("#unidade").val());
+          $("#qtdItens"+i).append($("#qtdItens").val());
+          i++;
+
+        }

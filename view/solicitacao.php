@@ -46,6 +46,7 @@
 			if($('#tipoSolici').val()=='adesaoAta'){
 				ShowFieldsAdesaoAta();
 			}
+
 			if($('#tipoSolici').val()=='regPreco'){
 				HideFieldsAdesaoAta();
 			}
@@ -67,15 +68,13 @@
 	//CHANGE FAMILY
 	$(document).ready(function(){
 		$('#familiaList').change(function(){
-
-			if($('#familiaList').val() !=""){
+				
+			if($('#familiaList').val() != ""){
+				
 				let tpObjKey = $('#tipoObjeto').val();
 				let familyKey = $('#familiaList').val();
-				$("#descItem").empty();
-					$("#descricao").val("");
-				LodaDataListKey(familyKey,tpObjKey,"#descItem","data/itens.json","descricao","tipo");	
-			} else {
-				$("#descItem").empty();
+				LodaDataListKey(familyKey,tpObjKey,"#descItem","data/itens.json","descricao");
+				
 			}
 			
 		})
@@ -94,7 +93,7 @@
 				$('#familia').empty();
 				  	$('#descricao').val("");
 					  	$('#familiaList').val("");
-						LodaDataListWithID(null, "#familia","data/familiaMaterial.json","familia","tipo");
+						LodaDataList(null, "#familia","data/familiaMaterial.json","familia","id");
 				exit();
 			}
 
@@ -102,19 +101,27 @@
 				$('#familia').empty();
 					$('#descricao').val("");
 						$('#familiaList').val("");
-						LodaDataListWithID(null, "#familia","data/familiaServicos.json","familia","tipo");
+						LodaDataList(null, "#familia","data/familiaServicos.json","familia","tipo");
 				exit();
 			}
 		})
 	})
 
-	//EVENT KEY ENTER TRIGGER
+	//EVENT KEY TRIGGER ENTER 
 	$(document).ready(function(){	
-	$(".telcas").on( "keypress", function( event ) {
+	$(".telcas").on( "keypress", function( event ){
 		if ( event.which == 13 ) {
-			event.preventDefault();
-			InsertMultipleItens();
-			
+			 event.preventDefault();
+
+				if($("#insMult").prop("checked")){
+					InsertMultipleItens();
+					
+				} 
+
+				if($("#insCat").prop("checked")){
+					AppendItemSingle();
+					
+				} 
 			}
 		}) 
 	}) 
@@ -122,18 +129,11 @@
 	//INSERT LINE IN LIST
 	$(document).ready(function(){
 		$("#btn-add").click(function(){
-			Insert();
+		
 		}) 
 	})
 
-	//INSERT MASK SEI NUMBER PROCESS
-	/*$(document).ready(function(){
-           $('#seiprocess').focus(function (){
-              	$('#seiprocess').mask('SEI-000000/000000/0000');
-        })
-    })*/
-
- 	//RESET FIELDS
+	//RESET FIELDS
 	$(document).ready(function(){
 		$("#reset").click(function(){
 			HideFieldsAdesaoAta();
@@ -162,14 +162,27 @@
 
 	//LOAD PAGE EVENTS TYPE REQUEST
 	$(document).ready(function(){
-		
 		HideFieldsAdesaoAta();
-		$('#familia').empty();
+		
 		LodaDataList("#OrgSol_Gestor","","data/orgaos.json","sigla","descricao");
 		LodaDataList(null,"#unidades","data/unidades.json","sigla","descricao");
-		
+		DefaultMultInsert();
+	})
+
+	$(document).ready(function(){
+		$("#insMult").click(function(){
+			DefaultMultInsert();
+		})
 
 	})
+
+	$(document).ready(function(){
+		$("#insCat").click(function(){
+			DefaultItemtoItem();
+		})
+		
+    })
+
 
 	//APPEND CONTENT ITEN
 /*	$(document).ready(function(){
@@ -201,10 +214,9 @@
 						
 					<div class="panel-heading" class="form-group">
 												
-						<label>Solicitação Nº:</label>
+						<label>Nº: do Processo</label>
 					
 					</div>
-
 								
 					   <div class="panel-body" style=''>
 								<form id='frm' method='POST' action=''>
@@ -269,7 +281,8 @@
 											
 								<label id='l_familia'>Familia</label>
 													
-								<input class="form-control col-lg-3" placeholder="Informe uma família" name='solRegPrec[]' id='familiaList' list='familia' required><datalist id='familia'></datalist>
+										<input class="form-control col-lg-3" placeholder="Informe uma família" name='solRegPrec[]' id='familiaList' list='familia' required>
+								<datalist id='familia'></datalist>
 							    </div>
 
 								<div class="col-md-2">
@@ -297,12 +310,12 @@
 								 <div class="form-group col-lg-12">
 										<label>Descrição do objeto:</label>
 										<textarea class="form-control" id='obs' rows="2" name='solRegPrec[]' ></textarea>
-										<label>Itens na lista: 0</label><label id='qtdItensTotal' ></label><br>
+										<label>Itens na lista: </label><label id='qtdItensTotal'>&nbsp;0</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" class="btn-primary " id='insMult' name='inserction' for='contatact' checked/>&nbsp;&nbsp;<label>Multipla Inserção de ID's </label>&nbsp;&nbsp;&nbsp;&nbsp;<input type='radio' class="btn-primary" id='insCat' value='' name='inserction'>&nbsp;&nbsp;<label>Item á item pelo catalogo</label>
 								</div><br>
 								 
 								 <div>
 								 
-
+								 
 								</label>
 								
 								<input type="button" class="btn-primary pull-right" id='salvar' name='salvar' value='Salvar'></div>
