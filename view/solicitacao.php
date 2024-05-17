@@ -113,7 +113,8 @@
 	$(".telcas").on( "keypress", function( event ) {
 		if ( event.which == 13 ) {
 			event.preventDefault();
-			SearchforId();
+			InsertMultipleItens();
+			
 			}
 		}) 
 	}) 
@@ -143,6 +144,7 @@
 	$(document).ready(function (){
 		$("#btn-rmv").click(function(){
 		RemoveItens();
+		CountItens();
 		})
 	})
 

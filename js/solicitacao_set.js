@@ -68,7 +68,7 @@
           })
         }
 
-        function SearchforId(){
+        function InsertMultipleItens(){
            $.getJSON('data/itens.json', function(data) {
 
               $(data.registros).each(function(obj){
@@ -89,7 +89,8 @@
                       $("#familiaItem"+i).append(fam);
                       $("#fdunidade"+i).val($("#unidade").val());
                       $("#qtdItens"+i).append(qtdPart[x]);
-                      i++; 
+                      CountItens();
+                      i++;
               }
                         
               })
@@ -170,12 +171,14 @@
       
         }
 
-        function CountItem(){
-        }
 
-        function QtdTotalItens(){
-        }
+        function CountItens(){
+         
+         let qtdItens = $(".chbox").length;
+         $("#qtdItensTotal").empty();
+         $("#qtdItensTotal").append(qtdItens);
 
+        }
     
     
     
