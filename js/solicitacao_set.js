@@ -1,10 +1,6 @@
         
         var i = 0;
-        function Insert(){
-
-            
-        }                
-   
+      
         function RemoveItens(){
               $(".chbox:checked").each(function(){
               let item = $(this).attr("id");
@@ -54,33 +50,53 @@
         }
 
         function InsertMultipleItens(){
+
            $.getJSON('data/itens.json', function(data) {
 
-              $(data.registros).each(function(obj){
-                var desc = $("#descricao").val();
-                var qtd = $("#qtdItens").val();
+          $(data.registros).each(function(obj){
+            var desc = $("#descricao").val();
+            var qtd = $("#qtdItens").val();
 
-                var descPart = desc.split("-");
-                var qtdPart = qtd.split(',');
+            var descPart = desc.split("-");
+            var qtdPart = qtd.split(',');
+            
+          $(descPart).each(function(x) {
+            if(data.registros[obj]['id'] == descPart[x]){
+                let desc = data.registros[obj]['descricao'];
+                let fam = data.registros[obj]['familia'];
+                let idItem = data.registros[obj]['id'];
+
+                  RowEmpty(i);
+                  $("#idItem"+i).append("<b>"+ descPart[x] +"</b>");
+                  $("#descricao"+i).append(idItem +" - "+ desc);
+                  $("#familiaItem"+i).append(fam);
+                  $("#fdunidade"+i).val($("#unidade").val());
+                  $("#qtdItens"+i).append(qtdPart[x]);
+                  
+                  CountItens();
+                  i++;
                 
-              $(descPart).each(function(x) {
-                if(data.registros[obj]['id'] == descPart[x]){
-                    let desc = data.registros[obj]['descricao'];
-                    let fam = data.registros[obj]['familia'];
-
-                      RowEmpty(i);
-                      $("#idItem"+i).append("<b>"+ descPart[x] +"</b>");
-                      $("#descricao"+i).append(desc);
-                      $("#familiaItem"+i).append(fam);
-                      $("#fdunidade"+i).val($("#unidade").val());
-                      $("#qtdItens"+i).append(qtdPart[x]);
-                      CountItens();
-                      i++;
-              }
-                        
+                }
+                    
               })
             })
           })
+        }
+
+        function InsertItemSingle(){
+          var desc = $("#descricao").val();
+          var descPart = desc.split("-");
+
+                  RowEmpty(i);
+                  $("#idItem"+i).append("<b>"+ descPart[0] +"</b>");
+                  $("#descricao"+i).append($("#descricao").val());
+                  $("#familiaItem"+i).append($("#familiaList").val());
+                  $("#fdunidade"+i).val($("#unidade").val());
+                  $("#qtdItens"+i).append($("#qtdItens").val());
+                  CleanFieldsItens();
+                  CountItens();
+                  i++;
+
         }
                              
         function ShowFieldsAdesaoAta(){
@@ -169,25 +185,24 @@
             $("#l_familia").hide();
             $("#descItem").empty();
             $("#descricao").val("");
+            $("#descricao").attr("placeholder", "INFORME ID's SEPARADOS POR TRAÇOS ( - )");
+            $("#qtdItens").attr("placeholder", "INFORME A QUANTIDADE DE CADA ID SEPARADO POR VIGULA ( , )");
          }
    
         function DefaultItemtoItem(){
             $("#familiaList").show();
             $("#l_familia").show();
             $("#familiaList").val("");
+            $("#descricao").attr("placeholder", "DIGITE O ID OU A DESCRIÇÃO DO ITEM");
+            $("#qtdItens").attr("placeholder", "INFORME QUANTIDADE DO ITEM");
          
         }
         
-        function AppendItemSingle(){
-          var desc = $("#descricao").val();
-          var descPart = desc.split("-");
-
-          RowEmpty(i);
-          $("#idItem"+i).append("<b>"+ descPart[0] +"</b>");
-          $("#descricao"+i).append(descPart[1]);
-          $("#familiaItem"+i).append($("#familiaList").val());
-          $("#fdunidade"+i).val($("#unidade").val());
-          $("#qtdItens"+i).append($("#qtdItens").val());
-          i++;
-
+        function CleanFieldsItens(){
+        
+          $("#descricao").val("");
+          $("#qtdItens").val("");
+          $("#unidade").val("");
+          
         }
+        

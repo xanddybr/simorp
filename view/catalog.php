@@ -11,11 +11,72 @@
 <link href="../css/datepicker3.css" rel="stylesheet">
 <link href="../css/styles.css" rel="stylesheet">
 <link href="../css/bootstrap-table.css" rel="stylesheet">
-
+<script src="./js/catalog_set.js"></script>
 <script src="../js/lumino.glyphs.js"></script>
 
 <script>
-	
+
+
+	// LOAD FAMILY FIELD
+	$(document).ready(function(){
+
+	$('#tipoObjeto').change(function(){
+			if($('#tipoObjeto').val()=='selecione'){
+				$('#familia').empty();
+				$('#familiaList').val("");
+				exit();
+			}
+
+			if($('#tipoObjeto').val()=='MATERIAL'){
+				$('#familia').empty();
+					$('#descricao').val("");
+						$('#familiaList').val("");
+						LodaDataList(null, "#familia","data/familiaMaterial.json","familia","id","tipo");
+						
+				exit();
+			}
+
+			if($('#tipoObjeto').val()=='SERVICO'){
+				$('#familia').empty();
+					$('#descricao').val("");
+						$('#familiaList').val("");
+						LodaDataList(null, "#familia","data/familiaServicos.json","familia","id","tipo");
+				exit();
+			}
+		})
+	})
+
+
+	//CHANGE FAMILY
+	$(document).ready(function(){
+
+			$('#familiaList').change(function(){
+					
+				if($('#familiaList').val() != ""){
+					
+					let tpObjKey = $('#tipoObjeto').val();
+					let familyKey = $('#familiaList').val();
+					LodaDataListKey(familyKey,tpObjKey,"#descItem","data/itens.json","descricao");
+					
+				}
+				
+			})
+		})
+
+	//EVENT KEY TRIGGER ENTER 
+	$(document).ready(function(){	
+
+	$("#descItem").on( "keypress", function( event ){
+		if ( event.which == 13 ) {
+			event.preventDefault();
+			//InsertMultipleItens();
+			alert("Running...");
+		}
+
+	}) 
+	}) 
+
+
 </script>
 
 </head>
@@ -31,8 +92,6 @@
 			</ol>/.row-->
 		</div>
 		
-		
-		
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="panel panel-default">
@@ -41,40 +100,28 @@
 						
 							<form role="form">
 										<div class="form-group col-md-13">
-												<div class="col-lg-2">
-														<label>ID/ Descrição</label>
-														<input class="form-control" placeholder="Encontrado no SEI">
-												</div>
-
 												<div class="col-lg-3">
 													<label>Tipo de Objeto</label>
-														<select class="form-control" name="tipoSolicitacao">
-															
-														</select>
+													<select id='tipoObjeto' class="form-control col-lg-3" placeholder="INFORME O TIPO DE OBJETO" onChange="";  name='solRegPrec[]'>
+														<option value="selecione"><< SELECIONE UM TIPO >></option>
+														<option value="MATERIAL">1 - MATERIAL</option>
+														<option value="SERVICO">2 - SERVICOS</option>
+													</select>
 												</div>
-
-												<div class="col-lg-3">
-													<label>Familia</label>
-														<select class="form-control" name="tipoAta">
-															
-															
-														</select>
+												<br><br><br><br>
+												<div class="col-lg-6">
+														<label>Familia</label>
+														<input class="form-control col-lg-6" placeholder="Informe uma família" name='solRegPrec[]' id='familiaList' list='familia' required>
+														<datalist id='familia'></datalist>
 												</div>
-
-												
-												
-
-
+												<br><br><br><br>
+												<div class="col-lg-12">
+														<label>ID/ Descrição</label>
+														<input class='form-control col-lg-12 telcas' placeholder='' list='descItem' type='text' id='descricao' name='solRegPrec[]'><datalist id='descItem'></datalist>
+												</div>
 										</div>
-												
-								    
-
-								  <br><br><br><br>
-		
-						
-							
-
-							
+	     						    <br><br><br><br>
+					
 						</form>
 					
 				</div>
@@ -94,19 +141,16 @@
 								<th class="col-lg-1"></th>
 								<th class="col-lg-6"></th>
 								<th class="col-lg-4"></th>
-								<th class="col-lg-1"></th>
-																
 							</tr>
-								<tr id='item' >
+
+							<tr id='item'>
 								<td><input class='form-control col-lg-1' placeholder='ID' type='text' id='idItem' name='solRegPrec[]' onkeypress="return false;"></td>
 								<td><input class='form-control col-lg-6' placeholder='DESCRIÇÃO' type='text' id='descricao' name='solRegPrec[]' onkeypress="return false;"></td>
 								<td><input class='form-control col-lg-4' type='text' id='familiaItem' placeholder='FAMILIA' name='solRegPrec[]' onkeypress="return false;"></td>
-								<td><input class='form-control col-lg-1' id='unidade' placeholder='UNIDADE' name='solRegPrec[]' onkeypress="return false;"></td>
-														
 							</tr>
 							
 						</table>
-										<script>
+	<script>
 						$(function () {
 							$('#hover, #striped, #condensed').click(function () {
 								var classes = 'table';

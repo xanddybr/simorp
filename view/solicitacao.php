@@ -32,6 +32,15 @@
 	
 
 <script>
+
+	//LOAD PAGE EVENTS TYPE REQUEST
+	$(document).ready(function(){
+		HideFieldsAdesaoAta();
+		
+		LodaDataList("#OrgSol_Gestor","","data/orgaos.json","sigla","descricao");
+		LodaDataList(null,"#unidades","data/unidades.json","sigla","descricao");
+		DefaultMultInsert();
+	})
 	
 	//CHECK ALL CHECKBOXES
 	$(document).ready(function(){
@@ -109,27 +118,40 @@
 
 	//EVENT KEY TRIGGER ENTER 
 	$(document).ready(function(){	
-	$(".telcas").on( "keypress", function( event ){
-		if ( event.which == 13 ) {
-			 event.preventDefault();
+		
+		$(".telcas").on( "keypress", function( event ){
+			if ( event.which == 13 ) {
+				event.preventDefault();
 
-				if($("#insMult").prop("checked")){
-					InsertMultipleItens();
-					
-				} 
+			if($("#insMult").prop("checked")){
+				InsertMultipleItens();
+				
+			} 
 
-				if($("#insCat").prop("checked")){
-					AppendItemSingle();
-					
-				} 
+			if($("#insCat").prop("checked")){
+				InsertItemSingle();
+				
 			}
+			
+		}
+		
 		}) 
 	}) 
 
 	//INSERT LINE IN LIST
 	$(document).ready(function(){
 		$("#btn-add").click(function(){
-		
+
+			if($("#insMult").prop("checked")){
+				InsertMultipleItens();
+					
+				} 
+
+			if($("#insCat").prop("checked")){
+				InsertItemSingle();
+					
+			} 
+			
 		}) 
 	})
 
@@ -160,15 +182,7 @@
         $(".dinheiro").mask('#.##9,99',{reverse: true});
     })
 
-	//LOAD PAGE EVENTS TYPE REQUEST
-	$(document).ready(function(){
-		HideFieldsAdesaoAta();
-		
-		LodaDataList("#OrgSol_Gestor","","data/orgaos.json","sigla","descricao");
-		LodaDataList(null,"#unidades","data/unidades.json","sigla","descricao");
-		DefaultMultInsert();
-	})
-
+	//ENABLE MULTI-INSERCTION MODE
 	$(document).ready(function(){
 		$("#insMult").click(function(){
 			DefaultMultInsert();
@@ -176,6 +190,7 @@
 
 	})
 
+	//ENABLE SINGLE-INSERCTION MODE
 	$(document).ready(function(){
 		$("#insCat").click(function(){
 			DefaultItemtoItem();
@@ -348,8 +363,8 @@
 							<tr id='item'>
 							<td style='width:30px;'><input type='checkbox' class='' id='checkAll'></td>
 							<td><input class='form-control col-lg-1 telcas' placeholder='ID' type='text' id='idItem' name='solRegPrec[]' onkeypress="return false;"></td>
-							<td><input class='form-control col-lg-5 telcas' placeholder='INFORME OS IDs SEPARADOS POR (-)' list='descItem' type='text' id='descricao' name='solRegPrec[]'><datalist id='descItem'></datalist></td>
-							<td><input class='form-control col-lg-4 telcas' type='text'  id='qtdItens' placeholder='INFORME A QUANTIDADE SEPARADO POR (,)' name='solRegPrec[]'></td>
+							<td><input class='form-control col-lg-5 telcas' placeholder='' list='descItem' type='text' id='descricao' name='solRegPrec[]'><datalist id='descItem'></datalist></td>
+							<td><input class='form-control col-lg-4 telcas' type='text'  id='qtdItens' placeholder='' name='solRegPrec[]'></td>
 							<td><input class='form-control col-lg-1 telcas' list='unidades'  id='unidade' placeholder='UNIDADE' name='solRegPrec[]'><datalist id='unidades'></datalist></td>
 							<td><input class='form-control col-lg-1 telcas' id='' placeholder='' name='solRegPrec[]' value='' onkeypress="return false;"/></td>
 							<td><input type="button" id="btn-add" value=' + ' name="" /></td>
