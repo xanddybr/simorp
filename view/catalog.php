@@ -14,6 +14,15 @@
 <script src="./js/catalog_set.js"></script>
 <script src="../js/lumino.glyphs.js"></script>
 
+<style>
+
+	tr:nth-child(even) {
+	background-color: #f2f2f2;
+	}
+
+
+</style>
+
 <script>
 
 
@@ -50,6 +59,7 @@
 	//CHANGE FAMILY
 	$(document).ready(function(){
 
+
 			$('#familiaList').change(function(){
 					
 				if($('#familiaList').val() != ""){
@@ -63,17 +73,18 @@
 			})
 		})
 
+
+	
 	//EVENT KEY TRIGGER ENTER 
 	$(document).ready(function(){	
+		
+		$("#descricao").on( "keypress", function( event ){
+			if (event.which == 13) {
+				event.preventDefault();
+				loadTable();
+	     	}
 
-	$("#descItem").on( "keypress", function( event ){
-		if ( event.which == 13 ) {
-			event.preventDefault();
-			//InsertMultipleItens();
-			alert("Running...");
-		}
-
-	}) 
+		}) 
 	}) 
 
 
@@ -91,14 +102,12 @@
 				<li class="active">Navegação</li>
 			</ol>/.row-->
 		</div>
-		
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="panel panel-default">
 					<div class="panel-heading" class="form-group"><label> Catálago SIGA: Consulta de itens por tipo e familia </label> </div>
 					  <div class="panel-body">
-						
-							<form role="form">
+						 <form role="form">
 										<div class="form-group col-md-13">
 												<div class="col-lg-3">
 													<label>Tipo de Objeto</label>
@@ -136,19 +145,12 @@
 		
 		<div class="panel panel-default">
 					<div class="panel-body">
-						<table data-toggle="table" id='table01' class="col-lg-12">
+						<table data-toggle="table" id='table01' class="col-lg-10">
 							<tr>
-								<th class="col-lg-1"></th>
-								<th class="col-lg-6"></th>
-								<th class="col-lg-4"></th>
+								<th class="col-lg-1">ID</th>
+								<th class="col-lg-4">DESCRIÇÃO</th>
+								<th class="col-lg-4">FAMILIA</th>
 							</tr>
-
-							<tr id='item'>
-								<td><input class='form-control col-lg-1' placeholder='ID' type='text' id='idItem' name='solRegPrec[]' onkeypress="return false;"></td>
-								<td><input class='form-control col-lg-6' placeholder='DESCRIÇÃO' type='text' id='descricao' name='solRegPrec[]' onkeypress="return false;"></td>
-								<td><input class='form-control col-lg-4' type='text' id='familiaItem' placeholder='FAMILIA' name='solRegPrec[]' onkeypress="return false;"></td>
-							</tr>
-							
 						</table>
 	<script>
 						$(function () {

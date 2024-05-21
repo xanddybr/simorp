@@ -24,7 +24,7 @@
 <style>
 
 	tr:nth-child(even) {
-	background-color: #f2f2f2;
+	background-color: #F7F7F8;
 	}
 
 
@@ -117,7 +117,7 @@
 	})
 
 	//EVENT KEY TRIGGER ENTER 
-	$(document).ready(function(){	
+	$(document).ready(function(){
 		
 		$(".telcas").on( "keypress", function( event ){
 			if ( event.which == 13 ) {

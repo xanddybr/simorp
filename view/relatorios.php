@@ -20,7 +20,14 @@
 <script src="./js/relatorios_settings.js"></script>
 <script src="./js/bootstrap-table.js"></script>
 
+<style>
 
+	tr:nth-child(even) {
+	background-color: #F7F7F8;
+	}
+
+
+</style>
 
 </head>
 

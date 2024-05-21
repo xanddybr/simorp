@@ -12,6 +12,7 @@
 
 [
 
+0521.1800 : implemented catalog itens
 0515.1759 : implemented multiple itens in list
 0510.1822 : implemented new resource list intens
 0509.1957 : fixed disposition fields form

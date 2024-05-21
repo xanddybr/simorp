@@ -103,13 +103,13 @@ Class Usuario {
             if($this->usuario == "homolog" and  $this->senha == "123"){
                 Usuario::Homologation();
                 
-            } else {
+                  } else {
 
-            $userAPI = new DataSourceAPI(); 
-            $userAPI->set_url('http://10.3.15.200:8002/auth/login/');
-            $user = array('username' => $this->usuario, 'password' => $this->senha);
-            $userAPI->set_postfields($user);
-            $data = $userAPI->AuthAPI();
+                  $userAPI = new DataSourceAPI(); 
+                  $userAPI->set_url('http://10.3.15.200:8002/auth/login/');
+                  $user = array('username' => $this->usuario, 'password' => $this->senha);
+                  $userAPI->set_postfields($user);
+                  $data = $userAPI->AuthAPI();
 
                           
           if(isset($data['detail'])) {
@@ -131,7 +131,7 @@ Class Usuario {
           }
 
     public function Homologation() {
-      if(!isset($_SESSION['login'] )) {
+      if(!isset($_SESSION['login'])) {
 
         if($this->usuario == "homolog" && $this->senha == "123") {
 
