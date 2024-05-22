@@ -5,14 +5,19 @@
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bem Vindo ao SIMORP</title>
-<link rel="icon" type="image/x-icon" href="img/ico/pencil.ico">
-<link href="../css/bootstrap.min.css" rel="stylesheet">
-<link href="../css/datepicker3.css" rel="stylesheet">
-<link href="../css/styles.css" rel="stylesheet">
-<link href="../css/bootstrap-table.css" rel="stylesheet">
-<script src="./js/catalog_set.js"></script>
-<script src="../js/lumino.glyphs.js"></script>
+
+<title>SIMORP</title>
+
+<!-- load dependency libraries  -->
+<link href="./css/bootstrap.min.css" rel="stylesheet">
+<link href="./css/styles.css" rel="stylesheet">
+<link href="./img/ico/pencil.ico" rel="icon" type="image/x-icon" >
+
+<!-- load dependency libraries -->
+<script src="./js/lumino.glyphs.js" type="text/javascript"></script>
+<script src="./js/jquery.min.js" type="text/javascript"></script>
+<script src="./js/catalog_set.js" type="text/javascript"></script>
+<script src="./js/bootstrap.min.js" type="text/javascript"></script>
 
 <style>
 
@@ -75,10 +80,10 @@
 
 
 	
-	//EVENT KEY TRIGGER ENTER 
+	//EVENT KEY TRIGGER ENTER f
 	$(document).ready(function(){	
 		
-		$("#descricao").on( "keypress", function( event ){
+		$("#familiaList").on( "keypress", function( event ){
 			if (event.which == 13) {
 				event.preventDefault();
 				loadTable();
@@ -128,6 +133,9 @@
 														<label>ID/ Descrição</label>
 														<input class='form-control col-lg-12 telcas' placeholder='' list='descItem' type='text' id='descricao' name='solRegPrec[]'><datalist id='descItem'></datalist>
 												</div>
+													<div class="form-group col-lg-12">
+													<label id='qtdItensTotal'>0&nbsp;</label><label>: Itens encontrados na lista </label>
+													</div>
 										</div>
 	     						    <br><br><br><br>
 					
@@ -145,11 +153,11 @@
 		
 		<div class="panel panel-default">
 					<div class="panel-body">
-						<table data-toggle="table" id='table01' class="col-lg-10">
+						<table data-toggle="table" id='table01' class="col-lg-12">
 							<tr>
-								<th class="col-lg-1">ID</th>
-								<th class="col-lg-4">DESCRIÇÃO</th>
-								<th class="col-lg-4">FAMILIA</th>
+								<th class="col-lg-1" style='text-align:center;'>ID</th>
+								<th class="col-lg-8" style='text-align:center;'>DESCRIÇÃO</th>
+								<th class="col-lg-6" style='text-align:center;'>FAMILIA</th>
 							</tr>
 						</table>
 	<script>
@@ -167,7 +175,7 @@
 									.bootstrapTable({
 										classes: classes,
 										striped: $('#striped').prop('checked')
-									});
+								});
 							});
 						});
 					

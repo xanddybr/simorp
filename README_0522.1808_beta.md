@@ -11,8 +11,8 @@
 `Notes-release`:
 
 [
-
-0521.1800 : implemented catalog itens
+0522.1808 : refinament catalog
+0521.1800 : implemented catalog it
 0515.1759 : implemented multiple itens in list
 0510.1822 : implemented new resource list intens
 0509.1957 : fixed disposition fields form
@@ -259,3 +259,22 @@ TREE VIEW
 
 --------------------------------------------------------------------------
 
+MODAL BLOQUED VIEW
+
+$('#myModal').modal({backdrop: 'static', keyboard: false});
+
+If you are using data attributes, use:
+
+ <button data-target="#myModal" data-toggle="modal" data-backdrop="static" data-keyboard="false">
+    Launch demo modal
+ </button>
+
+ --------------------------------------------------------------------------
+
+ MODAL FOCUS
+
+ $('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').trigger('focus')
+})
+
+ --------------------------------------------------------------------------

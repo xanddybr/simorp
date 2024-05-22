@@ -7,19 +7,21 @@
 <meta http-equiv='expires' content='0'>
 <meta http-equiv='pragma' content='no-cache'>
 
-<title>Bem Vindo ao SIMORP</title>
+<title>SIMORP</title>
+
 <link rel="icon" type="image/x-icon" href="img/ico/pencil.ico">
 
-<!-- libraires  -->
-
-<link href="./css/styles.css" rel="stylesheet">
+<!-- load dependency libraries  -->
 <link href="./css/bootstrap.min.css" rel="stylesheet">
+<link href="./css/styles.css" rel="stylesheet">
+<link href="./img/ico/pencil.ico" rel="icon" type="image/x-icon" >
 
-<script src="../js/bootstrap.min.js"></script>
-<script src="../js/jquery.min.js"></script>
+<!-- load dependency libraries -->
+<script src="./js/lumino.glyphs.js" type="text/javascript"></script>
+<script src="./js/jquery.min.js" type="text/javascript"></script>
+<script src="./js/solicitacao_set.js" type="text/javascript"></script>
+<script src="./js/bootstrap.min.js" type="text/javascript"></script>
 
-<script src="./js/jquery.mask.min.js"></script>
-<script src="./js/solicitacao_set.js"></script>
 
 <style>
 

@@ -7,18 +7,20 @@
 <meta http-equiv='cache-control' content='no-cache'>
 <meta http-equiv='expires' content='0'>
 <meta http-equiv='pragma' content='no-cache'>
-<title>SIMORP-BETA</title>
 
-<link rel="icon" type="image/x-icon" href="img/ico/pencil.ico">
+<title>SIMORP</title>
 
+<!-- load dependency libraries  -->
 <link href="./css/bootstrap.min.css" rel="stylesheet">
 <link href="./css/styles.css" rel="stylesheet">
-<link href="./css/bootstrap-table.css" rel="stylesheet">
+<link href="./img/ico/pencil.ico" rel="icon" type="image/x-icon" >
 
-<script src="./js/jquery.min.js"></script>
-<script src="./js/lumino.glyphs.js"></script>
-<script src="./js/relatorios_settings.js"></script>
-<script src="./js/bootstrap-table.js"></script>
+<!-- load dependency libraries -->
+<script src="./js/lumino.glyphs.js" type="text/javascript"></script>
+<script src="./js/jquery.min.js" type="text/javascript"></script>
+<script src="./js/relatorios_set.js" type="text/javascript"></script>
+<script src="./js/bootstrap.min.js" type="text/javascript"></script>
+
 
 <style>
 

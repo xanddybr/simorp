@@ -15,17 +15,19 @@
 
 <title>Bem Vindo ao SIMORP</title>
 
-<!-- Load dependency Bootstraps Framewoks  -->
+<!-- load dependency libraries  -->
 <link href="./css/bootstrap.min.css" rel="stylesheet">
 <link href="./css/styles.css" rel="stylesheet">
 <link href="./img/ico/pencil.ico" rel="icon" type="image/x-icon" >
 
-<!--load Icons and javascripts-->
-<script src="./js/lumino.glyphs.js"></script>
-<script src="./js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="./js/index_settings.js"></script>
+<!-- load dependency libraries -->
+<script src="./js/lumino.glyphs.js" type="text/javascript"></script>
+<script src="./js/jquery.min.js" type="text/javascript"></script>
+<script src="./js/index_set.js" type="text/javascript"></script>
+<script src="../js/bootstrap.min.js" type="text/javascript"></script>
 
 </head>
+
 <script>
 
 
@@ -50,10 +52,8 @@
                              
       }
       // START APP IN PAGE LOGIN
-     
-      
+           
        $rota->StartAppLogin();
-
 
       } else {
 

@@ -5,20 +5,20 @@
 <meta http-equiv='cache-control' content='no-cache'>
 <meta http-equiv='expires' content='0'>
 <meta http-equiv='pragma' content='no-cache'>
+
 <title>SIMORP</title>
-<link rel="icon" type="image/x-icon" href="img/ico/pencil.ico">
+
+<!-- load dependency libraries  -->
 <link href="./css/bootstrap.min.css" rel="stylesheet">
 <link href="./css/styles.css" rel="stylesheet">
-<script src="./js/jquery.min.js"></script>
-<script src="./js/bootstrap.min.js"></script>
+<link href="./img/ico/pencil.ico" rel="icon" type="image/x-icon" >
 
-<script src="./js/login_settings.js"></script>
+<!-- load dependency libraries -->
+<script src="./js/lumino.glyphs.js" type="text/javascript"></script>
+<script src="./js/jquery.min.js" type="text/javascript"></script>
+<script src="./js/login_set.js" type="text/javascript"></script>
+<script src="./js/bootstrap.min.js" type="text/javascript"></script>
 
-
-<!--chamada para API-->
-<script src="./js/authAPI.js"></script>
-<!--Icons-->
-<script src="js/lumino.glyphs.js"></script>
 
 <script>
 
@@ -56,7 +56,7 @@
 				</div>
 				
 			</div>
-			<?php echo "<center><span style='text-aling: center'><h6>v1.0.0 build 0521.1800</h6></span></center>"; ?>
+			<?php echo "<center><span style='text-aling: center'><h6>v1.0.0 build 0522.1808</h6></span></center>"; ?>
 		</div><!-- /.col-->
 		
 	</div><!-- /.row -->	

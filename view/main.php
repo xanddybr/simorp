@@ -8,16 +8,18 @@
 <meta http-equiv='expires' content='0'>
 <meta http-equiv='pragma' content='no-cache'>
 
-<title>Bem Vindo ao SIMORP</title>
-<link rel="icon" type="image/x-icon" href="img/ico/pencil.ico">
+<title>SIMORP</title>
 
-<!-- Load dependency Bootstraps Framewoks  -->
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="css/styles.css" rel="stylesheet">
+<!-- load dependency libraries  -->
+<link href="./css/bootstrap.min.css" rel="stylesheet">
+<link href="./css/styles.css" rel="stylesheet">
+<link href="./img/ico/pencil.ico" rel="icon" type="image/x-icon" >
 
-<!--load Icons and javascripts-->
-
-<script src="../js/lumino.glyphs.js"></script>
+<!-- load dependency libraries -->
+<script src="./js/lumino.glyphs.js" type="text/javascript"></script>
+<script src="./js/jquery.min.js" type="text/javascript"></script>
+<script src="./js/main_set.js" type="text/javascript"></script>
+<script src="./js/bootstrap.min.js" type="text/javascript"></script>
 
 
 </head>

@@ -1,10 +1,10 @@
             
-      function RowEmpty(id,desc,fam){
+       function RowEmpty(id,desc,fam){
         
-        var row = "<tr id='item"+ c +"' style='height:30px; border: 1px solid #F7F7F8; border-collapse: collapse;'>"+
+        var row = "<tr id='item"+ c +"' class='chbox' style='height:30px; border: 1px solid #F7F7F8; border-collapse: collapse;'>"+
                   "<td style='text-align:center;' class='col-lg-1' id='idItem"+ c +"'>" + id + "</td>"+
-                  "<td style='text-align:justify;' class='col-lg-4' id='descricao"+ c +"'>" + desc + "</td>"+
-                  "<td style='text-align:center;' class='col-lg-4' id='familiaItem"+ c +"'>" + fam + "</td>"+
+                  "<td style='text-align:ma;' class='col-lg-8' id='descricao"+ c +"'>" + desc + "</td>"+
+                  "<td style='text-align:center;' class='col-lg-6' id='familiaItem"+ c +"'>" + fam + "</td>"+
                   "</tr>";
                   
                   $("#table01:last").append(row);
@@ -12,7 +12,7 @@
       }
 
 
-      function LodaDataList(id1, id2, url, valueField, desc1, desc2){
+       function LodaDataList(id1, id2, url, valueField, desc1, desc2){
             
             $.getJSON(url, function(data) {
                 $(data.registros).each(function(obj) {
@@ -23,7 +23,8 @@
           })
           }
 
-      function LodaDataListKey(key1, key2, id1, url, desc1){
+
+       function LodaDataListKey(key1, key2, id1, url, desc1){
                     
             $.getJSON(url, function(data) {
               $('#descItem').empty();
@@ -45,7 +46,9 @@
                 $(data.registros).each(function(obj){ 
                   if(data.registros[obj]['familia'] == $("#familiaList").val()){
 
-                  RowEmpty(data.registros[obj]['id'], data.registros[obj]['descricao'], data.registros[obj]['familia']);   
+                  RowEmpty(data.registros[obj]['id'], data.registros[obj]['descricao'], data.registros[obj]['familia']); 
+                  CountItens();
+
                   c++;
 
                   }
@@ -53,6 +56,13 @@
             })
           }
        
+          function CountItens(){
+         
+            let qtdItens = $(".chbox").length;
+            $("#qtdItensTotal").empty();
+            $("#qtdItensTotal").append("&nbsp;"+ qtdItens);
+   
+           }
 
   
 
