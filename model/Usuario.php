@@ -97,24 +97,17 @@ Class Usuario {
 
  
 //Exec connection with data-source API
-        public function AuthenticUserAPI($check) {
-
-            /* $dataUser = array('username'	=> $this->_usuario, 'password'  => $this->_senha); */
-            if($this->usuario == "homolog" and  $this->senha == "123"){
-                Usuario::Homologation();
-                
-                  } else {
-
+        public function AuthenticUserAPI($check){
+        
                   $userAPI = new DataSourceAPI(); 
                   $userAPI->set_url('http://10.3.15.200:8002/auth/login/');
                   $user = array('username' => $this->usuario, 'password' => $this->senha);
                   $userAPI->set_postfields($user);
                   $data = $userAPI->AuthAPI();
-
                           
-          if(isset($data['detail'])) {
+          if(isset($data['detail'])){
 
-                 echo Modal::MsgBox('Por favor, verifique o seu usuario e senha!');
+                 echo ('<script>Por favor, verifique o seu usuario e senha!</script>');
 
             } else {
 
@@ -124,13 +117,13 @@ Class Usuario {
                   $this->set_token($data['access']);
                     
                   Usuario::LogonSession($check);
-                  
+         
               }
-              
-          }
-          }
+        }
 
-    public function Homologation() {
+
+          
+    public function Homologation(){
       if(!isset($_SESSION['login'])) {
 
         if($this->usuario == "homolog" && $this->senha == "123") {
@@ -143,22 +136,26 @@ Class Usuario {
              header("location:/simorp_beta2/home");
 
             } else { 
+
+              
         }
 
-        } else { echo Modal::MsgBox('Usuario ou senha do Homologador inválidos!'); }
+        } else { 
+          
+          echo Modal::MsgBox('Usuario ou senha do Homologador inválidos!'); }
       
       }  
     }
 
         
-      public function LogoutSessionTimeOut() {
+      public function LogoutSessionTimeOut(){
         $_SESSION['login'] = [null, null, null];
         session_destroy();
       }
       
     
       // public function for logout user     
-      public function LogoutSession() {
+      public function LogoutSession(){
         
         $_SESSION['login'] = [null, null, null];
         setcookie('timeUser', null , null);  
@@ -219,7 +216,6 @@ Class Usuario {
    
   }
 
-  
 
  
 ?>

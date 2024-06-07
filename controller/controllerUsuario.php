@@ -12,8 +12,6 @@ Class ControllerUsuario {
         $usuario->set_usuario($user);
         $usuario->set_senha($pass);
         $usuario->AuthenticUserAPI($check);
-           
-               
     }
 
     public static function LogonTeste($user,$pass,$check) {
@@ -23,20 +21,17 @@ Class ControllerUsuario {
         $usuario->set_usuario($user);
         $usuario->set_senha($pass);
         $usuario->Homologation($check = null);
-       
     }
 
     public static function Logout() {
         $usuario = new Usuario();
         $usuario->LogoutSession();
-        
     }
 
     public static function TimeOut() {
         $usuario = new Usuario();
         $usuario->LogoutSessionTimeOut();
     }
-
    
     
 }

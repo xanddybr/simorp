@@ -24,7 +24,9 @@
 <script src="./js/lumino.glyphs.js" type="text/javascript"></script>
 <script src="./js/jquery.min.js" type="text/javascript"></script>
 <script src="./js/index_set.js" type="text/javascript"></script>
+<script src="./js/bootstrap-table.js" type="text/javascript"></script>
 <script src="../js/bootstrap.min.js" type="text/javascript"></script>
+
 
 </head>
 

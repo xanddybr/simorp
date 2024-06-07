@@ -49,7 +49,8 @@ Class DataSourceAPI {
                         if(!$result = curl_exec($curl)){
                           
                           die('<script>alert("A aplicação não pode ser iniciada, porque a API não responde!!")</script>');
-                       
+                          return 'false';
+
                         } else {
                           $result_json = json_decode($result, true);
                           return $result_json;
@@ -81,7 +82,7 @@ Class DataSourceAPI {
         }
                   
           
-        public function GetForIdAPI($id) {
+        public function GetForIdAPI(int $id) {
 
                       $curl = curl_init();
                     
@@ -94,7 +95,7 @@ Class DataSourceAPI {
 
                       if(!$result = curl_exec($curl)){
                          
-                        header("location:/simorp_beta/login");
+                    
                         die('Erro na integração com a API na tentativa de carregamento da informação');
                         
 
@@ -107,7 +108,7 @@ Class DataSourceAPI {
                     
         
 
-        public function PostInAPI($arrayData) {
+        public function PostInAPI(array $arrayData) {
 
                       $curl = curl_init();
                       $array_Data = http_build_query($arrayData);
@@ -136,7 +137,7 @@ Class DataSourceAPI {
         }
 
 
-        public function PutInAPI($arrayData) {
+        public function PutInAPI(array $arrayData) {
 
                       $curl = curl_init();
                       $array_Data = http_build_query($arrayData);
