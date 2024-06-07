@@ -10,12 +10,12 @@
 
 <title>SIMORP</title>
 
-<!-- load dependency libraries  -->
+<!-- load dependency libraries css -->
 <link href="./css/bootstrap.min.css" rel="stylesheet">
 <link href="./css/styles.css" rel="stylesheet">
 <link href="./img/ico/pencil.ico" rel="icon" type="image/x-icon" >
 
-<!-- load dependency libraries -->
+<!-- load dependency libraries js -->
 <script src="./js/lumino.glyphs.js" type="text/javascript"></script>
 <script src="./js/jquery.min.js" type="text/javascript"></script>
 <script src="./js/main_set.js" type="text/javascript"></script>

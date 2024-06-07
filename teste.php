@@ -1,7 +1,5 @@
 
-<script>
-    
-</script>
+
 
 
 <script src="./js/jquery.min.js" type="text/javascript"></script>
@@ -11,7 +9,7 @@
 
 <br><br><br>
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" data-backdrop="static" data-keyboard="false" autofocus>
+<button type="button" id='chamar'>
   Launch demo modal
 </button>
 
@@ -29,10 +27,27 @@
         <p>Modal body text goes here.</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Save changes</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" id="sl" class="btn btn-primary">Save changes</button>
+        <button type="button" id="cl" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
 </div>
 
+<script>
+
+  $(document).ready(function(){
+      $("#chamar").click(function(){
+        $('#exampleModalCenter').modal('show',true);
+    })
+  })
+      
+   $('#exampleModalCenter').on('shown.bs.modal', function () {
+        $('#cl').focus();
+   }) 
+ 
+  
+
+
+    
+</script>
